@@ -80,6 +80,10 @@ async function putcopySiteCounty($formValues, pk, success, error) {
 	if(valueReportCardKeys != null && valueReportCardKeys !== '')
 		vals['reportCardKeys'] = [valueReportCardKeys];
 
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+		vals['inheritPk'] = valueInheritPk;
+
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
 		vals['userId'] = valueUserId;
@@ -163,6 +167,10 @@ async function postSiteCounty($formValues, success, error) {
 	});
 	if(valueReportCardKeys.length > 0)
 		vals['reportCardKeys'] = valueReportCardKeys;
+
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+		vals['inheritPk'] = valueInheritPk;
 
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
@@ -312,6 +320,19 @@ async function patchSiteCounty($formFilters, $formValues, pk, success, error) {
 	var valueReportCardKeys = $formValues.find('input.valueReportCardKeys:checked').val();
 	if(valueReportCardKeys != null && valueReportCardKeys !== '')
 		vals['addReportCardKeys'] = valueReportCardKeys;
+
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+	var removeInheritPk = $formFilters.find('.removeInheritPk').val() === 'true';
+	var setInheritPk = removeInheritPk ? null : $formValues.find('.setInheritPk').val();
+	if(removeInheritPk || setInheritPk != null && setInheritPk !== '')
+		vals['setInheritPk'] = setInheritPk;
+	var addInheritPk = $formValues.find('.addInheritPk').val();
+	if(addInheritPk != null && addInheritPk !== '')
+		vals['addInheritPk'] = addInheritPk;
+	var removeInheritPk = $formValues.find('.removeInheritPk').val();
+	if(removeInheritPk != null && removeInheritPk !== '')
+		vals['removeInheritPk'] = removeInheritPk;
 
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')

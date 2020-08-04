@@ -80,6 +80,10 @@ async function putcopySiteState($formValues, pk, success, error) {
 	if(valueCountyKeys != null && valueCountyKeys !== '')
 		vals['countyKeys'] = [valueCountyKeys];
 
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+		vals['inheritPk'] = valueInheritPk;
+
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
 		vals['userId'] = valueUserId;
@@ -163,6 +167,10 @@ async function postSiteState($formValues, success, error) {
 	});
 	if(valueCountyKeys.length > 0)
 		vals['countyKeys'] = valueCountyKeys;
+
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+		vals['inheritPk'] = valueInheritPk;
 
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
@@ -321,6 +329,19 @@ async function patchSiteState($formFilters, $formValues, pk, success, error) {
 	var valueCountyKeys = $formValues.find('input.valueCountyKeys:checked').val();
 	if(valueCountyKeys != null && valueCountyKeys !== '')
 		vals['addCountyKeys'] = valueCountyKeys;
+
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+	var removeInheritPk = $formFilters.find('.removeInheritPk').val() === 'true';
+	var setInheritPk = removeInheritPk ? null : $formValues.find('.setInheritPk').val();
+	if(removeInheritPk || setInheritPk != null && setInheritPk !== '')
+		vals['setInheritPk'] = setInheritPk;
+	var addInheritPk = $formValues.find('.addInheritPk').val();
+	if(addInheritPk != null && addInheritPk !== '')
+		vals['addInheritPk'] = addInheritPk;
+	var removeInheritPk = $formValues.find('.removeInheritPk').val();
+	if(removeInheritPk != null && removeInheritPk !== '')
+		vals['removeInheritPk'] = removeInheritPk;
 
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
@@ -976,6 +997,18 @@ async function websocketSiteStateInner(apiRequest) {
 	if(pk != null) {
 		searchSiteStateVals([ {name: 'fq', value: 'pk:' + pk} ], function( data, textStatus, jQxhr ) {
 			var o = data['list'][0];
+			var val = o['pk'];
+			if(vars.includes('pk')) {
+				$('.inputSiteState' + pk + 'Pk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'Pk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'Pk'));
+			}
 			var val = o['created'];
 			if(vars.includes('created')) {
 				$('.inputSiteState' + pk + 'Created').each(function() {
@@ -999,6 +1032,18 @@ async function websocketSiteStateInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputSiteState' + pk + 'Modified'));
+			}
+			var val = o['objectId'];
+			if(vars.includes('objectId')) {
+				$('.inputSiteState' + pk + 'ObjectId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'ObjectId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'ObjectId'));
 			}
 			var val = o['archived'];
 			if(vars.includes('archived')) {
@@ -1060,6 +1105,78 @@ async function websocketSiteStateInner(apiRequest) {
 				});
 				addGlow($('.inputSiteState' + pk + 'CountyKeys'));
 			}
+			var val = o['inheritPk'];
+			if(vars.includes('inheritPk')) {
+				$('.inputSiteState' + pk + 'InheritPk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'InheritPk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'InheritPk'));
+			}
+			var val = o['id'];
+			if(vars.includes('id')) {
+				$('.inputSiteState' + pk + 'Id').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'Id').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'Id'));
+			}
+			var val = o['classCanonicalName'];
+			if(vars.includes('classCanonicalName')) {
+				$('.inputSiteState' + pk + 'ClassCanonicalName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'ClassCanonicalName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'ClassCanonicalName'));
+			}
+			var val = o['classSimpleName'];
+			if(vars.includes('classSimpleName')) {
+				$('.inputSiteState' + pk + 'ClassSimpleName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'ClassSimpleName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'ClassSimpleName'));
+			}
+			var val = o['classCanonicalNames'];
+			if(vars.includes('classCanonicalNames')) {
+				$('.inputSiteState' + pk + 'ClassCanonicalNames').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'ClassCanonicalNames').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'ClassCanonicalNames'));
+			}
+			var val = o['sessionId'];
+			if(vars.includes('sessionId')) {
+				$('.inputSiteState' + pk + 'SessionId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'SessionId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'SessionId'));
+			}
 			var val = o['userId'];
 			if(vars.includes('userId')) {
 				$('.inputSiteState' + pk + 'UserId').each(function() {
@@ -1083,6 +1200,102 @@ async function websocketSiteStateInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputSiteState' + pk + 'UserKey'));
+			}
+			var val = o['saves'];
+			if(vars.includes('saves')) {
+				$('.inputSiteState' + pk + 'Saves').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'Saves').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'Saves'));
+			}
+			var val = o['objectTitle'];
+			if(vars.includes('objectTitle')) {
+				$('.inputSiteState' + pk + 'ObjectTitle').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'ObjectTitle').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'ObjectTitle'));
+			}
+			var val = o['objectSuggest'];
+			if(vars.includes('objectSuggest')) {
+				$('.inputSiteState' + pk + 'ObjectSuggest').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'ObjectSuggest').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'ObjectSuggest'));
+			}
+			var val = o['objectText'];
+			if(vars.includes('objectText')) {
+				$('.inputSiteState' + pk + 'ObjectText').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'ObjectText').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'ObjectText'));
+			}
+			var val = o['pageUrlId'];
+			if(vars.includes('pageUrlId')) {
+				$('.inputSiteState' + pk + 'PageUrlId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'PageUrlId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'PageUrlId'));
+			}
+			var val = o['pageUrlPk'];
+			if(vars.includes('pageUrlPk')) {
+				$('.inputSiteState' + pk + 'PageUrlPk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'PageUrlPk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'PageUrlPk'));
+			}
+			var val = o['stateKey'];
+			if(vars.includes('stateKey')) {
+				$('.inputSiteState' + pk + 'StateKey').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'StateKey').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'StateKey'));
+			}
+			var val = o['countyCompleteName'];
+			if(vars.includes('countyCompleteName')) {
+				$('.inputSiteState' + pk + 'CountyCompleteName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'CountyCompleteName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'CountyCompleteName'));
 			}
 		});
 	}

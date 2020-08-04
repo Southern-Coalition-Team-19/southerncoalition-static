@@ -701,7 +701,7 @@ function suggestPageDesignObjectSuggest($formFilters, $list) {
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'fa fa- ');
+			var $i = $('<i>').attr('class', 'far fa-drafting-compass ');
 			var $span = $('<span>').attr('class', '').text(o['pageDesignCompleteName']);
 			var $li = $('<li>');
 			var $a = $('<a>').attr('href', o['pageUrlPk']);
@@ -719,7 +719,7 @@ function suggestPageDesignChildDesignKeys(filters, $list, pk = null, attribute=t
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'fa fa- ');
+			var $i = $('<i>').attr('class', 'far fa-drafting-compass ');
 			var $span = $('<span>').attr('class', '').text(o['pageDesignCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
@@ -755,7 +755,7 @@ function suggestPageDesignParentDesignKeys(filters, $list, pk = null, attribute=
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'fa fa- ');
+			var $i = $('<i>').attr('class', 'far fa-drafting-compass ');
 			var $span = $('<span>').attr('class', '').text(o['pageDesignCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
@@ -791,7 +791,7 @@ function suggestPageDesignHtmlPartKeys(filters, $list, pk = null, attribute=true
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'fa fa-puzzle-piece ');
+			var $i = $('<i>').attr('class', 'far fa-puzzle-piece ');
 			var $span = $('<span>').attr('class', '').text(o['objectTitle']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
@@ -1159,7 +1159,7 @@ function suggestPageDesignObjectSuggest($formFilters, $list) {
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'fa fa- ');
+			var $i = $('<i>').attr('class', 'far fa-drafting-compass ');
 			var $span = $('<span>').attr('class', '').text(o['pageDesignCompleteName']);
 			var $li = $('<li>');
 			var $a = $('<a>').attr('href', o['pageUrlPk']);
@@ -1177,7 +1177,7 @@ function suggestPageDesignChildDesignKeys(filters, $list, pk = null, attribute=t
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'fa fa- ');
+			var $i = $('<i>').attr('class', 'far fa-drafting-compass ');
 			var $span = $('<span>').attr('class', '').text(o['pageDesignCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
@@ -1213,7 +1213,7 @@ function suggestPageDesignParentDesignKeys(filters, $list, pk = null, attribute=
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'fa fa- ');
+			var $i = $('<i>').attr('class', 'far fa-drafting-compass ');
 			var $span = $('<span>').attr('class', '').text(o['pageDesignCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
@@ -1249,7 +1249,7 @@ function suggestPageDesignHtmlPartKeys(filters, $list, pk = null, attribute=true
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'fa fa-puzzle-piece ');
+			var $i = $('<i>').attr('class', 'far fa-puzzle-piece ');
 			var $span = $('<span>').attr('class', '').text(o['objectTitle']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
@@ -1467,34 +1467,34 @@ async function websocketPageDesign(success) {
 			var id = json['id'];
 			var pk = json['pk'];
 			var pkPage = $('#PageDesignForm :input[name=pk]').val();
+			var pks = json['pks'];
+			var empty = json['empty'];
+			var numFound = json['numFound'];
+			var numPATCH = json['numPATCH'];
+			var percent = Math.floor( numPATCH / numFound * 100 ) + '%';
+			var $box = $('<div>').attr('class', 'w3-display-topright w3-quarter box-' + id + ' ').attr('id', 'box-' + id);
+			var $margin = $('<div>').attr('class', 'w3-margin ').attr('id', 'margin-' + id);
+			var $card = $('<div>').attr('class', 'w3-card w3-white ').attr('id', 'card-' + id);
+			var $header = $('<div>').attr('class', 'w3-container fa-khaki ').attr('id', 'header-' + id);
+			var $i = $('<i>').attr('class', 'far fa-drafting-compass w3-margin-right ').attr('id', 'icon-' + id);
+			var $headerSpan = $('<span>').attr('class', '').text('modify page designs');
+			var $x = $('<span>').attr('class', 'w3-button w3-display-topright ').attr('onclick', '$("#card-' + id + '").hide(); ').attr('id', 'x-' + id);
+			var $body = $('<div>').attr('class', 'w3-container w3-padding ').attr('id', 'text-' + id);
+			var $bar = $('<div>').attr('class', 'w3-light-gray ').attr('id', 'bar-' + id);
+			var $progress = $('<div>').attr('class', 'w3-khaki ').attr('style', 'height: 24px; width: ' + percent + '; ').attr('id', 'progress-' + id).text(numPATCH + '/' + numFound);
+			$card.append($header);
+			$header.append($i);
+			$header.append($headerSpan);
+			$header.append($x);
+			$body.append($bar);
+			$bar.append($progress);
+			$card.append($body);
+			$box.append($margin);
+			$margin.append($card);
+			$('.box-' + id).remove();
+			if(numPATCH < numFound)
+			$('.top-box').append($box);
 			if(pk && pkPage && pk == pkPage) {;
-				var pks = json['pks'];
-				var empty = json['empty'];
-				var numFound = json['numFound'];
-				var numPATCH = json['numPATCH'];
-				var percent = Math.floor( numPATCH / numFound * 100 ) + '%';
-				var $box = $('<div>').attr('class', 'w3-display-topright w3-quarter box-' + id + ' ').attr('id', 'box-' + id);
-				var $margin = $('<div>').attr('class', 'w3-margin ').attr('id', 'margin-' + id);
-				var $card = $('<div>').attr('class', 'w3-card w3-white ').attr('id', 'card-' + id);
-				var $header = $('<div>').attr('class', 'w3-container fa-khaki ').attr('id', 'header-' + id);
-				var $i = $('<i>').attr('class', 'fa fa- w3-margin-right ').attr('id', 'icon-' + id);
-				var $headerSpan = $('<span>').attr('class', '').text('modify page designs');
-				var $x = $('<span>').attr('class', 'w3-button w3-display-topright ').attr('onclick', '$("#card-' + id + '").hide(); ').attr('id', 'x-' + id);
-				var $body = $('<div>').attr('class', 'w3-container w3-padding ').attr('id', 'text-' + id);
-				var $bar = $('<div>').attr('class', 'w3-light-gray ').attr('id', 'bar-' + id);
-				var $progress = $('<div>').attr('class', 'w3-khaki ').attr('style', 'height: 24px; width: ' + percent + '; ').attr('id', 'progress-' + id).text(numPATCH + '/' + numFound);
-				$card.append($header);
-				$header.append($i);
-				$header.append($headerSpan);
-				$header.append($x);
-				$body.append($bar);
-				$bar.append($progress);
-				$card.append($body);
-				$box.append($margin);
-				$margin.append($card);
-				$('.box-' + id).remove();
-				if(numPATCH < numFound)
-					$('.top-box').append($box);
 				if(success)
 					success(json);
 			}
@@ -1553,6 +1553,18 @@ async function websocketPageDesignInner(apiRequest) {
 	if(pk != null) {
 		searchPageDesignVals([ {name: 'fq', value: 'pk:' + pk} ], function( data, textStatus, jQxhr ) {
 			var o = data['list'][0];
+			var val = o['pk'];
+			if(vars.includes('pk')) {
+				$('.inputPageDesign' + pk + 'Pk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'Pk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'Pk'));
+			}
 			var val = o['created'];
 			if(vars.includes('created')) {
 				$('.inputPageDesign' + pk + 'Created').each(function() {
@@ -1576,6 +1588,18 @@ async function websocketPageDesignInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputPageDesign' + pk + 'Modified'));
+			}
+			var val = o['objectId'];
+			if(vars.includes('objectId')) {
+				$('.inputPageDesign' + pk + 'ObjectId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'ObjectId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'ObjectId'));
 			}
 			var val = o['archived'];
 			if(vars.includes('archived')) {
@@ -1649,6 +1673,78 @@ async function websocketPageDesignInner(apiRequest) {
 				});
 				addGlow($('.inputPageDesign' + pk + 'HtmlPartKeys'));
 			}
+			var val = o['inheritPk'];
+			if(vars.includes('inheritPk')) {
+				$('.inputPageDesign' + pk + 'InheritPk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'InheritPk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'InheritPk'));
+			}
+			var val = o['id'];
+			if(vars.includes('id')) {
+				$('.inputPageDesign' + pk + 'Id').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'Id').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'Id'));
+			}
+			var val = o['classCanonicalName'];
+			if(vars.includes('classCanonicalName')) {
+				$('.inputPageDesign' + pk + 'ClassCanonicalName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'ClassCanonicalName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'ClassCanonicalName'));
+			}
+			var val = o['classSimpleName'];
+			if(vars.includes('classSimpleName')) {
+				$('.inputPageDesign' + pk + 'ClassSimpleName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'ClassSimpleName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'ClassSimpleName'));
+			}
+			var val = o['classCanonicalNames'];
+			if(vars.includes('classCanonicalNames')) {
+				$('.inputPageDesign' + pk + 'ClassCanonicalNames').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'ClassCanonicalNames').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'ClassCanonicalNames'));
+			}
+			var val = o['sessionId'];
+			if(vars.includes('sessionId')) {
+				$('.inputPageDesign' + pk + 'SessionId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'SessionId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'SessionId'));
+			}
 			var val = o['userId'];
 			if(vars.includes('userId')) {
 				$('.inputPageDesign' + pk + 'UserId').each(function() {
@@ -1672,6 +1768,90 @@ async function websocketPageDesignInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputPageDesign' + pk + 'UserKey'));
+			}
+			var val = o['saves'];
+			if(vars.includes('saves')) {
+				$('.inputPageDesign' + pk + 'Saves').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'Saves').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'Saves'));
+			}
+			var val = o['objectTitle'];
+			if(vars.includes('objectTitle')) {
+				$('.inputPageDesign' + pk + 'ObjectTitle').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'ObjectTitle').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'ObjectTitle'));
+			}
+			var val = o['objectSuggest'];
+			if(vars.includes('objectSuggest')) {
+				$('.inputPageDesign' + pk + 'ObjectSuggest').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'ObjectSuggest').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'ObjectSuggest'));
+			}
+			var val = o['objectText'];
+			if(vars.includes('objectText')) {
+				$('.inputPageDesign' + pk + 'ObjectText').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'ObjectText').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'ObjectText'));
+			}
+			var val = o['pageUrlId'];
+			if(vars.includes('pageUrlId')) {
+				$('.inputPageDesign' + pk + 'PageUrlId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'PageUrlId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'PageUrlId'));
+			}
+			var val = o['pageUrlPk'];
+			if(vars.includes('pageUrlPk')) {
+				$('.inputPageDesign' + pk + 'PageUrlPk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'PageUrlPk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'PageUrlPk'));
+			}
+			var val = o['pageDesignKey'];
+			if(vars.includes('pageDesignKey')) {
+				$('.inputPageDesign' + pk + 'PageDesignKey').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'PageDesignKey').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'PageDesignKey'));
 			}
 			var val = o['childDesignKeys'];
 			if(vars.includes('childDesignKeys')) {

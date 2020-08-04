@@ -152,6 +152,10 @@ async function postHtmlPart($formValues, success, error) {
 	if(valueSort10 != null && valueSort10 !== '')
 		vals['sort10'] = valueSort10;
 
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+		vals['inheritPk'] = valueInheritPk;
+
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
 		vals['userId'] = valueUserId;
@@ -363,6 +367,10 @@ async function putcopyHtmlPart($formValues, pk, success, error) {
 	var valueSort10 = $formValues.find('.valueSort10').val();
 	if(valueSort10 != null && valueSort10 !== '')
 		vals['sort10'] = valueSort10;
+
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+		vals['inheritPk'] = valueInheritPk;
 
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
@@ -837,6 +845,19 @@ async function patchHtmlPart($formFilters, $formValues, pk, success, error) {
 	var removeSort10 = $formValues.find('.removeSort10').val();
 	if(removeSort10 != null && removeSort10 !== '')
 		vals['removeSort10'] = removeSort10;
+
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+	var removeInheritPk = $formFilters.find('.removeInheritPk').val() === 'true';
+	var setInheritPk = removeInheritPk ? null : $formValues.find('.setInheritPk').val();
+	if(removeInheritPk || setInheritPk != null && setInheritPk !== '')
+		vals['setInheritPk'] = setInheritPk;
+	var addInheritPk = $formValues.find('.addInheritPk').val();
+	if(addInheritPk != null && addInheritPk !== '')
+		vals['addInheritPk'] = addInheritPk;
+	var removeInheritPk = $formValues.find('.removeInheritPk').val();
+	if(removeInheritPk != null && removeInheritPk !== '')
+		vals['removeInheritPk'] = removeInheritPk;
 
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
@@ -1402,7 +1423,7 @@ function suggestHtmlPartPageDesignKeys(filters, $list, pk = null, attribute=true
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'fa fa- ');
+			var $i = $('<i>').attr('class', 'fa fa-drafting-compass ');
 			var $span = $('<span>').attr('class', '').text(o['pageDesignCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
@@ -1442,34 +1463,34 @@ async function websocketHtmlPart(success) {
 			var id = json['id'];
 			var pk = json['pk'];
 			var pkPage = $('#HtmlPartForm :input[name=pk]').val();
+			var pks = json['pks'];
+			var empty = json['empty'];
+			var numFound = json['numFound'];
+			var numPATCH = json['numPATCH'];
+			var percent = Math.floor( numPATCH / numFound * 100 ) + '%';
+			var $box = $('<div>').attr('class', 'w3-display-topright w3-quarter box-' + id + ' ').attr('id', 'box-' + id);
+			var $margin = $('<div>').attr('class', 'w3-margin ').attr('id', 'margin-' + id);
+			var $card = $('<div>').attr('class', 'w3-card w3-white ').attr('id', 'card-' + id);
+			var $header = $('<div>').attr('class', 'w3-container fa-khaki ').attr('id', 'header-' + id);
+			var $i = $('<i>').attr('class', 'far fa-puzzle-piece w3-margin-right ').attr('id', 'icon-' + id);
+			var $headerSpan = $('<span>').attr('class', '').text('modify HTML parts');
+			var $x = $('<span>').attr('class', 'w3-button w3-display-topright ').attr('onclick', '$("#card-' + id + '").hide(); ').attr('id', 'x-' + id);
+			var $body = $('<div>').attr('class', 'w3-container w3-padding ').attr('id', 'text-' + id);
+			var $bar = $('<div>').attr('class', 'w3-light-gray ').attr('id', 'bar-' + id);
+			var $progress = $('<div>').attr('class', 'w3-khaki ').attr('style', 'height: 24px; width: ' + percent + '; ').attr('id', 'progress-' + id).text(numPATCH + '/' + numFound);
+			$card.append($header);
+			$header.append($i);
+			$header.append($headerSpan);
+			$header.append($x);
+			$body.append($bar);
+			$bar.append($progress);
+			$card.append($body);
+			$box.append($margin);
+			$margin.append($card);
+			$('.box-' + id).remove();
+			if(numPATCH < numFound)
+			$('.top-box').append($box);
 			if(pk && pkPage && pk == pkPage) {;
-				var pks = json['pks'];
-				var empty = json['empty'];
-				var numFound = json['numFound'];
-				var numPATCH = json['numPATCH'];
-				var percent = Math.floor( numPATCH / numFound * 100 ) + '%';
-				var $box = $('<div>').attr('class', 'w3-display-topright w3-quarter box-' + id + ' ').attr('id', 'box-' + id);
-				var $margin = $('<div>').attr('class', 'w3-margin ').attr('id', 'margin-' + id);
-				var $card = $('<div>').attr('class', 'w3-card w3-white ').attr('id', 'card-' + id);
-				var $header = $('<div>').attr('class', 'w3-container fa-khaki ').attr('id', 'header-' + id);
-				var $i = $('<i>').attr('class', 'far fa-puzzle-piece w3-margin-right ').attr('id', 'icon-' + id);
-				var $headerSpan = $('<span>').attr('class', '').text('modify HTML parts');
-				var $x = $('<span>').attr('class', 'w3-button w3-display-topright ').attr('onclick', '$("#card-' + id + '").hide(); ').attr('id', 'x-' + id);
-				var $body = $('<div>').attr('class', 'w3-container w3-padding ').attr('id', 'text-' + id);
-				var $bar = $('<div>').attr('class', 'w3-light-gray ').attr('id', 'bar-' + id);
-				var $progress = $('<div>').attr('class', 'w3-khaki ').attr('style', 'height: 24px; width: ' + percent + '; ').attr('id', 'progress-' + id).text(numPATCH + '/' + numFound);
-				$card.append($header);
-				$header.append($i);
-				$header.append($headerSpan);
-				$header.append($x);
-				$body.append($bar);
-				$bar.append($progress);
-				$card.append($body);
-				$box.append($margin);
-				$margin.append($card);
-				$('.box-' + id).remove();
-				if(numPATCH < numFound)
-					$('.top-box').append($box);
 				if(success)
 					success(json);
 			}
@@ -1493,6 +1514,18 @@ async function websocketHtmlPartInner(apiRequest) {
 	if(pk != null) {
 		searchHtmlPartVals([ {name: 'fq', value: 'pk:' + pk} ], function( data, textStatus, jQxhr ) {
 			var o = data['list'][0];
+			var val = o['pk'];
+			if(vars.includes('pk')) {
+				$('.inputHtmlPart' + pk + 'Pk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'Pk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'Pk'));
+			}
 			var val = o['created'];
 			if(vars.includes('created')) {
 				$('.inputHtmlPart' + pk + 'Created').each(function() {
@@ -1516,6 +1549,18 @@ async function websocketHtmlPartInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputHtmlPart' + pk + 'Modified'));
+			}
+			var val = o['objectId'];
+			if(vars.includes('objectId')) {
+				$('.inputHtmlPart' + pk + 'ObjectId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'ObjectId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'ObjectId'));
 			}
 			var val = o['archived'];
 			if(vars.includes('archived')) {
@@ -1865,6 +1910,78 @@ async function websocketHtmlPartInner(apiRequest) {
 				});
 				addGlow($('.inputHtmlPart' + pk + 'Sort10'));
 			}
+			var val = o['inheritPk'];
+			if(vars.includes('inheritPk')) {
+				$('.inputHtmlPart' + pk + 'InheritPk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'InheritPk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'InheritPk'));
+			}
+			var val = o['id'];
+			if(vars.includes('id')) {
+				$('.inputHtmlPart' + pk + 'Id').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'Id').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'Id'));
+			}
+			var val = o['classCanonicalName'];
+			if(vars.includes('classCanonicalName')) {
+				$('.inputHtmlPart' + pk + 'ClassCanonicalName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'ClassCanonicalName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'ClassCanonicalName'));
+			}
+			var val = o['classSimpleName'];
+			if(vars.includes('classSimpleName')) {
+				$('.inputHtmlPart' + pk + 'ClassSimpleName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'ClassSimpleName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'ClassSimpleName'));
+			}
+			var val = o['classCanonicalNames'];
+			if(vars.includes('classCanonicalNames')) {
+				$('.inputHtmlPart' + pk + 'ClassCanonicalNames').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'ClassCanonicalNames').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'ClassCanonicalNames'));
+			}
+			var val = o['sessionId'];
+			if(vars.includes('sessionId')) {
+				$('.inputHtmlPart' + pk + 'SessionId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'SessionId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'SessionId'));
+			}
 			var val = o['userId'];
 			if(vars.includes('userId')) {
 				$('.inputHtmlPart' + pk + 'UserId').each(function() {
@@ -1888,6 +2005,90 @@ async function websocketHtmlPartInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputHtmlPart' + pk + 'UserKey'));
+			}
+			var val = o['saves'];
+			if(vars.includes('saves')) {
+				$('.inputHtmlPart' + pk + 'Saves').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'Saves').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'Saves'));
+			}
+			var val = o['objectTitle'];
+			if(vars.includes('objectTitle')) {
+				$('.inputHtmlPart' + pk + 'ObjectTitle').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'ObjectTitle').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'ObjectTitle'));
+			}
+			var val = o['objectSuggest'];
+			if(vars.includes('objectSuggest')) {
+				$('.inputHtmlPart' + pk + 'ObjectSuggest').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'ObjectSuggest').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'ObjectSuggest'));
+			}
+			var val = o['objectText'];
+			if(vars.includes('objectText')) {
+				$('.inputHtmlPart' + pk + 'ObjectText').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'ObjectText').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'ObjectText'));
+			}
+			var val = o['pageUrlId'];
+			if(vars.includes('pageUrlId')) {
+				$('.inputHtmlPart' + pk + 'PageUrlId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'PageUrlId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'PageUrlId'));
+			}
+			var val = o['pageUrlPk'];
+			if(vars.includes('pageUrlPk')) {
+				$('.inputHtmlPart' + pk + 'PageUrlPk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'PageUrlPk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'PageUrlPk'));
+			}
+			var val = o['htmlPartKey'];
+			if(vars.includes('htmlPartKey')) {
+				$('.inputHtmlPart' + pk + 'HtmlPartKey').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'HtmlPartKey').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'HtmlPartKey'));
 			}
 		});
 	}

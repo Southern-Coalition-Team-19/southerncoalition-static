@@ -208,6 +208,10 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valueDelinquentComplaintsAtSchoolPercent != null && valueDelinquentComplaintsAtSchoolPercent !== '')
 		vals['delinquentComplaintsAtSchoolPercent'] = valueDelinquentComplaintsAtSchoolPercent;
 
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+		vals['inheritPk'] = valueInheritPk;
+
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
 		vals['userId'] = valueUserId;
@@ -416,6 +420,10 @@ async function postReportCard($formValues, success, error) {
 	var valueDelinquentComplaintsAtSchoolPercent = $formValues.find('.valueDelinquentComplaintsAtSchoolPercent').val();
 	if(valueDelinquentComplaintsAtSchoolPercent != null && valueDelinquentComplaintsAtSchoolPercent !== '')
 		vals['delinquentComplaintsAtSchoolPercent'] = valueDelinquentComplaintsAtSchoolPercent;
+
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+		vals['inheritPk'] = valueInheritPk;
 
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
@@ -991,6 +999,19 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removeDelinquentComplaintsAtSchoolPercent != null && removeDelinquentComplaintsAtSchoolPercent !== '')
 		vals['removeDelinquentComplaintsAtSchoolPercent'] = removeDelinquentComplaintsAtSchoolPercent;
 
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+	var removeInheritPk = $formFilters.find('.removeInheritPk').val() === 'true';
+	var setInheritPk = removeInheritPk ? null : $formValues.find('.setInheritPk').val();
+	if(removeInheritPk || setInheritPk != null && setInheritPk !== '')
+		vals['setInheritPk'] = setInheritPk;
+	var addInheritPk = $formValues.find('.addInheritPk').val();
+	if(addInheritPk != null && addInheritPk !== '')
+		vals['addInheritPk'] = addInheritPk;
+	var removeInheritPk = $formValues.find('.removeInheritPk').val();
+	if(removeInheritPk != null && removeInheritPk !== '')
+		vals['removeInheritPk'] = removeInheritPk;
+
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
 	var removeUserId = $formFilters.find('.removeUserId').val() === 'true';
@@ -1272,6 +1293,10 @@ function patchReportCardFilters($formFilters) {
 		var filterReportCardKey = $formFilters.find('.valueReportCardKey').val();
 		if(filterReportCardKey != null && filterReportCardKey !== '')
 			filters.push({ name: 'fq', value: 'reportCardKey:' + filterReportCardKey });
+
+		var filterStateKey = $formFilters.find('.valueStateKey').val();
+		if(filterStateKey != null && filterStateKey !== '')
+			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
 
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
@@ -1574,6 +1599,10 @@ function searchReportCardFilters($formFilters) {
 		var filterReportCardKey = $formFilters.find('.valueReportCardKey').val();
 		if(filterReportCardKey != null && filterReportCardKey !== '')
 			filters.push({ name: 'fq', value: 'reportCardKey:' + filterReportCardKey });
+
+		var filterStateKey = $formFilters.find('.valueStateKey').val();
+		if(filterStateKey != null && filterStateKey !== '')
+			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
 
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
@@ -1914,6 +1943,10 @@ function adminsearchReportCardFilters($formFilters) {
 		var filterReportCardKey = $formFilters.find('.valueReportCardKey').val();
 		if(filterReportCardKey != null && filterReportCardKey !== '')
 			filters.push({ name: 'fq', value: 'reportCardKey:' + filterReportCardKey });
+
+		var filterStateKey = $formFilters.find('.valueStateKey').val();
+		if(filterStateKey != null && filterStateKey !== '')
+			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
 
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
@@ -2740,6 +2773,18 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'ReportCardKey'));
+			}
+			var val = o['stateKey'];
+			if(vars.includes('stateKey')) {
+				$('.inputReportCard' + pk + 'StateKey').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'StateKey').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'StateKey'));
 			}
 			var val = o['stateName'];
 			if(vars.includes('stateName')) {

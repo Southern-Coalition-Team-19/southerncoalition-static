@@ -746,6 +746,7 @@ async function websocketSiteUser(success) {
 			var json = JSON.parse(message['body']);
 			var id = json['id'];
 			var pk = json['pk'];
+			var pkPage = $('#SiteUserForm :input[name=pk]').val();
 			var pks = json['pks'];
 			var empty = json['empty'];
 			var numFound = json['numFound'];
@@ -772,9 +773,11 @@ async function websocketSiteUser(success) {
 			$margin.append($card);
 			$('.box-' + id).remove();
 			if(numPATCH < numFound)
-				$('.top-box').append($box);
-			if(success)
+			$('.top-box').append($box);
+			if(pk && pkPage && pk == pkPage) {;
+				if(success)
 					success(json);
+			}
 		});
 	}
 }
@@ -788,6 +791,18 @@ async function websocketSiteUserInner(apiRequest) {
 	if(pk != null) {
 		searchSiteUserVals([ {name: 'fq', value: 'pk:' + pk} ], function( data, textStatus, jQxhr ) {
 			var o = data['list'][0];
+			var val = o['pk'];
+			if(vars.includes('pk')) {
+				$('.inputSiteUser' + pk + 'Pk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'Pk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'Pk'));
+			}
 			var val = o['created'];
 			if(vars.includes('created')) {
 				$('.inputSiteUser' + pk + 'Created').each(function() {
@@ -811,6 +826,18 @@ async function websocketSiteUserInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputSiteUser' + pk + 'Modified'));
+			}
+			var val = o['objectId'];
+			if(vars.includes('objectId')) {
+				$('.inputSiteUser' + pk + 'ObjectId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'ObjectId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'ObjectId'));
 			}
 			var val = o['archived'];
 			if(vars.includes('archived')) {
@@ -884,6 +911,78 @@ async function websocketSiteUserInner(apiRequest) {
 				});
 				addGlow($('.inputSiteUser' + pk + 'CustomerProfileId'));
 			}
+			var val = o['inheritPk'];
+			if(vars.includes('inheritPk')) {
+				$('.inputSiteUser' + pk + 'InheritPk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'InheritPk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'InheritPk'));
+			}
+			var val = o['id'];
+			if(vars.includes('id')) {
+				$('.inputSiteUser' + pk + 'Id').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'Id').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'Id'));
+			}
+			var val = o['classCanonicalName'];
+			if(vars.includes('classCanonicalName')) {
+				$('.inputSiteUser' + pk + 'ClassCanonicalName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'ClassCanonicalName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'ClassCanonicalName'));
+			}
+			var val = o['classSimpleName'];
+			if(vars.includes('classSimpleName')) {
+				$('.inputSiteUser' + pk + 'ClassSimpleName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'ClassSimpleName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'ClassSimpleName'));
+			}
+			var val = o['classCanonicalNames'];
+			if(vars.includes('classCanonicalNames')) {
+				$('.inputSiteUser' + pk + 'ClassCanonicalNames').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'ClassCanonicalNames').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'ClassCanonicalNames'));
+			}
+			var val = o['sessionId'];
+			if(vars.includes('sessionId')) {
+				$('.inputSiteUser' + pk + 'SessionId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'SessionId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'SessionId'));
+			}
 			var val = o['userId'];
 			if(vars.includes('userId')) {
 				$('.inputSiteUser' + pk + 'UserId').each(function() {
@@ -907,6 +1006,90 @@ async function websocketSiteUserInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputSiteUser' + pk + 'UserKey'));
+			}
+			var val = o['saves'];
+			if(vars.includes('saves')) {
+				$('.inputSiteUser' + pk + 'Saves').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'Saves').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'Saves'));
+			}
+			var val = o['objectTitle'];
+			if(vars.includes('objectTitle')) {
+				$('.inputSiteUser' + pk + 'ObjectTitle').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'ObjectTitle').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'ObjectTitle'));
+			}
+			var val = o['objectSuggest'];
+			if(vars.includes('objectSuggest')) {
+				$('.inputSiteUser' + pk + 'ObjectSuggest').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'ObjectSuggest').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'ObjectSuggest'));
+			}
+			var val = o['objectText'];
+			if(vars.includes('objectText')) {
+				$('.inputSiteUser' + pk + 'ObjectText').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'ObjectText').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'ObjectText'));
+			}
+			var val = o['pageUrlId'];
+			if(vars.includes('pageUrlId')) {
+				$('.inputSiteUser' + pk + 'PageUrlId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'PageUrlId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'PageUrlId'));
+			}
+			var val = o['pageUrlPk'];
+			if(vars.includes('pageUrlPk')) {
+				$('.inputSiteUser' + pk + 'PageUrlPk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'PageUrlPk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'PageUrlPk'));
+			}
+			var val = o['userKeys'];
+			if(vars.includes('userKeys')) {
+				$('.inputSiteUser' + pk + 'UserKeys').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'UserKeys').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'UserKeys'));
 			}
 			var val = o['userId'];
 			if(vars.includes('userId')) {
@@ -943,6 +1126,66 @@ async function websocketSiteUserInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputSiteUser' + pk + 'UserName'));
+			}
+			var val = o['userEmail'];
+			if(vars.includes('userEmail')) {
+				$('.inputSiteUser' + pk + 'UserEmail').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'UserEmail').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'UserEmail'));
+			}
+			var val = o['userFirstName'];
+			if(vars.includes('userFirstName')) {
+				$('.inputSiteUser' + pk + 'UserFirstName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'UserFirstName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'UserFirstName'));
+			}
+			var val = o['userLastName'];
+			if(vars.includes('userLastName')) {
+				$('.inputSiteUser' + pk + 'UserLastName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'UserLastName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'UserLastName'));
+			}
+			var val = o['userFullName'];
+			if(vars.includes('userFullName')) {
+				$('.inputSiteUser' + pk + 'UserFullName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'UserFullName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'UserFullName'));
+			}
+			var val = o['userSite'];
+			if(vars.includes('userSite')) {
+				$('.inputSiteUser' + pk + 'UserSite').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteUser' + pk + 'UserSite').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteUser' + pk + 'UserSite'));
 			}
 		});
 	}

@@ -488,6 +488,10 @@ function patchSiteCountyFilters($formFilters) {
 		if(filterCountyKey != null && filterCountyKey !== '')
 			filters.push({ name: 'fq', value: 'countyKey:' + filterCountyKey });
 
+		var filterStateId = $formFilters.find('.valueStateId').val();
+		if(filterStateId != null && filterStateId !== '')
+			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
+
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
 			filters.push({ name: 'fq', value: 'stateName:' + filterStateName });
@@ -657,6 +661,10 @@ function searchSiteCountyFilters($formFilters) {
 		var filterCountyKey = $formFilters.find('.valueCountyKey').val();
 		if(filterCountyKey != null && filterCountyKey !== '')
 			filters.push({ name: 'fq', value: 'countyKey:' + filterCountyKey });
+
+		var filterStateId = $formFilters.find('.valueStateId').val();
+		if(filterStateId != null && filterStateId !== '')
+			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
 
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
@@ -899,6 +907,10 @@ function adminsearchSiteCountyFilters($formFilters) {
 		var filterCountyKey = $formFilters.find('.valueCountyKey').val();
 		if(filterCountyKey != null && filterCountyKey !== '')
 			filters.push({ name: 'fq', value: 'countyKey:' + filterCountyKey });
+
+		var filterStateId = $formFilters.find('.valueStateId').val();
+		if(filterStateId != null && filterStateId !== '')
+			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
 
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
@@ -1385,6 +1397,18 @@ async function websocketSiteCountyInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputSiteCounty' + pk + 'CountyKey'));
+			}
+			var val = o['stateId'];
+			if(vars.includes('stateId')) {
+				$('.inputSiteCounty' + pk + 'StateId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteCounty' + pk + 'StateId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteCounty' + pk + 'StateId'));
 			}
 			var val = o['stateName'];
 			if(vars.includes('stateName')) {

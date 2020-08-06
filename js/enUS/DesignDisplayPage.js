@@ -84,6 +84,10 @@ async function putcopyPageDesign($formValues, pk, success, error) {
 	if(valueHtmlPartKeys != null && valueHtmlPartKeys !== '')
 		vals['htmlPartKeys'] = [valueHtmlPartKeys];
 
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+		vals['inheritPk'] = valueInheritPk;
+
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
 		vals['userId'] = valueUserId;
@@ -174,6 +178,10 @@ async function postPageDesign($formValues, success, error) {
 	});
 	if(valueHtmlPartKeys.length > 0)
 		vals['htmlPartKeys'] = valueHtmlPartKeys;
+
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+		vals['inheritPk'] = valueInheritPk;
 
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')
@@ -340,6 +348,19 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valueHtmlPartKeys = $formValues.find('input.valueHtmlPartKeys:checked').val();
 	if(valueHtmlPartKeys != null && valueHtmlPartKeys !== '')
 		vals['addHtmlPartKeys'] = valueHtmlPartKeys;
+
+	var valueInheritPk = $formValues.find('.valueInheritPk').val();
+	if(valueInheritPk != null && valueInheritPk !== '')
+	var removeInheritPk = $formFilters.find('.removeInheritPk').val() === 'true';
+	var setInheritPk = removeInheritPk ? null : $formValues.find('.setInheritPk').val();
+	if(removeInheritPk || setInheritPk != null && setInheritPk !== '')
+		vals['setInheritPk'] = setInheritPk;
+	var addInheritPk = $formValues.find('.addInheritPk').val();
+	if(addInheritPk != null && addInheritPk !== '')
+		vals['addInheritPk'] = addInheritPk;
+	var removeInheritPk = $formValues.find('.removeInheritPk').val();
+	if(removeInheritPk != null && removeInheritPk !== '')
+		vals['removeInheritPk'] = removeInheritPk;
 
 	var valueUserId = $formValues.find('.valueUserId').val();
 	if(valueUserId != null && valueUserId !== '')

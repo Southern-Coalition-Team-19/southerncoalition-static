@@ -80,17 +80,13 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valueCountyKey != null && valueCountyKey !== '')
 		vals['countyKey'] = valueCountyKey;
 
-	var valuePupilsTotal = $formValues.find('.valuePupilsTotal').val();
-	if(valuePupilsTotal != null && valuePupilsTotal !== '')
-		vals['pupilsTotal'] = valuePupilsTotal;
+	var valuePupilsIndianMale = $formValues.find('.valuePupilsIndianMale').val();
+	if(valuePupilsIndianMale != null && valuePupilsIndianMale !== '')
+		vals['pupilsIndianMale'] = valuePupilsIndianMale;
 
 	var valuePupilsIndianFemale = $formValues.find('.valuePupilsIndianFemale').val();
 	if(valuePupilsIndianFemale != null && valuePupilsIndianFemale !== '')
 		vals['pupilsIndianFemale'] = valuePupilsIndianFemale;
-
-	var valuePupilsIndianMale = $formValues.find('.valuePupilsIndianMale').val();
-	if(valuePupilsIndianMale != null && valuePupilsIndianMale !== '')
-		vals['pupilsIndianMale'] = valuePupilsIndianMale;
 
 	var valuePupilsIndianTotal = $formValues.find('.valuePupilsIndianTotal').val();
 	if(valuePupilsIndianTotal != null && valuePupilsIndianTotal !== '')
@@ -100,13 +96,13 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valuePupilsIndianPercent != null && valuePupilsIndianPercent !== '')
 		vals['pupilsIndianPercent'] = valuePupilsIndianPercent;
 
-	var valuePupilsAsianFemale = $formValues.find('.valuePupilsAsianFemale').val();
-	if(valuePupilsAsianFemale != null && valuePupilsAsianFemale !== '')
-		vals['pupilsAsianFemale'] = valuePupilsAsianFemale;
-
 	var valuePupilsAsianMale = $formValues.find('.valuePupilsAsianMale').val();
 	if(valuePupilsAsianMale != null && valuePupilsAsianMale !== '')
 		vals['pupilsAsianMale'] = valuePupilsAsianMale;
+
+	var valuePupilsAsianFemale = $formValues.find('.valuePupilsAsianFemale').val();
+	if(valuePupilsAsianFemale != null && valuePupilsAsianFemale !== '')
+		vals['pupilsAsianFemale'] = valuePupilsAsianFemale;
 
 	var valuePupilsAsianTotal = $formValues.find('.valuePupilsAsianTotal').val();
 	if(valuePupilsAsianTotal != null && valuePupilsAsianTotal !== '')
@@ -116,13 +112,13 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valuePupilsAsianPercent != null && valuePupilsAsianPercent !== '')
 		vals['pupilsAsianPercent'] = valuePupilsAsianPercent;
 
-	var valuePupilsHispanicFemale = $formValues.find('.valuePupilsHispanicFemale').val();
-	if(valuePupilsHispanicFemale != null && valuePupilsHispanicFemale !== '')
-		vals['pupilsHispanicFemale'] = valuePupilsHispanicFemale;
-
 	var valuePupilsHispanicMale = $formValues.find('.valuePupilsHispanicMale').val();
 	if(valuePupilsHispanicMale != null && valuePupilsHispanicMale !== '')
 		vals['pupilsHispanicMale'] = valuePupilsHispanicMale;
+
+	var valuePupilsHispanicFemale = $formValues.find('.valuePupilsHispanicFemale').val();
+	if(valuePupilsHispanicFemale != null && valuePupilsHispanicFemale !== '')
+		vals['pupilsHispanicFemale'] = valuePupilsHispanicFemale;
 
 	var valuePupilsHispanicTotal = $formValues.find('.valuePupilsHispanicTotal').val();
 	if(valuePupilsHispanicTotal != null && valuePupilsHispanicTotal !== '')
@@ -132,13 +128,13 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valuePupilsHispanicPercent != null && valuePupilsHispanicPercent !== '')
 		vals['pupilsHispanicPercent'] = valuePupilsHispanicPercent;
 
-	var valuePupilsBlackFemale = $formValues.find('.valuePupilsBlackFemale').val();
-	if(valuePupilsBlackFemale != null && valuePupilsBlackFemale !== '')
-		vals['pupilsBlackFemale'] = valuePupilsBlackFemale;
-
 	var valuePupilsBlackMale = $formValues.find('.valuePupilsBlackMale').val();
 	if(valuePupilsBlackMale != null && valuePupilsBlackMale !== '')
 		vals['pupilsBlackMale'] = valuePupilsBlackMale;
+
+	var valuePupilsBlackFemale = $formValues.find('.valuePupilsBlackFemale').val();
+	if(valuePupilsBlackFemale != null && valuePupilsBlackFemale !== '')
+		vals['pupilsBlackFemale'] = valuePupilsBlackFemale;
 
 	var valuePupilsBlackTotal = $formValues.find('.valuePupilsBlackTotal').val();
 	if(valuePupilsBlackTotal != null && valuePupilsBlackTotal !== '')
@@ -148,13 +144,13 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valuePupilsBlackPercent != null && valuePupilsBlackPercent !== '')
 		vals['pupilsBlackPercent'] = valuePupilsBlackPercent;
 
-	var valuePupilsWhiteFemale = $formValues.find('.valuePupilsWhiteFemale').val();
-	if(valuePupilsWhiteFemale != null && valuePupilsWhiteFemale !== '')
-		vals['pupilsWhiteFemale'] = valuePupilsWhiteFemale;
-
 	var valuePupilsWhiteMale = $formValues.find('.valuePupilsWhiteMale').val();
 	if(valuePupilsWhiteMale != null && valuePupilsWhiteMale !== '')
 		vals['pupilsWhiteMale'] = valuePupilsWhiteMale;
+
+	var valuePupilsWhiteFemale = $formValues.find('.valuePupilsWhiteFemale').val();
+	if(valuePupilsWhiteFemale != null && valuePupilsWhiteFemale !== '')
+		vals['pupilsWhiteFemale'] = valuePupilsWhiteFemale;
 
 	var valuePupilsWhiteTotal = $formValues.find('.valuePupilsWhiteTotal').val();
 	if(valuePupilsWhiteTotal != null && valuePupilsWhiteTotal !== '')
@@ -164,13 +160,13 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valuePupilsWhitePercent != null && valuePupilsWhitePercent !== '')
 		vals['pupilsWhitePercent'] = valuePupilsWhitePercent;
 
-	var valuePupilsPacificIslanderFemale = $formValues.find('.valuePupilsPacificIslanderFemale').val();
-	if(valuePupilsPacificIslanderFemale != null && valuePupilsPacificIslanderFemale !== '')
-		vals['pupilsPacificIslanderFemale'] = valuePupilsPacificIslanderFemale;
-
 	var valuePupilsPacificIslanderMale = $formValues.find('.valuePupilsPacificIslanderMale').val();
 	if(valuePupilsPacificIslanderMale != null && valuePupilsPacificIslanderMale !== '')
 		vals['pupilsPacificIslanderMale'] = valuePupilsPacificIslanderMale;
+
+	var valuePupilsPacificIslanderFemale = $formValues.find('.valuePupilsPacificIslanderFemale').val();
+	if(valuePupilsPacificIslanderFemale != null && valuePupilsPacificIslanderFemale !== '')
+		vals['pupilsPacificIslanderFemale'] = valuePupilsPacificIslanderFemale;
 
 	var valuePupilsPacificIslanderTotal = $formValues.find('.valuePupilsPacificIslanderTotal').val();
 	if(valuePupilsPacificIslanderTotal != null && valuePupilsPacificIslanderTotal !== '')
@@ -180,13 +176,17 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valuePupilsPacificIslanderPercent != null && valuePupilsPacificIslanderPercent !== '')
 		vals['pupilsPacificIslanderPercent'] = valuePupilsPacificIslanderPercent;
 
+	var valuePupilsMultiRacialMale = $formValues.find('.valuePupilsMultiRacialMale').val();
+	if(valuePupilsMultiRacialMale != null && valuePupilsMultiRacialMale !== '')
+		vals['pupilsMultiRacialMale'] = valuePupilsMultiRacialMale;
+
 	var valuePupilsMultiRacialFemale = $formValues.find('.valuePupilsMultiRacialFemale').val();
 	if(valuePupilsMultiRacialFemale != null && valuePupilsMultiRacialFemale !== '')
 		vals['pupilsMultiRacialFemale'] = valuePupilsMultiRacialFemale;
 
-	var valuePupilsMultiRacialMale = $formValues.find('.valuePupilsMultiRacialMale').val();
-	if(valuePupilsMultiRacialMale != null && valuePupilsMultiRacialMale !== '')
-		vals['pupilsMultiRacialMale'] = valuePupilsMultiRacialMale;
+	var valuePupilsTotal = $formValues.find('.valuePupilsTotal').val();
+	if(valuePupilsTotal != null && valuePupilsTotal !== '')
+		vals['pupilsTotal'] = valuePupilsTotal;
 
 	var valuePupilsMultiRacialTotal = $formValues.find('.valuePupilsMultiRacialTotal').val();
 	if(valuePupilsMultiRacialTotal != null && valuePupilsMultiRacialTotal !== '')
@@ -293,17 +293,13 @@ async function postReportCard($formValues, success, error) {
 	if(valueCountyKey != null && valueCountyKey !== '')
 		vals['countyKey'] = valueCountyKey;
 
-	var valuePupilsTotal = $formValues.find('.valuePupilsTotal').val();
-	if(valuePupilsTotal != null && valuePupilsTotal !== '')
-		vals['pupilsTotal'] = valuePupilsTotal;
+	var valuePupilsIndianMale = $formValues.find('.valuePupilsIndianMale').val();
+	if(valuePupilsIndianMale != null && valuePupilsIndianMale !== '')
+		vals['pupilsIndianMale'] = valuePupilsIndianMale;
 
 	var valuePupilsIndianFemale = $formValues.find('.valuePupilsIndianFemale').val();
 	if(valuePupilsIndianFemale != null && valuePupilsIndianFemale !== '')
 		vals['pupilsIndianFemale'] = valuePupilsIndianFemale;
-
-	var valuePupilsIndianMale = $formValues.find('.valuePupilsIndianMale').val();
-	if(valuePupilsIndianMale != null && valuePupilsIndianMale !== '')
-		vals['pupilsIndianMale'] = valuePupilsIndianMale;
 
 	var valuePupilsIndianTotal = $formValues.find('.valuePupilsIndianTotal').val();
 	if(valuePupilsIndianTotal != null && valuePupilsIndianTotal !== '')
@@ -313,13 +309,13 @@ async function postReportCard($formValues, success, error) {
 	if(valuePupilsIndianPercent != null && valuePupilsIndianPercent !== '')
 		vals['pupilsIndianPercent'] = valuePupilsIndianPercent;
 
-	var valuePupilsAsianFemale = $formValues.find('.valuePupilsAsianFemale').val();
-	if(valuePupilsAsianFemale != null && valuePupilsAsianFemale !== '')
-		vals['pupilsAsianFemale'] = valuePupilsAsianFemale;
-
 	var valuePupilsAsianMale = $formValues.find('.valuePupilsAsianMale').val();
 	if(valuePupilsAsianMale != null && valuePupilsAsianMale !== '')
 		vals['pupilsAsianMale'] = valuePupilsAsianMale;
+
+	var valuePupilsAsianFemale = $formValues.find('.valuePupilsAsianFemale').val();
+	if(valuePupilsAsianFemale != null && valuePupilsAsianFemale !== '')
+		vals['pupilsAsianFemale'] = valuePupilsAsianFemale;
 
 	var valuePupilsAsianTotal = $formValues.find('.valuePupilsAsianTotal').val();
 	if(valuePupilsAsianTotal != null && valuePupilsAsianTotal !== '')
@@ -329,13 +325,13 @@ async function postReportCard($formValues, success, error) {
 	if(valuePupilsAsianPercent != null && valuePupilsAsianPercent !== '')
 		vals['pupilsAsianPercent'] = valuePupilsAsianPercent;
 
-	var valuePupilsHispanicFemale = $formValues.find('.valuePupilsHispanicFemale').val();
-	if(valuePupilsHispanicFemale != null && valuePupilsHispanicFemale !== '')
-		vals['pupilsHispanicFemale'] = valuePupilsHispanicFemale;
-
 	var valuePupilsHispanicMale = $formValues.find('.valuePupilsHispanicMale').val();
 	if(valuePupilsHispanicMale != null && valuePupilsHispanicMale !== '')
 		vals['pupilsHispanicMale'] = valuePupilsHispanicMale;
+
+	var valuePupilsHispanicFemale = $formValues.find('.valuePupilsHispanicFemale').val();
+	if(valuePupilsHispanicFemale != null && valuePupilsHispanicFemale !== '')
+		vals['pupilsHispanicFemale'] = valuePupilsHispanicFemale;
 
 	var valuePupilsHispanicTotal = $formValues.find('.valuePupilsHispanicTotal').val();
 	if(valuePupilsHispanicTotal != null && valuePupilsHispanicTotal !== '')
@@ -345,13 +341,13 @@ async function postReportCard($formValues, success, error) {
 	if(valuePupilsHispanicPercent != null && valuePupilsHispanicPercent !== '')
 		vals['pupilsHispanicPercent'] = valuePupilsHispanicPercent;
 
-	var valuePupilsBlackFemale = $formValues.find('.valuePupilsBlackFemale').val();
-	if(valuePupilsBlackFemale != null && valuePupilsBlackFemale !== '')
-		vals['pupilsBlackFemale'] = valuePupilsBlackFemale;
-
 	var valuePupilsBlackMale = $formValues.find('.valuePupilsBlackMale').val();
 	if(valuePupilsBlackMale != null && valuePupilsBlackMale !== '')
 		vals['pupilsBlackMale'] = valuePupilsBlackMale;
+
+	var valuePupilsBlackFemale = $formValues.find('.valuePupilsBlackFemale').val();
+	if(valuePupilsBlackFemale != null && valuePupilsBlackFemale !== '')
+		vals['pupilsBlackFemale'] = valuePupilsBlackFemale;
 
 	var valuePupilsBlackTotal = $formValues.find('.valuePupilsBlackTotal').val();
 	if(valuePupilsBlackTotal != null && valuePupilsBlackTotal !== '')
@@ -361,13 +357,13 @@ async function postReportCard($formValues, success, error) {
 	if(valuePupilsBlackPercent != null && valuePupilsBlackPercent !== '')
 		vals['pupilsBlackPercent'] = valuePupilsBlackPercent;
 
-	var valuePupilsWhiteFemale = $formValues.find('.valuePupilsWhiteFemale').val();
-	if(valuePupilsWhiteFemale != null && valuePupilsWhiteFemale !== '')
-		vals['pupilsWhiteFemale'] = valuePupilsWhiteFemale;
-
 	var valuePupilsWhiteMale = $formValues.find('.valuePupilsWhiteMale').val();
 	if(valuePupilsWhiteMale != null && valuePupilsWhiteMale !== '')
 		vals['pupilsWhiteMale'] = valuePupilsWhiteMale;
+
+	var valuePupilsWhiteFemale = $formValues.find('.valuePupilsWhiteFemale').val();
+	if(valuePupilsWhiteFemale != null && valuePupilsWhiteFemale !== '')
+		vals['pupilsWhiteFemale'] = valuePupilsWhiteFemale;
 
 	var valuePupilsWhiteTotal = $formValues.find('.valuePupilsWhiteTotal').val();
 	if(valuePupilsWhiteTotal != null && valuePupilsWhiteTotal !== '')
@@ -377,13 +373,13 @@ async function postReportCard($formValues, success, error) {
 	if(valuePupilsWhitePercent != null && valuePupilsWhitePercent !== '')
 		vals['pupilsWhitePercent'] = valuePupilsWhitePercent;
 
-	var valuePupilsPacificIslanderFemale = $formValues.find('.valuePupilsPacificIslanderFemale').val();
-	if(valuePupilsPacificIslanderFemale != null && valuePupilsPacificIslanderFemale !== '')
-		vals['pupilsPacificIslanderFemale'] = valuePupilsPacificIslanderFemale;
-
 	var valuePupilsPacificIslanderMale = $formValues.find('.valuePupilsPacificIslanderMale').val();
 	if(valuePupilsPacificIslanderMale != null && valuePupilsPacificIslanderMale !== '')
 		vals['pupilsPacificIslanderMale'] = valuePupilsPacificIslanderMale;
+
+	var valuePupilsPacificIslanderFemale = $formValues.find('.valuePupilsPacificIslanderFemale').val();
+	if(valuePupilsPacificIslanderFemale != null && valuePupilsPacificIslanderFemale !== '')
+		vals['pupilsPacificIslanderFemale'] = valuePupilsPacificIslanderFemale;
 
 	var valuePupilsPacificIslanderTotal = $formValues.find('.valuePupilsPacificIslanderTotal').val();
 	if(valuePupilsPacificIslanderTotal != null && valuePupilsPacificIslanderTotal !== '')
@@ -393,13 +389,17 @@ async function postReportCard($formValues, success, error) {
 	if(valuePupilsPacificIslanderPercent != null && valuePupilsPacificIslanderPercent !== '')
 		vals['pupilsPacificIslanderPercent'] = valuePupilsPacificIslanderPercent;
 
+	var valuePupilsMultiRacialMale = $formValues.find('.valuePupilsMultiRacialMale').val();
+	if(valuePupilsMultiRacialMale != null && valuePupilsMultiRacialMale !== '')
+		vals['pupilsMultiRacialMale'] = valuePupilsMultiRacialMale;
+
 	var valuePupilsMultiRacialFemale = $formValues.find('.valuePupilsMultiRacialFemale').val();
 	if(valuePupilsMultiRacialFemale != null && valuePupilsMultiRacialFemale !== '')
 		vals['pupilsMultiRacialFemale'] = valuePupilsMultiRacialFemale;
 
-	var valuePupilsMultiRacialMale = $formValues.find('.valuePupilsMultiRacialMale').val();
-	if(valuePupilsMultiRacialMale != null && valuePupilsMultiRacialMale !== '')
-		vals['pupilsMultiRacialMale'] = valuePupilsMultiRacialMale;
+	var valuePupilsTotal = $formValues.find('.valuePupilsTotal').val();
+	if(valuePupilsTotal != null && valuePupilsTotal !== '')
+		vals['pupilsTotal'] = valuePupilsTotal;
 
 	var valuePupilsMultiRacialTotal = $formValues.find('.valuePupilsMultiRacialTotal').val();
 	if(valuePupilsMultiRacialTotal != null && valuePupilsMultiRacialTotal !== '')
@@ -583,18 +583,18 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(valueCountyKey != null && valueCountyKey !== '')
 		vals['setCountyKey'] = valueCountyKey;
 
-	var valuePupilsTotal = $formValues.find('.valuePupilsTotal').val();
-	if(valuePupilsTotal != null && valuePupilsTotal !== '')
-	var removePupilsTotal = $formFilters.find('.removePupilsTotal').val() === 'true';
-	var setPupilsTotal = removePupilsTotal ? null : $formValues.find('.setPupilsTotal').val();
-	if(removePupilsTotal || setPupilsTotal != null && setPupilsTotal !== '')
-		vals['setPupilsTotal'] = setPupilsTotal;
-	var addPupilsTotal = $formValues.find('.addPupilsTotal').val();
-	if(addPupilsTotal != null && addPupilsTotal !== '')
-		vals['addPupilsTotal'] = addPupilsTotal;
-	var removePupilsTotal = $formValues.find('.removePupilsTotal').val();
-	if(removePupilsTotal != null && removePupilsTotal !== '')
-		vals['removePupilsTotal'] = removePupilsTotal;
+	var valuePupilsIndianMale = $formValues.find('.valuePupilsIndianMale').val();
+	if(valuePupilsIndianMale != null && valuePupilsIndianMale !== '')
+	var removePupilsIndianMale = $formFilters.find('.removePupilsIndianMale').val() === 'true';
+	var setPupilsIndianMale = removePupilsIndianMale ? null : $formValues.find('.setPupilsIndianMale').val();
+	if(removePupilsIndianMale || setPupilsIndianMale != null && setPupilsIndianMale !== '')
+		vals['setPupilsIndianMale'] = setPupilsIndianMale;
+	var addPupilsIndianMale = $formValues.find('.addPupilsIndianMale').val();
+	if(addPupilsIndianMale != null && addPupilsIndianMale !== '')
+		vals['addPupilsIndianMale'] = addPupilsIndianMale;
+	var removePupilsIndianMale = $formValues.find('.removePupilsIndianMale').val();
+	if(removePupilsIndianMale != null && removePupilsIndianMale !== '')
+		vals['removePupilsIndianMale'] = removePupilsIndianMale;
 
 	var valuePupilsIndianFemale = $formValues.find('.valuePupilsIndianFemale').val();
 	if(valuePupilsIndianFemale != null && valuePupilsIndianFemale !== '')
@@ -608,19 +608,6 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var removePupilsIndianFemale = $formValues.find('.removePupilsIndianFemale').val();
 	if(removePupilsIndianFemale != null && removePupilsIndianFemale !== '')
 		vals['removePupilsIndianFemale'] = removePupilsIndianFemale;
-
-	var valuePupilsIndianMale = $formValues.find('.valuePupilsIndianMale').val();
-	if(valuePupilsIndianMale != null && valuePupilsIndianMale !== '')
-	var removePupilsIndianMale = $formFilters.find('.removePupilsIndianMale').val() === 'true';
-	var setPupilsIndianMale = removePupilsIndianMale ? null : $formValues.find('.setPupilsIndianMale').val();
-	if(removePupilsIndianMale || setPupilsIndianMale != null && setPupilsIndianMale !== '')
-		vals['setPupilsIndianMale'] = setPupilsIndianMale;
-	var addPupilsIndianMale = $formValues.find('.addPupilsIndianMale').val();
-	if(addPupilsIndianMale != null && addPupilsIndianMale !== '')
-		vals['addPupilsIndianMale'] = addPupilsIndianMale;
-	var removePupilsIndianMale = $formValues.find('.removePupilsIndianMale').val();
-	if(removePupilsIndianMale != null && removePupilsIndianMale !== '')
-		vals['removePupilsIndianMale'] = removePupilsIndianMale;
 
 	var valuePupilsIndianTotal = $formValues.find('.valuePupilsIndianTotal').val();
 	if(valuePupilsIndianTotal != null && valuePupilsIndianTotal !== '')
@@ -648,19 +635,6 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removePupilsIndianPercent != null && removePupilsIndianPercent !== '')
 		vals['removePupilsIndianPercent'] = removePupilsIndianPercent;
 
-	var valuePupilsAsianFemale = $formValues.find('.valuePupilsAsianFemale').val();
-	if(valuePupilsAsianFemale != null && valuePupilsAsianFemale !== '')
-	var removePupilsAsianFemale = $formFilters.find('.removePupilsAsianFemale').val() === 'true';
-	var setPupilsAsianFemale = removePupilsAsianFemale ? null : $formValues.find('.setPupilsAsianFemale').val();
-	if(removePupilsAsianFemale || setPupilsAsianFemale != null && setPupilsAsianFemale !== '')
-		vals['setPupilsAsianFemale'] = setPupilsAsianFemale;
-	var addPupilsAsianFemale = $formValues.find('.addPupilsAsianFemale').val();
-	if(addPupilsAsianFemale != null && addPupilsAsianFemale !== '')
-		vals['addPupilsAsianFemale'] = addPupilsAsianFemale;
-	var removePupilsAsianFemale = $formValues.find('.removePupilsAsianFemale').val();
-	if(removePupilsAsianFemale != null && removePupilsAsianFemale !== '')
-		vals['removePupilsAsianFemale'] = removePupilsAsianFemale;
-
 	var valuePupilsAsianMale = $formValues.find('.valuePupilsAsianMale').val();
 	if(valuePupilsAsianMale != null && valuePupilsAsianMale !== '')
 	var removePupilsAsianMale = $formFilters.find('.removePupilsAsianMale').val() === 'true';
@@ -673,6 +647,19 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var removePupilsAsianMale = $formValues.find('.removePupilsAsianMale').val();
 	if(removePupilsAsianMale != null && removePupilsAsianMale !== '')
 		vals['removePupilsAsianMale'] = removePupilsAsianMale;
+
+	var valuePupilsAsianFemale = $formValues.find('.valuePupilsAsianFemale').val();
+	if(valuePupilsAsianFemale != null && valuePupilsAsianFemale !== '')
+	var removePupilsAsianFemale = $formFilters.find('.removePupilsAsianFemale').val() === 'true';
+	var setPupilsAsianFemale = removePupilsAsianFemale ? null : $formValues.find('.setPupilsAsianFemale').val();
+	if(removePupilsAsianFemale || setPupilsAsianFemale != null && setPupilsAsianFemale !== '')
+		vals['setPupilsAsianFemale'] = setPupilsAsianFemale;
+	var addPupilsAsianFemale = $formValues.find('.addPupilsAsianFemale').val();
+	if(addPupilsAsianFemale != null && addPupilsAsianFemale !== '')
+		vals['addPupilsAsianFemale'] = addPupilsAsianFemale;
+	var removePupilsAsianFemale = $formValues.find('.removePupilsAsianFemale').val();
+	if(removePupilsAsianFemale != null && removePupilsAsianFemale !== '')
+		vals['removePupilsAsianFemale'] = removePupilsAsianFemale;
 
 	var valuePupilsAsianTotal = $formValues.find('.valuePupilsAsianTotal').val();
 	if(valuePupilsAsianTotal != null && valuePupilsAsianTotal !== '')
@@ -700,19 +687,6 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removePupilsAsianPercent != null && removePupilsAsianPercent !== '')
 		vals['removePupilsAsianPercent'] = removePupilsAsianPercent;
 
-	var valuePupilsHispanicFemale = $formValues.find('.valuePupilsHispanicFemale').val();
-	if(valuePupilsHispanicFemale != null && valuePupilsHispanicFemale !== '')
-	var removePupilsHispanicFemale = $formFilters.find('.removePupilsHispanicFemale').val() === 'true';
-	var setPupilsHispanicFemale = removePupilsHispanicFemale ? null : $formValues.find('.setPupilsHispanicFemale').val();
-	if(removePupilsHispanicFemale || setPupilsHispanicFemale != null && setPupilsHispanicFemale !== '')
-		vals['setPupilsHispanicFemale'] = setPupilsHispanicFemale;
-	var addPupilsHispanicFemale = $formValues.find('.addPupilsHispanicFemale').val();
-	if(addPupilsHispanicFemale != null && addPupilsHispanicFemale !== '')
-		vals['addPupilsHispanicFemale'] = addPupilsHispanicFemale;
-	var removePupilsHispanicFemale = $formValues.find('.removePupilsHispanicFemale').val();
-	if(removePupilsHispanicFemale != null && removePupilsHispanicFemale !== '')
-		vals['removePupilsHispanicFemale'] = removePupilsHispanicFemale;
-
 	var valuePupilsHispanicMale = $formValues.find('.valuePupilsHispanicMale').val();
 	if(valuePupilsHispanicMale != null && valuePupilsHispanicMale !== '')
 	var removePupilsHispanicMale = $formFilters.find('.removePupilsHispanicMale').val() === 'true';
@@ -725,6 +699,19 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var removePupilsHispanicMale = $formValues.find('.removePupilsHispanicMale').val();
 	if(removePupilsHispanicMale != null && removePupilsHispanicMale !== '')
 		vals['removePupilsHispanicMale'] = removePupilsHispanicMale;
+
+	var valuePupilsHispanicFemale = $formValues.find('.valuePupilsHispanicFemale').val();
+	if(valuePupilsHispanicFemale != null && valuePupilsHispanicFemale !== '')
+	var removePupilsHispanicFemale = $formFilters.find('.removePupilsHispanicFemale').val() === 'true';
+	var setPupilsHispanicFemale = removePupilsHispanicFemale ? null : $formValues.find('.setPupilsHispanicFemale').val();
+	if(removePupilsHispanicFemale || setPupilsHispanicFemale != null && setPupilsHispanicFemale !== '')
+		vals['setPupilsHispanicFemale'] = setPupilsHispanicFemale;
+	var addPupilsHispanicFemale = $formValues.find('.addPupilsHispanicFemale').val();
+	if(addPupilsHispanicFemale != null && addPupilsHispanicFemale !== '')
+		vals['addPupilsHispanicFemale'] = addPupilsHispanicFemale;
+	var removePupilsHispanicFemale = $formValues.find('.removePupilsHispanicFemale').val();
+	if(removePupilsHispanicFemale != null && removePupilsHispanicFemale !== '')
+		vals['removePupilsHispanicFemale'] = removePupilsHispanicFemale;
 
 	var valuePupilsHispanicTotal = $formValues.find('.valuePupilsHispanicTotal').val();
 	if(valuePupilsHispanicTotal != null && valuePupilsHispanicTotal !== '')
@@ -752,19 +739,6 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removePupilsHispanicPercent != null && removePupilsHispanicPercent !== '')
 		vals['removePupilsHispanicPercent'] = removePupilsHispanicPercent;
 
-	var valuePupilsBlackFemale = $formValues.find('.valuePupilsBlackFemale').val();
-	if(valuePupilsBlackFemale != null && valuePupilsBlackFemale !== '')
-	var removePupilsBlackFemale = $formFilters.find('.removePupilsBlackFemale').val() === 'true';
-	var setPupilsBlackFemale = removePupilsBlackFemale ? null : $formValues.find('.setPupilsBlackFemale').val();
-	if(removePupilsBlackFemale || setPupilsBlackFemale != null && setPupilsBlackFemale !== '')
-		vals['setPupilsBlackFemale'] = setPupilsBlackFemale;
-	var addPupilsBlackFemale = $formValues.find('.addPupilsBlackFemale').val();
-	if(addPupilsBlackFemale != null && addPupilsBlackFemale !== '')
-		vals['addPupilsBlackFemale'] = addPupilsBlackFemale;
-	var removePupilsBlackFemale = $formValues.find('.removePupilsBlackFemale').val();
-	if(removePupilsBlackFemale != null && removePupilsBlackFemale !== '')
-		vals['removePupilsBlackFemale'] = removePupilsBlackFemale;
-
 	var valuePupilsBlackMale = $formValues.find('.valuePupilsBlackMale').val();
 	if(valuePupilsBlackMale != null && valuePupilsBlackMale !== '')
 	var removePupilsBlackMale = $formFilters.find('.removePupilsBlackMale').val() === 'true';
@@ -777,6 +751,19 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var removePupilsBlackMale = $formValues.find('.removePupilsBlackMale').val();
 	if(removePupilsBlackMale != null && removePupilsBlackMale !== '')
 		vals['removePupilsBlackMale'] = removePupilsBlackMale;
+
+	var valuePupilsBlackFemale = $formValues.find('.valuePupilsBlackFemale').val();
+	if(valuePupilsBlackFemale != null && valuePupilsBlackFemale !== '')
+	var removePupilsBlackFemale = $formFilters.find('.removePupilsBlackFemale').val() === 'true';
+	var setPupilsBlackFemale = removePupilsBlackFemale ? null : $formValues.find('.setPupilsBlackFemale').val();
+	if(removePupilsBlackFemale || setPupilsBlackFemale != null && setPupilsBlackFemale !== '')
+		vals['setPupilsBlackFemale'] = setPupilsBlackFemale;
+	var addPupilsBlackFemale = $formValues.find('.addPupilsBlackFemale').val();
+	if(addPupilsBlackFemale != null && addPupilsBlackFemale !== '')
+		vals['addPupilsBlackFemale'] = addPupilsBlackFemale;
+	var removePupilsBlackFemale = $formValues.find('.removePupilsBlackFemale').val();
+	if(removePupilsBlackFemale != null && removePupilsBlackFemale !== '')
+		vals['removePupilsBlackFemale'] = removePupilsBlackFemale;
 
 	var valuePupilsBlackTotal = $formValues.find('.valuePupilsBlackTotal').val();
 	if(valuePupilsBlackTotal != null && valuePupilsBlackTotal !== '')
@@ -804,19 +791,6 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removePupilsBlackPercent != null && removePupilsBlackPercent !== '')
 		vals['removePupilsBlackPercent'] = removePupilsBlackPercent;
 
-	var valuePupilsWhiteFemale = $formValues.find('.valuePupilsWhiteFemale').val();
-	if(valuePupilsWhiteFemale != null && valuePupilsWhiteFemale !== '')
-	var removePupilsWhiteFemale = $formFilters.find('.removePupilsWhiteFemale').val() === 'true';
-	var setPupilsWhiteFemale = removePupilsWhiteFemale ? null : $formValues.find('.setPupilsWhiteFemale').val();
-	if(removePupilsWhiteFemale || setPupilsWhiteFemale != null && setPupilsWhiteFemale !== '')
-		vals['setPupilsWhiteFemale'] = setPupilsWhiteFemale;
-	var addPupilsWhiteFemale = $formValues.find('.addPupilsWhiteFemale').val();
-	if(addPupilsWhiteFemale != null && addPupilsWhiteFemale !== '')
-		vals['addPupilsWhiteFemale'] = addPupilsWhiteFemale;
-	var removePupilsWhiteFemale = $formValues.find('.removePupilsWhiteFemale').val();
-	if(removePupilsWhiteFemale != null && removePupilsWhiteFemale !== '')
-		vals['removePupilsWhiteFemale'] = removePupilsWhiteFemale;
-
 	var valuePupilsWhiteMale = $formValues.find('.valuePupilsWhiteMale').val();
 	if(valuePupilsWhiteMale != null && valuePupilsWhiteMale !== '')
 	var removePupilsWhiteMale = $formFilters.find('.removePupilsWhiteMale').val() === 'true';
@@ -829,6 +803,19 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var removePupilsWhiteMale = $formValues.find('.removePupilsWhiteMale').val();
 	if(removePupilsWhiteMale != null && removePupilsWhiteMale !== '')
 		vals['removePupilsWhiteMale'] = removePupilsWhiteMale;
+
+	var valuePupilsWhiteFemale = $formValues.find('.valuePupilsWhiteFemale').val();
+	if(valuePupilsWhiteFemale != null && valuePupilsWhiteFemale !== '')
+	var removePupilsWhiteFemale = $formFilters.find('.removePupilsWhiteFemale').val() === 'true';
+	var setPupilsWhiteFemale = removePupilsWhiteFemale ? null : $formValues.find('.setPupilsWhiteFemale').val();
+	if(removePupilsWhiteFemale || setPupilsWhiteFemale != null && setPupilsWhiteFemale !== '')
+		vals['setPupilsWhiteFemale'] = setPupilsWhiteFemale;
+	var addPupilsWhiteFemale = $formValues.find('.addPupilsWhiteFemale').val();
+	if(addPupilsWhiteFemale != null && addPupilsWhiteFemale !== '')
+		vals['addPupilsWhiteFemale'] = addPupilsWhiteFemale;
+	var removePupilsWhiteFemale = $formValues.find('.removePupilsWhiteFemale').val();
+	if(removePupilsWhiteFemale != null && removePupilsWhiteFemale !== '')
+		vals['removePupilsWhiteFemale'] = removePupilsWhiteFemale;
 
 	var valuePupilsWhiteTotal = $formValues.find('.valuePupilsWhiteTotal').val();
 	if(valuePupilsWhiteTotal != null && valuePupilsWhiteTotal !== '')
@@ -856,19 +843,6 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removePupilsWhitePercent != null && removePupilsWhitePercent !== '')
 		vals['removePupilsWhitePercent'] = removePupilsWhitePercent;
 
-	var valuePupilsPacificIslanderFemale = $formValues.find('.valuePupilsPacificIslanderFemale').val();
-	if(valuePupilsPacificIslanderFemale != null && valuePupilsPacificIslanderFemale !== '')
-	var removePupilsPacificIslanderFemale = $formFilters.find('.removePupilsPacificIslanderFemale').val() === 'true';
-	var setPupilsPacificIslanderFemale = removePupilsPacificIslanderFemale ? null : $formValues.find('.setPupilsPacificIslanderFemale').val();
-	if(removePupilsPacificIslanderFemale || setPupilsPacificIslanderFemale != null && setPupilsPacificIslanderFemale !== '')
-		vals['setPupilsPacificIslanderFemale'] = setPupilsPacificIslanderFemale;
-	var addPupilsPacificIslanderFemale = $formValues.find('.addPupilsPacificIslanderFemale').val();
-	if(addPupilsPacificIslanderFemale != null && addPupilsPacificIslanderFemale !== '')
-		vals['addPupilsPacificIslanderFemale'] = addPupilsPacificIslanderFemale;
-	var removePupilsPacificIslanderFemale = $formValues.find('.removePupilsPacificIslanderFemale').val();
-	if(removePupilsPacificIslanderFemale != null && removePupilsPacificIslanderFemale !== '')
-		vals['removePupilsPacificIslanderFemale'] = removePupilsPacificIslanderFemale;
-
 	var valuePupilsPacificIslanderMale = $formValues.find('.valuePupilsPacificIslanderMale').val();
 	if(valuePupilsPacificIslanderMale != null && valuePupilsPacificIslanderMale !== '')
 	var removePupilsPacificIslanderMale = $formFilters.find('.removePupilsPacificIslanderMale').val() === 'true';
@@ -881,6 +855,19 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var removePupilsPacificIslanderMale = $formValues.find('.removePupilsPacificIslanderMale').val();
 	if(removePupilsPacificIslanderMale != null && removePupilsPacificIslanderMale !== '')
 		vals['removePupilsPacificIslanderMale'] = removePupilsPacificIslanderMale;
+
+	var valuePupilsPacificIslanderFemale = $formValues.find('.valuePupilsPacificIslanderFemale').val();
+	if(valuePupilsPacificIslanderFemale != null && valuePupilsPacificIslanderFemale !== '')
+	var removePupilsPacificIslanderFemale = $formFilters.find('.removePupilsPacificIslanderFemale').val() === 'true';
+	var setPupilsPacificIslanderFemale = removePupilsPacificIslanderFemale ? null : $formValues.find('.setPupilsPacificIslanderFemale').val();
+	if(removePupilsPacificIslanderFemale || setPupilsPacificIslanderFemale != null && setPupilsPacificIslanderFemale !== '')
+		vals['setPupilsPacificIslanderFemale'] = setPupilsPacificIslanderFemale;
+	var addPupilsPacificIslanderFemale = $formValues.find('.addPupilsPacificIslanderFemale').val();
+	if(addPupilsPacificIslanderFemale != null && addPupilsPacificIslanderFemale !== '')
+		vals['addPupilsPacificIslanderFemale'] = addPupilsPacificIslanderFemale;
+	var removePupilsPacificIslanderFemale = $formValues.find('.removePupilsPacificIslanderFemale').val();
+	if(removePupilsPacificIslanderFemale != null && removePupilsPacificIslanderFemale !== '')
+		vals['removePupilsPacificIslanderFemale'] = removePupilsPacificIslanderFemale;
 
 	var valuePupilsPacificIslanderTotal = $formValues.find('.valuePupilsPacificIslanderTotal').val();
 	if(valuePupilsPacificIslanderTotal != null && valuePupilsPacificIslanderTotal !== '')
@@ -908,6 +895,19 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removePupilsPacificIslanderPercent != null && removePupilsPacificIslanderPercent !== '')
 		vals['removePupilsPacificIslanderPercent'] = removePupilsPacificIslanderPercent;
 
+	var valuePupilsMultiRacialMale = $formValues.find('.valuePupilsMultiRacialMale').val();
+	if(valuePupilsMultiRacialMale != null && valuePupilsMultiRacialMale !== '')
+	var removePupilsMultiRacialMale = $formFilters.find('.removePupilsMultiRacialMale').val() === 'true';
+	var setPupilsMultiRacialMale = removePupilsMultiRacialMale ? null : $formValues.find('.setPupilsMultiRacialMale').val();
+	if(removePupilsMultiRacialMale || setPupilsMultiRacialMale != null && setPupilsMultiRacialMale !== '')
+		vals['setPupilsMultiRacialMale'] = setPupilsMultiRacialMale;
+	var addPupilsMultiRacialMale = $formValues.find('.addPupilsMultiRacialMale').val();
+	if(addPupilsMultiRacialMale != null && addPupilsMultiRacialMale !== '')
+		vals['addPupilsMultiRacialMale'] = addPupilsMultiRacialMale;
+	var removePupilsMultiRacialMale = $formValues.find('.removePupilsMultiRacialMale').val();
+	if(removePupilsMultiRacialMale != null && removePupilsMultiRacialMale !== '')
+		vals['removePupilsMultiRacialMale'] = removePupilsMultiRacialMale;
+
 	var valuePupilsMultiRacialFemale = $formValues.find('.valuePupilsMultiRacialFemale').val();
 	if(valuePupilsMultiRacialFemale != null && valuePupilsMultiRacialFemale !== '')
 	var removePupilsMultiRacialFemale = $formFilters.find('.removePupilsMultiRacialFemale').val() === 'true';
@@ -921,18 +921,18 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removePupilsMultiRacialFemale != null && removePupilsMultiRacialFemale !== '')
 		vals['removePupilsMultiRacialFemale'] = removePupilsMultiRacialFemale;
 
-	var valuePupilsMultiRacialMale = $formValues.find('.valuePupilsMultiRacialMale').val();
-	if(valuePupilsMultiRacialMale != null && valuePupilsMultiRacialMale !== '')
-	var removePupilsMultiRacialMale = $formFilters.find('.removePupilsMultiRacialMale').val() === 'true';
-	var setPupilsMultiRacialMale = removePupilsMultiRacialMale ? null : $formValues.find('.setPupilsMultiRacialMale').val();
-	if(removePupilsMultiRacialMale || setPupilsMultiRacialMale != null && setPupilsMultiRacialMale !== '')
-		vals['setPupilsMultiRacialMale'] = setPupilsMultiRacialMale;
-	var addPupilsMultiRacialMale = $formValues.find('.addPupilsMultiRacialMale').val();
-	if(addPupilsMultiRacialMale != null && addPupilsMultiRacialMale !== '')
-		vals['addPupilsMultiRacialMale'] = addPupilsMultiRacialMale;
-	var removePupilsMultiRacialMale = $formValues.find('.removePupilsMultiRacialMale').val();
-	if(removePupilsMultiRacialMale != null && removePupilsMultiRacialMale !== '')
-		vals['removePupilsMultiRacialMale'] = removePupilsMultiRacialMale;
+	var valuePupilsTotal = $formValues.find('.valuePupilsTotal').val();
+	if(valuePupilsTotal != null && valuePupilsTotal !== '')
+	var removePupilsTotal = $formFilters.find('.removePupilsTotal').val() === 'true';
+	var setPupilsTotal = removePupilsTotal ? null : $formValues.find('.setPupilsTotal').val();
+	if(removePupilsTotal || setPupilsTotal != null && setPupilsTotal !== '')
+		vals['setPupilsTotal'] = setPupilsTotal;
+	var addPupilsTotal = $formValues.find('.addPupilsTotal').val();
+	if(addPupilsTotal != null && addPupilsTotal !== '')
+		vals['addPupilsTotal'] = addPupilsTotal;
+	var removePupilsTotal = $formValues.find('.removePupilsTotal').val();
+	if(removePupilsTotal != null && removePupilsTotal !== '')
+		vals['removePupilsTotal'] = removePupilsTotal;
 
 	var valuePupilsMultiRacialTotal = $formValues.find('.valuePupilsMultiRacialTotal').val();
 	if(valuePupilsMultiRacialTotal != null && valuePupilsMultiRacialTotal !== '')
@@ -1106,17 +1106,13 @@ function patchReportCardFilters($formFilters) {
 		if(filterCountyKey != null && filterCountyKey !== '')
 			filters.push({ name: 'fq', value: 'countyKey:' + filterCountyKey });
 
-		var filterPupilsTotal = $formFilters.find('.valuePupilsTotal').val();
-		if(filterPupilsTotal != null && filterPupilsTotal !== '')
-			filters.push({ name: 'fq', value: 'pupilsTotal:' + filterPupilsTotal });
+		var filterPupilsIndianMale = $formFilters.find('.valuePupilsIndianMale').val();
+		if(filterPupilsIndianMale != null && filterPupilsIndianMale !== '')
+			filters.push({ name: 'fq', value: 'pupilsIndianMale:' + filterPupilsIndianMale });
 
 		var filterPupilsIndianFemale = $formFilters.find('.valuePupilsIndianFemale').val();
 		if(filterPupilsIndianFemale != null && filterPupilsIndianFemale !== '')
 			filters.push({ name: 'fq', value: 'pupilsIndianFemale:' + filterPupilsIndianFemale });
-
-		var filterPupilsIndianMale = $formFilters.find('.valuePupilsIndianMale').val();
-		if(filterPupilsIndianMale != null && filterPupilsIndianMale !== '')
-			filters.push({ name: 'fq', value: 'pupilsIndianMale:' + filterPupilsIndianMale });
 
 		var filterPupilsIndianTotal = $formFilters.find('.valuePupilsIndianTotal').val();
 		if(filterPupilsIndianTotal != null && filterPupilsIndianTotal !== '')
@@ -1126,13 +1122,13 @@ function patchReportCardFilters($formFilters) {
 		if(filterPupilsIndianPercent != null && filterPupilsIndianPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsIndianPercent:' + filterPupilsIndianPercent });
 
-		var filterPupilsAsianFemale = $formFilters.find('.valuePupilsAsianFemale').val();
-		if(filterPupilsAsianFemale != null && filterPupilsAsianFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsAsianFemale:' + filterPupilsAsianFemale });
-
 		var filterPupilsAsianMale = $formFilters.find('.valuePupilsAsianMale').val();
 		if(filterPupilsAsianMale != null && filterPupilsAsianMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsAsianMale:' + filterPupilsAsianMale });
+
+		var filterPupilsAsianFemale = $formFilters.find('.valuePupilsAsianFemale').val();
+		if(filterPupilsAsianFemale != null && filterPupilsAsianFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsAsianFemale:' + filterPupilsAsianFemale });
 
 		var filterPupilsAsianTotal = $formFilters.find('.valuePupilsAsianTotal').val();
 		if(filterPupilsAsianTotal != null && filterPupilsAsianTotal !== '')
@@ -1142,13 +1138,13 @@ function patchReportCardFilters($formFilters) {
 		if(filterPupilsAsianPercent != null && filterPupilsAsianPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsAsianPercent:' + filterPupilsAsianPercent });
 
-		var filterPupilsHispanicFemale = $formFilters.find('.valuePupilsHispanicFemale').val();
-		if(filterPupilsHispanicFemale != null && filterPupilsHispanicFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsHispanicFemale:' + filterPupilsHispanicFemale });
-
 		var filterPupilsHispanicMale = $formFilters.find('.valuePupilsHispanicMale').val();
 		if(filterPupilsHispanicMale != null && filterPupilsHispanicMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsHispanicMale:' + filterPupilsHispanicMale });
+
+		var filterPupilsHispanicFemale = $formFilters.find('.valuePupilsHispanicFemale').val();
+		if(filterPupilsHispanicFemale != null && filterPupilsHispanicFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsHispanicFemale:' + filterPupilsHispanicFemale });
 
 		var filterPupilsHispanicTotal = $formFilters.find('.valuePupilsHispanicTotal').val();
 		if(filterPupilsHispanicTotal != null && filterPupilsHispanicTotal !== '')
@@ -1158,13 +1154,13 @@ function patchReportCardFilters($formFilters) {
 		if(filterPupilsHispanicPercent != null && filterPupilsHispanicPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsHispanicPercent:' + filterPupilsHispanicPercent });
 
-		var filterPupilsBlackFemale = $formFilters.find('.valuePupilsBlackFemale').val();
-		if(filterPupilsBlackFemale != null && filterPupilsBlackFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsBlackFemale:' + filterPupilsBlackFemale });
-
 		var filterPupilsBlackMale = $formFilters.find('.valuePupilsBlackMale').val();
 		if(filterPupilsBlackMale != null && filterPupilsBlackMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsBlackMale:' + filterPupilsBlackMale });
+
+		var filterPupilsBlackFemale = $formFilters.find('.valuePupilsBlackFemale').val();
+		if(filterPupilsBlackFemale != null && filterPupilsBlackFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsBlackFemale:' + filterPupilsBlackFemale });
 
 		var filterPupilsBlackTotal = $formFilters.find('.valuePupilsBlackTotal').val();
 		if(filterPupilsBlackTotal != null && filterPupilsBlackTotal !== '')
@@ -1174,13 +1170,13 @@ function patchReportCardFilters($formFilters) {
 		if(filterPupilsBlackPercent != null && filterPupilsBlackPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsBlackPercent:' + filterPupilsBlackPercent });
 
-		var filterPupilsWhiteFemale = $formFilters.find('.valuePupilsWhiteFemale').val();
-		if(filterPupilsWhiteFemale != null && filterPupilsWhiteFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsWhiteFemale:' + filterPupilsWhiteFemale });
-
 		var filterPupilsWhiteMale = $formFilters.find('.valuePupilsWhiteMale').val();
 		if(filterPupilsWhiteMale != null && filterPupilsWhiteMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsWhiteMale:' + filterPupilsWhiteMale });
+
+		var filterPupilsWhiteFemale = $formFilters.find('.valuePupilsWhiteFemale').val();
+		if(filterPupilsWhiteFemale != null && filterPupilsWhiteFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsWhiteFemale:' + filterPupilsWhiteFemale });
 
 		var filterPupilsWhiteTotal = $formFilters.find('.valuePupilsWhiteTotal').val();
 		if(filterPupilsWhiteTotal != null && filterPupilsWhiteTotal !== '')
@@ -1190,13 +1186,13 @@ function patchReportCardFilters($formFilters) {
 		if(filterPupilsWhitePercent != null && filterPupilsWhitePercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsWhitePercent:' + filterPupilsWhitePercent });
 
-		var filterPupilsPacificIslanderFemale = $formFilters.find('.valuePupilsPacificIslanderFemale').val();
-		if(filterPupilsPacificIslanderFemale != null && filterPupilsPacificIslanderFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsPacificIslanderFemale:' + filterPupilsPacificIslanderFemale });
-
 		var filterPupilsPacificIslanderMale = $formFilters.find('.valuePupilsPacificIslanderMale').val();
 		if(filterPupilsPacificIslanderMale != null && filterPupilsPacificIslanderMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsPacificIslanderMale:' + filterPupilsPacificIslanderMale });
+
+		var filterPupilsPacificIslanderFemale = $formFilters.find('.valuePupilsPacificIslanderFemale').val();
+		if(filterPupilsPacificIslanderFemale != null && filterPupilsPacificIslanderFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsPacificIslanderFemale:' + filterPupilsPacificIslanderFemale });
 
 		var filterPupilsPacificIslanderTotal = $formFilters.find('.valuePupilsPacificIslanderTotal').val();
 		if(filterPupilsPacificIslanderTotal != null && filterPupilsPacificIslanderTotal !== '')
@@ -1206,13 +1202,17 @@ function patchReportCardFilters($formFilters) {
 		if(filterPupilsPacificIslanderPercent != null && filterPupilsPacificIslanderPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsPacificIslanderPercent:' + filterPupilsPacificIslanderPercent });
 
+		var filterPupilsMultiRacialMale = $formFilters.find('.valuePupilsMultiRacialMale').val();
+		if(filterPupilsMultiRacialMale != null && filterPupilsMultiRacialMale !== '')
+			filters.push({ name: 'fq', value: 'pupilsMultiRacialMale:' + filterPupilsMultiRacialMale });
+
 		var filterPupilsMultiRacialFemale = $formFilters.find('.valuePupilsMultiRacialFemale').val();
 		if(filterPupilsMultiRacialFemale != null && filterPupilsMultiRacialFemale !== '')
 			filters.push({ name: 'fq', value: 'pupilsMultiRacialFemale:' + filterPupilsMultiRacialFemale });
 
-		var filterPupilsMultiRacialMale = $formFilters.find('.valuePupilsMultiRacialMale').val();
-		if(filterPupilsMultiRacialMale != null && filterPupilsMultiRacialMale !== '')
-			filters.push({ name: 'fq', value: 'pupilsMultiRacialMale:' + filterPupilsMultiRacialMale });
+		var filterPupilsTotal = $formFilters.find('.valuePupilsTotal').val();
+		if(filterPupilsTotal != null && filterPupilsTotal !== '')
+			filters.push({ name: 'fq', value: 'pupilsTotal:' + filterPupilsTotal });
 
 		var filterPupilsMultiRacialTotal = $formFilters.find('.valuePupilsMultiRacialTotal').val();
 		if(filterPupilsMultiRacialTotal != null && filterPupilsMultiRacialTotal !== '')
@@ -1297,6 +1297,14 @@ function patchReportCardFilters($formFilters) {
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
 			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
+
+		var filterStateId = $formFilters.find('.valueStateId').val();
+		if(filterStateId != null && filterStateId !== '')
+			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
+
+		var filterCountyId = $formFilters.find('.valueCountyId').val();
+		if(filterCountyId != null && filterCountyId !== '')
+			filters.push({ name: 'fq', value: 'countyId:' + filterCountyId });
 
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
@@ -1412,17 +1420,13 @@ function searchReportCardFilters($formFilters) {
 		if(filterCountyKey != null && filterCountyKey !== '')
 			filters.push({ name: 'fq', value: 'countyKey:' + filterCountyKey });
 
-		var filterPupilsTotal = $formFilters.find('.valuePupilsTotal').val();
-		if(filterPupilsTotal != null && filterPupilsTotal !== '')
-			filters.push({ name: 'fq', value: 'pupilsTotal:' + filterPupilsTotal });
+		var filterPupilsIndianMale = $formFilters.find('.valuePupilsIndianMale').val();
+		if(filterPupilsIndianMale != null && filterPupilsIndianMale !== '')
+			filters.push({ name: 'fq', value: 'pupilsIndianMale:' + filterPupilsIndianMale });
 
 		var filterPupilsIndianFemale = $formFilters.find('.valuePupilsIndianFemale').val();
 		if(filterPupilsIndianFemale != null && filterPupilsIndianFemale !== '')
 			filters.push({ name: 'fq', value: 'pupilsIndianFemale:' + filterPupilsIndianFemale });
-
-		var filterPupilsIndianMale = $formFilters.find('.valuePupilsIndianMale').val();
-		if(filterPupilsIndianMale != null && filterPupilsIndianMale !== '')
-			filters.push({ name: 'fq', value: 'pupilsIndianMale:' + filterPupilsIndianMale });
 
 		var filterPupilsIndianTotal = $formFilters.find('.valuePupilsIndianTotal').val();
 		if(filterPupilsIndianTotal != null && filterPupilsIndianTotal !== '')
@@ -1432,13 +1436,13 @@ function searchReportCardFilters($formFilters) {
 		if(filterPupilsIndianPercent != null && filterPupilsIndianPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsIndianPercent:' + filterPupilsIndianPercent });
 
-		var filterPupilsAsianFemale = $formFilters.find('.valuePupilsAsianFemale').val();
-		if(filterPupilsAsianFemale != null && filterPupilsAsianFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsAsianFemale:' + filterPupilsAsianFemale });
-
 		var filterPupilsAsianMale = $formFilters.find('.valuePupilsAsianMale').val();
 		if(filterPupilsAsianMale != null && filterPupilsAsianMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsAsianMale:' + filterPupilsAsianMale });
+
+		var filterPupilsAsianFemale = $formFilters.find('.valuePupilsAsianFemale').val();
+		if(filterPupilsAsianFemale != null && filterPupilsAsianFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsAsianFemale:' + filterPupilsAsianFemale });
 
 		var filterPupilsAsianTotal = $formFilters.find('.valuePupilsAsianTotal').val();
 		if(filterPupilsAsianTotal != null && filterPupilsAsianTotal !== '')
@@ -1448,13 +1452,13 @@ function searchReportCardFilters($formFilters) {
 		if(filterPupilsAsianPercent != null && filterPupilsAsianPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsAsianPercent:' + filterPupilsAsianPercent });
 
-		var filterPupilsHispanicFemale = $formFilters.find('.valuePupilsHispanicFemale').val();
-		if(filterPupilsHispanicFemale != null && filterPupilsHispanicFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsHispanicFemale:' + filterPupilsHispanicFemale });
-
 		var filterPupilsHispanicMale = $formFilters.find('.valuePupilsHispanicMale').val();
 		if(filterPupilsHispanicMale != null && filterPupilsHispanicMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsHispanicMale:' + filterPupilsHispanicMale });
+
+		var filterPupilsHispanicFemale = $formFilters.find('.valuePupilsHispanicFemale').val();
+		if(filterPupilsHispanicFemale != null && filterPupilsHispanicFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsHispanicFemale:' + filterPupilsHispanicFemale });
 
 		var filterPupilsHispanicTotal = $formFilters.find('.valuePupilsHispanicTotal').val();
 		if(filterPupilsHispanicTotal != null && filterPupilsHispanicTotal !== '')
@@ -1464,13 +1468,13 @@ function searchReportCardFilters($formFilters) {
 		if(filterPupilsHispanicPercent != null && filterPupilsHispanicPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsHispanicPercent:' + filterPupilsHispanicPercent });
 
-		var filterPupilsBlackFemale = $formFilters.find('.valuePupilsBlackFemale').val();
-		if(filterPupilsBlackFemale != null && filterPupilsBlackFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsBlackFemale:' + filterPupilsBlackFemale });
-
 		var filterPupilsBlackMale = $formFilters.find('.valuePupilsBlackMale').val();
 		if(filterPupilsBlackMale != null && filterPupilsBlackMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsBlackMale:' + filterPupilsBlackMale });
+
+		var filterPupilsBlackFemale = $formFilters.find('.valuePupilsBlackFemale').val();
+		if(filterPupilsBlackFemale != null && filterPupilsBlackFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsBlackFemale:' + filterPupilsBlackFemale });
 
 		var filterPupilsBlackTotal = $formFilters.find('.valuePupilsBlackTotal').val();
 		if(filterPupilsBlackTotal != null && filterPupilsBlackTotal !== '')
@@ -1480,13 +1484,13 @@ function searchReportCardFilters($formFilters) {
 		if(filterPupilsBlackPercent != null && filterPupilsBlackPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsBlackPercent:' + filterPupilsBlackPercent });
 
-		var filterPupilsWhiteFemale = $formFilters.find('.valuePupilsWhiteFemale').val();
-		if(filterPupilsWhiteFemale != null && filterPupilsWhiteFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsWhiteFemale:' + filterPupilsWhiteFemale });
-
 		var filterPupilsWhiteMale = $formFilters.find('.valuePupilsWhiteMale').val();
 		if(filterPupilsWhiteMale != null && filterPupilsWhiteMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsWhiteMale:' + filterPupilsWhiteMale });
+
+		var filterPupilsWhiteFemale = $formFilters.find('.valuePupilsWhiteFemale').val();
+		if(filterPupilsWhiteFemale != null && filterPupilsWhiteFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsWhiteFemale:' + filterPupilsWhiteFemale });
 
 		var filterPupilsWhiteTotal = $formFilters.find('.valuePupilsWhiteTotal').val();
 		if(filterPupilsWhiteTotal != null && filterPupilsWhiteTotal !== '')
@@ -1496,13 +1500,13 @@ function searchReportCardFilters($formFilters) {
 		if(filterPupilsWhitePercent != null && filterPupilsWhitePercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsWhitePercent:' + filterPupilsWhitePercent });
 
-		var filterPupilsPacificIslanderFemale = $formFilters.find('.valuePupilsPacificIslanderFemale').val();
-		if(filterPupilsPacificIslanderFemale != null && filterPupilsPacificIslanderFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsPacificIslanderFemale:' + filterPupilsPacificIslanderFemale });
-
 		var filterPupilsPacificIslanderMale = $formFilters.find('.valuePupilsPacificIslanderMale').val();
 		if(filterPupilsPacificIslanderMale != null && filterPupilsPacificIslanderMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsPacificIslanderMale:' + filterPupilsPacificIslanderMale });
+
+		var filterPupilsPacificIslanderFemale = $formFilters.find('.valuePupilsPacificIslanderFemale').val();
+		if(filterPupilsPacificIslanderFemale != null && filterPupilsPacificIslanderFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsPacificIslanderFemale:' + filterPupilsPacificIslanderFemale });
 
 		var filterPupilsPacificIslanderTotal = $formFilters.find('.valuePupilsPacificIslanderTotal').val();
 		if(filterPupilsPacificIslanderTotal != null && filterPupilsPacificIslanderTotal !== '')
@@ -1512,13 +1516,17 @@ function searchReportCardFilters($formFilters) {
 		if(filterPupilsPacificIslanderPercent != null && filterPupilsPacificIslanderPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsPacificIslanderPercent:' + filterPupilsPacificIslanderPercent });
 
+		var filterPupilsMultiRacialMale = $formFilters.find('.valuePupilsMultiRacialMale').val();
+		if(filterPupilsMultiRacialMale != null && filterPupilsMultiRacialMale !== '')
+			filters.push({ name: 'fq', value: 'pupilsMultiRacialMale:' + filterPupilsMultiRacialMale });
+
 		var filterPupilsMultiRacialFemale = $formFilters.find('.valuePupilsMultiRacialFemale').val();
 		if(filterPupilsMultiRacialFemale != null && filterPupilsMultiRacialFemale !== '')
 			filters.push({ name: 'fq', value: 'pupilsMultiRacialFemale:' + filterPupilsMultiRacialFemale });
 
-		var filterPupilsMultiRacialMale = $formFilters.find('.valuePupilsMultiRacialMale').val();
-		if(filterPupilsMultiRacialMale != null && filterPupilsMultiRacialMale !== '')
-			filters.push({ name: 'fq', value: 'pupilsMultiRacialMale:' + filterPupilsMultiRacialMale });
+		var filterPupilsTotal = $formFilters.find('.valuePupilsTotal').val();
+		if(filterPupilsTotal != null && filterPupilsTotal !== '')
+			filters.push({ name: 'fq', value: 'pupilsTotal:' + filterPupilsTotal });
 
 		var filterPupilsMultiRacialTotal = $formFilters.find('.valuePupilsMultiRacialTotal').val();
 		if(filterPupilsMultiRacialTotal != null && filterPupilsMultiRacialTotal !== '')
@@ -1603,6 +1611,14 @@ function searchReportCardFilters($formFilters) {
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
 			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
+
+		var filterStateId = $formFilters.find('.valueStateId').val();
+		if(filterStateId != null && filterStateId !== '')
+			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
+
+		var filterCountyId = $formFilters.find('.valueCountyId').val();
+		if(filterCountyId != null && filterCountyId !== '')
+			filters.push({ name: 'fq', value: 'countyId:' + filterCountyId });
 
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
@@ -1756,17 +1772,13 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterCountyKey != null && filterCountyKey !== '')
 			filters.push({ name: 'fq', value: 'countyKey:' + filterCountyKey });
 
-		var filterPupilsTotal = $formFilters.find('.valuePupilsTotal').val();
-		if(filterPupilsTotal != null && filterPupilsTotal !== '')
-			filters.push({ name: 'fq', value: 'pupilsTotal:' + filterPupilsTotal });
+		var filterPupilsIndianMale = $formFilters.find('.valuePupilsIndianMale').val();
+		if(filterPupilsIndianMale != null && filterPupilsIndianMale !== '')
+			filters.push({ name: 'fq', value: 'pupilsIndianMale:' + filterPupilsIndianMale });
 
 		var filterPupilsIndianFemale = $formFilters.find('.valuePupilsIndianFemale').val();
 		if(filterPupilsIndianFemale != null && filterPupilsIndianFemale !== '')
 			filters.push({ name: 'fq', value: 'pupilsIndianFemale:' + filterPupilsIndianFemale });
-
-		var filterPupilsIndianMale = $formFilters.find('.valuePupilsIndianMale').val();
-		if(filterPupilsIndianMale != null && filterPupilsIndianMale !== '')
-			filters.push({ name: 'fq', value: 'pupilsIndianMale:' + filterPupilsIndianMale });
 
 		var filterPupilsIndianTotal = $formFilters.find('.valuePupilsIndianTotal').val();
 		if(filterPupilsIndianTotal != null && filterPupilsIndianTotal !== '')
@@ -1776,13 +1788,13 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterPupilsIndianPercent != null && filterPupilsIndianPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsIndianPercent:' + filterPupilsIndianPercent });
 
-		var filterPupilsAsianFemale = $formFilters.find('.valuePupilsAsianFemale').val();
-		if(filterPupilsAsianFemale != null && filterPupilsAsianFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsAsianFemale:' + filterPupilsAsianFemale });
-
 		var filterPupilsAsianMale = $formFilters.find('.valuePupilsAsianMale').val();
 		if(filterPupilsAsianMale != null && filterPupilsAsianMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsAsianMale:' + filterPupilsAsianMale });
+
+		var filterPupilsAsianFemale = $formFilters.find('.valuePupilsAsianFemale').val();
+		if(filterPupilsAsianFemale != null && filterPupilsAsianFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsAsianFemale:' + filterPupilsAsianFemale });
 
 		var filterPupilsAsianTotal = $formFilters.find('.valuePupilsAsianTotal').val();
 		if(filterPupilsAsianTotal != null && filterPupilsAsianTotal !== '')
@@ -1792,13 +1804,13 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterPupilsAsianPercent != null && filterPupilsAsianPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsAsianPercent:' + filterPupilsAsianPercent });
 
-		var filterPupilsHispanicFemale = $formFilters.find('.valuePupilsHispanicFemale').val();
-		if(filterPupilsHispanicFemale != null && filterPupilsHispanicFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsHispanicFemale:' + filterPupilsHispanicFemale });
-
 		var filterPupilsHispanicMale = $formFilters.find('.valuePupilsHispanicMale').val();
 		if(filterPupilsHispanicMale != null && filterPupilsHispanicMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsHispanicMale:' + filterPupilsHispanicMale });
+
+		var filterPupilsHispanicFemale = $formFilters.find('.valuePupilsHispanicFemale').val();
+		if(filterPupilsHispanicFemale != null && filterPupilsHispanicFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsHispanicFemale:' + filterPupilsHispanicFemale });
 
 		var filterPupilsHispanicTotal = $formFilters.find('.valuePupilsHispanicTotal').val();
 		if(filterPupilsHispanicTotal != null && filterPupilsHispanicTotal !== '')
@@ -1808,13 +1820,13 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterPupilsHispanicPercent != null && filterPupilsHispanicPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsHispanicPercent:' + filterPupilsHispanicPercent });
 
-		var filterPupilsBlackFemale = $formFilters.find('.valuePupilsBlackFemale').val();
-		if(filterPupilsBlackFemale != null && filterPupilsBlackFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsBlackFemale:' + filterPupilsBlackFemale });
-
 		var filterPupilsBlackMale = $formFilters.find('.valuePupilsBlackMale').val();
 		if(filterPupilsBlackMale != null && filterPupilsBlackMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsBlackMale:' + filterPupilsBlackMale });
+
+		var filterPupilsBlackFemale = $formFilters.find('.valuePupilsBlackFemale').val();
+		if(filterPupilsBlackFemale != null && filterPupilsBlackFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsBlackFemale:' + filterPupilsBlackFemale });
 
 		var filterPupilsBlackTotal = $formFilters.find('.valuePupilsBlackTotal').val();
 		if(filterPupilsBlackTotal != null && filterPupilsBlackTotal !== '')
@@ -1824,13 +1836,13 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterPupilsBlackPercent != null && filterPupilsBlackPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsBlackPercent:' + filterPupilsBlackPercent });
 
-		var filterPupilsWhiteFemale = $formFilters.find('.valuePupilsWhiteFemale').val();
-		if(filterPupilsWhiteFemale != null && filterPupilsWhiteFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsWhiteFemale:' + filterPupilsWhiteFemale });
-
 		var filterPupilsWhiteMale = $formFilters.find('.valuePupilsWhiteMale').val();
 		if(filterPupilsWhiteMale != null && filterPupilsWhiteMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsWhiteMale:' + filterPupilsWhiteMale });
+
+		var filterPupilsWhiteFemale = $formFilters.find('.valuePupilsWhiteFemale').val();
+		if(filterPupilsWhiteFemale != null && filterPupilsWhiteFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsWhiteFemale:' + filterPupilsWhiteFemale });
 
 		var filterPupilsWhiteTotal = $formFilters.find('.valuePupilsWhiteTotal').val();
 		if(filterPupilsWhiteTotal != null && filterPupilsWhiteTotal !== '')
@@ -1840,13 +1852,13 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterPupilsWhitePercent != null && filterPupilsWhitePercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsWhitePercent:' + filterPupilsWhitePercent });
 
-		var filterPupilsPacificIslanderFemale = $formFilters.find('.valuePupilsPacificIslanderFemale').val();
-		if(filterPupilsPacificIslanderFemale != null && filterPupilsPacificIslanderFemale !== '')
-			filters.push({ name: 'fq', value: 'pupilsPacificIslanderFemale:' + filterPupilsPacificIslanderFemale });
-
 		var filterPupilsPacificIslanderMale = $formFilters.find('.valuePupilsPacificIslanderMale').val();
 		if(filterPupilsPacificIslanderMale != null && filterPupilsPacificIslanderMale !== '')
 			filters.push({ name: 'fq', value: 'pupilsPacificIslanderMale:' + filterPupilsPacificIslanderMale });
+
+		var filterPupilsPacificIslanderFemale = $formFilters.find('.valuePupilsPacificIslanderFemale').val();
+		if(filterPupilsPacificIslanderFemale != null && filterPupilsPacificIslanderFemale !== '')
+			filters.push({ name: 'fq', value: 'pupilsPacificIslanderFemale:' + filterPupilsPacificIslanderFemale });
 
 		var filterPupilsPacificIslanderTotal = $formFilters.find('.valuePupilsPacificIslanderTotal').val();
 		if(filterPupilsPacificIslanderTotal != null && filterPupilsPacificIslanderTotal !== '')
@@ -1856,13 +1868,17 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterPupilsPacificIslanderPercent != null && filterPupilsPacificIslanderPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsPacificIslanderPercent:' + filterPupilsPacificIslanderPercent });
 
+		var filterPupilsMultiRacialMale = $formFilters.find('.valuePupilsMultiRacialMale').val();
+		if(filterPupilsMultiRacialMale != null && filterPupilsMultiRacialMale !== '')
+			filters.push({ name: 'fq', value: 'pupilsMultiRacialMale:' + filterPupilsMultiRacialMale });
+
 		var filterPupilsMultiRacialFemale = $formFilters.find('.valuePupilsMultiRacialFemale').val();
 		if(filterPupilsMultiRacialFemale != null && filterPupilsMultiRacialFemale !== '')
 			filters.push({ name: 'fq', value: 'pupilsMultiRacialFemale:' + filterPupilsMultiRacialFemale });
 
-		var filterPupilsMultiRacialMale = $formFilters.find('.valuePupilsMultiRacialMale').val();
-		if(filterPupilsMultiRacialMale != null && filterPupilsMultiRacialMale !== '')
-			filters.push({ name: 'fq', value: 'pupilsMultiRacialMale:' + filterPupilsMultiRacialMale });
+		var filterPupilsTotal = $formFilters.find('.valuePupilsTotal').val();
+		if(filterPupilsTotal != null && filterPupilsTotal !== '')
+			filters.push({ name: 'fq', value: 'pupilsTotal:' + filterPupilsTotal });
 
 		var filterPupilsMultiRacialTotal = $formFilters.find('.valuePupilsMultiRacialTotal').val();
 		if(filterPupilsMultiRacialTotal != null && filterPupilsMultiRacialTotal !== '')
@@ -1947,6 +1963,14 @@ function adminsearchReportCardFilters($formFilters) {
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
 			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
+
+		var filterStateId = $formFilters.find('.valueStateId').val();
+		if(filterStateId != null && filterStateId !== '')
+			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
+
+		var filterCountyId = $formFilters.find('.valueCountyId').val();
+		if(filterCountyId != null && filterCountyId !== '')
+			filters.push({ name: 'fq', value: 'countyId:' + filterCountyId });
 
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
@@ -2210,17 +2234,17 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'CountyKey'));
 			}
-			var val = o['pupilsTotal'];
-			if(vars.includes('pupilsTotal')) {
-				$('.inputReportCard' + pk + 'PupilsTotal').each(function() {
+			var val = o['pupilsIndianMale'];
+			if(vars.includes('pupilsIndianMale')) {
+				$('.inputReportCard' + pk + 'PupilsIndianMale').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varReportCard' + pk + 'PupilsTotal').each(function() {
+				$('.varReportCard' + pk + 'PupilsIndianMale').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputReportCard' + pk + 'PupilsTotal'));
+				addGlow($('.inputReportCard' + pk + 'PupilsIndianMale'));
 			}
 			var val = o['pupilsIndianFemale'];
 			if(vars.includes('pupilsIndianFemale')) {
@@ -2233,18 +2257,6 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsIndianFemale'));
-			}
-			var val = o['pupilsIndianMale'];
-			if(vars.includes('pupilsIndianMale')) {
-				$('.inputReportCard' + pk + 'PupilsIndianMale').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varReportCard' + pk + 'PupilsIndianMale').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputReportCard' + pk + 'PupilsIndianMale'));
 			}
 			var val = o['pupilsIndianTotal'];
 			if(vars.includes('pupilsIndianTotal')) {
@@ -2270,18 +2282,6 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsIndianPercent'));
 			}
-			var val = o['pupilsAsianFemale'];
-			if(vars.includes('pupilsAsianFemale')) {
-				$('.inputReportCard' + pk + 'PupilsAsianFemale').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varReportCard' + pk + 'PupilsAsianFemale').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputReportCard' + pk + 'PupilsAsianFemale'));
-			}
 			var val = o['pupilsAsianMale'];
 			if(vars.includes('pupilsAsianMale')) {
 				$('.inputReportCard' + pk + 'PupilsAsianMale').each(function() {
@@ -2293,6 +2293,18 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsAsianMale'));
+			}
+			var val = o['pupilsAsianFemale'];
+			if(vars.includes('pupilsAsianFemale')) {
+				$('.inputReportCard' + pk + 'PupilsAsianFemale').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'PupilsAsianFemale').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'PupilsAsianFemale'));
 			}
 			var val = o['pupilsAsianTotal'];
 			if(vars.includes('pupilsAsianTotal')) {
@@ -2318,18 +2330,6 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsAsianPercent'));
 			}
-			var val = o['pupilsHispanicFemale'];
-			if(vars.includes('pupilsHispanicFemale')) {
-				$('.inputReportCard' + pk + 'PupilsHispanicFemale').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varReportCard' + pk + 'PupilsHispanicFemale').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputReportCard' + pk + 'PupilsHispanicFemale'));
-			}
 			var val = o['pupilsHispanicMale'];
 			if(vars.includes('pupilsHispanicMale')) {
 				$('.inputReportCard' + pk + 'PupilsHispanicMale').each(function() {
@@ -2341,6 +2341,18 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsHispanicMale'));
+			}
+			var val = o['pupilsHispanicFemale'];
+			if(vars.includes('pupilsHispanicFemale')) {
+				$('.inputReportCard' + pk + 'PupilsHispanicFemale').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'PupilsHispanicFemale').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'PupilsHispanicFemale'));
 			}
 			var val = o['pupilsHispanicTotal'];
 			if(vars.includes('pupilsHispanicTotal')) {
@@ -2366,18 +2378,6 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsHispanicPercent'));
 			}
-			var val = o['pupilsBlackFemale'];
-			if(vars.includes('pupilsBlackFemale')) {
-				$('.inputReportCard' + pk + 'PupilsBlackFemale').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varReportCard' + pk + 'PupilsBlackFemale').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputReportCard' + pk + 'PupilsBlackFemale'));
-			}
 			var val = o['pupilsBlackMale'];
 			if(vars.includes('pupilsBlackMale')) {
 				$('.inputReportCard' + pk + 'PupilsBlackMale').each(function() {
@@ -2389,6 +2389,18 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsBlackMale'));
+			}
+			var val = o['pupilsBlackFemale'];
+			if(vars.includes('pupilsBlackFemale')) {
+				$('.inputReportCard' + pk + 'PupilsBlackFemale').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'PupilsBlackFemale').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'PupilsBlackFemale'));
 			}
 			var val = o['pupilsBlackTotal'];
 			if(vars.includes('pupilsBlackTotal')) {
@@ -2414,18 +2426,6 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsBlackPercent'));
 			}
-			var val = o['pupilsWhiteFemale'];
-			if(vars.includes('pupilsWhiteFemale')) {
-				$('.inputReportCard' + pk + 'PupilsWhiteFemale').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varReportCard' + pk + 'PupilsWhiteFemale').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputReportCard' + pk + 'PupilsWhiteFemale'));
-			}
 			var val = o['pupilsWhiteMale'];
 			if(vars.includes('pupilsWhiteMale')) {
 				$('.inputReportCard' + pk + 'PupilsWhiteMale').each(function() {
@@ -2437,6 +2437,18 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsWhiteMale'));
+			}
+			var val = o['pupilsWhiteFemale'];
+			if(vars.includes('pupilsWhiteFemale')) {
+				$('.inputReportCard' + pk + 'PupilsWhiteFemale').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'PupilsWhiteFemale').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'PupilsWhiteFemale'));
 			}
 			var val = o['pupilsWhiteTotal'];
 			if(vars.includes('pupilsWhiteTotal')) {
@@ -2462,18 +2474,6 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsWhitePercent'));
 			}
-			var val = o['pupilsPacificIslanderFemale'];
-			if(vars.includes('pupilsPacificIslanderFemale')) {
-				$('.inputReportCard' + pk + 'PupilsPacificIslanderFemale').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varReportCard' + pk + 'PupilsPacificIslanderFemale').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputReportCard' + pk + 'PupilsPacificIslanderFemale'));
-			}
 			var val = o['pupilsPacificIslanderMale'];
 			if(vars.includes('pupilsPacificIslanderMale')) {
 				$('.inputReportCard' + pk + 'PupilsPacificIslanderMale').each(function() {
@@ -2485,6 +2485,18 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsPacificIslanderMale'));
+			}
+			var val = o['pupilsPacificIslanderFemale'];
+			if(vars.includes('pupilsPacificIslanderFemale')) {
+				$('.inputReportCard' + pk + 'PupilsPacificIslanderFemale').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'PupilsPacificIslanderFemale').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'PupilsPacificIslanderFemale'));
 			}
 			var val = o['pupilsPacificIslanderTotal'];
 			if(vars.includes('pupilsPacificIslanderTotal')) {
@@ -2510,6 +2522,18 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsPacificIslanderPercent'));
 			}
+			var val = o['pupilsMultiRacialMale'];
+			if(vars.includes('pupilsMultiRacialMale')) {
+				$('.inputReportCard' + pk + 'PupilsMultiRacialMale').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'PupilsMultiRacialMale').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'PupilsMultiRacialMale'));
+			}
 			var val = o['pupilsMultiRacialFemale'];
 			if(vars.includes('pupilsMultiRacialFemale')) {
 				$('.inputReportCard' + pk + 'PupilsMultiRacialFemale').each(function() {
@@ -2522,17 +2546,17 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'PupilsMultiRacialFemale'));
 			}
-			var val = o['pupilsMultiRacialMale'];
-			if(vars.includes('pupilsMultiRacialMale')) {
-				$('.inputReportCard' + pk + 'PupilsMultiRacialMale').each(function() {
+			var val = o['pupilsTotal'];
+			if(vars.includes('pupilsTotal')) {
+				$('.inputReportCard' + pk + 'PupilsTotal').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varReportCard' + pk + 'PupilsMultiRacialMale').each(function() {
+				$('.varReportCard' + pk + 'PupilsTotal').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputReportCard' + pk + 'PupilsMultiRacialMale'));
+				addGlow($('.inputReportCard' + pk + 'PupilsTotal'));
 			}
 			var val = o['pupilsMultiRacialTotal'];
 			if(vars.includes('pupilsMultiRacialTotal')) {
@@ -2785,6 +2809,30 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'StateKey'));
+			}
+			var val = o['stateId'];
+			if(vars.includes('stateId')) {
+				$('.inputReportCard' + pk + 'StateId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'StateId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'StateId'));
+			}
+			var val = o['countyId'];
+			if(vars.includes('countyId')) {
+				$('.inputReportCard' + pk + 'CountyId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'CountyId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'CountyId'));
 			}
 			var val = o['stateName'];
 			if(vars.includes('stateName')) {

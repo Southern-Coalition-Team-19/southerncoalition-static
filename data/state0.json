@@ -1,0 +1,19 @@
+{
+  "startNum" : 0,
+  "foundNum" : 1,
+  "returnedNum" : 1,
+  "searchTime" : "0.000 sec",
+  "transmissionTime" : "0.001 sec",
+  "list" : [ {
+    "pk" : "140",
+    "inheritPk" : "108",
+    "created" : "2020-08-04T13:45:33.147-04:00[America/New_York]",
+    "archived" : false,
+    "deleted" : false,
+    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
+    "saves" : [ "stateAbbreviation", "inheritPk", "userId", "deleted", "stateName", "created", "archived", "agencyKeys" ],
+    "stateName" : "North Carolina",
+    "stateAbbreviation" : "NC",
+    "agencyKeys" : [ "141", "142", "265", "268" ]
+  } ]
+}

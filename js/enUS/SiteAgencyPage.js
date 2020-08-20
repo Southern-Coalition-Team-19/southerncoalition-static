@@ -1,15 +1,15 @@
 
 // PUTImport //
 
-async function putimportSiteState($formValues, pk, success, error) {
+async function putimportSiteAgency($formValues, pk, success, error) {
 	var json = $formValues.find('.PUTImport_list').val();
 	if(json != null && json !== '')
-		putimportSiteStateVals(JSON.parse(json), success, error);
+		putimportSiteAgencyVals(JSON.parse(json), success, error);
 }
 
-function putimportSiteStateVals(json, success, error) {
+function putimportSiteAgencyVals(json, success, error) {
 	$.ajax({
-		url: '/api/state/import'
+		url: '/api/agency/import'
 		, dataType: 'json'
 		, type: 'PUT'
 		, contentType: 'application/json; charset=utf-8'
@@ -21,15 +21,15 @@ function putimportSiteStateVals(json, success, error) {
 
 // PUTMerge //
 
-async function putmergeSiteState($formValues, pk, success, error) {
+async function putmergeSiteAgency($formValues, pk, success, error) {
 	var json = $formValues.find('.PUTMerge_list').val();
 	if(json != null && json !== '')
-		putmergeSiteStateVals(JSON.parse(json), success, error);
+		putmergeSiteAgencyVals(JSON.parse(json), success, error);
 }
 
-function putmergeSiteStateVals(json, success, error) {
+function putmergeSiteAgencyVals(json, success, error) {
 	$.ajax({
-		url: '/api/state/merge'
+		url: '/api/agency/merge'
 		, dataType: 'json'
 		, type: 'PUT'
 		, contentType: 'application/json; charset=utf-8'
@@ -41,7 +41,7 @@ function putmergeSiteStateVals(json, success, error) {
 
 // PUTCopy //
 
-async function putcopySiteState($formValues, pk, success, error) {
+async function putcopySiteAgency($formValues, pk, success, error) {
 	var vals = {};
 
 	var valuePk = $formValues.find('.valuePk').val();
@@ -68,17 +68,17 @@ async function putcopySiteState($formValues, pk, success, error) {
 	if(valueDeleted != null && valueDeleted !== '')
 		vals['deleted'] = valueDeleted;
 
-	var valueStateName = $formValues.find('.valueStateName').val();
-	if(valueStateName != null && valueStateName !== '')
-		vals['stateName'] = valueStateName;
+	var valueAgencyName = $formValues.find('.valueAgencyName').val();
+	if(valueAgencyName != null && valueAgencyName !== '')
+		vals['agencyName'] = valueAgencyName;
 
-	var valueStateAbbreviation = $formValues.find('.valueStateAbbreviation').val();
-	if(valueStateAbbreviation != null && valueStateAbbreviation !== '')
-		vals['stateAbbreviation'] = valueStateAbbreviation;
+	var valueStateKey = $formValues.find('input.valueStateKey:checked').val();
+	if(valueStateKey != null && valueStateKey !== '')
+		vals['stateKey'] = valueStateKey;
 
-	var valueAgencyKeys = $formValues.find('input.valueAgencyKeys:checked').val();
-	if(valueAgencyKeys != null && valueAgencyKeys !== '')
-		vals['agencyKeys'] = [valueAgencyKeys];
+	var valueReportCardKeys = $formValues.find('input.valueReportCardKeys:checked').val();
+	if(valueReportCardKeys != null && valueReportCardKeys !== '')
+		vals['reportCardKeys'] = [valueReportCardKeys];
 
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
 	if(valueInheritPk != null && valueInheritPk !== '')
@@ -96,12 +96,12 @@ async function putcopySiteState($formValues, pk, success, error) {
 	if(valueObjectTitle != null && valueObjectTitle !== '')
 		vals['objectTitle'] = valueObjectTitle;
 
-	putcopySiteStateVals(pk == null ? $.deparam(window.location.search ? window.location.search.substring(1) : window.location.search) : [{name:'fq', value:'pk:' + pk}], vals, success, error);
+	putcopySiteAgencyVals(pk == null ? $.deparam(window.location.search ? window.location.search.substring(1) : window.location.search) : [{name:'fq', value:'pk:' + pk}], vals, success, error);
 }
 
-function putcopySiteStateVals(filters, vals, success, error) {
+function putcopySiteAgencyVals(filters, vals, success, error) {
 	$.ajax({
-		url: '/api/state/copy?' + $.param(filters)
+		url: '/api/agency/copy?' + $.param(filters)
 		, dataType: 'json'
 		, type: 'PUT'
 		, contentType: 'application/json; charset=utf-8'
@@ -113,7 +113,7 @@ function putcopySiteStateVals(filters, vals, success, error) {
 
 // POST //
 
-async function postSiteState($formValues, success, error) {
+async function postSiteAgency($formValues, success, error) {
 	var vals = {};
 	if(success == null) {
 		success = function( data, textStatus, jQxhr ) {
@@ -153,20 +153,20 @@ async function postSiteState($formValues, success, error) {
 	if(valueDeleted != null && valueDeleted !== '')
 		vals['deleted'] = valueDeleted;
 
-	var valueStateName = $formValues.find('.valueStateName').val();
-	if(valueStateName != null && valueStateName !== '')
-		vals['stateName'] = valueStateName;
+	var valueAgencyName = $formValues.find('.valueAgencyName').val();
+	if(valueAgencyName != null && valueAgencyName !== '')
+		vals['agencyName'] = valueAgencyName;
 
-	var valueStateAbbreviation = $formValues.find('.valueStateAbbreviation').val();
-	if(valueStateAbbreviation != null && valueStateAbbreviation !== '')
-		vals['stateAbbreviation'] = valueStateAbbreviation;
+	var valueStateKey = $formValues.find('.valueStateKey').val();
+	if(valueStateKey != null && valueStateKey !== '')
+		vals['stateKey'] = valueStateKey;
 
-	var valueAgencyKeys = [];
-	$formValues.find('input.valueAgencyKeys:checked').each(function(index) {
-		valueAgencyKeys.push($(this).val());
+	var valueReportCardKeys = [];
+	$formValues.find('input.valueReportCardKeys:checked').each(function(index) {
+		valueReportCardKeys.push($(this).val());
 	});
-	if(valueAgencyKeys.length > 0)
-		vals['agencyKeys'] = valueAgencyKeys;
+	if(valueReportCardKeys.length > 0)
+		vals['reportCardKeys'] = valueReportCardKeys;
 
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
 	if(valueInheritPk != null && valueInheritPk !== '')
@@ -185,7 +185,7 @@ async function postSiteState($formValues, success, error) {
 		vals['objectTitle'] = valueObjectTitle;
 
 	$.ajax({
-		url: '/api/state'
+		url: '/api/agency'
 		, dataType: 'json'
 		, type: 'POST'
 		, contentType: 'application/json; charset=utf-8'
@@ -195,9 +195,9 @@ async function postSiteState($formValues, success, error) {
 	});
 }
 
-function postSiteStateVals(vals, success, error) {
+function postSiteAgencyVals(vals, success, error) {
 	$.ajax({
-		url: '/api/state'
+		url: '/api/agency'
 		, dataType: 'json'
 		, type: 'POST'
 		, contentType: 'application/json; charset=utf-8'
@@ -209,8 +209,8 @@ function postSiteStateVals(vals, success, error) {
 
 // PATCH //
 
-async function patchSiteState($formFilters, $formValues, pk, success, error) {
-	var filters = patchSiteStateFilters($formFilters);
+async function patchSiteAgency($formFilters, $formValues, pk, success, error) {
+	var filters = patchSiteAgencyFilters($formFilters);
 
 	var vals = {};
 
@@ -300,35 +300,26 @@ async function patchSiteState($formFilters, $formValues, pk, success, error) {
 	if(removeDeleted != null && removeDeleted !== '')
 		vals['removeDeleted'] = removeDeleted;
 
-	var valueStateName = $formValues.find('.valueStateName').val();
-	if(valueStateName != null && valueStateName !== '')
-	var removeStateName = $formFilters.find('.removeStateName').val() === 'true';
-	var setStateName = removeStateName ? null : $formValues.find('.setStateName').val();
-	if(removeStateName || setStateName != null && setStateName !== '')
-		vals['setStateName'] = setStateName;
-	var addStateName = $formValues.find('.addStateName').val();
-	if(addStateName != null && addStateName !== '')
-		vals['addStateName'] = addStateName;
-	var removeStateName = $formValues.find('.removeStateName').val();
-	if(removeStateName != null && removeStateName !== '')
-		vals['removeStateName'] = removeStateName;
+	var valueAgencyName = $formValues.find('.valueAgencyName').val();
+	if(valueAgencyName != null && valueAgencyName !== '')
+	var removeAgencyName = $formFilters.find('.removeAgencyName').val() === 'true';
+	var setAgencyName = removeAgencyName ? null : $formValues.find('.setAgencyName').val();
+	if(removeAgencyName || setAgencyName != null && setAgencyName !== '')
+		vals['setAgencyName'] = setAgencyName;
+	var addAgencyName = $formValues.find('.addAgencyName').val();
+	if(addAgencyName != null && addAgencyName !== '')
+		vals['addAgencyName'] = addAgencyName;
+	var removeAgencyName = $formValues.find('.removeAgencyName').val();
+	if(removeAgencyName != null && removeAgencyName !== '')
+		vals['removeAgencyName'] = removeAgencyName;
 
-	var valueStateAbbreviation = $formValues.find('.valueStateAbbreviation').val();
-	if(valueStateAbbreviation != null && valueStateAbbreviation !== '')
-	var removeStateAbbreviation = $formFilters.find('.removeStateAbbreviation').val() === 'true';
-	var setStateAbbreviation = removeStateAbbreviation ? null : $formValues.find('.setStateAbbreviation').val();
-	if(removeStateAbbreviation || setStateAbbreviation != null && setStateAbbreviation !== '')
-		vals['setStateAbbreviation'] = setStateAbbreviation;
-	var addStateAbbreviation = $formValues.find('.addStateAbbreviation').val();
-	if(addStateAbbreviation != null && addStateAbbreviation !== '')
-		vals['addStateAbbreviation'] = addStateAbbreviation;
-	var removeStateAbbreviation = $formValues.find('.removeStateAbbreviation').val();
-	if(removeStateAbbreviation != null && removeStateAbbreviation !== '')
-		vals['removeStateAbbreviation'] = removeStateAbbreviation;
+	var valueStateKey = $formValues.find('input.valueStateKey:checked').val();
+	if(valueStateKey != null && valueStateKey !== '')
+		vals['setStateKey'] = valueStateKey;
 
-	var valueAgencyKeys = $formValues.find('input.valueAgencyKeys:checked').val();
-	if(valueAgencyKeys != null && valueAgencyKeys !== '')
-		vals['addAgencyKeys'] = valueAgencyKeys;
+	var valueReportCardKeys = $formValues.find('input.valueReportCardKeys:checked').val();
+	if(valueReportCardKeys != null && valueReportCardKeys !== '')
+		vals['addReportCardKeys'] = valueReportCardKeys;
 
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
 	if(valueInheritPk != null && valueInheritPk !== '')
@@ -382,10 +373,10 @@ async function patchSiteState($formFilters, $formValues, pk, success, error) {
 	if(removeObjectTitle != null && removeObjectTitle !== '')
 		vals['removeObjectTitle'] = removeObjectTitle;
 
-	patchSiteStateVals(pk == null ? $.deparam(window.location.search ? window.location.search.substring(1) : window.location.search) : [{name:'fq', value:'pk:' + pk}], vals, success, error);
+	patchSiteAgencyVals(pk == null ? $.deparam(window.location.search ? window.location.search.substring(1) : window.location.search) : [{name:'fq', value:'pk:' + pk}], vals, success, error);
 }
 
-function patchSiteStateFilters($formFilters) {
+function patchSiteAgencyFilters($formFilters) {
 	var filters = [];
 	if($formFilters) {
 
@@ -425,17 +416,17 @@ function patchSiteStateFilters($formFilters) {
 		if(filterDeleted != null && filterDeleted === true)
 			filters.push({ name: 'fq', value: 'deleted:' + filterDeleted });
 
-		var filterStateName = $formFilters.find('.valueStateName').val();
-		if(filterStateName != null && filterStateName !== '')
-			filters.push({ name: 'fq', value: 'stateName:' + filterStateName });
+		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
+		if(filterAgencyName != null && filterAgencyName !== '')
+			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
 
-		var filterStateAbbreviation = $formFilters.find('.valueStateAbbreviation').val();
-		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
-			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
+		var filterStateKey = $formFilters.find('.valueStateKey').val();
+		if(filterStateKey != null && filterStateKey !== '')
+			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
 
-		var filterAgencyKeys = $formFilters.find('.valueAgencyKeys').val();
-		if(filterAgencyKeys != null && filterAgencyKeys !== '')
-			filters.push({ name: 'fq', value: 'agencyKeys:' + filterAgencyKeys });
+		var filterReportCardKeys = $formFilters.find('.valueReportCardKeys').val();
+		if(filterReportCardKeys != null && filterReportCardKeys !== '')
+			filters.push({ name: 'fq', value: 'reportCardKeys:' + filterReportCardKeys });
 
 		var filterInheritPk = $formFilters.find('.valueInheritPk').val();
 		if(filterInheritPk != null && filterInheritPk !== '')
@@ -493,9 +484,21 @@ function patchSiteStateFilters($formFilters) {
 		if(filterPageUrlPk != null && filterPageUrlPk !== '')
 			filters.push({ name: 'fq', value: 'pageUrlPk:' + filterPageUrlPk });
 
-		var filterStateKey = $formFilters.find('.valueStateKey').val();
-		if(filterStateKey != null && filterStateKey !== '')
-			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
+		var filterAgencyKey = $formFilters.find('.valueAgencyKey').val();
+		if(filterAgencyKey != null && filterAgencyKey !== '')
+			filters.push({ name: 'fq', value: 'agencyKey:' + filterAgencyKey });
+
+		var filterStateId = $formFilters.find('.valueStateId').val();
+		if(filterStateId != null && filterStateId !== '')
+			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
+
+		var filterStateName = $formFilters.find('.valueStateName').val();
+		if(filterStateName != null && filterStateName !== '')
+			filters.push({ name: 'fq', value: 'stateName:' + filterStateName });
+
+		var filterStateAbbreviation = $formFilters.find('.valueStateAbbreviation').val();
+		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
+			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
 		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
 		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
@@ -504,15 +507,15 @@ function patchSiteStateFilters($formFilters) {
 	return filters;
 }
 
-function patchSiteStateVal(filters, v, val, success, error) {
+function patchSiteAgencyVal(filters, v, val, success, error) {
 	var vals = {};
 	vals[v] = val;
-	patchSiteStateVals(filters, vals, success, error);
+	patchSiteAgencyVals(filters, vals, success, error);
 }
 
-function patchSiteStateVals(filters, vals, success, error) {
+function patchSiteAgencyVals(filters, vals, success, error) {
 	$.ajax({
-		url: '/api/state?' + $.param(filters)
+		url: '/api/agency?' + $.param(filters)
 		, dataType: 'json'
 		, type: 'PATCH'
 		, contentType: 'application/json; charset=utf-8'
@@ -524,9 +527,9 @@ function patchSiteStateVals(filters, vals, success, error) {
 
 // GET //
 
-async function getSiteState(pk) {
+async function getSiteAgency(pk) {
 	$.ajax({
-		url: '/api/state/' + id
+		url: '/api/agency/' + id
 		, dataType: 'json'
 		, type: 'GET'
 		, contentType: 'application/json; charset=utf-8'
@@ -537,17 +540,17 @@ async function getSiteState(pk) {
 
 // Search //
 
-async function searchSiteState($formFilters, success, error) {
-	var filters = searchSiteStateFilters($formFilters);
+async function searchSiteAgency($formFilters, success, error) {
+	var filters = searchSiteAgencyFilters($formFilters);
 	if(success == null)
 		success = function( data, textStatus, jQxhr ) {};
 	if(error == null)
 		error = function( jqXhr, textStatus, errorThrown ) {};
 
-	searchSiteStateVals(filters, success, error);
+	searchSiteAgencyVals(filters, success, error);
 }
 
-function searchSiteStateFilters($formFilters) {
+function searchSiteAgencyFilters($formFilters) {
 	var filters = [];
 	if($formFilters) {
 
@@ -587,17 +590,17 @@ function searchSiteStateFilters($formFilters) {
 		if(filterDeleted != null && filterDeleted === true)
 			filters.push({ name: 'fq', value: 'deleted:' + filterDeleted });
 
-		var filterStateName = $formFilters.find('.valueStateName').val();
-		if(filterStateName != null && filterStateName !== '')
-			filters.push({ name: 'fq', value: 'stateName:' + filterStateName });
+		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
+		if(filterAgencyName != null && filterAgencyName !== '')
+			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
 
-		var filterStateAbbreviation = $formFilters.find('.valueStateAbbreviation').val();
-		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
-			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
+		var filterStateKey = $formFilters.find('.valueStateKey').val();
+		if(filterStateKey != null && filterStateKey !== '')
+			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
 
-		var filterAgencyKeys = $formFilters.find('.valueAgencyKeys').val();
-		if(filterAgencyKeys != null && filterAgencyKeys !== '')
-			filters.push({ name: 'fq', value: 'agencyKeys:' + filterAgencyKeys });
+		var filterReportCardKeys = $formFilters.find('.valueReportCardKeys').val();
+		if(filterReportCardKeys != null && filterReportCardKeys !== '')
+			filters.push({ name: 'fq', value: 'reportCardKeys:' + filterReportCardKeys });
 
 		var filterInheritPk = $formFilters.find('.valueInheritPk').val();
 		if(filterInheritPk != null && filterInheritPk !== '')
@@ -655,9 +658,21 @@ function searchSiteStateFilters($formFilters) {
 		if(filterPageUrlPk != null && filterPageUrlPk !== '')
 			filters.push({ name: 'fq', value: 'pageUrlPk:' + filterPageUrlPk });
 
-		var filterStateKey = $formFilters.find('.valueStateKey').val();
-		if(filterStateKey != null && filterStateKey !== '')
-			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
+		var filterAgencyKey = $formFilters.find('.valueAgencyKey').val();
+		if(filterAgencyKey != null && filterAgencyKey !== '')
+			filters.push({ name: 'fq', value: 'agencyKey:' + filterAgencyKey });
+
+		var filterStateId = $formFilters.find('.valueStateId').val();
+		if(filterStateId != null && filterStateId !== '')
+			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
+
+		var filterStateName = $formFilters.find('.valueStateName').val();
+		if(filterStateName != null && filterStateName !== '')
+			filters.push({ name: 'fq', value: 'stateName:' + filterStateName });
+
+		var filterStateAbbreviation = $formFilters.find('.valueStateAbbreviation').val();
+		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
+			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
 		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
 		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
@@ -666,11 +681,11 @@ function searchSiteStateFilters($formFilters) {
 	return filters;
 }
 
-function searchSiteStateVals(filters, success, error) {
+function searchSiteAgencyVals(filters, success, error) {
 
-	filters.push({ name: 'sort', value: 'stateName asc' });
+	filters.push({ name: 'sort', value: 'agencyName asc' });
 	$.ajax({
-		url: '/api/state?' + $.param(filters)
+		url: '/api/agency?' + $.param(filters)
 		, dataType: 'json'
 		, type: 'GET'
 		, contentType: 'application/json; charset=utf-8'
@@ -679,11 +694,11 @@ function searchSiteStateVals(filters, success, error) {
 	});
 }
 
-function suggestSiteStateObjectSuggest($formFilters, $list) {
+function suggestSiteAgencyObjectSuggest($formFilters, $list) {
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'far fa-globe-americas ');
+			var $i = $('<i>').attr('class', 'far fa-road ');
 			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
 			var $li = $('<li>');
 			var $a = $('<a>').attr('href', o['pageUrlPk']);
@@ -694,26 +709,26 @@ function suggestSiteStateObjectSuggest($formFilters, $list) {
 		});
 	};
 	error = function( jqXhr, textStatus, errorThrown ) {};
-	searchSiteStateVals($formFilters, success, error);
+	searchSiteAgencyVals($formFilters, success, error);
 }
 
-function suggestSiteStateAgencyKeys(filters, $list, pk = null, attribute=true) {
+function suggestSiteAgencyStateKey(filters, $list, pk = null, attribute=true) {
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'fa fa-road ');
+			var $i = $('<i>').attr('class', 'fa fa-globe-americas ');
 			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
 			$a.append($span);
-			var val = o['stateKey'];
+			var val = o['agencyKeys'];
 			var checked = pk == null ? false : Array.isArray(val) ? val.includes(pk.toString()) : val == pk;
 			var $input = $('<input>');
-			$input.attr('id', 'GET_agencyKeys_' + pk + '_stateKey_' + o['pk']);
+			$input.attr('id', 'GET_stateKey_' + pk + '_agencyKeys_' + o['pk']);
 			$input.attr('value', o['pk']);
-			$input.attr('class', 'valueAgencyKeys w3-check ');
+			$input.attr('class', 'valueStateKey w3-check ');
 			if(pk != null) {
-				$input.attr('onchange', "var $input = $('#GET_agencyKeys_" + pk + "_stateKey_" + o['pk'] + "'); patchSiteStateVals([{ name: 'fq', value: 'pk:" + pk + "' }], { [($input.prop('checked') ? 'add' : 'remove') + 'AgencyKeys']: \"" + o['pk'] + "\" } ); ");
+				$input.attr('onchange', "var $input = $('#GET_stateKey_" + pk + "_agencyKeys_" + o['pk'] + "'); patchSiteAgencyVals([{ name: 'fq', value: 'pk:" + pk + "' }], { [($input.prop('checked') ? 'set' : 'remove') + 'StateKey']: \"" + o['pk'] + "\" } ); ");
 				$input.attr('onclick', 'removeGlow($(this)); ');
 			}
 			$input.attr('type', 'checkbox');
@@ -725,27 +740,63 @@ function suggestSiteStateAgencyKeys(filters, $list, pk = null, attribute=true) {
 			$li.append($a);
 			$list.append($li);
 		});
-		var focusId = $('#SiteStateForm :input[name="focusId"]').val();
+		var focusId = $('#SiteAgencyForm :input[name="focusId"]').val();
 		if(focusId)
 			$('#' + focusId).parent().next().find('input').focus();
 	};
 	error = function( jqXhr, textStatus, errorThrown ) {};
-	searchSiteAgencyVals(filters, success, error);
+	searchSiteStateVals(filters, success, error);
+}
+
+function suggestSiteAgencyReportCardKeys(filters, $list, pk = null, attribute=true) {
+	success = function( data, textStatus, jQxhr ) {
+		$list.empty();
+		$.each(data['list'], function(i, o) {
+			var $i = $('<i>').attr('class', 'fa fa-newspaper ');
+			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
+			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
+			$a.append($i);
+			$a.append($span);
+			var val = o['agencyKey'];
+			var checked = pk == null ? false : Array.isArray(val) ? val.includes(pk.toString()) : val == pk;
+			var $input = $('<input>');
+			$input.attr('id', 'GET_reportCardKeys_' + pk + '_agencyKey_' + o['pk']);
+			$input.attr('value', o['pk']);
+			$input.attr('class', 'valueReportCardKeys w3-check ');
+			if(pk != null) {
+				$input.attr('onchange', "var $input = $('#GET_reportCardKeys_" + pk + "_agencyKey_" + o['pk'] + "'); patchSiteAgencyVals([{ name: 'fq', value: 'pk:" + pk + "' }], { [($input.prop('checked') ? 'add' : 'remove') + 'ReportCardKeys']: \"" + o['pk'] + "\" } ); ");
+				$input.attr('onclick', 'removeGlow($(this)); ');
+			}
+			$input.attr('type', 'checkbox');
+			if(checked)
+				$input.attr('checked', 'checked');
+			var $li = $('<li>');
+			if(attribute)
+				$li.append($input);
+			$li.append($a);
+			$list.append($li);
+		});
+		var focusId = $('#SiteAgencyForm :input[name="focusId"]').val();
+		if(focusId)
+			$('#' + focusId).parent().next().find('input').focus();
+	};
+	error = function( jqXhr, textStatus, errorThrown ) {};
+	searchReportCardVals(filters, success, error);
 }
 
 // AdminSearch //
 
-async function adminsearchSiteState($formFilters, success, error) {
-	var filters = adminsearchSiteStateFilters($formFilters);
+async function adminsearchSiteAgency($formFilters, success, error) {
+	var filters = adminsearchSiteAgencyFilters($formFilters);
 	if(success == null)
 		success = function( data, textStatus, jQxhr ) {};
 	if(error == null)
 		error = function( jqXhr, textStatus, errorThrown ) {};
 
-	adminsearchSiteStateVals(filters, success, error);
+	adminsearchSiteAgencyVals(filters, success, error);
 }
 
-function adminsearchSiteStateFilters($formFilters) {
+function adminsearchSiteAgencyFilters($formFilters) {
 	var filters = [];
 	if($formFilters) {
 
@@ -785,17 +836,17 @@ function adminsearchSiteStateFilters($formFilters) {
 		if(filterDeleted != null && filterDeleted === true)
 			filters.push({ name: 'fq', value: 'deleted:' + filterDeleted });
 
-		var filterStateName = $formFilters.find('.valueStateName').val();
-		if(filterStateName != null && filterStateName !== '')
-			filters.push({ name: 'fq', value: 'stateName:' + filterStateName });
+		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
+		if(filterAgencyName != null && filterAgencyName !== '')
+			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
 
-		var filterStateAbbreviation = $formFilters.find('.valueStateAbbreviation').val();
-		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
-			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
+		var filterStateKey = $formFilters.find('.valueStateKey').val();
+		if(filterStateKey != null && filterStateKey !== '')
+			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
 
-		var filterAgencyKeys = $formFilters.find('.valueAgencyKeys').val();
-		if(filterAgencyKeys != null && filterAgencyKeys !== '')
-			filters.push({ name: 'fq', value: 'agencyKeys:' + filterAgencyKeys });
+		var filterReportCardKeys = $formFilters.find('.valueReportCardKeys').val();
+		if(filterReportCardKeys != null && filterReportCardKeys !== '')
+			filters.push({ name: 'fq', value: 'reportCardKeys:' + filterReportCardKeys });
 
 		var filterInheritPk = $formFilters.find('.valueInheritPk').val();
 		if(filterInheritPk != null && filterInheritPk !== '')
@@ -853,9 +904,21 @@ function adminsearchSiteStateFilters($formFilters) {
 		if(filterPageUrlPk != null && filterPageUrlPk !== '')
 			filters.push({ name: 'fq', value: 'pageUrlPk:' + filterPageUrlPk });
 
-		var filterStateKey = $formFilters.find('.valueStateKey').val();
-		if(filterStateKey != null && filterStateKey !== '')
-			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
+		var filterAgencyKey = $formFilters.find('.valueAgencyKey').val();
+		if(filterAgencyKey != null && filterAgencyKey !== '')
+			filters.push({ name: 'fq', value: 'agencyKey:' + filterAgencyKey });
+
+		var filterStateId = $formFilters.find('.valueStateId').val();
+		if(filterStateId != null && filterStateId !== '')
+			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
+
+		var filterStateName = $formFilters.find('.valueStateName').val();
+		if(filterStateName != null && filterStateName !== '')
+			filters.push({ name: 'fq', value: 'stateName:' + filterStateName });
+
+		var filterStateAbbreviation = $formFilters.find('.valueStateAbbreviation').val();
+		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
+			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
 		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
 		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
@@ -864,11 +927,11 @@ function adminsearchSiteStateFilters($formFilters) {
 	return filters;
 }
 
-function adminsearchSiteStateVals(filters, success, error) {
+function adminsearchSiteAgencyVals(filters, success, error) {
 
-	filters.push({ name: 'sort', value: 'stateName asc' });
+	filters.push({ name: 'sort', value: 'agencyName asc' });
 	$.ajax({
-		url: '/api/admin/state?' + $.param(filters)
+		url: '/api/admin/agency?' + $.param(filters)
 		, dataType: 'json'
 		, type: 'GET'
 		, contentType: 'application/json; charset=utf-8'
@@ -877,11 +940,11 @@ function adminsearchSiteStateVals(filters, success, error) {
 	});
 }
 
-function suggestSiteStateObjectSuggest($formFilters, $list) {
+function suggestSiteAgencyObjectSuggest($formFilters, $list) {
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'far fa-globe-americas ');
+			var $i = $('<i>').attr('class', 'far fa-road ');
 			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
 			var $li = $('<li>');
 			var $a = $('<a>').attr('href', o['pageUrlPk']);
@@ -892,26 +955,26 @@ function suggestSiteStateObjectSuggest($formFilters, $list) {
 		});
 	};
 	error = function( jqXhr, textStatus, errorThrown ) {};
-	searchSiteStateVals($formFilters, success, error);
+	searchSiteAgencyVals($formFilters, success, error);
 }
 
-function suggestSiteStateAgencyKeys(filters, $list, pk = null, attribute=true) {
+function suggestSiteAgencyStateKey(filters, $list, pk = null, attribute=true) {
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
-			var $i = $('<i>').attr('class', 'fa fa-road ');
+			var $i = $('<i>').attr('class', 'fa fa-globe-americas ');
 			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
 			$a.append($span);
-			var val = o['stateKey'];
+			var val = o['agencyKeys'];
 			var checked = pk == null ? false : Array.isArray(val) ? val.includes(pk.toString()) : val == pk;
 			var $input = $('<input>');
-			$input.attr('id', 'GET_agencyKeys_' + pk + '_stateKey_' + o['pk']);
+			$input.attr('id', 'GET_stateKey_' + pk + '_agencyKeys_' + o['pk']);
 			$input.attr('value', o['pk']);
-			$input.attr('class', 'valueAgencyKeys w3-check ');
+			$input.attr('class', 'valueStateKey w3-check ');
 			if(pk != null) {
-				$input.attr('onchange', "var $input = $('#GET_agencyKeys_" + pk + "_stateKey_" + o['pk'] + "'); patchSiteStateVals([{ name: 'fq', value: 'pk:" + pk + "' }], { [($input.prop('checked') ? 'add' : 'remove') + 'AgencyKeys']: \"" + o['pk'] + "\" } ); ");
+				$input.attr('onchange', "var $input = $('#GET_stateKey_" + pk + "_agencyKeys_" + o['pk'] + "'); patchSiteAgencyVals([{ name: 'fq', value: 'pk:" + pk + "' }], { [($input.prop('checked') ? 'set' : 'remove') + 'StateKey']: \"" + o['pk'] + "\" } ); ");
 				$input.attr('onclick', 'removeGlow($(this)); ');
 			}
 			$input.attr('type', 'checkbox');
@@ -923,22 +986,58 @@ function suggestSiteStateAgencyKeys(filters, $list, pk = null, attribute=true) {
 			$li.append($a);
 			$list.append($li);
 		});
-		var focusId = $('#SiteStateForm :input[name="focusId"]').val();
+		var focusId = $('#SiteAgencyForm :input[name="focusId"]').val();
 		if(focusId)
 			$('#' + focusId).parent().next().find('input').focus();
 	};
 	error = function( jqXhr, textStatus, errorThrown ) {};
-	searchSiteAgencyVals(filters, success, error);
+	searchSiteStateVals(filters, success, error);
 }
 
-async function websocketSiteState(success) {
+function suggestSiteAgencyReportCardKeys(filters, $list, pk = null, attribute=true) {
+	success = function( data, textStatus, jQxhr ) {
+		$list.empty();
+		$.each(data['list'], function(i, o) {
+			var $i = $('<i>').attr('class', 'fa fa-newspaper ');
+			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
+			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
+			$a.append($i);
+			$a.append($span);
+			var val = o['agencyKey'];
+			var checked = pk == null ? false : Array.isArray(val) ? val.includes(pk.toString()) : val == pk;
+			var $input = $('<input>');
+			$input.attr('id', 'GET_reportCardKeys_' + pk + '_agencyKey_' + o['pk']);
+			$input.attr('value', o['pk']);
+			$input.attr('class', 'valueReportCardKeys w3-check ');
+			if(pk != null) {
+				$input.attr('onchange', "var $input = $('#GET_reportCardKeys_" + pk + "_agencyKey_" + o['pk'] + "'); patchSiteAgencyVals([{ name: 'fq', value: 'pk:" + pk + "' }], { [($input.prop('checked') ? 'add' : 'remove') + 'ReportCardKeys']: \"" + o['pk'] + "\" } ); ");
+				$input.attr('onclick', 'removeGlow($(this)); ');
+			}
+			$input.attr('type', 'checkbox');
+			if(checked)
+				$input.attr('checked', 'checked');
+			var $li = $('<li>');
+			if(attribute)
+				$li.append($input);
+			$li.append($a);
+			$list.append($li);
+		});
+		var focusId = $('#SiteAgencyForm :input[name="focusId"]').val();
+		if(focusId)
+			$('#' + focusId).parent().next().find('input').focus();
+	};
+	error = function( jqXhr, textStatus, errorThrown ) {};
+	searchReportCardVals(filters, success, error);
+}
+
+async function websocketSiteAgency(success) {
 	window.eventBus.onopen = function () {
 
-		window.eventBus.registerHandler('websocketSiteState', function (error, message) {
+		window.eventBus.registerHandler('websocketSiteAgency', function (error, message) {
 			var json = JSON.parse(message['body']);
 			var id = json['id'];
 			var pk = json['pk'];
-			var pkPage = $('#SiteStateForm :input[name=pk]').val();
+			var pkPage = $('#SiteAgencyForm :input[name=pk]').val();
 			var pks = json['pks'];
 			var empty = json['empty'];
 			var numFound = json['numFound'];
@@ -947,13 +1046,13 @@ async function websocketSiteState(success) {
 			var $box = $('<div>').attr('class', 'w3-display-topright w3-quarter box-' + id + ' ').attr('id', 'box-' + id);
 			var $margin = $('<div>').attr('class', 'w3-margin ').attr('id', 'margin-' + id);
 			var $card = $('<div>').attr('class', 'w3-card w3-white ').attr('id', 'card-' + id);
-			var $header = $('<div>').attr('class', 'w3-container fa-pale-blue ').attr('id', 'header-' + id);
-			var $i = $('<i>').attr('class', 'far fa-globe-americas w3-margin-right ').attr('id', 'icon-' + id);
-			var $headerSpan = $('<span>').attr('class', '').text('modify states');
+			var $header = $('<div>').attr('class', 'w3-container fa-pale-yellow ').attr('id', 'header-' + id);
+			var $i = $('<i>').attr('class', 'far fa-road w3-margin-right ').attr('id', 'icon-' + id);
+			var $headerSpan = $('<span>').attr('class', '').text('modify agencies');
 			var $x = $('<span>').attr('class', 'w3-button w3-display-topright ').attr('onclick', '$("#card-' + id + '").hide(); ').attr('id', 'x-' + id);
 			var $body = $('<div>').attr('class', 'w3-container w3-padding ').attr('id', 'text-' + id);
 			var $bar = $('<div>').attr('class', 'w3-light-gray ').attr('id', 'bar-' + id);
-			var $progress = $('<div>').attr('class', 'w3-pale-blue ').attr('style', 'height: 24px; width: ' + percent + '; ').attr('id', 'progress-' + id).text(numPATCH + '/' + numFound);
+			var $progress = $('<div>').attr('class', 'w3-pale-yellow ').attr('style', 'height: 24px; width: ' + percent + '; ').attr('id', 'progress-' + id).text(numPATCH + '/' + numFound);
 			$card.append($header);
 			$header.append($i);
 			$header.append($headerSpan);
@@ -972,22 +1071,36 @@ async function websocketSiteState(success) {
 			}
 		});
 
-		window.eventBus.registerHandler('websocketSiteAgency', function (error, message) {
-			$('#Page_agencyKeys').trigger('oninput');
-			$('#Page_agencyKeys_add').text('add a agency');
-			$('#Page_agencyKeys_add').removeClass('w3-disabled');
-			$('#Page_agencyKeys_add').attr('disabled', false);
+		window.eventBus.registerHandler('websocketSiteState', function (error, message) {
+			$('#Page_stateKey').trigger('oninput');
+			$('#Page_stateKey_add').text('add a state');
+			$('#Page_stateKey_add').removeClass('w3-disabled');
+			$('#Page_stateKey_add').attr('disabled', false);
 		});
 
-		window.eventBus.registerHandler('websocketSiteAgency', function (error, message) {
-			$('#Page_agencyKeys').trigger('oninput');
-			$('#Page_agencyKeys_add').text('add a agency');
-			$('#Page_agencyKeys_add').removeClass('w3-disabled');
-			$('#Page_agencyKeys_add').attr('disabled', false);
+		window.eventBus.registerHandler('websocketReportCard', function (error, message) {
+			$('#Page_reportCardKeys').trigger('oninput');
+			$('#Page_reportCardKeys_add').text('add a report card');
+			$('#Page_reportCardKeys_add').removeClass('w3-disabled');
+			$('#Page_reportCardKeys_add').attr('disabled', false);
+		});
+
+		window.eventBus.registerHandler('websocketSiteState', function (error, message) {
+			$('#Page_stateKey').trigger('oninput');
+			$('#Page_stateKey_add').text('add a state');
+			$('#Page_stateKey_add').removeClass('w3-disabled');
+			$('#Page_stateKey_add').attr('disabled', false);
+		});
+
+		window.eventBus.registerHandler('websocketReportCard', function (error, message) {
+			$('#Page_reportCardKeys').trigger('oninput');
+			$('#Page_reportCardKeys_add').text('add a report card');
+			$('#Page_reportCardKeys_add').removeClass('w3-disabled');
+			$('#Page_reportCardKeys_add').attr('disabled', false);
 		});
 	}
 }
-async function websocketSiteStateInner(apiRequest) {
+async function websocketSiteAgencyInner(apiRequest) {
 	var pk = apiRequest['pk'];
 	var pks = apiRequest['pks'];
 	var classes = apiRequest['classes'];
@@ -995,307 +1108,343 @@ async function websocketSiteStateInner(apiRequest) {
 	var empty = apiRequest['empty'];
 
 	if(pk != null) {
-		searchSiteStateVals([ {name: 'fq', value: 'pk:' + pk} ], function( data, textStatus, jQxhr ) {
+		searchSiteAgencyVals([ {name: 'fq', value: 'pk:' + pk} ], function( data, textStatus, jQxhr ) {
 			var o = data['list'][0];
 			var val = o['pk'];
 			if(vars.includes('pk')) {
-				$('.inputSiteState' + pk + 'Pk').each(function() {
+				$('.inputSiteAgency' + pk + 'Pk').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varSiteState' + pk + 'Pk').each(function() {
+				$('.varSiteAgency' + pk + 'Pk').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputSiteState' + pk + 'Pk'));
+				addGlow($('.inputSiteAgency' + pk + 'Pk'));
 			}
 			var val = o['created'];
 			if(vars.includes('created')) {
-				$('.inputSiteState' + pk + 'Created').each(function() {
+				$('.inputSiteAgency' + pk + 'Created').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varSiteState' + pk + 'Created').each(function() {
+				$('.varSiteAgency' + pk + 'Created').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputSiteState' + pk + 'Created'));
+				addGlow($('.inputSiteAgency' + pk + 'Created'));
 			}
 			var val = o['modified'];
 			if(vars.includes('modified')) {
-				$('.inputSiteState' + pk + 'Modified').each(function() {
+				$('.inputSiteAgency' + pk + 'Modified').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varSiteState' + pk + 'Modified').each(function() {
+				$('.varSiteAgency' + pk + 'Modified').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputSiteState' + pk + 'Modified'));
+				addGlow($('.inputSiteAgency' + pk + 'Modified'));
 			}
 			var val = o['objectId'];
 			if(vars.includes('objectId')) {
-				$('.inputSiteState' + pk + 'ObjectId').each(function() {
+				$('.inputSiteAgency' + pk + 'ObjectId').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varSiteState' + pk + 'ObjectId').each(function() {
+				$('.varSiteAgency' + pk + 'ObjectId').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputSiteState' + pk + 'ObjectId'));
+				addGlow($('.inputSiteAgency' + pk + 'ObjectId'));
 			}
 			var val = o['archived'];
 			if(vars.includes('archived')) {
-				$('.inputSiteState' + pk + 'Archived').each(function() {
+				$('.inputSiteAgency' + pk + 'Archived').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varSiteState' + pk + 'Archived').each(function() {
+				$('.varSiteAgency' + pk + 'Archived').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputSiteState' + pk + 'Archived'));
+				addGlow($('.inputSiteAgency' + pk + 'Archived'));
 			}
 			var val = o['deleted'];
 			if(vars.includes('deleted')) {
-				$('.inputSiteState' + pk + 'Deleted').each(function() {
+				$('.inputSiteAgency' + pk + 'Deleted').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varSiteState' + pk + 'Deleted').each(function() {
+				$('.varSiteAgency' + pk + 'Deleted').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputSiteState' + pk + 'Deleted'));
+				addGlow($('.inputSiteAgency' + pk + 'Deleted'));
 			}
-			var val = o['stateName'];
-			if(vars.includes('stateName')) {
-				$('.inputSiteState' + pk + 'StateName').each(function() {
+			var val = o['agencyName'];
+			if(vars.includes('agencyName')) {
+				$('.inputSiteAgency' + pk + 'AgencyName').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varSiteState' + pk + 'StateName').each(function() {
+				$('.varSiteAgency' + pk + 'AgencyName').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputSiteState' + pk + 'StateName'));
-			}
-			var val = o['stateAbbreviation'];
-			if(vars.includes('stateAbbreviation')) {
-				$('.inputSiteState' + pk + 'StateAbbreviation').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'StateAbbreviation').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'StateAbbreviation'));
-			}
-			var val = o['agencyKeys'];
-			if(vars.includes('agencyKeys')) {
-				$('.inputSiteState' + pk + 'AgencyKeys').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'AgencyKeys').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'AgencyKeys'));
-			}
-			var val = o['inheritPk'];
-			if(vars.includes('inheritPk')) {
-				$('.inputSiteState' + pk + 'InheritPk').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'InheritPk').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'InheritPk'));
-			}
-			var val = o['id'];
-			if(vars.includes('id')) {
-				$('.inputSiteState' + pk + 'Id').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'Id').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'Id'));
-			}
-			var val = o['classCanonicalName'];
-			if(vars.includes('classCanonicalName')) {
-				$('.inputSiteState' + pk + 'ClassCanonicalName').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'ClassCanonicalName').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'ClassCanonicalName'));
-			}
-			var val = o['classSimpleName'];
-			if(vars.includes('classSimpleName')) {
-				$('.inputSiteState' + pk + 'ClassSimpleName').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'ClassSimpleName').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'ClassSimpleName'));
-			}
-			var val = o['classCanonicalNames'];
-			if(vars.includes('classCanonicalNames')) {
-				$('.inputSiteState' + pk + 'ClassCanonicalNames').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'ClassCanonicalNames').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'ClassCanonicalNames'));
-			}
-			var val = o['sessionId'];
-			if(vars.includes('sessionId')) {
-				$('.inputSiteState' + pk + 'SessionId').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'SessionId').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'SessionId'));
-			}
-			var val = o['userId'];
-			if(vars.includes('userId')) {
-				$('.inputSiteState' + pk + 'UserId').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'UserId').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'UserId'));
-			}
-			var val = o['userKey'];
-			if(vars.includes('userKey')) {
-				$('.inputSiteState' + pk + 'UserKey').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'UserKey').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'UserKey'));
-			}
-			var val = o['saves'];
-			if(vars.includes('saves')) {
-				$('.inputSiteState' + pk + 'Saves').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'Saves').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'Saves'));
-			}
-			var val = o['objectTitle'];
-			if(vars.includes('objectTitle')) {
-				$('.inputSiteState' + pk + 'ObjectTitle').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'ObjectTitle').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'ObjectTitle'));
-			}
-			var val = o['objectSuggest'];
-			if(vars.includes('objectSuggest')) {
-				$('.inputSiteState' + pk + 'ObjectSuggest').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'ObjectSuggest').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'ObjectSuggest'));
-			}
-			var val = o['objectText'];
-			if(vars.includes('objectText')) {
-				$('.inputSiteState' + pk + 'ObjectText').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'ObjectText').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'ObjectText'));
-			}
-			var val = o['pageUrlId'];
-			if(vars.includes('pageUrlId')) {
-				$('.inputSiteState' + pk + 'PageUrlId').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'PageUrlId').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'PageUrlId'));
-			}
-			var val = o['pageUrlPk'];
-			if(vars.includes('pageUrlPk')) {
-				$('.inputSiteState' + pk + 'PageUrlPk').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varSiteState' + pk + 'PageUrlPk').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputSiteState' + pk + 'PageUrlPk'));
+				addGlow($('.inputSiteAgency' + pk + 'AgencyName'));
 			}
 			var val = o['stateKey'];
 			if(vars.includes('stateKey')) {
-				$('.inputSiteState' + pk + 'StateKey').each(function() {
+				$('.inputSiteAgency' + pk + 'StateKey').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varSiteState' + pk + 'StateKey').each(function() {
+				$('.varSiteAgency' + pk + 'StateKey').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputSiteState' + pk + 'StateKey'));
+				addGlow($('.inputSiteAgency' + pk + 'StateKey'));
+			}
+			var val = o['reportCardKeys'];
+			if(vars.includes('reportCardKeys')) {
+				$('.inputSiteAgency' + pk + 'ReportCardKeys').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'ReportCardKeys').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'ReportCardKeys'));
+			}
+			var val = o['inheritPk'];
+			if(vars.includes('inheritPk')) {
+				$('.inputSiteAgency' + pk + 'InheritPk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'InheritPk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'InheritPk'));
+			}
+			var val = o['id'];
+			if(vars.includes('id')) {
+				$('.inputSiteAgency' + pk + 'Id').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'Id').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'Id'));
+			}
+			var val = o['classCanonicalName'];
+			if(vars.includes('classCanonicalName')) {
+				$('.inputSiteAgency' + pk + 'ClassCanonicalName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'ClassCanonicalName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'ClassCanonicalName'));
+			}
+			var val = o['classSimpleName'];
+			if(vars.includes('classSimpleName')) {
+				$('.inputSiteAgency' + pk + 'ClassSimpleName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'ClassSimpleName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'ClassSimpleName'));
+			}
+			var val = o['classCanonicalNames'];
+			if(vars.includes('classCanonicalNames')) {
+				$('.inputSiteAgency' + pk + 'ClassCanonicalNames').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'ClassCanonicalNames').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'ClassCanonicalNames'));
+			}
+			var val = o['sessionId'];
+			if(vars.includes('sessionId')) {
+				$('.inputSiteAgency' + pk + 'SessionId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'SessionId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'SessionId'));
+			}
+			var val = o['userId'];
+			if(vars.includes('userId')) {
+				$('.inputSiteAgency' + pk + 'UserId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'UserId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'UserId'));
+			}
+			var val = o['userKey'];
+			if(vars.includes('userKey')) {
+				$('.inputSiteAgency' + pk + 'UserKey').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'UserKey').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'UserKey'));
+			}
+			var val = o['saves'];
+			if(vars.includes('saves')) {
+				$('.inputSiteAgency' + pk + 'Saves').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'Saves').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'Saves'));
+			}
+			var val = o['objectTitle'];
+			if(vars.includes('objectTitle')) {
+				$('.inputSiteAgency' + pk + 'ObjectTitle').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'ObjectTitle').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'ObjectTitle'));
+			}
+			var val = o['objectSuggest'];
+			if(vars.includes('objectSuggest')) {
+				$('.inputSiteAgency' + pk + 'ObjectSuggest').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'ObjectSuggest').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'ObjectSuggest'));
+			}
+			var val = o['objectText'];
+			if(vars.includes('objectText')) {
+				$('.inputSiteAgency' + pk + 'ObjectText').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'ObjectText').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'ObjectText'));
+			}
+			var val = o['pageUrlId'];
+			if(vars.includes('pageUrlId')) {
+				$('.inputSiteAgency' + pk + 'PageUrlId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'PageUrlId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'PageUrlId'));
+			}
+			var val = o['pageUrlPk'];
+			if(vars.includes('pageUrlPk')) {
+				$('.inputSiteAgency' + pk + 'PageUrlPk').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'PageUrlPk').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'PageUrlPk'));
+			}
+			var val = o['agencyKey'];
+			if(vars.includes('agencyKey')) {
+				$('.inputSiteAgency' + pk + 'AgencyKey').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'AgencyKey').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'AgencyKey'));
+			}
+			var val = o['stateId'];
+			if(vars.includes('stateId')) {
+				$('.inputSiteAgency' + pk + 'StateId').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'StateId').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'StateId'));
+			}
+			var val = o['stateName'];
+			if(vars.includes('stateName')) {
+				$('.inputSiteAgency' + pk + 'StateName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'StateName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'StateName'));
+			}
+			var val = o['stateAbbreviation'];
+			if(vars.includes('stateAbbreviation')) {
+				$('.inputSiteAgency' + pk + 'StateAbbreviation').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'StateAbbreviation').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'StateAbbreviation'));
 			}
 			var val = o['agencyCompleteName'];
 			if(vars.includes('agencyCompleteName')) {
-				$('.inputSiteState' + pk + 'AgencyCompleteName').each(function() {
+				$('.inputSiteAgency' + pk + 'AgencyCompleteName').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varSiteState' + pk + 'AgencyCompleteName').each(function() {
+				$('.varSiteAgency' + pk + 'AgencyCompleteName').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputSiteState' + pk + 'AgencyCompleteName'));
+				addGlow($('.inputSiteAgency' + pk + 'AgencyCompleteName'));
 			}
 		});
 	}

@@ -76,9 +76,9 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valueReportCardEndYear != null && valueReportCardEndYear !== '')
 		vals['reportCardEndYear'] = valueReportCardEndYear;
 
-	var valueCountyKey = $formValues.find('input.valueCountyKey:checked').val();
-	if(valueCountyKey != null && valueCountyKey !== '')
-		vals['countyKey'] = valueCountyKey;
+	var valueAgencyKey = $formValues.find('input.valueAgencyKey:checked').val();
+	if(valueAgencyKey != null && valueAgencyKey !== '')
+		vals['agencyKey'] = valueAgencyKey;
 
 	var valuePupilsIndianMale = $formValues.find('.valuePupilsIndianMale').val();
 	if(valuePupilsIndianMale != null && valuePupilsIndianMale !== '')
@@ -533,9 +533,9 @@ async function postReportCard($formValues, success, error) {
 	if(valueReportCardEndYear != null && valueReportCardEndYear !== '')
 		vals['reportCardEndYear'] = valueReportCardEndYear;
 
-	var valueCountyKey = $formValues.find('.valueCountyKey').val();
-	if(valueCountyKey != null && valueCountyKey !== '')
-		vals['countyKey'] = valueCountyKey;
+	var valueAgencyKey = $formValues.find('.valueAgencyKey').val();
+	if(valueAgencyKey != null && valueAgencyKey !== '')
+		vals['agencyKey'] = valueAgencyKey;
 
 	var valuePupilsIndianMale = $formValues.find('.valuePupilsIndianMale').val();
 	if(valuePupilsIndianMale != null && valuePupilsIndianMale !== '')
@@ -1067,9 +1067,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removeReportCardEndYear != null && removeReportCardEndYear !== '')
 		vals['removeReportCardEndYear'] = removeReportCardEndYear;
 
-	var valueCountyKey = $formValues.find('input.valueCountyKey:checked').val();
-	if(valueCountyKey != null && valueCountyKey !== '')
-		vals['setCountyKey'] = valueCountyKey;
+	var valueAgencyKey = $formValues.find('input.valueAgencyKey:checked').val();
+	if(valueAgencyKey != null && valueAgencyKey !== '')
+		vals['setAgencyKey'] = valueAgencyKey;
 
 	var valuePupilsIndianMale = $formValues.find('.valuePupilsIndianMale').val();
 	if(valuePupilsIndianMale != null && valuePupilsIndianMale !== '')
@@ -2383,9 +2383,9 @@ function patchReportCardFilters($formFilters) {
 		if(filterReportCardEndYear != null && filterReportCardEndYear !== '')
 			filters.push({ name: 'fq', value: 'reportCardEndYear:' + filterReportCardEndYear });
 
-		var filterCountyKey = $formFilters.find('.valueCountyKey').val();
-		if(filterCountyKey != null && filterCountyKey !== '')
-			filters.push({ name: 'fq', value: 'countyKey:' + filterCountyKey });
+		var filterAgencyKey = $formFilters.find('.valueAgencyKey').val();
+		if(filterAgencyKey != null && filterAgencyKey !== '')
+			filters.push({ name: 'fq', value: 'agencyKey:' + filterAgencyKey });
 
 		var filterPupilsIndianMale = $formFilters.find('.valuePupilsIndianMale').val();
 		if(filterPupilsIndianMale != null && filterPupilsIndianMale !== '')
@@ -2827,9 +2827,9 @@ function patchReportCardFilters($formFilters) {
 		if(filterStateId != null && filterStateId !== '')
 			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
 
-		var filterCountyId = $formFilters.find('.valueCountyId').val();
-		if(filterCountyId != null && filterCountyId !== '')
-			filters.push({ name: 'fq', value: 'countyId:' + filterCountyId });
+		var filterAgencyId = $formFilters.find('.valueAgencyId').val();
+		if(filterAgencyId != null && filterAgencyId !== '')
+			filters.push({ name: 'fq', value: 'agencyId:' + filterAgencyId });
 
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
@@ -2839,13 +2839,13 @@ function patchReportCardFilters($formFilters) {
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
-		var filterCountyName = $formFilters.find('.valueCountyName').val();
-		if(filterCountyName != null && filterCountyName !== '')
-			filters.push({ name: 'fq', value: 'countyName:' + filterCountyName });
+		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
+		if(filterAgencyName != null && filterAgencyName !== '')
+			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
 
-		var filterCountyCompleteName = $formFilters.find('.valueCountyCompleteName').val();
-		if(filterCountyCompleteName != null && filterCountyCompleteName !== '')
-			filters.push({ name: 'fq', value: 'countyCompleteName:' + filterCountyCompleteName });
+		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
+		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
+			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
 	}
 	return filters;
 }
@@ -2941,9 +2941,9 @@ function searchReportCardFilters($formFilters) {
 		if(filterReportCardEndYear != null && filterReportCardEndYear !== '')
 			filters.push({ name: 'fq', value: 'reportCardEndYear:' + filterReportCardEndYear });
 
-		var filterCountyKey = $formFilters.find('.valueCountyKey').val();
-		if(filterCountyKey != null && filterCountyKey !== '')
-			filters.push({ name: 'fq', value: 'countyKey:' + filterCountyKey });
+		var filterAgencyKey = $formFilters.find('.valueAgencyKey').val();
+		if(filterAgencyKey != null && filterAgencyKey !== '')
+			filters.push({ name: 'fq', value: 'agencyKey:' + filterAgencyKey });
 
 		var filterPupilsIndianMale = $formFilters.find('.valuePupilsIndianMale').val();
 		if(filterPupilsIndianMale != null && filterPupilsIndianMale !== '')
@@ -3385,9 +3385,9 @@ function searchReportCardFilters($formFilters) {
 		if(filterStateId != null && filterStateId !== '')
 			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
 
-		var filterCountyId = $formFilters.find('.valueCountyId').val();
-		if(filterCountyId != null && filterCountyId !== '')
-			filters.push({ name: 'fq', value: 'countyId:' + filterCountyId });
+		var filterAgencyId = $formFilters.find('.valueAgencyId').val();
+		if(filterAgencyId != null && filterAgencyId !== '')
+			filters.push({ name: 'fq', value: 'agencyId:' + filterAgencyId });
 
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
@@ -3397,13 +3397,13 @@ function searchReportCardFilters($formFilters) {
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
-		var filterCountyName = $formFilters.find('.valueCountyName').val();
-		if(filterCountyName != null && filterCountyName !== '')
-			filters.push({ name: 'fq', value: 'countyName:' + filterCountyName });
+		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
+		if(filterAgencyName != null && filterAgencyName !== '')
+			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
 
-		var filterCountyCompleteName = $formFilters.find('.valueCountyCompleteName').val();
-		if(filterCountyCompleteName != null && filterCountyCompleteName !== '')
-			filters.push({ name: 'fq', value: 'countyCompleteName:' + filterCountyCompleteName });
+		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
+		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
+			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
 	}
 	return filters;
 }
@@ -3412,7 +3412,7 @@ function searchReportCardVals(filters, success, error) {
 
 	filters.push({ name: 'sort', value: 'reportCardStartYear desc' });
 	filters.push({ name: 'sort', value: 'stateName asc' });
-	filters.push({ name: 'sort', value: 'countyName asc' });
+	filters.push({ name: 'sort', value: 'agencyName asc' });
 	$.ajax({
 		url: '/api/reportcard?' + $.param(filters)
 		, dataType: 'json'
@@ -3428,7 +3428,7 @@ function suggestReportCardObjectSuggest($formFilters, $list) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'far fa-newspaper ');
-			var $span = $('<span>').attr('class', '').text(o['countyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
 			var $li = $('<li>');
 			var $a = $('<a>').attr('href', o['pageUrlPk']);
 			$a.append($i);
@@ -3441,23 +3441,23 @@ function suggestReportCardObjectSuggest($formFilters, $list) {
 	searchReportCardVals($formFilters, success, error);
 }
 
-function suggestReportCardCountyKey(filters, $list, pk = null, attribute=true) {
+function suggestReportCardAgencyKey(filters, $list, pk = null, attribute=true) {
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'fa fa-road ');
-			var $span = $('<span>').attr('class', '').text(o['countyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
 			$a.append($span);
 			var val = o['reportCardKeys'];
 			var checked = pk == null ? false : Array.isArray(val) ? val.includes(pk.toString()) : val == pk;
 			var $input = $('<input>');
-			$input.attr('id', 'GET_countyKey_' + pk + '_reportCardKeys_' + o['pk']);
+			$input.attr('id', 'GET_agencyKey_' + pk + '_reportCardKeys_' + o['pk']);
 			$input.attr('value', o['pk']);
-			$input.attr('class', 'valueCountyKey w3-check ');
+			$input.attr('class', 'valueAgencyKey w3-check ');
 			if(pk != null) {
-				$input.attr('onchange', "var $input = $('#GET_countyKey_" + pk + "_reportCardKeys_" + o['pk'] + "'); patchReportCardVals([{ name: 'fq', value: 'pk:" + pk + "' }], { [($input.prop('checked') ? 'set' : 'remove') + 'CountyKey']: \"" + o['pk'] + "\" } ); ");
+				$input.attr('onchange', "var $input = $('#GET_agencyKey_" + pk + "_reportCardKeys_" + o['pk'] + "'); patchReportCardVals([{ name: 'fq', value: 'pk:" + pk + "' }], { [($input.prop('checked') ? 'set' : 'remove') + 'AgencyKey']: \"" + o['pk'] + "\" } ); ");
 				$input.attr('onclick', 'removeGlow($(this)); ');
 			}
 			$input.attr('type', 'checkbox');
@@ -3474,7 +3474,7 @@ function suggestReportCardCountyKey(filters, $list, pk = null, attribute=true) {
 			$('#' + focusId).parent().next().find('input').focus();
 	};
 	error = function( jqXhr, textStatus, errorThrown ) {};
-	searchSiteCountyVals(filters, success, error);
+	searchSiteAgencyVals(filters, success, error);
 }
 
 // AdminSearch //
@@ -3537,9 +3537,9 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterReportCardEndYear != null && filterReportCardEndYear !== '')
 			filters.push({ name: 'fq', value: 'reportCardEndYear:' + filterReportCardEndYear });
 
-		var filterCountyKey = $formFilters.find('.valueCountyKey').val();
-		if(filterCountyKey != null && filterCountyKey !== '')
-			filters.push({ name: 'fq', value: 'countyKey:' + filterCountyKey });
+		var filterAgencyKey = $formFilters.find('.valueAgencyKey').val();
+		if(filterAgencyKey != null && filterAgencyKey !== '')
+			filters.push({ name: 'fq', value: 'agencyKey:' + filterAgencyKey });
 
 		var filterPupilsIndianMale = $formFilters.find('.valuePupilsIndianMale').val();
 		if(filterPupilsIndianMale != null && filterPupilsIndianMale !== '')
@@ -3981,9 +3981,9 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterStateId != null && filterStateId !== '')
 			filters.push({ name: 'fq', value: 'stateId:' + filterStateId });
 
-		var filterCountyId = $formFilters.find('.valueCountyId').val();
-		if(filterCountyId != null && filterCountyId !== '')
-			filters.push({ name: 'fq', value: 'countyId:' + filterCountyId });
+		var filterAgencyId = $formFilters.find('.valueAgencyId').val();
+		if(filterAgencyId != null && filterAgencyId !== '')
+			filters.push({ name: 'fq', value: 'agencyId:' + filterAgencyId });
 
 		var filterStateName = $formFilters.find('.valueStateName').val();
 		if(filterStateName != null && filterStateName !== '')
@@ -3993,13 +3993,13 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
-		var filterCountyName = $formFilters.find('.valueCountyName').val();
-		if(filterCountyName != null && filterCountyName !== '')
-			filters.push({ name: 'fq', value: 'countyName:' + filterCountyName });
+		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
+		if(filterAgencyName != null && filterAgencyName !== '')
+			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
 
-		var filterCountyCompleteName = $formFilters.find('.valueCountyCompleteName').val();
-		if(filterCountyCompleteName != null && filterCountyCompleteName !== '')
-			filters.push({ name: 'fq', value: 'countyCompleteName:' + filterCountyCompleteName });
+		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
+		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
+			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
 	}
 	return filters;
 }
@@ -4008,7 +4008,7 @@ function adminsearchReportCardVals(filters, success, error) {
 
 	filters.push({ name: 'sort', value: 'reportCardStartYear desc' });
 	filters.push({ name: 'sort', value: 'stateName asc' });
-	filters.push({ name: 'sort', value: 'countyName asc' });
+	filters.push({ name: 'sort', value: 'agencyName asc' });
 	$.ajax({
 		url: '/api/admin/reportcard?' + $.param(filters)
 		, dataType: 'json'
@@ -4024,7 +4024,7 @@ function suggestReportCardObjectSuggest($formFilters, $list) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'far fa-newspaper ');
-			var $span = $('<span>').attr('class', '').text(o['countyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
 			var $li = $('<li>');
 			var $a = $('<a>').attr('href', o['pageUrlPk']);
 			$a.append($i);
@@ -4037,23 +4037,23 @@ function suggestReportCardObjectSuggest($formFilters, $list) {
 	searchReportCardVals($formFilters, success, error);
 }
 
-function suggestReportCardCountyKey(filters, $list, pk = null, attribute=true) {
+function suggestReportCardAgencyKey(filters, $list, pk = null, attribute=true) {
 	success = function( data, textStatus, jQxhr ) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'fa fa-road ');
-			var $span = $('<span>').attr('class', '').text(o['countyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
 			$a.append($span);
 			var val = o['reportCardKeys'];
 			var checked = pk == null ? false : Array.isArray(val) ? val.includes(pk.toString()) : val == pk;
 			var $input = $('<input>');
-			$input.attr('id', 'GET_countyKey_' + pk + '_reportCardKeys_' + o['pk']);
+			$input.attr('id', 'GET_agencyKey_' + pk + '_reportCardKeys_' + o['pk']);
 			$input.attr('value', o['pk']);
-			$input.attr('class', 'valueCountyKey w3-check ');
+			$input.attr('class', 'valueAgencyKey w3-check ');
 			if(pk != null) {
-				$input.attr('onchange', "var $input = $('#GET_countyKey_" + pk + "_reportCardKeys_" + o['pk'] + "'); patchReportCardVals([{ name: 'fq', value: 'pk:" + pk + "' }], { [($input.prop('checked') ? 'set' : 'remove') + 'CountyKey']: \"" + o['pk'] + "\" } ); ");
+				$input.attr('onchange', "var $input = $('#GET_agencyKey_" + pk + "_reportCardKeys_" + o['pk'] + "'); patchReportCardVals([{ name: 'fq', value: 'pk:" + pk + "' }], { [($input.prop('checked') ? 'set' : 'remove') + 'AgencyKey']: \"" + o['pk'] + "\" } ); ");
 				$input.attr('onclick', 'removeGlow($(this)); ');
 			}
 			$input.attr('type', 'checkbox');
@@ -4070,7 +4070,7 @@ function suggestReportCardCountyKey(filters, $list, pk = null, attribute=true) {
 			$('#' + focusId).parent().next().find('input').focus();
 	};
 	error = function( jqXhr, textStatus, errorThrown ) {};
-	searchSiteCountyVals(filters, success, error);
+	searchSiteAgencyVals(filters, success, error);
 }
 
 async function websocketReportCard(success) {
@@ -4114,18 +4114,18 @@ async function websocketReportCard(success) {
 			}
 		});
 
-		window.eventBus.registerHandler('websocketSiteCounty', function (error, message) {
-			$('#Page_countyKey').trigger('oninput');
-			$('#Page_countyKey_add').text('add a county');
-			$('#Page_countyKey_add').removeClass('w3-disabled');
-			$('#Page_countyKey_add').attr('disabled', false);
+		window.eventBus.registerHandler('websocketSiteAgency', function (error, message) {
+			$('#Page_agencyKey').trigger('oninput');
+			$('#Page_agencyKey_add').text('add a agency');
+			$('#Page_agencyKey_add').removeClass('w3-disabled');
+			$('#Page_agencyKey_add').attr('disabled', false);
 		});
 
-		window.eventBus.registerHandler('websocketSiteCounty', function (error, message) {
-			$('#Page_countyKey').trigger('oninput');
-			$('#Page_countyKey_add').text('add a county');
-			$('#Page_countyKey_add').removeClass('w3-disabled');
-			$('#Page_countyKey_add').attr('disabled', false);
+		window.eventBus.registerHandler('websocketSiteAgency', function (error, message) {
+			$('#Page_agencyKey').trigger('oninput');
+			$('#Page_agencyKey_add').text('add a agency');
+			$('#Page_agencyKey_add').removeClass('w3-disabled');
+			$('#Page_agencyKey_add').attr('disabled', false);
 		});
 	}
 }
@@ -4235,17 +4235,17 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'ReportCardEndYear'));
 			}
-			var val = o['countyKey'];
-			if(vars.includes('countyKey')) {
-				$('.inputReportCard' + pk + 'CountyKey').each(function() {
+			var val = o['agencyKey'];
+			if(vars.includes('agencyKey')) {
+				$('.inputReportCard' + pk + 'AgencyKey').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varReportCard' + pk + 'CountyKey').each(function() {
+				$('.varReportCard' + pk + 'AgencyKey').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputReportCard' + pk + 'CountyKey'));
+				addGlow($('.inputReportCard' + pk + 'AgencyKey'));
 			}
 			var val = o['pupilsIndianMale'];
 			if(vars.includes('pupilsIndianMale')) {
@@ -5567,17 +5567,17 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'StateId'));
 			}
-			var val = o['countyId'];
-			if(vars.includes('countyId')) {
-				$('.inputReportCard' + pk + 'CountyId').each(function() {
+			var val = o['agencyId'];
+			if(vars.includes('agencyId')) {
+				$('.inputReportCard' + pk + 'AgencyId').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varReportCard' + pk + 'CountyId').each(function() {
+				$('.varReportCard' + pk + 'AgencyId').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputReportCard' + pk + 'CountyId'));
+				addGlow($('.inputReportCard' + pk + 'AgencyId'));
 			}
 			var val = o['stateName'];
 			if(vars.includes('stateName')) {
@@ -5603,29 +5603,29 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'StateAbbreviation'));
 			}
-			var val = o['countyName'];
-			if(vars.includes('countyName')) {
-				$('.inputReportCard' + pk + 'CountyName').each(function() {
+			var val = o['agencyName'];
+			if(vars.includes('agencyName')) {
+				$('.inputReportCard' + pk + 'AgencyName').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varReportCard' + pk + 'CountyName').each(function() {
+				$('.varReportCard' + pk + 'AgencyName').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputReportCard' + pk + 'CountyName'));
+				addGlow($('.inputReportCard' + pk + 'AgencyName'));
 			}
-			var val = o['countyCompleteName'];
-			if(vars.includes('countyCompleteName')) {
-				$('.inputReportCard' + pk + 'CountyCompleteName').each(function() {
+			var val = o['agencyCompleteName'];
+			if(vars.includes('agencyCompleteName')) {
+				$('.inputReportCard' + pk + 'AgencyCompleteName').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varReportCard' + pk + 'CountyCompleteName').each(function() {
+				$('.varReportCard' + pk + 'AgencyCompleteName').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputReportCard' + pk + 'CountyCompleteName'));
+				addGlow($('.inputReportCard' + pk + 'AgencyCompleteName'));
 			}
 		});
 	}

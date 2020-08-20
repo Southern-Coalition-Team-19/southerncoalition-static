@@ -1,0 +1,48 @@
+{
+  "startNum" : 0,
+  "foundNum" : 4,
+  "returnedNum" : 4,
+  "searchTime" : "0.000 sec",
+  "transmissionTime" : "0.001 sec",
+  "list" : [ {
+    "pk" : "142",
+    "inheritPk" : "182",
+    "created" : "2020-08-06T13:47:59.158-04:00[America/New_York]",
+    "archived" : false,
+    "deleted" : false,
+    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
+    "saves" : [ "inheritPk", "userId", "deleted", "agencyName", "created", "archived", "stateKey", "reportCardKeys" ],
+    "agencyName" : "Alexander",
+    "stateKey" : "140",
+    "reportCardKeys" : [ "145", "146" ]
+  }, {
+    "pk" : "141",
+    "inheritPk" : "109",
+    "created" : "2020-08-04T13:46:21.375-04:00[America/New_York]",
+    "archived" : false,
+    "deleted" : false,
+    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
+    "saves" : [ "created", "inheritPk", "agencyName", "userId", "deleted", "archived", "stateKey", "reportCardKeys" ],
+    "agencyName" : "Alamance-Burlington",
+    "stateKey" : "140",
+    "reportCardKeys" : [ "144", "143", "263" ]
+  }, {
+    "pk" : "265",
+    "created" : "2020-08-13T19:14:28.973-04:00[America/New_York]",
+    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
+    "userKey" : "1",
+    "saves" : [ "userId", "userKey", "agencyName", "created", "stateKey", "reportCardKeys" ],
+    "agencyName" : "Anson",
+    "stateKey" : "140",
+    "reportCardKeys" : [ "266" ]
+  }, {
+    "pk" : "268",
+    "created" : "2020-08-18T15:12:03.033-04:00[America/New_York]",
+    "userId" : "9f6fe2f1-5ac1-4993-8469-92bddb6c306d",
+    "userKey" : "267",
+    "saves" : [ "agencyName", "userKey", "created", "userId", "stateKey", "reportCardKeys" ],
+    "agencyName" : "Alleghany",
+    "stateKey" : "140",
+    "reportCardKeys" : [ "269" ]
+  } ]
+}

@@ -69,13 +69,11 @@ body {
 table {
 	width: 100%; 
 	border-collapse: collapse;
-	border-top: 0.3px solid gray;
-	border-left: 0.3px solid gray;
+	border: none;
 }
 td, th {
 	padding: 0 0.2em;
-	border-bottom: 0.3px solid gray;
-	border-right: 0.3px solid gray;
+	border: none;
 }
 .enfantNom {
 	font-weight: bold; 

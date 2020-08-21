@@ -3,17 +3,17 @@
   "foundNum" : 1,
   "returnedNum" : 1,
   "searchTime" : "0.000 sec",
-  "transmissionTime" : "0.001 sec",
+  "transmissionTime" : "0.004 sec",
   "list" : [ {
-    "pk" : "140",
-    "inheritPk" : "108",
-    "created" : "2020-08-04T13:45:33.147-04:00[America/New_York]",
+    "pk" : "313",
+    "inheritPk" : "140",
+    "created" : "2020-08-04T11:45:33.147-06:00[America/Denver]",
     "archived" : false,
     "deleted" : false,
-    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
-    "saves" : [ "stateAbbreviation", "inheritPk", "userId", "deleted", "stateName", "created", "archived", "agencyKeys" ],
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "archived", "created", "userId", "deleted", "stateName", "stateAbbreviation", "inheritPk", "agencyKeys" ],
     "stateName" : "North Carolina",
     "stateAbbreviation" : "NC",
-    "agencyKeys" : [ "141", "142", "265", "268" ]
+    "agencyKeys" : [ "316", "314", "315", "317" ]
   } ]
 }

@@ -452,6 +452,10 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valueShortTermSuspensionsWhiteRate != null && valueShortTermSuspensionsWhiteRate !== '')
 		vals['shortTermSuspensionsWhiteRate'] = valueShortTermSuspensionsWhiteRate;
 
+	var valueShortTermSuspensionsBlackVsWhite = $formValues.find('.valueShortTermSuspensionsBlackVsWhite').val();
+	if(valueShortTermSuspensionsBlackVsWhite != null && valueShortTermSuspensionsBlackVsWhite !== '')
+		vals['shortTermSuspensionsBlackVsWhite'] = valueShortTermSuspensionsBlackVsWhite;
+
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
 	if(valueInheritPk != null && valueInheritPk !== '')
 		vals['inheritPk'] = valueInheritPk;
@@ -908,6 +912,10 @@ async function postReportCard($formValues, success, error) {
 	var valueShortTermSuspensionsWhiteRate = $formValues.find('.valueShortTermSuspensionsWhiteRate').val();
 	if(valueShortTermSuspensionsWhiteRate != null && valueShortTermSuspensionsWhiteRate !== '')
 		vals['shortTermSuspensionsWhiteRate'] = valueShortTermSuspensionsWhiteRate;
+
+	var valueShortTermSuspensionsBlackVsWhite = $formValues.find('.valueShortTermSuspensionsBlackVsWhite').val();
+	if(valueShortTermSuspensionsBlackVsWhite != null && valueShortTermSuspensionsBlackVsWhite !== '')
+		vals['shortTermSuspensionsBlackVsWhite'] = valueShortTermSuspensionsBlackVsWhite;
 
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
 	if(valueInheritPk != null && valueInheritPk !== '')
@@ -2280,6 +2288,19 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removeShortTermSuspensionsWhiteRate != null && removeShortTermSuspensionsWhiteRate !== '')
 		vals['removeShortTermSuspensionsWhiteRate'] = removeShortTermSuspensionsWhiteRate;
 
+	var valueShortTermSuspensionsBlackVsWhite = $formValues.find('.valueShortTermSuspensionsBlackVsWhite').val();
+	if(valueShortTermSuspensionsBlackVsWhite != null && valueShortTermSuspensionsBlackVsWhite !== '')
+	var removeShortTermSuspensionsBlackVsWhite = $formFilters.find('.removeShortTermSuspensionsBlackVsWhite').val() === 'true';
+	var setShortTermSuspensionsBlackVsWhite = removeShortTermSuspensionsBlackVsWhite ? null : $formValues.find('.setShortTermSuspensionsBlackVsWhite').val();
+	if(removeShortTermSuspensionsBlackVsWhite || setShortTermSuspensionsBlackVsWhite != null && setShortTermSuspensionsBlackVsWhite !== '')
+		vals['setShortTermSuspensionsBlackVsWhite'] = setShortTermSuspensionsBlackVsWhite;
+	var addShortTermSuspensionsBlackVsWhite = $formValues.find('.addShortTermSuspensionsBlackVsWhite').val();
+	if(addShortTermSuspensionsBlackVsWhite != null && addShortTermSuspensionsBlackVsWhite !== '')
+		vals['addShortTermSuspensionsBlackVsWhite'] = addShortTermSuspensionsBlackVsWhite;
+	var removeShortTermSuspensionsBlackVsWhite = $formValues.find('.removeShortTermSuspensionsBlackVsWhite').val();
+	if(removeShortTermSuspensionsBlackVsWhite != null && removeShortTermSuspensionsBlackVsWhite !== '')
+		vals['removeShortTermSuspensionsBlackVsWhite'] = removeShortTermSuspensionsBlackVsWhite;
+
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
 	if(valueInheritPk != null && valueInheritPk !== '')
 	var removeInheritPk = $formFilters.find('.removeInheritPk').val() === 'true';
@@ -2758,6 +2779,10 @@ function patchReportCardFilters($formFilters) {
 		var filterShortTermSuspensionsWhiteRate = $formFilters.find('.valueShortTermSuspensionsWhiteRate').val();
 		if(filterShortTermSuspensionsWhiteRate != null && filterShortTermSuspensionsWhiteRate !== '')
 			filters.push({ name: 'fq', value: 'shortTermSuspensionsWhiteRate:' + filterShortTermSuspensionsWhiteRate });
+
+		var filterShortTermSuspensionsBlackVsWhite = $formFilters.find('.valueShortTermSuspensionsBlackVsWhite').val();
+		if(filterShortTermSuspensionsBlackVsWhite != null && filterShortTermSuspensionsBlackVsWhite !== '')
+			filters.push({ name: 'fq', value: 'shortTermSuspensionsBlackVsWhite:' + filterShortTermSuspensionsBlackVsWhite });
 
 		var filterInheritPk = $formFilters.find('.valueInheritPk').val();
 		if(filterInheritPk != null && filterInheritPk !== '')
@@ -3316,6 +3341,10 @@ function searchReportCardFilters($formFilters) {
 		var filterShortTermSuspensionsWhiteRate = $formFilters.find('.valueShortTermSuspensionsWhiteRate').val();
 		if(filterShortTermSuspensionsWhiteRate != null && filterShortTermSuspensionsWhiteRate !== '')
 			filters.push({ name: 'fq', value: 'shortTermSuspensionsWhiteRate:' + filterShortTermSuspensionsWhiteRate });
+
+		var filterShortTermSuspensionsBlackVsWhite = $formFilters.find('.valueShortTermSuspensionsBlackVsWhite').val();
+		if(filterShortTermSuspensionsBlackVsWhite != null && filterShortTermSuspensionsBlackVsWhite !== '')
+			filters.push({ name: 'fq', value: 'shortTermSuspensionsBlackVsWhite:' + filterShortTermSuspensionsBlackVsWhite });
 
 		var filterInheritPk = $formFilters.find('.valueInheritPk').val();
 		if(filterInheritPk != null && filterInheritPk !== '')
@@ -3912,6 +3941,10 @@ function adminsearchReportCardFilters($formFilters) {
 		var filterShortTermSuspensionsWhiteRate = $formFilters.find('.valueShortTermSuspensionsWhiteRate').val();
 		if(filterShortTermSuspensionsWhiteRate != null && filterShortTermSuspensionsWhiteRate !== '')
 			filters.push({ name: 'fq', value: 'shortTermSuspensionsWhiteRate:' + filterShortTermSuspensionsWhiteRate });
+
+		var filterShortTermSuspensionsBlackVsWhite = $formFilters.find('.valueShortTermSuspensionsBlackVsWhite').val();
+		if(filterShortTermSuspensionsBlackVsWhite != null && filterShortTermSuspensionsBlackVsWhite !== '')
+			filters.push({ name: 'fq', value: 'shortTermSuspensionsBlackVsWhite:' + filterShortTermSuspensionsBlackVsWhite });
 
 		var filterInheritPk = $formFilters.find('.valueInheritPk').val();
 		if(filterInheritPk != null && filterInheritPk !== '')
@@ -5362,6 +5395,18 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'ShortTermSuspensionsWhiteRate'));
+			}
+			var val = o['shortTermSuspensionsBlackVsWhite'];
+			if(vars.includes('shortTermSuspensionsBlackVsWhite')) {
+				$('.inputReportCard' + pk + 'ShortTermSuspensionsBlackVsWhite').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'ShortTermSuspensionsBlackVsWhite').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'ShortTermSuspensionsBlackVsWhite'));
 			}
 			var val = o['inheritPk'];
 			if(vars.includes('inheritPk')) {

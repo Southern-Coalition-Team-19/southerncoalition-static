@@ -3,41 +3,42 @@
   "foundNum" : 4,
   "returnedNum" : 4,
   "searchTime" : "0.000 sec",
-  "transmissionTime" : "0.007 sec",
+  "transmissionTime" : "0.015 sec",
   "list" : [ {
-    "pk" : "5",
-    "created" : "2020-07-30T12:27:16.386-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "userKey" : "4",
-    "saves" : [ "pageDesignCompleteName", "userKey", "created", "userId", "htmlPartKeys", "childDesignKeys" ],
-    "childDesignKeys" : [ "114", "204", "111" ],
-    "htmlPartKeys" : [ "81", "74", "89", "70", "82", "75", "67", "72", "80", "84", "83", "76", "78", "73", "88", "77", "79", "96", "90", "85", "91", "95", "92", "94", "100", "103", "93", "97", "65", "86", "101", "102", "66", "87", "99", "104", "69", "124", "64", "152", "154", "156", "157", "159", "62", "153", "155", "158", "160", "161", "71", "105", "163", "164", "165", "98", "166", "169", "63", "175", "68" ],
-    "pageDesignCompleteName" : "page layout"
-  }, {
-    "pk" : "114",
-    "created" : "2020-08-04T13:39:28.824-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "created", "pageDesignCompleteName", "userId", "htmlPartKeys", "parentDesignKeys" ],
-    "parentDesignKeys" : [ "5" ],
-    "htmlPartKeys" : [ "223", "224", "225", "115", "226", "116", "227", "117", "118", "119", "120", "121", "122", "123", "167", "170", "171", "172", "173", "174", "177", "176", "221", "178", "222" ],
-    "pageDesignCompleteName" : "home page"
-  }, {
-    "pk" : "111",
+    "pk" : "310",
+    "inheritPk" : "111",
     "created" : "2020-08-04T12:30:04.214-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "userKey" : "4",
-    "saves" : [ "pageDesignCompleteName", "created", "userKey", "userId", "htmlPartKeys", "parentDesignKeys" ],
-    "parentDesignKeys" : [ "5" ],
-    "htmlPartKeys" : [ "112", "179", "196", "113", "180", "202", "181", "201", "228", "186", "187", "188", "189", "190", "191", "192", "162", "193", "194", "168", "195", "197", "200", "198", "220", "203", "199" ],
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "pageDesignCompleteName", "userId", "inheritPk", "created", "htmlPartKeys", "parentDesignKeys" ],
+    "parentDesignKeys" : [ "309" ],
+    "htmlPartKeys" : [ "248", "262", "260", "263", "261", "266", "264", "265", "269", "268", "267", "272", "270", "271", "274", "273", "277", "280", "276", "278", "281", "283", "293", "290", "275" ],
     "pageDesignCompleteName" : "report cards by year"
   }, {
-    "pk" : "204",
+    "pk" : "309",
+    "inheritPk" : "5",
+    "created" : "2020-07-30T12:27:16.386-06:00[America/Denver]",
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "inheritPk", "userId", "pageDesignCompleteName", "created", "htmlPartKeys", "childDesignKeys" ],
+    "childDesignKeys" : [ "311", "312", "310" ],
+    "htmlPartKeys" : [ "236", "235", "237", "239", "238", "243", "242", "241", "246", "247", "249", "250", "245", "254", "256", "259" ],
+    "pageDesignCompleteName" : "page layout"
+  }, {
+    "pk" : "311",
+    "inheritPk" : "114",
+    "created" : "2020-08-04T13:39:28.824-06:00[America/Denver]",
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "userId", "inheritPk", "created", "pageDesignCompleteName", "htmlPartKeys", "parentDesignKeys" ],
+    "parentDesignKeys" : [ "309" ],
+    "htmlPartKeys" : [ "240", "244", "251", "253", "255", "257", "252", "258", "279", "284", "282", "288", "289", "287", "285", "286" ],
+    "pageDesignCompleteName" : "home page"
+  }, {
+    "pk" : "312",
+    "inheritPk" : "204",
     "created" : "2020-08-06T09:09:05.445-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "userKey" : "4",
-    "saves" : [ "pageDesignCompleteName", "userKey", "created", "userId", "parentDesignKeys", "htmlPartKeys" ],
-    "parentDesignKeys" : [ "5" ],
-    "htmlPartKeys" : [ "205", "206", "207", "208", "209", "231", "210", "211", "212", "213", "214", "215", "216", "218", "217", "219", "232" ],
-    "pageDesignCompleteName" : "report card by county"
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "created", "userId", "inheritPk", "pageDesignCompleteName", "htmlPartKeys", "parentDesignKeys" ],
+    "parentDesignKeys" : [ "309" ],
+    "htmlPartKeys" : [ "294", "296", "292", "291", "295", "297", "298", "302", "304", "300", "306", "308", "303", "301", "299", "305", "307" ],
+    "pageDesignCompleteName" : "report card by agency"
   } ]
 }

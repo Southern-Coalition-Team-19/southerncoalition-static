@@ -3,46 +3,46 @@
   "foundNum" : 4,
   "returnedNum" : 4,
   "searchTime" : "0.000 sec",
-  "transmissionTime" : "0.001 sec",
+  "transmissionTime" : "0.002 sec",
   "list" : [ {
-    "pk" : "142",
-    "inheritPk" : "182",
-    "created" : "2020-08-06T13:47:59.158-04:00[America/New_York]",
+    "pk" : "315",
+    "inheritPk" : "141",
+    "created" : "2020-08-04T11:46:21.375-06:00[America/Denver]",
     "archived" : false,
     "deleted" : false,
-    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
-    "saves" : [ "inheritPk", "userId", "deleted", "agencyName", "created", "archived", "stateKey", "reportCardKeys" ],
-    "agencyName" : "Alexander",
-    "stateKey" : "140",
-    "reportCardKeys" : [ "145", "146" ]
-  }, {
-    "pk" : "141",
-    "inheritPk" : "109",
-    "created" : "2020-08-04T13:46:21.375-04:00[America/New_York]",
-    "archived" : false,
-    "deleted" : false,
-    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
-    "saves" : [ "created", "inheritPk", "agencyName", "userId", "deleted", "archived", "stateKey", "reportCardKeys" ],
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "archived", "agencyName", "created", "userId", "inheritPk", "deleted", "stateKey", "reportCardKeys" ],
     "agencyName" : "Alamance-Burlington",
-    "stateKey" : "140",
-    "reportCardKeys" : [ "144", "143", "263" ]
+    "stateKey" : "313",
+    "reportCardKeys" : [ "318", "319", "321" ]
   }, {
-    "pk" : "265",
-    "created" : "2020-08-13T19:14:28.973-04:00[America/New_York]",
-    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
-    "userKey" : "1",
-    "saves" : [ "userId", "userKey", "agencyName", "created", "stateKey", "reportCardKeys" ],
-    "agencyName" : "Anson",
-    "stateKey" : "140",
-    "reportCardKeys" : [ "266" ]
+    "pk" : "314",
+    "inheritPk" : "142",
+    "created" : "2020-08-06T11:47:59.158-06:00[America/Denver]",
+    "archived" : false,
+    "deleted" : false,
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "archived", "userId", "agencyName", "inheritPk", "deleted", "created", "stateKey", "reportCardKeys" ],
+    "agencyName" : "Alexander",
+    "stateKey" : "313",
+    "reportCardKeys" : [ "320", "323" ]
   }, {
-    "pk" : "268",
-    "created" : "2020-08-18T15:12:03.033-04:00[America/New_York]",
-    "userId" : "9f6fe2f1-5ac1-4993-8469-92bddb6c306d",
-    "userKey" : "267",
-    "saves" : [ "agencyName", "userKey", "created", "userId", "stateKey", "reportCardKeys" ],
+    "pk" : "316",
+    "inheritPk" : "268",
+    "created" : "2020-08-18T13:12:03.033-06:00[America/Denver]",
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "created", "userId", "agencyName", "inheritPk", "stateKey", "reportCardKeys" ],
     "agencyName" : "Alleghany",
-    "stateKey" : "140",
-    "reportCardKeys" : [ "269" ]
+    "stateKey" : "313",
+    "reportCardKeys" : [ "324" ]
+  }, {
+    "pk" : "317",
+    "inheritPk" : "265",
+    "created" : "2020-08-13T17:14:28.973-06:00[America/Denver]",
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "userId", "inheritPk", "agencyName", "created", "stateKey", "reportCardKeys" ],
+    "agencyName" : "Anson",
+    "stateKey" : "313",
+    "reportCardKeys" : [ "322" ]
   } ]
 }

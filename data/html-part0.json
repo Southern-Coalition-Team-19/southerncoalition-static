@@ -3,7 +3,7 @@
   "foundNum" : 94,
   "returnedNum" : 94,
   "searchTime" : "0.000 sec",
-  "transmissionTime" : "0.018 sec",
+  "transmissionTime" : "0.015 sec",
   "list" : [ {
     "pk" : "240",
     "inheritPk" : "171",
@@ -1115,39 +1115,6 @@
     "sort3" : "1.0",
     "sort4" : "2.0"
   }, {
-    "pk" : "342",
-    "created" : "2020-08-20T22:02:51.317-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort4", "sort3", "htmlBefore", "sort1", "created", "sort2", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "                <td class=\"w3-padding \">\n\n",
-    "sort1" : "1.0",
-    "sort2" : "3.0",
-    "sort3" : "3.0",
-    "sort4" : "1.0"
-  }, {
-    "pk" : "332",
-    "created" : "2020-08-20T21:58:13.776-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort4", "sort3", "htmlBefore", "sort1", "created", "sort2", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "                <td class=\"w3-padding \">\n\n",
-    "sort1" : "1.0",
-    "sort2" : "3.0",
-    "sort3" : "1.0",
-    "sort4" : "1.0"
-  }, {
-    "pk" : "333",
-    "created" : "2020-08-20T22:02:40.134-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort4", "sort3", "htmlBefore", "sort1", "created", "sort2", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "                <td class=\"w3-padding \">\n\n",
-    "sort1" : "1.0",
-    "sort2" : "3.0",
-    "sort3" : "2.0",
-    "sort4" : "1.0"
-  }, {
     "pk" : "340",
     "created" : "2020-08-20T22:02:51.199-06:00[America/Denver]",
     "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
@@ -1202,17 +1169,6 @@
     "sort3" : "1.0",
     "sort4" : "5.0"
   }, {
-    "pk" : "326",
-    "created" : "2020-08-20T21:25:35.760-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "userKey" : "233",
-    "saves" : [ "userKey", "sort3", "created", "sort1", "htmlBefore", "userId", "sort2", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "        <div class=\"w3-padding w3-topbar w3-rightbar w3-bottombar w3-leftbar w3-border-deep-purple \">\n          <table class=\"w3-margin \">\n            <thead>\n              <tr>\n                <th colspan=\"3\" class=\"w3-text-deep-purple w3-xlarge \">• • • • • • • • • IN THIS DISTRICT • • • • • • • • •</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n\n",
-    "sort1" : "1.0",
-    "sort2" : "3.0",
-    "sort3" : "0.0"
-  }, {
     "pk" : "330",
     "created" : "2020-08-20T21:44:51.260-06:00[America/Denver]",
     "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
@@ -1224,18 +1180,6 @@
     "sort2" : "3.0",
     "sort3" : "1.0",
     "sort4" : "3.0"
-  }, {
-    "pk" : "292",
-    "inheritPk" : "205",
-    "created" : "2020-08-06T09:09:54.260-06:00[America/Denver]",
-    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
-    "saves" : [ "sort2", "userId", "sort3", "htmlBefore", "sort1", "htmlVar", "inheritPk", "created", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "    <div class=\"w3-content \">\n      <div class=\"w3-margin-bottom w3-white page-break-after \">\n        <table class=\"w3-table \">\n          <tr>\n            <td class=\"w3-mobile w3-deep-purple \">\n              <div class=\"w3-padding w3-center w3-xxxlarge font-weight-bold \">Racial Equity Report Card</div>\n              <div class=\"w3-row \">\n                <div class=\"w3-twothird \">\n                  <img class=\"w3-image \" src=\"https://www.southerncoalition.org/wp-content/uploads/2019/05/cropped-SCSJ_Horizontal_Logo_-_Full_Color-1-1-1024x411.png\"/>\n                </div>\n                <div class=\"w3-third \">\n                  <div class=\"w3-large font-weight-bold w3-center w3-padding-32  \">",
-    "htmlVar" : "reportCardStartYear",
-    "sort1" : "1.0",
-    "sort2" : "1.0",
-    "sort3" : "1.0"
   }, {
     "pk" : "298",
     "inheritPk" : "219",
@@ -1307,19 +1251,6 @@
     "sort3" : "1.0",
     "sort4" : "10.0"
   }, {
-    "pk" : "296",
-    "inheritPk" : "208",
-    "created" : "2020-08-06T09:42:34.684-06:00[America/Denver]",
-    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
-    "saves" : [ "sort2", "userId", "htmlBefore", "htmlAfter", "htmlVar", "sort1", "sort3", "created", "inheritPk", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "            <td class=\"w3-mobile \" style=\"padding: 0; \">\n              <div class=\"w3-center w3-xlarge w3-border-deep-purple w3-topbar w3-bottombar w3-leftbar w3-rightbar \">\n                <div class=\"w3-deep-purple w3-opacity \">",
-    "htmlAfter" : " Schools</div>\n              </div>",
-    "htmlVar" : "reportCard_.agencyName",
-    "sort1" : "1.0",
-    "sort2" : "1.0",
-    "sort3" : "3.0"
-  }, {
     "pk" : "343",
     "inheritPk" : "209",
     "created" : "2020-08-20T22:51:15.574-06:00[America/Denver]",
@@ -1334,19 +1265,6 @@
     "sort3" : "4.0",
     "sort4" : "2.0"
   }, {
-    "pk" : "307",
-    "inheritPk" : "209",
-    "created" : "2020-08-06T09:44:21.316-06:00[America/Denver]",
-    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
-    "saves" : [ "sort2", "userId", "sort4", "sort1", "htmlVar", "created", "inheritPk", "htmlBefore", "sort3", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "              <div class=\"\">\n                <img style=\"max-width: 400px; max-height: 300px; \" src=\"\n",
-    "htmlVar" : "staticBaseUrl",
-    "sort1" : "1.0",
-    "sort2" : "1.0",
-    "sort3" : "4.0",
-    "sort4" : "1.0"
-  }, {
     "pk" : "344",
     "inheritPk" : "209",
     "created" : "2020-08-20T22:51:18.640-06:00[America/Denver]",
@@ -1358,5 +1276,87 @@
     "sort2" : "1.0",
     "sort3" : "4.0",
     "sort4" : "3.0"
+  }, {
+    "pk" : "307",
+    "inheritPk" : "209",
+    "created" : "2020-08-06T09:44:21.316-06:00[America/Denver]",
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "sort2", "userId", "sort4", "sort1", "htmlVar", "created", "inheritPk", "htmlBefore", "sort3", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "              <div class=\"\">\n                <img style=\"width: 300px; \" src=\"",
+    "htmlVar" : "staticBaseUrl",
+    "sort1" : "1.0",
+    "sort2" : "1.0",
+    "sort3" : "4.0",
+    "sort4" : "1.0"
+  }, {
+    "pk" : "292",
+    "inheritPk" : "205",
+    "created" : "2020-08-06T09:09:54.260-06:00[America/Denver]",
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "sort2", "userId", "sort3", "htmlBefore", "sort1", "htmlVar", "inheritPk", "created", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "    <div class=\"w3-content \">\n      <div class=\"w3-margin-bottom w3-white page-break-after \">\n        <table class=\"w3-table \">\n          <tr>\n            <td class=\"w3-mobile w3-deep-purple \">\n              <div class=\"w3-padding w3-center w3-xxxlarge font-weight-bold \">Racial Equity Report Card</div>\n              <div class=\"w3-row \">\n                <div class=\"w3-twothird \">\n                  <img class=\"w3-image \" src=\"https://www.southerncoalition.org/wp-content/uploads/2019/05/cropped-SCSJ_Horizontal_Logo_-_Full_Color-1-1-1024x411.png\"/>\n                </div>\n                <div class=\"w3-third \">\n                  <div class=\"w3-large font-weight-bold w3-center w3-padding-32  \">",
+    "htmlVar" : "reportCardStartYear",
+    "sort1" : "1.0",
+    "sort2" : "1.0",
+    "sort3" : "1.0"
+  }, {
+    "pk" : "296",
+    "inheritPk" : "208",
+    "created" : "2020-08-06T09:42:34.684-06:00[America/Denver]",
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "sort2", "userId", "htmlAfter", "htmlBefore", "htmlVar", "sort1", "sort3", "created", "inheritPk", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "            <td class=\"w3-mobile \" style=\"padding: 0; \">\n              <div class=\"w3-center w3-large w3-border-deep-purple w3-topbar w3-bottombar w3-leftbar w3-rightbar \">\n                <div class=\"w3-deep-purple w3-opacity \">",
+    "htmlAfter" : " Schools</div>\n              </div>",
+    "htmlVar" : "reportCard_.agencyName",
+    "sort1" : "1.0",
+    "sort2" : "1.0",
+    "sort3" : "3.0"
+  }, {
+    "pk" : "332",
+    "created" : "2020-08-20T21:58:13.776-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort4", "sort3", "sort1", "htmlBefore", "created", "sort2", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "                <td class=\"w3-padding w3-center \">\n\n",
+    "sort1" : "1.0",
+    "sort2" : "3.0",
+    "sort3" : "1.0",
+    "sort4" : "1.0"
+  }, {
+    "pk" : "333",
+    "created" : "2020-08-20T22:02:40.134-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort4", "sort3", "sort1", "created", "htmlBefore", "sort2", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "                <td class=\"w3-padding w3-center \">\n\n",
+    "sort1" : "1.0",
+    "sort2" : "3.0",
+    "sort3" : "2.0",
+    "sort4" : "1.0"
+  }, {
+    "pk" : "342",
+    "created" : "2020-08-20T22:02:51.317-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort4", "sort3", "sort1", "created", "htmlBefore", "sort2", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "                <td class=\"w3-padding w3-center \">\n\n",
+    "sort1" : "1.0",
+    "sort2" : "3.0",
+    "sort3" : "3.0",
+    "sort4" : "1.0"
+  }, {
+    "pk" : "326",
+    "created" : "2020-08-20T21:25:35.760-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "userKey" : "233",
+    "saves" : [ "userKey", "sort3", "created", "sort1", "userId", "sort2", "htmlBefore", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "        <div class=\"w3-padding w3-topbar w3-rightbar w3-bottombar w3-leftbar w3-border-deep-purple \">\n          <table class=\"w3-margin \">\n            <thead>\n              <tr>\n                <th colspan=\"3\" class=\"w3-text-deep-purple w3-xlarge w3-center \">• • • • • • • • • IN THIS DISTRICT • • • • • • • • •</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n\n",
+    "sort1" : "1.0",
+    "sort2" : "3.0",
+    "sort3" : "0.0"
   } ]
 }

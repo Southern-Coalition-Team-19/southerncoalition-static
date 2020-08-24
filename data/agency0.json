@@ -3,7 +3,7 @@
   "foundNum" : 4,
   "returnedNum" : 4,
   "searchTime" : "0.000 sec",
-  "transmissionTime" : "0.002 sec",
+  "transmissionTime" : "0.008 sec",
   "list" : [ {
     "pk" : "315",
     "inheritPk" : "141",
@@ -27,15 +27,6 @@
     "stateKey" : "313",
     "reportCardKeys" : [ "320", "323" ]
   }, {
-    "pk" : "317",
-    "inheritPk" : "265",
-    "created" : "2020-08-13T17:14:28.973-06:00[America/Denver]",
-    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
-    "saves" : [ "agencyName", "userId", "inheritPk", "created", "stateKey", "reportCardKeys" ],
-    "agencyName" : "Anson County",
-    "stateKey" : "313",
-    "reportCardKeys" : [ "322" ]
-  }, {
     "pk" : "316",
     "inheritPk" : "268",
     "created" : "2020-08-18T13:12:03.033-06:00[America/Denver]",
@@ -44,5 +35,14 @@
     "agencyName" : "Alleghany County",
     "stateKey" : "313",
     "reportCardKeys" : [ "324" ]
+  }, {
+    "pk" : "317",
+    "inheritPk" : "265",
+    "created" : "2020-08-13T17:14:28.973-06:00[America/Denver]",
+    "userId" : "94eca97d-dc86-4179-a1ff-64400b19184b",
+    "saves" : [ "agencyName", "userId", "inheritPk", "created", "stateKey", "reportCardKeys" ],
+    "agencyName" : "Anson County",
+    "stateKey" : "313",
+    "reportCardKeys" : [ "322" ]
   } ]
 }

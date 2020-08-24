@@ -2844,6 +2844,10 @@ function patchReportCardFilters($formFilters) {
 		if(filterReportCardKey != null && filterReportCardKey !== '')
 			filters.push({ name: 'fq', value: 'reportCardKey:' + filterReportCardKey });
 
+		var filterReportCardYearsStr = $formFilters.find('.valueReportCardYearsStr').val();
+		if(filterReportCardYearsStr != null && filterReportCardYearsStr !== '')
+			filters.push({ name: 'fq', value: 'reportCardYearsStr:' + filterReportCardYearsStr });
+
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
 			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
@@ -3405,6 +3409,10 @@ function searchReportCardFilters($formFilters) {
 		var filterReportCardKey = $formFilters.find('.valueReportCardKey').val();
 		if(filterReportCardKey != null && filterReportCardKey !== '')
 			filters.push({ name: 'fq', value: 'reportCardKey:' + filterReportCardKey });
+
+		var filterReportCardYearsStr = $formFilters.find('.valueReportCardYearsStr').val();
+		if(filterReportCardYearsStr != null && filterReportCardYearsStr !== '')
+			filters.push({ name: 'fq', value: 'reportCardYearsStr:' + filterReportCardYearsStr });
 
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
@@ -4005,6 +4013,10 @@ function adminsearchReportCardFilters($formFilters) {
 		var filterReportCardKey = $formFilters.find('.valueReportCardKey').val();
 		if(filterReportCardKey != null && filterReportCardKey !== '')
 			filters.push({ name: 'fq', value: 'reportCardKey:' + filterReportCardKey });
+
+		var filterReportCardYearsStr = $formFilters.find('.valueReportCardYearsStr').val();
+		if(filterReportCardYearsStr != null && filterReportCardYearsStr !== '')
+			filters.push({ name: 'fq', value: 'reportCardYearsStr:' + filterReportCardYearsStr });
 
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
@@ -5588,6 +5600,18 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'ReportCardKey'));
 			}
+			var val = o['reportCardYearsStr'];
+			if(vars.includes('reportCardYearsStr')) {
+				$('.inputReportCard' + pk + 'ReportCardYearsStr').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'ReportCardYearsStr').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'ReportCardYearsStr'));
+			}
 			var val = o['stateKey'];
 			if(vars.includes('stateKey')) {
 				$('.inputReportCard' + pk + 'StateKey').each(function() {
@@ -5671,6 +5695,126 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'AgencyCompleteName'));
+			}
+			var val = o['agencyDemographicsGraph'];
+			if(vars.includes('agencyDemographicsGraph')) {
+				$('.inputReportCard' + pk + 'AgencyDemographicsGraph').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'AgencyDemographicsGraph').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'AgencyDemographicsGraph'));
+			}
+			var val = o['agencyStudentsByRaceGraph'];
+			if(vars.includes('agencyStudentsByRaceGraph')) {
+				$('.inputReportCard' + pk + 'AgencyStudentsByRaceGraph').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'AgencyStudentsByRaceGraph').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'AgencyStudentsByRaceGraph'));
+			}
+			var val = o['agencyTeachersByRaceGraph'];
+			if(vars.includes('agencyTeachersByRaceGraph')) {
+				$('.inputReportCard' + pk + 'AgencyTeachersByRaceGraph').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'AgencyTeachersByRaceGraph').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'AgencyTeachersByRaceGraph'));
+			}
+			var val = o['agencyGrades3To8Graph'];
+			if(vars.includes('agencyGrades3To8Graph')) {
+				$('.inputReportCard' + pk + 'AgencyGrades3To8Graph').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'AgencyGrades3To8Graph').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'AgencyGrades3To8Graph'));
+			}
+			var val = o['agencyGrades9To12Graph'];
+			if(vars.includes('agencyGrades9To12Graph')) {
+				$('.inputReportCard' + pk + 'AgencyGrades9To12Graph').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'AgencyGrades9To12Graph').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'AgencyGrades9To12Graph'));
+			}
+			var val = o['agencyGraduatesWithin4YearsGraph'];
+			if(vars.includes('agencyGraduatesWithin4YearsGraph')) {
+				$('.inputReportCard' + pk + 'AgencyGraduatesWithin4YearsGraph').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'AgencyGraduatesWithin4YearsGraph').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'AgencyGraduatesWithin4YearsGraph'));
+			}
+			var val = o['suspensionsByRaceGraph'];
+			if(vars.includes('suspensionsByRaceGraph')) {
+				$('.inputReportCard' + pk + 'SuspensionsByRaceGraph').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'SuspensionsByRaceGraph').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'SuspensionsByRaceGraph'));
+			}
+			var val = o['suspensionRatesByRaceGraph'];
+			if(vars.includes('suspensionRatesByRaceGraph')) {
+				$('.inputReportCard' + pk + 'SuspensionRatesByRaceGraph').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'SuspensionRatesByRaceGraph').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'SuspensionRatesByRaceGraph'));
+			}
+			var val = o['countySchoolBasedComplaintsGraph'];
+			if(vars.includes('countySchoolBasedComplaintsGraph')) {
+				$('.inputReportCard' + pk + 'CountySchoolBasedComplaintsGraph').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'CountySchoolBasedComplaintsGraph').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'CountySchoolBasedComplaintsGraph'));
+			}
+			var val = o['schoolBasedComplaintsGraph'];
+			if(vars.includes('schoolBasedComplaintsGraph')) {
+				$('.inputReportCard' + pk + 'SchoolBasedComplaintsGraph').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'SchoolBasedComplaintsGraph').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'SchoolBasedComplaintsGraph'));
 			}
 		});
 	}

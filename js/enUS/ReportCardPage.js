@@ -300,6 +300,10 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valueDelinquentComplaintsPacificIslanderPercent != null && valueDelinquentComplaintsPacificIslanderPercent !== '')
 		vals['delinquentComplaintsPacificIslanderPercent'] = valueDelinquentComplaintsPacificIslanderPercent;
 
+	var valueShortTermSuspensionRate = $formValues.find('.valueShortTermSuspensionRate').val();
+	if(valueShortTermSuspensionRate != null && valueShortTermSuspensionRate !== '')
+		vals['shortTermSuspensionRate'] = valueShortTermSuspensionRate;
+
 	var valueShortTermSuspensionsTotal = $formValues.find('.valueShortTermSuspensionsTotal').val();
 	if(valueShortTermSuspensionsTotal != null && valueShortTermSuspensionsTotal !== '')
 		vals['shortTermSuspensionsTotal'] = valueShortTermSuspensionsTotal;
@@ -451,6 +455,10 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	var valueShortTermSuspensionsWhiteRate = $formValues.find('.valueShortTermSuspensionsWhiteRate').val();
 	if(valueShortTermSuspensionsWhiteRate != null && valueShortTermSuspensionsWhiteRate !== '')
 		vals['shortTermSuspensionsWhiteRate'] = valueShortTermSuspensionsWhiteRate;
+
+	var valueShortTermSuspensionsAllRate = $formValues.find('.valueShortTermSuspensionsAllRate').val();
+	if(valueShortTermSuspensionsAllRate != null && valueShortTermSuspensionsAllRate !== '')
+		vals['shortTermSuspensionsAllRate'] = valueShortTermSuspensionsAllRate;
 
 	var valueShortTermSuspensionsBlackVsWhite = $formValues.find('.valueShortTermSuspensionsBlackVsWhite').val();
 	if(valueShortTermSuspensionsBlackVsWhite != null && valueShortTermSuspensionsBlackVsWhite !== '')
@@ -761,6 +769,10 @@ async function postReportCard($formValues, success, error) {
 	if(valueDelinquentComplaintsPacificIslanderPercent != null && valueDelinquentComplaintsPacificIslanderPercent !== '')
 		vals['delinquentComplaintsPacificIslanderPercent'] = valueDelinquentComplaintsPacificIslanderPercent;
 
+	var valueShortTermSuspensionRate = $formValues.find('.valueShortTermSuspensionRate').val();
+	if(valueShortTermSuspensionRate != null && valueShortTermSuspensionRate !== '')
+		vals['shortTermSuspensionRate'] = valueShortTermSuspensionRate;
+
 	var valueShortTermSuspensionsTotal = $formValues.find('.valueShortTermSuspensionsTotal').val();
 	if(valueShortTermSuspensionsTotal != null && valueShortTermSuspensionsTotal !== '')
 		vals['shortTermSuspensionsTotal'] = valueShortTermSuspensionsTotal;
@@ -912,6 +924,10 @@ async function postReportCard($formValues, success, error) {
 	var valueShortTermSuspensionsWhiteRate = $formValues.find('.valueShortTermSuspensionsWhiteRate').val();
 	if(valueShortTermSuspensionsWhiteRate != null && valueShortTermSuspensionsWhiteRate !== '')
 		vals['shortTermSuspensionsWhiteRate'] = valueShortTermSuspensionsWhiteRate;
+
+	var valueShortTermSuspensionsAllRate = $formValues.find('.valueShortTermSuspensionsAllRate').val();
+	if(valueShortTermSuspensionsAllRate != null && valueShortTermSuspensionsAllRate !== '')
+		vals['shortTermSuspensionsAllRate'] = valueShortTermSuspensionsAllRate;
 
 	var valueShortTermSuspensionsBlackVsWhite = $formValues.find('.valueShortTermSuspensionsBlackVsWhite').val();
 	if(valueShortTermSuspensionsBlackVsWhite != null && valueShortTermSuspensionsBlackVsWhite !== '')
@@ -1794,6 +1810,19 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removeDelinquentComplaintsPacificIslanderPercent != null && removeDelinquentComplaintsPacificIslanderPercent !== '')
 		vals['removeDelinquentComplaintsPacificIslanderPercent'] = removeDelinquentComplaintsPacificIslanderPercent;
 
+	var valueShortTermSuspensionRate = $formValues.find('.valueShortTermSuspensionRate').val();
+	if(valueShortTermSuspensionRate != null && valueShortTermSuspensionRate !== '')
+	var removeShortTermSuspensionRate = $formFilters.find('.removeShortTermSuspensionRate').val() === 'true';
+	var setShortTermSuspensionRate = removeShortTermSuspensionRate ? null : $formValues.find('.setShortTermSuspensionRate').val();
+	if(removeShortTermSuspensionRate || setShortTermSuspensionRate != null && setShortTermSuspensionRate !== '')
+		vals['setShortTermSuspensionRate'] = setShortTermSuspensionRate;
+	var addShortTermSuspensionRate = $formValues.find('.addShortTermSuspensionRate').val();
+	if(addShortTermSuspensionRate != null && addShortTermSuspensionRate !== '')
+		vals['addShortTermSuspensionRate'] = addShortTermSuspensionRate;
+	var removeShortTermSuspensionRate = $formValues.find('.removeShortTermSuspensionRate').val();
+	if(removeShortTermSuspensionRate != null && removeShortTermSuspensionRate !== '')
+		vals['removeShortTermSuspensionRate'] = removeShortTermSuspensionRate;
+
 	var valueShortTermSuspensionsTotal = $formValues.find('.valueShortTermSuspensionsTotal').val();
 	if(valueShortTermSuspensionsTotal != null && valueShortTermSuspensionsTotal !== '')
 	var removeShortTermSuspensionsTotal = $formFilters.find('.removeShortTermSuspensionsTotal').val() === 'true';
@@ -2288,6 +2317,19 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removeShortTermSuspensionsWhiteRate != null && removeShortTermSuspensionsWhiteRate !== '')
 		vals['removeShortTermSuspensionsWhiteRate'] = removeShortTermSuspensionsWhiteRate;
 
+	var valueShortTermSuspensionsAllRate = $formValues.find('.valueShortTermSuspensionsAllRate').val();
+	if(valueShortTermSuspensionsAllRate != null && valueShortTermSuspensionsAllRate !== '')
+	var removeShortTermSuspensionsAllRate = $formFilters.find('.removeShortTermSuspensionsAllRate').val() === 'true';
+	var setShortTermSuspensionsAllRate = removeShortTermSuspensionsAllRate ? null : $formValues.find('.setShortTermSuspensionsAllRate').val();
+	if(removeShortTermSuspensionsAllRate || setShortTermSuspensionsAllRate != null && setShortTermSuspensionsAllRate !== '')
+		vals['setShortTermSuspensionsAllRate'] = setShortTermSuspensionsAllRate;
+	var addShortTermSuspensionsAllRate = $formValues.find('.addShortTermSuspensionsAllRate').val();
+	if(addShortTermSuspensionsAllRate != null && addShortTermSuspensionsAllRate !== '')
+		vals['addShortTermSuspensionsAllRate'] = addShortTermSuspensionsAllRate;
+	var removeShortTermSuspensionsAllRate = $formValues.find('.removeShortTermSuspensionsAllRate').val();
+	if(removeShortTermSuspensionsAllRate != null && removeShortTermSuspensionsAllRate !== '')
+		vals['removeShortTermSuspensionsAllRate'] = removeShortTermSuspensionsAllRate;
+
 	var valueShortTermSuspensionsBlackVsWhite = $formValues.find('.valueShortTermSuspensionsBlackVsWhite').val();
 	if(valueShortTermSuspensionsBlackVsWhite != null && valueShortTermSuspensionsBlackVsWhite !== '')
 	var removeShortTermSuspensionsBlackVsWhite = $formFilters.find('.removeShortTermSuspensionsBlackVsWhite').val() === 'true';
@@ -2628,6 +2670,10 @@ function patchReportCardFilters($formFilters) {
 		if(filterDelinquentComplaintsPacificIslanderPercent != null && filterDelinquentComplaintsPacificIslanderPercent !== '')
 			filters.push({ name: 'fq', value: 'delinquentComplaintsPacificIslanderPercent:' + filterDelinquentComplaintsPacificIslanderPercent });
 
+		var filterShortTermSuspensionRate = $formFilters.find('.valueShortTermSuspensionRate').val();
+		if(filterShortTermSuspensionRate != null && filterShortTermSuspensionRate !== '')
+			filters.push({ name: 'fq', value: 'shortTermSuspensionRate:' + filterShortTermSuspensionRate });
+
 		var filterShortTermSuspensionsTotal = $formFilters.find('.valueShortTermSuspensionsTotal').val();
 		if(filterShortTermSuspensionsTotal != null && filterShortTermSuspensionsTotal !== '')
 			filters.push({ name: 'fq', value: 'shortTermSuspensionsTotal:' + filterShortTermSuspensionsTotal });
@@ -2779,6 +2825,10 @@ function patchReportCardFilters($formFilters) {
 		var filterShortTermSuspensionsWhiteRate = $formFilters.find('.valueShortTermSuspensionsWhiteRate').val();
 		if(filterShortTermSuspensionsWhiteRate != null && filterShortTermSuspensionsWhiteRate !== '')
 			filters.push({ name: 'fq', value: 'shortTermSuspensionsWhiteRate:' + filterShortTermSuspensionsWhiteRate });
+
+		var filterShortTermSuspensionsAllRate = $formFilters.find('.valueShortTermSuspensionsAllRate').val();
+		if(filterShortTermSuspensionsAllRate != null && filterShortTermSuspensionsAllRate !== '')
+			filters.push({ name: 'fq', value: 'shortTermSuspensionsAllRate:' + filterShortTermSuspensionsAllRate });
 
 		var filterShortTermSuspensionsBlackVsWhite = $formFilters.find('.valueShortTermSuspensionsBlackVsWhite').val();
 		if(filterShortTermSuspensionsBlackVsWhite != null && filterShortTermSuspensionsBlackVsWhite !== '')
@@ -3194,6 +3244,10 @@ function searchReportCardFilters($formFilters) {
 		if(filterDelinquentComplaintsPacificIslanderPercent != null && filterDelinquentComplaintsPacificIslanderPercent !== '')
 			filters.push({ name: 'fq', value: 'delinquentComplaintsPacificIslanderPercent:' + filterDelinquentComplaintsPacificIslanderPercent });
 
+		var filterShortTermSuspensionRate = $formFilters.find('.valueShortTermSuspensionRate').val();
+		if(filterShortTermSuspensionRate != null && filterShortTermSuspensionRate !== '')
+			filters.push({ name: 'fq', value: 'shortTermSuspensionRate:' + filterShortTermSuspensionRate });
+
 		var filterShortTermSuspensionsTotal = $formFilters.find('.valueShortTermSuspensionsTotal').val();
 		if(filterShortTermSuspensionsTotal != null && filterShortTermSuspensionsTotal !== '')
 			filters.push({ name: 'fq', value: 'shortTermSuspensionsTotal:' + filterShortTermSuspensionsTotal });
@@ -3345,6 +3399,10 @@ function searchReportCardFilters($formFilters) {
 		var filterShortTermSuspensionsWhiteRate = $formFilters.find('.valueShortTermSuspensionsWhiteRate').val();
 		if(filterShortTermSuspensionsWhiteRate != null && filterShortTermSuspensionsWhiteRate !== '')
 			filters.push({ name: 'fq', value: 'shortTermSuspensionsWhiteRate:' + filterShortTermSuspensionsWhiteRate });
+
+		var filterShortTermSuspensionsAllRate = $formFilters.find('.valueShortTermSuspensionsAllRate').val();
+		if(filterShortTermSuspensionsAllRate != null && filterShortTermSuspensionsAllRate !== '')
+			filters.push({ name: 'fq', value: 'shortTermSuspensionsAllRate:' + filterShortTermSuspensionsAllRate });
 
 		var filterShortTermSuspensionsBlackVsWhite = $formFilters.find('.valueShortTermSuspensionsBlackVsWhite').val();
 		if(filterShortTermSuspensionsBlackVsWhite != null && filterShortTermSuspensionsBlackVsWhite !== '')
@@ -3798,6 +3856,10 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterDelinquentComplaintsPacificIslanderPercent != null && filterDelinquentComplaintsPacificIslanderPercent !== '')
 			filters.push({ name: 'fq', value: 'delinquentComplaintsPacificIslanderPercent:' + filterDelinquentComplaintsPacificIslanderPercent });
 
+		var filterShortTermSuspensionRate = $formFilters.find('.valueShortTermSuspensionRate').val();
+		if(filterShortTermSuspensionRate != null && filterShortTermSuspensionRate !== '')
+			filters.push({ name: 'fq', value: 'shortTermSuspensionRate:' + filterShortTermSuspensionRate });
+
 		var filterShortTermSuspensionsTotal = $formFilters.find('.valueShortTermSuspensionsTotal').val();
 		if(filterShortTermSuspensionsTotal != null && filterShortTermSuspensionsTotal !== '')
 			filters.push({ name: 'fq', value: 'shortTermSuspensionsTotal:' + filterShortTermSuspensionsTotal });
@@ -3949,6 +4011,10 @@ function adminsearchReportCardFilters($formFilters) {
 		var filterShortTermSuspensionsWhiteRate = $formFilters.find('.valueShortTermSuspensionsWhiteRate').val();
 		if(filterShortTermSuspensionsWhiteRate != null && filterShortTermSuspensionsWhiteRate !== '')
 			filters.push({ name: 'fq', value: 'shortTermSuspensionsWhiteRate:' + filterShortTermSuspensionsWhiteRate });
+
+		var filterShortTermSuspensionsAllRate = $formFilters.find('.valueShortTermSuspensionsAllRate').val();
+		if(filterShortTermSuspensionsAllRate != null && filterShortTermSuspensionsAllRate !== '')
+			filters.push({ name: 'fq', value: 'shortTermSuspensionsAllRate:' + filterShortTermSuspensionsAllRate });
 
 		var filterShortTermSuspensionsBlackVsWhite = $formFilters.find('.valueShortTermSuspensionsBlackVsWhite').val();
 		if(filterShortTermSuspensionsBlackVsWhite != null && filterShortTermSuspensionsBlackVsWhite !== '')
@@ -4952,6 +5018,18 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'DelinquentComplaintsPacificIslanderPercent'));
 			}
+			var val = o['shortTermSuspensionRate'];
+			if(vars.includes('shortTermSuspensionRate')) {
+				$('.inputReportCard' + pk + 'ShortTermSuspensionRate').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'ShortTermSuspensionRate').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'ShortTermSuspensionRate'));
+			}
 			var val = o['shortTermSuspensionsTotal'];
 			if(vars.includes('shortTermSuspensionsTotal')) {
 				$('.inputReportCard' + pk + 'ShortTermSuspensionsTotal').each(function() {
@@ -5407,6 +5485,18 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'ShortTermSuspensionsWhiteRate'));
+			}
+			var val = o['shortTermSuspensionsAllRate'];
+			if(vars.includes('shortTermSuspensionsAllRate')) {
+				$('.inputReportCard' + pk + 'ShortTermSuspensionsAllRate').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'ShortTermSuspensionsAllRate').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'ShortTermSuspensionsAllRate'));
 			}
 			var val = o['shortTermSuspensionsBlackVsWhite'];
 			if(vars.includes('shortTermSuspensionsBlackVsWhite')) {

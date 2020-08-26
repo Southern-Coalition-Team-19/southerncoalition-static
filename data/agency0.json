@@ -3,7 +3,7 @@
   "foundNum" : 4,
   "returnedNum" : 4,
   "searchTime" : "0.000 sec",
-  "transmissionTime" : "0.008 sec",
+  "transmissionTime" : "0.003 sec",
   "list" : [ {
     "pk" : "315",
     "inheritPk" : "141",
@@ -43,6 +43,6 @@
     "saves" : [ "agencyName", "userId", "inheritPk", "created", "stateKey", "reportCardKeys" ],
     "agencyName" : "Anson County",
     "stateKey" : "313",
-    "reportCardKeys" : [ "322" ]
+    "reportCardKeys" : [ "322", "393" ]
   } ]
 }

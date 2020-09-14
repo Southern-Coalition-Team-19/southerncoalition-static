@@ -3,7 +3,7 @@
   "foundNum" : 8,
   "returnedNum" : 8,
   "searchTime" : "0.000 sec",
-  "transmissionTime" : "0.005 sec",
+  "transmissionTime" : "0.006 sec",
   "list" : [ {
     "pk" : "324",
     "inheritPk" : "269",
@@ -160,7 +160,7 @@
     "created" : "2020-08-25T14:30:16.062-06:00[America/Denver]",
     "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
     "userKey" : "233",
-    "saves" : [ "reportCardStartYear", "pupilsPacificIslanderFemale", "shortTermSuspensionsWhiteFemale", "delinquentComplaintsPacificIslander", "pupilsIndianMale", "pupilsIndianFemale", "shortTermSuspensionsAsianMale", "pupilsWhiteMale", "shortTermSuspensionsMultiRacialFemale", "longTermSuspensionsTotal", "teachersFemale", "shortTermSuspensionsWhiteMale", "pupilsTotal", "shortTermSuspensionsPacificIslanderMale", "teachersMale", "pupilsBlackMale", "shortTermSuspensionsIndianFemale", "delinquentComplaintsTotal", "delinquentComplaintsMultiRacial", "delinquentComplaintsIndian", "shortTermSuspensionsTotal", "pupilsHispanicFemale", "pupilsHispanicMale", "shortTermSuspensionsHispanicMale", "delinquentComplaintsWhite", "pupilsBlackFemale", "delinquentComplaintsHispanic", "pupilsMultiRacialFemale", "shortTermSuspensionsAsianFemale", "teachersBlackTotal", "shortTermSuspensionsBlackFemale", "shortTermSuspensionsBlackMale", "shortTermSuspensionsPacificIslanderFemale", "pupilsAsianFemale", "pupilsMultiRacialMale", "shortTermSuspensionsMultiRacialMale", "expulsionsTotal", "delinquentComplaintsAtSchool", "userId", "userKey", "pupilsWhiteFemale", "created", "delinquentComplaintsAsian", "pupilsPacificIslanderMale", "pupilsAsianMale", "teachersOtherTotal", "shortTermSuspensionsHispanicFemale", "delinquentComplaintsBlack", "teachersWhiteTotal", "shortTermSuspensionsIndianMale", "agencyKey" ],
+    "saves" : [ "reportCardStartYear", "pupilsPacificIslanderFemale", "shortTermSuspensionsWhiteFemale", "delinquentComplaintsPacificIslander", "pupilsIndianMale", "pupilsIndianFemale", "shortTermSuspensionsAsianMale", "pupilsWhiteMale", "shortTermSuspensionsMultiRacialFemale", "longTermSuspensionsTotal", "teachersFemale", "pupilsTotal", "shortTermSuspensionsPacificIslanderMale", "shortTermSuspensionsIndianFemale", "delinquentComplaintsMultiRacial", "delinquentComplaintsIndian", "delinquentComplaintsWhite", "pupilsBlackFemale", "delinquentComplaintsHispanic", "pupilsMultiRacialFemale", "shortTermSuspensionsAsianFemale", "shortTermSuspensionsBlackMale", "shortTermSuspensionsPacificIslanderFemale", "pupilsAsianFemale", "pupilsMultiRacialMale", "expulsionsTotal", "userKey", "pupilsWhiteFemale", "created", "delinquentComplaintsAsian", "pupilsPacificIslanderMale", "pupilsAsianMale", "teachersOtherTotal", "shortTermSuspensionsHispanicFemale", "delinquentComplaintsBlack", "teachersWhiteTotal", "shortTermSuspensionsIndianMale", "shortTermSuspensionsWhiteMale", "teachersMale", "pupilsBlackMale", "delinquentComplaintsTotal", "shortTermSuspensionsTotal", "pupilsHispanicFemale", "pupilsHispanicMale", "shortTermSuspensionsHispanicMale", "teachersBlackTotal", "shortTermSuspensionsBlackFemale", "shortTermSuspensionsMultiRacialMale", "delinquentComplaintsAtSchool", "userId", "agencyKey" ],
     "reportCardStartYear" : "2017",
     "agencyKey" : "317",
     "pupilsTotal" : "3351",

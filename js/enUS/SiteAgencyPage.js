@@ -706,7 +706,7 @@ function suggestSiteAgencyStateKey(filters, $list, pk = null, attribute=true) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'fa fa-globe-americas ');
-			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['stateCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
 			$a.append($span);
@@ -742,7 +742,7 @@ function suggestSiteAgencyReportCardKeys(filters, $list, pk = null, attribute=tr
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'fa fa-newspaper ');
-			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['reportCardCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
 			$a.append($span);
@@ -952,7 +952,7 @@ function suggestSiteAgencyStateKey(filters, $list, pk = null, attribute=true) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'fa fa-globe-americas ');
-			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['stateCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
 			$a.append($span);
@@ -988,7 +988,7 @@ function suggestSiteAgencyReportCardKeys(filters, $list, pk = null, attribute=tr
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'fa fa-newspaper ');
-			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['reportCardCompleteName']);
 			var $a = $('<a>').attr('id', o['pk']).attr('href', o['pageUrlPk'] + '#' + pk);
 			$a.append($i);
 			$a.append($span);

@@ -3398,9 +3398,9 @@ function patchReportCardFilters($formFilters) {
 		if(filterAgencyName != null && filterAgencyName !== '')
 			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
 
-		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
-		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
-			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
+		var filterReportCardCompleteName = $formFilters.find('.valueReportCardCompleteName').val();
+		if(filterReportCardCompleteName != null && filterReportCardCompleteName !== '')
+			filters.push({ name: 'fq', value: 'reportCardCompleteName:' + filterReportCardCompleteName });
 	}
 	return filters;
 }
@@ -4076,9 +4076,9 @@ function searchReportCardFilters($formFilters) {
 		if(filterAgencyName != null && filterAgencyName !== '')
 			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
 
-		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
-		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
-			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
+		var filterReportCardCompleteName = $formFilters.find('.valueReportCardCompleteName').val();
+		if(filterReportCardCompleteName != null && filterReportCardCompleteName !== '')
+			filters.push({ name: 'fq', value: 'reportCardCompleteName:' + filterReportCardCompleteName });
 	}
 	return filters;
 }
@@ -4103,7 +4103,7 @@ function suggestReportCardObjectSuggest($formFilters, $list) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'far fa-newspaper ');
-			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['reportCardCompleteName']);
 			var $li = $('<li>');
 			var $a = $('<a>').attr('href', o['pageUrlPk']);
 			$a.append($i);
@@ -4792,9 +4792,9 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterAgencyName != null && filterAgencyName !== '')
 			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
 
-		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
-		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
-			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
+		var filterReportCardCompleteName = $formFilters.find('.valueReportCardCompleteName').val();
+		if(filterReportCardCompleteName != null && filterReportCardCompleteName !== '')
+			filters.push({ name: 'fq', value: 'reportCardCompleteName:' + filterReportCardCompleteName });
 	}
 	return filters;
 }
@@ -4819,7 +4819,7 @@ function suggestReportCardObjectSuggest($formFilters, $list) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'far fa-newspaper ');
-			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['reportCardCompleteName']);
 			var $li = $('<li>');
 			var $a = $('<a>').attr('href', o['pageUrlPk']);
 			$a.append($i);
@@ -6770,17 +6770,17 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'AgencyName'));
 			}
-			var val = o['agencyCompleteName'];
-			if(vars.includes('agencyCompleteName')) {
-				$('.inputReportCard' + pk + 'AgencyCompleteName').each(function() {
+			var val = o['reportCardCompleteName'];
+			if(vars.includes('reportCardCompleteName')) {
+				$('.inputReportCard' + pk + 'ReportCardCompleteName').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varReportCard' + pk + 'AgencyCompleteName').each(function() {
+				$('.varReportCard' + pk + 'ReportCardCompleteName').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputReportCard' + pk + 'AgencyCompleteName'));
+				addGlow($('.inputReportCard' + pk + 'ReportCardCompleteName'));
 			}
 			var val = o['agencyDemographicsGraph'];
 			if(vars.includes('agencyDemographicsGraph')) {

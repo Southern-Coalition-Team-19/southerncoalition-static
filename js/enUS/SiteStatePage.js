@@ -485,9 +485,9 @@ function patchSiteStateFilters($formFilters) {
 		if(filterStateKey != null && filterStateKey !== '')
 			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
 
-		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
-		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
-			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
+		var filterStateCompleteName = $formFilters.find('.valueStateCompleteName').val();
+		if(filterStateCompleteName != null && filterStateCompleteName !== '')
+			filters.push({ name: 'fq', value: 'stateCompleteName:' + filterStateCompleteName });
 	}
 	return filters;
 }
@@ -647,9 +647,9 @@ function searchSiteStateFilters($formFilters) {
 		if(filterStateKey != null && filterStateKey !== '')
 			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
 
-		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
-		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
-			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
+		var filterStateCompleteName = $formFilters.find('.valueStateCompleteName').val();
+		if(filterStateCompleteName != null && filterStateCompleteName !== '')
+			filters.push({ name: 'fq', value: 'stateCompleteName:' + filterStateCompleteName });
 	}
 	return filters;
 }
@@ -672,7 +672,7 @@ function suggestSiteStateObjectSuggest($formFilters, $list) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'far fa-globe-americas ');
-			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['stateCompleteName']);
 			var $li = $('<li>');
 			var $a = $('<a>').attr('href', o['pageUrlPk']);
 			$a.append($i);
@@ -845,9 +845,9 @@ function adminsearchSiteStateFilters($formFilters) {
 		if(filterStateKey != null && filterStateKey !== '')
 			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
 
-		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
-		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
-			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
+		var filterStateCompleteName = $formFilters.find('.valueStateCompleteName').val();
+		if(filterStateCompleteName != null && filterStateCompleteName !== '')
+			filters.push({ name: 'fq', value: 'stateCompleteName:' + filterStateCompleteName });
 	}
 	return filters;
 }
@@ -870,7 +870,7 @@ function suggestSiteStateObjectSuggest($formFilters, $list) {
 		$list.empty();
 		$.each(data['list'], function(i, o) {
 			var $i = $('<i>').attr('class', 'far fa-globe-americas ');
-			var $span = $('<span>').attr('class', '').text(o['agencyCompleteName']);
+			var $span = $('<span>').attr('class', '').text(o['stateCompleteName']);
 			var $li = $('<li>');
 			var $a = $('<a>').attr('href', o['pageUrlPk']);
 			$a.append($i);
@@ -1273,17 +1273,17 @@ async function websocketSiteStateInner(apiRequest) {
 				});
 				addGlow($('.inputSiteState' + pk + 'StateKey'));
 			}
-			var val = o['agencyCompleteName'];
-			if(vars.includes('agencyCompleteName')) {
-				$('.inputSiteState' + pk + 'AgencyCompleteName').each(function() {
+			var val = o['stateCompleteName'];
+			if(vars.includes('stateCompleteName')) {
+				$('.inputSiteState' + pk + 'StateCompleteName').each(function() {
 					if(val !== $(this).val())
 						$(this).val(val);
 				});
-				$('.varSiteState' + pk + 'AgencyCompleteName').each(function() {
+				$('.varSiteState' + pk + 'StateCompleteName').each(function() {
 					if(val !== $(this).text())
 						$(this).text(val);
 				});
-				addGlow($('.inputSiteState' + pk + 'AgencyCompleteName'));
+				addGlow($('.inputSiteState' + pk + 'StateCompleteName'));
 			}
 		});
 	}

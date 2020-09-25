@@ -1,9 +1,9 @@
 {
   "startNum" : 0,
-  "foundNum" : 167,
-  "returnedNum" : 167,
+  "foundNum" : 172,
+  "returnedNum" : 172,
   "searchTime" : "0.000 sec",
-  "transmissionTime" : "0.040 sec",
+  "transmissionTime" : "0.026 sec",
   "list" : [ {
     "pk" : "240",
     "inheritPk" : "171",
@@ -1079,19 +1079,6 @@
     "sort3" : "4.0",
     "sort4" : "2.0"
   }, {
-    "pk" : "356",
-    "created" : "2020-08-21T14:04:22.916-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "htmlBefore", "sort1", "sort3", "htmlAfter", "sort4", "htmlVar", "userId", "created", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : " of the state’s teachers were\nWhite, even though only ",
-    "htmlAfter" : "% of the\nstate’s student population was White.</span>\n                </div>\n",
-    "htmlVar" : "state_.teachersBlackPercent",
-    "sort1" : "2.0",
-    "sort2" : "1.0",
-    "sort3" : "1.0",
-    "sort4" : "2.0"
-  }, {
     "pk" : "307",
     "inheritPk" : "209",
     "created" : "2020-08-06T09:44:21.316-06:00[America/Denver]",
@@ -1139,18 +1126,6 @@
     "sort3" : "1.0",
     "sort4" : "5.0"
   }, {
-    "pk" : "355",
-    "created" : "2020-08-21T14:04:22.911-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "sort4", "sort1", "sort3", "htmlAfter", "created", "userId", "htmlBefore", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : ", ",
-    "htmlAfter" : "%",
-    "sort1" : "2.0",
-    "sort2" : "1.0",
-    "sort3" : "1.0",
-    "sort4" : "1.0"
-  }, {
     "pk" : "296",
     "inheritPk" : "208",
     "created" : "2020-08-06T09:42:34.684-06:00[America/Denver]",
@@ -1177,18 +1152,6 @@
     "sort2" : "1.0",
     "sort3" : "2.0",
     "sort4" : "0.0"
-  }, {
-    "pk" : "352",
-    "created" : "2020-08-21T13:22:39.548-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "sort4", "created", "sort1", "htmlAfter", "sort3", "userId", "htmlVar", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlAfter" : "                  </tr>\n                </table>\n",
-    "htmlVar" : "state_.teachersBlackPercent",
-    "sort1" : "2.0",
-    "sort2" : "1.0",
-    "sort3" : "2.0",
-    "sort4" : "1.0"
   }, {
     "pk" : "345",
     "created" : "2020-08-21T08:43:47.772-06:00[America/Denver]",
@@ -1248,19 +1211,6 @@
     "pageDesignKeys" : [ "312" ],
     "htmlAfter" : "        </div>\n",
     "sort1" : "2.0"
-  }, {
-    "pk" : "363",
-    "created" : "2020-08-24T08:59:17.151-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "created", "sort2", "htmlBefore", "sort1", "sort3", "sort4", "htmlVar", "htmlAfter", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "              <td class=\"w3-mobile w3-padding-16 \" style=\"width: 40%; \">\n                <div class=\"w3-purple w3-border-deep-purple w3-topbar w3-rightbar w3-bottombar w3-leftbar \">Academic Achievement</div>\n                <div class=\"w3-padding w3-border-deep-purple w3-rightbar w3-bottombar w3-leftbar \">\n                  <span>Students who are behind academically are more likely to have attendance issues, experience behavior struggles,\nand drop out of school. </span><span class=\"font-weight-bold \">Statewide, only ",
-    "htmlAfter" : "% of Black students in grades 3-8 scored “College and Career Ready”\non their final exams, compared to ",
-    "htmlVar" : "state_.pupilsBlackGrade3To8Percent",
-    "sort1" : "2.0",
-    "sort2" : "2.0",
-    "sort3" : "1.0",
-    "sort4" : "0.0"
   }, {
     "pk" : "354",
     "created" : "2020-08-21T14:04:22.900-06:00[America/Denver]",
@@ -1368,18 +1318,6 @@
     "sort3" : "2.0",
     "sort4" : "1.0",
     "sort5" : "2.0"
-  }, {
-    "pk" : "362",
-    "created" : "2020-08-24T08:59:17.148-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "sort4", "sort1", "sort3", "htmlVar", "created", "htmlAfter", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlAfter" : "% of White students in ",
-    "htmlVar" : "state_.pupilsWhiteGrade3To8Percent",
-    "sort1" : "2.0",
-    "sort2" : "2.0",
-    "sort3" : "1.0",
-    "sort4" : "1.0"
   }, {
     "pk" : "377",
     "created" : "2020-08-25T12:56:42.646-06:00[America/Denver]",
@@ -1538,16 +1476,6 @@
     "sort2" : "1.0",
     "sort3" : "0.0"
   }, {
-    "pk" : "399",
-    "created" : "2020-08-26T12:50:11.822-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort3", "sort2", "htmlBefore", "sort1", "created", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "          <table class=\"\">\n            <tr>\n",
-    "sort1" : "3.0",
-    "sort2" : "2.0",
-    "sort3" : "0.0"
-  }, {
     "pk" : "383",
     "created" : "2020-08-25T12:57:49.726-06:00[America/Denver]",
     "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
@@ -1568,18 +1496,6 @@
     "sort1" : "1.0",
     "sort2" : "1.0",
     "sort3" : "6.0"
-  }, {
-    "pk" : "385",
-    "created" : "2020-08-25T12:57:49.733-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "htmlBefore", "sort3", "sort4", "created", "htmlVar", "sort1", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "              <td class=\"w3-mobile \" style=\"width: 70%; \">\n                <div class=\"w3-purple w3-border-deep-purple w3-topbar w3-rightbar w3-bottombar w3-leftbar \">SCHOOL DISCIPLINE</div>\n                <div class=\"w3-padding w3-border-deep-purple w3-rightbar w3-bottombar w3-leftbar \">\n                  <p>Any time a student spends out of the classroom for disciplinary reasons is\ntime that student is not learning. Research shows that out-of-school\nsuspension is ineffective at correcting student misbehavior and, instead,\nincreases a student’s chances of experiencing negative academic\noutcomes and future court involvement. Further, the use of suspension\nhas no measurable positive impact on overall school safety.</p>\n                  <p>Importantly, some students are more likely to receive a suspension.\n<span class=\"font-weight-bold \">Statewide, Black students received ",
-    "htmlVar" : "state_.shortTermSuspensionsBlackPercent",
-    "sort1" : "3.0",
-    "sort2" : "1.0",
-    "sort3" : "1.0",
-    "sort4" : "0.0"
   }, {
     "pk" : "396",
     "created" : "2020-08-26T12:31:55.457-06:00[America/Denver]",
@@ -1622,17 +1538,6 @@
     "sort2" : "1.0",
     "sort3" : "5.0",
     "sort4" : "2.0"
-  }, {
-    "pk" : "381",
-    "created" : "2020-08-25T12:57:49.721-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "sort4", "sort3", "created", "sort1", "htmlVar", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlVar" : "state_.teachersBlackPercent",
-    "sort1" : "3.0",
-    "sort2" : "1.0",
-    "sort3" : "2.0",
-    "sort4" : "1.0"
   }, {
     "pk" : "398",
     "created" : "2020-08-26T12:49:59.049-06:00[America/Denver]",
@@ -1762,31 +1667,6 @@
     "sort2" : "2.0",
     "sort3" : "2.0"
   }, {
-    "pk" : "431",
-    "created" : "2020-09-03T08:00:49.240-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "sort4", "htmlVar", "sort1", "sort3", "htmlBefore", "userId", "created", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "              <td class=\"w3-mobile \" style=\"width: 70%; \">\n                <div class=\"w3-purple w3-border-deep-purple w3-topbar w3-rightbar w3-bottombar w3-leftbar \">COURT INVOLVEMENT</div>\n                <div class=\"w3-padding w3-border-deep-purple w3-rightbar w3-bottombar w3-leftbar \">\n                  <p>Criminalization of youthful misbehavior has immediate \nand long-term consequences. Studies show youth who\nare court involved are more likely to reoffend and\nexperience lifelong entanglement in the criminal system.\nFurthermore, court involvement can impact a youth’s\naccess to education, employment, housing, public\nbenefits, voting rights, and other sources of opportunity\nand support.<span class=\"font-weight-bold \">Statewide, ",
-    "htmlVar" : "state_.courtReferrals",
-    "sort1" : "4.0",
-    "sort2" : "1.0",
-    "sort3" : "2.0",
-    "sort4" : "0.0"
-  }, {
-    "pk" : "422",
-    "created" : "2020-09-03T08:00:38.782-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "htmlAfter", "htmlVar", "sort1", "htmlBefore", "sort3", "sort4", "userId", "created", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : ". Further, ",
-    "htmlAfter" : "% of all\njuvenile complaints were filed against Black youth even\nthough they make up only a quarter of the population.</span></p>\n                  <p>The data in this section only includes youth under 16\nyears old. Until December 2019, all 16- and 17-year-olds\nin North Carolina were automatically sent to the adult\ncriminal system regardless of the offense. This changed\non December 1, 2019. Now, most youth under age 18\nare sent to the juvenile system, with only the most\nserious offenses sent to adult criminal court.</p>\n                </div>\n",
-    "htmlVar" : "state_.delinquentComplaintsBlackPercent",
-    "sort1" : "4.0",
-    "sort2" : "1.0",
-    "sort3" : "2.0",
-    "sort4" : "2.0"
-  }, {
     "pk" : "373",
     "created" : "2020-08-24T09:16:50.538-06:00[America/Denver]",
     "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
@@ -1798,18 +1678,6 @@
     "sort1" : "2.0",
     "sort2" : "3.0",
     "sort3" : "0.0"
-  }, {
-    "pk" : "424",
-    "created" : "2020-09-03T08:00:38.796-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "sort4", "htmlVar", "sort1", "htmlBefore", "sort3", "created", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "% of juvenile court referrals\ncame from schools in",
-    "htmlVar" : "reportCard.reportCardYearsStr",
-    "sort1" : "4.0",
-    "sort2" : "1.0",
-    "sort3" : "2.0",
-    "sort4" : "1.0"
   }, {
     "pk" : "446",
     "created" : "2020-09-03T09:03:05.114-06:00[America/Denver]",
@@ -1857,19 +1725,6 @@
     "htmlAfter" : "        </div>\n",
     "sort1" : "4.0"
   }, {
-    "pk" : "425",
-    "created" : "2020-09-03T08:00:38.805-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "sort3", "htmlBefore", "sort4", "sort1", "htmlVar", "created", "userId", "htmlAfter", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "              <td class=\"w3-mobile w3-text-deep-purple w3-padding \" style=\"vertical-align: top; \">\n                <img class=\"w3-image \" style=\"width: 200px; \" src=\"data:image/png;base64,",
-    "htmlAfter" : "\"/>\n",
-    "htmlVar" : "reportCard_.countySchoolBasedComplaintsGraph",
-    "sort1" : "4.0",
-    "sort2" : "1.0",
-    "sort3" : "1.0",
-    "sort4" : "0.0"
-  }, {
     "pk" : "292",
     "inheritPk" : "205",
     "created" : "2020-08-06T09:09:54.260-06:00[America/Denver]",
@@ -1881,32 +1736,6 @@
     "htmlVar" : "staticBaseUrl",
     "sort1" : "1.0",
     "sort2" : "1.0",
-    "sort3" : "1.0",
-    "sort4" : "1.0"
-  }, {
-    "pk" : "402",
-    "created" : "2020-08-26T12:55:37.091-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort3", "sort1", "htmlAfter", "htmlVar", "htmlBefore", "sort2", "userId", "created", "sort4", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "                <div>\n                  <img class=\"w3-image \" style=\"width: 200px; \" src=\"data:image/png;base64,",
-    "htmlAfter" : "\"/>\n                </div>\n",
-    "htmlVar" : "reportCard_.suspensionRatesByRaceGraph",
-    "sort1" : "3.0",
-    "sort2" : "2.0",
-    "sort3" : "1.0",
-    "sort4" : "2.0"
-  }, {
-    "pk" : "400",
-    "created" : "2020-08-26T12:54:10.133-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "created", "sort3", "sort4", "sort1", "htmlVar", "htmlAfter", "sort2", "htmlBefore", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "                <div>\n                  <img class=\"w3-image \" style=\"width: 200px; \" src=\"data:image/png;base64,",
-    "htmlAfter" : "\"/>\n                </div>\n",
-    "htmlVar" : "reportCard_.suspensionsByRaceGraph",
-    "sort1" : "3.0",
-    "sort2" : "2.0",
     "sort3" : "1.0",
     "sort4" : "1.0"
   }, {
@@ -1948,19 +1777,6 @@
     "sort2" : "3.0",
     "sort3" : "2.0",
     "sort4" : "4.0"
-  }, {
-    "pk" : "379",
-    "created" : "2020-08-25T12:57:49.696-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "created", "sort4", "htmlBefore", "htmlVar", "sort3", "htmlAfter", "sort1", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "% of all short-term suspensions,\neven though they made up only ",
-    "htmlAfter" : "% of the student population in ",
-    "htmlVar" : "state_.studentPopulationBlackPercent",
-    "sort1" : "3.0",
-    "sort2" : "1.0",
-    "sort3" : "1.0",
-    "sort4" : "1.0"
   }, {
     "pk" : "251",
     "inheritPk" : "176",
@@ -2063,17 +1879,6 @@
     "sort3" : "1.0",
     "sort4" : "3.0"
   }, {
-    "pk" : "415",
-    "created" : "2020-08-26T13:01:27.813-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort2", "htmlVarHtml", "sort3", "created", "sort4", "sort1", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlVarHtml" : "reportCard_.agencyDemographicsGraph",
-    "sort1" : "3.0",
-    "sort2" : "2.0",
-    "sort3" : "2.0",
-    "sort4" : "3.0"
-  }, {
     "pk" : "360",
     "created" : "2020-08-24T08:55:50.333-06:00[America/Denver]",
     "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
@@ -2086,44 +1891,6 @@
     "sort4" : "1.0",
     "sort5" : "1.0",
     "sort6" : "2.0"
-  }, {
-    "pk" : "447",
-    "created" : "2020-09-03T09:03:15.113-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort4", "htmlBefore", "sort3", "sort2", "sort1", "created", "htmlVar", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "              <td class=\"w3-mobile \">\n                <div class=\"w3-small \">\n                  <p class=\"text-decoration-underline \">Data Notes:</p>\n                  <p>*Lack of data in a category indicates the district did not\nhave sufficient data for reporting in that category.\nPercentages greater than 95 or less than 5 are reported\nby the state as &gt;95 and &lt;5 respectively. Here, they are\ndisplayed as 95 and 5 respectively.</p>\n                  <p>† In some instances, it is impossible to know the exact\nnumber of suspensions for a racial group because of the\nway suspension data is publicly reported. If there is\nenough data to approximate percentages or rates by race,\nthe RERCs display those approximations. All\napproximations are equal to or slightly lower than the\nactual percentages or rates.</p>\n                </div>\n              </td>\n",
-    "htmlVar" : "reportCard_.schoolBasedComplaintsGraph",
-    "sort1" : "4.0",
-    "sort2" : "3.0",
-    "sort3" : "1.0",
-    "sort4" : "1.0"
-  }, {
-    "pk" : "436",
-    "created" : "2020-09-03T08:00:49.597-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort4", "sort3", "sort1", "htmlAfter", "sort2", "htmlVar", "userId", "created", "htmlBefore", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "              <td class=\"w3-mobile \">\n                <div>\n                  <img class=\"w3-image \" style=\"width: 200px; \" src=\"data:image/png;base64,",
-    "htmlAfter" : "\"/>\n                </div>\n              </td>\n",
-    "htmlVar" : "reportCard_.schoolBasedComplaintsGraph",
-    "sort1" : "4.0",
-    "sort2" : "2.0",
-    "sort3" : "1.0",
-    "sort4" : "1.0"
-  }, {
-    "pk" : "435",
-    "created" : "2020-09-03T08:00:49.519-06:00[America/Denver]",
-    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "saves" : [ "sort3", "sort1", "htmlAfter", "htmlBefore", "htmlVarHtml", "created", "sort2", "sort4", "userId", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "              <td class=\"w3-mobile \">\n                <div>\n",
-    "htmlAfter" : "                </div>\n              </td>\n",
-    "htmlVarHtml" : "reportCard_.agencyStudentsByRaceGraph2",
-    "sort1" : "4.0",
-    "sort2" : "2.0",
-    "sort3" : "1.0",
-    "sort4" : "2.0"
   }, {
     "pk" : "359",
     "created" : "2020-08-24T08:48:16.073-06:00[America/Denver]",
@@ -2152,13 +1919,162 @@
     "sort5" : "3.0",
     "sort6" : "2.0"
   }, {
+    "pk" : "449",
+    "created" : "2020-09-15T12:05:41.022-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "userKey" : "233",
+    "saves" : [ "userKey", "created", "sort2", "htmlVar", "pdfExclude", "htmlBefore", "userId", "sort1", "htmlAfter", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "309" ],
+    "htmlBefore" : "    <footer class=\"w3-center w3-black w3-text-white w3-padding-24 \">\n      <div>\n        <a href=\"https://github.com/Southern-Coalition-Team-19/southerncoalition\" class=\"w3-small \">This site is open source.</a>\n        <a href=\"https://www.openshift.com/products/online/\"><span class=\"w3-small \">Powered by </span><img alt=\"\" class=\"w3-image \" style=\"display: inline-block; width: 100px; margin: 0 10px;\" src=\"",
+    "htmlAfter" : "/svg/openshift.svg\"/></a>\n      </div>\n    </footer>\n",
+    "htmlVar" : "staticBaseUrl",
+    "pdfExclude" : true,
+    "sort1" : "999.0",
+    "sort2" : "99.0"
+  }, {
+    "pk" : "385",
+    "created" : "2020-08-25T12:57:49.733-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort2", "htmlBefore", "sort3", "htmlVar", "sort4", "created", "sort1", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "              <td class=\"w3-mobile \" style=\"width: 70%; \">\n                <div class=\"w3-purple w3-border-deep-purple w3-topbar w3-rightbar w3-bottombar w3-leftbar \">SCHOOL DISCIPLINE</div>\n                <div class=\"w3-padding w3-border-deep-purple w3-rightbar w3-bottombar w3-leftbar \">\n                  <p>Any time a student spends out of the classroom for disciplinary reasons is\ntime that student is not learning. Research shows that out-of-school\nsuspension is ineffective at correcting student misbehavior and, instead,\nincreases a student’s chances of experiencing negative academic\noutcomes and future court involvement. Further, the use of suspension\nhas no measurable positive impact on overall school safety.</p>\n                  <p>Importantly, some students are more likely to receive a suspension.\n<span class=\"font-weight-bold \">Statewide, Black students received ",
+    "htmlVar" : "stateReportCard_.shortTermSuspensionsBlackPercent",
+    "sort1" : "3.0",
+    "sort2" : "1.0",
+    "sort3" : "1.0",
+    "sort4" : "0.0"
+  }, {
+    "pk" : "422",
+    "created" : "2020-09-03T08:00:38.782-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort2", "htmlAfter", "sort1", "htmlBefore", "sort3", "htmlVar", "sort4", "userId", "created", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : ". Further, ",
+    "htmlAfter" : "% of all\njuvenile complaints were filed against Black youth even\nthough they make up only a quarter of the population.</span></p>\n                  <p>The data in this section only includes youth under 16\nyears old. Until December 2019, all 16- and 17-year-olds\nin North Carolina were automatically sent to the adult\ncriminal system regardless of the offense. This changed\non December 1, 2019. Now, most youth under age 18\nare sent to the juvenile system, with only the most\nserious offenses sent to adult criminal court.</p>\n                </div>\n",
+    "htmlVar" : "stateReportCard_.delinquentComplaintsBlackPercent",
+    "sort1" : "4.0",
+    "sort2" : "1.0",
+    "sort3" : "2.0",
+    "sort4" : "2.0"
+  }, {
+    "pk" : "363",
+    "created" : "2020-08-24T08:59:17.151-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "created", "sort2", "htmlBefore", "sort1", "sort3", "sort4", "htmlVar", "htmlAfter", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "              <td class=\"w3-mobile w3-padding-16 \" style=\"width: 40%; \">\n                <div class=\"w3-purple w3-border-deep-purple w3-topbar w3-rightbar w3-bottombar w3-leftbar \">Academic Achievement</div>\n                <div class=\"w3-padding w3-border-deep-purple w3-rightbar w3-bottombar w3-leftbar \">\n                  <span>Students who are behind academically are more likely to have attendance issues, experience behavior struggles,\nand drop out of school. </span><span class=\"font-weight-bold \">Statewide, only ",
+    "htmlAfter" : "% of Black students in grades 3-8 scored “College and Career Ready”\non their final exams, compared to ",
+    "htmlVar" : "stateReportCard_.examsCollegeReadyGrades38BlackPercent",
+    "sort1" : "2.0",
+    "sort2" : "2.0",
+    "sort3" : "1.0",
+    "sort4" : "0.0"
+  }, {
+    "pk" : "362",
+    "created" : "2020-08-24T08:59:17.148-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort2", "sort4", "sort1", "sort3", "created", "htmlVar", "htmlAfter", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlAfter" : "% of White students in ",
+    "htmlVar" : "stateReportCard_.examsCollegeReadyGrades38WhitePercent",
+    "sort1" : "2.0",
+    "sort2" : "2.0",
+    "sort3" : "1.0",
+    "sort4" : "1.0"
+  }, {
+    "pk" : "356",
+    "created" : "2020-08-21T14:04:22.916-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort2", "htmlBefore", "sort1", "sort3", "htmlAfter", "htmlVar", "sort4", "userId", "created", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : " of the state’s teachers were\nWhite, even though only ",
+    "htmlAfter" : "% of the\nstate’s student population was White.</span>\n                </div>\n",
+    "htmlVar" : "stateReportCard_.pupilsWhitePercent",
+    "sort1" : "2.0",
+    "sort2" : "1.0",
+    "sort3" : "1.0",
+    "sort4" : "2.0"
+  }, {
+    "pk" : "379",
+    "created" : "2020-08-25T12:57:49.696-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort2", "created", "sort4", "htmlBefore", "htmlVar", "sort3", "htmlAfter", "sort1", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "% of all short-term suspensions,\neven though they made up only ",
+    "htmlAfter" : "% of the student population in ",
+    "htmlVar" : "stateReportCard_.pupilsBlackPercent",
+    "sort1" : "3.0",
+    "sort2" : "1.0",
+    "sort3" : "1.0",
+    "sort4" : "1.0"
+  }, {
+    "pk" : "355",
+    "created" : "2020-08-21T14:04:22.911-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort2", "sort4", "sort1", "sort3", "htmlAfter", "htmlVar", "created", "userId", "htmlBefore", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : ", ",
+    "htmlAfter" : "%",
+    "htmlVar" : "stateReportCard_.teachersWhitePercent",
+    "sort1" : "2.0",
+    "sort2" : "1.0",
+    "sort3" : "1.0",
+    "sort4" : "1.0"
+  }, {
+    "pk" : "352",
+    "created" : "2020-08-21T13:22:39.548-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort2", "sort4", "created", "sort1", "htmlAfter", "sort3", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlAfter" : "                  </tr>\n                </table>\n",
+    "sort1" : "2.0",
+    "sort2" : "1.0",
+    "sort3" : "2.0",
+    "sort4" : "1.0"
+  }, {
+    "pk" : "424",
+    "created" : "2020-09-03T08:00:38.796-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort2", "htmlBefore", "htmlVar", "sort4", "sort1", "sort3", "created", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "% of juvenile court referrals\ncame from schools in ",
+    "htmlVar" : "reportCard_.reportCardYearsStr",
+    "sort1" : "4.0",
+    "sort2" : "1.0",
+    "sort3" : "2.0",
+    "sort4" : "1.0"
+  }, {
+    "pk" : "447",
+    "created" : "2020-09-03T09:03:15.113-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort4", "htmlBefore", "sort3", "sort2", "sort1", "created", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "              <td class=\"w3-mobile \">\n                <div class=\"w3-small \">\n                  <p class=\"text-decoration-underline \">Data Notes:</p>\n                  <p>*Lack of data in a category indicates the district did not\nhave sufficient data for reporting in that category.\nPercentages greater than 95 or less than 5 are reported\nby the state as &gt;95 and &lt;5 respectively. Here, they are\ndisplayed as 95 and 5 respectively.</p>\n                  <p>† In some instances, it is impossible to know the exact\nnumber of suspensions for a racial group because of the\nway suspension data is publicly reported. If there is\nenough data to approximate percentages or rates by race,\nthe RERCs display those approximations. All\napproximations are equal to or slightly lower than the\nactual percentages or rates.</p>\n                </div>\n              </td>\n",
+    "sort1" : "4.0",
+    "sort2" : "3.0",
+    "sort3" : "1.0",
+    "sort4" : "1.0"
+  }, {
+    "pk" : "415",
+    "created" : "2020-08-26T13:01:27.813-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort2", "htmlVarHtml", "sort3", "htmlAfter", "created", "sort4", "htmlBefore", "sort1", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "                <div class=\"w3-center \">\n",
+    "htmlAfter" : "                </div>\n",
+    "htmlVarHtml" : "reportCard_.agencyDemographicsGraph",
+    "sort1" : "3.0",
+    "sort2" : "2.0",
+    "sort3" : "2.0",
+    "sort4" : "3.0"
+  }, {
     "pk" : "397",
     "created" : "2020-08-26T12:49:19.009-06:00[America/Denver]",
     "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
     "userKey" : "233",
-    "saves" : [ "userKey", "sort3", "htmlBefore", "sort4", "sort1", "sort2", "created", "userId", "pageDesignKeys" ],
+    "saves" : [ "userKey", "sort3", "sort4", "sort1", "sort2", "created", "userId", "htmlBefore", "pageDesignKeys" ],
     "pageDesignKeys" : [ "312" ],
-    "htmlBefore" : "              <td class=\"w3-mobile \">\n",
+    "htmlBefore" : "              <td class=\"w3-mobile \" style=\"width: 50%; \">\n",
     "sort1" : "3.0",
     "sort2" : "2.0",
     "sort3" : "1.0",
@@ -2175,17 +2091,178 @@
     "sort3" : "2.0",
     "sort4" : "0.0"
   }, {
-    "pk" : "449",
-    "created" : "2020-09-15T12:05:41.022-06:00[America/Denver]",
+    "pk" : "399",
+    "created" : "2020-08-26T12:50:11.822-06:00[America/Denver]",
     "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
-    "userKey" : "233",
-    "saves" : [ "userKey", "created", "sort2", "htmlVar", "pdfExclude", "htmlBefore", "userId", "sort1", "htmlAfter", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "309" ],
-    "htmlBefore" : "    <footer class=\"w3-center w3-black w3-text-white w3-padding-24 \">\n      <div>\n        <a href=\"https://github.com/Southern-Coalition-Team-19/southerncoalition\" class=\"w3-small \">This site is open source.</a>\n        <a href=\"https://www.openshift.com/products/online/\"><span class=\"w3-small \">Powered by </span><img alt=\"\" class=\"w3-image \" style=\"display: inline-block; width: 100px; margin: 0 10px;\" src=\"",
-    "htmlAfter" : "/svg/openshift.svg\"/></a>\n      </div>\n    </footer>\n",
-    "htmlVar" : "staticBaseUrl",
-    "pdfExclude" : true,
-    "sort1" : "999.0",
-    "sort2" : "99.0"
+    "saves" : [ "sort3", "sort2", "htmlBefore", "sort1", "created", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "          <table class=\"\">\n            <tr>\n",
+    "sort1" : "3.0",
+    "sort2" : "2.0",
+    "sort3" : "0.0"
+  }, {
+    "pk" : "400",
+    "created" : "2020-08-26T12:54:10.133-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "created", "sort3", "sort4", "sort1", "sort5", "htmlAfter", "htmlVarHtml", "sort2", "userId", "htmlBefore", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "                <div>\n",
+    "htmlAfter" : "                </div>\n",
+    "htmlVarHtml" : "reportCard_.suspensionsByRaceGraph",
+    "sort1" : "3.0",
+    "sort2" : "2.0",
+    "sort3" : "1.0",
+    "sort4" : "1.0",
+    "sort5" : "2.0"
+  }, {
+    "pk" : "454",
+    "created" : "2020-09-24T15:31:34.756-06:00[America/Denver]",
+    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
+    "saves" : [ "htmlBefore", "userId", "sort3", "sort1", "htmlAfter", "created", "sort5", "sort2", "sort4", "htmlVar", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "                <div class=\"w3-center font-weight-bold w3-margin-top w3-large \">Short-Term Suspension Rates by Race<sup>†</sup></div>\n                <div class=\"w3-center w3-small \">School Year \n",
+    "htmlAfter" : "</div>\n",
+    "htmlVar" : "reportCard_.reportCardYearsStr",
+    "sort1" : "3.0",
+    "sort2" : "2.0",
+    "sort3" : "1.0",
+    "sort4" : "2.0",
+    "sort5" : "1.0"
+  }, {
+    "pk" : "453",
+    "created" : "2020-09-24T15:26:31.069-06:00[America/Denver]",
+    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
+    "saves" : [ "userId", "sort4", "sort3", "sort1", "htmlAfter", "htmlBefore", "sort2", "sort5", "htmlVar", "created", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "                <div class=\"w3-center font-weight-bold w3-large \">% of Short-Term Suspensions by Race<sup>†</sup></div>\n                <div class=\"w3-center w3-small \">School Year \n",
+    "htmlAfter" : "</div>\n",
+    "htmlVar" : "reportCard_.reportCardYearsStr",
+    "sort1" : "3.0",
+    "sort2" : "2.0",
+    "sort3" : "1.0",
+    "sort4" : "1.0",
+    "sort5" : "1.0"
+  }, {
+    "pk" : "425",
+    "created" : "2020-09-03T08:00:38.805-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort2", "sort3", "sort5", "sort4", "sort1", "created", "htmlVarHtml", "htmlAfter", "userId", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlAfter" : "",
+    "htmlVarHtml" : "reportCard_.countySchoolBasedComplaintsGraph",
+    "sort1" : "4.0",
+    "sort2" : "1.0",
+    "sort3" : "1.0",
+    "sort4" : "0.0",
+    "sort5" : "3.0"
+  }, {
+    "pk" : "402",
+    "created" : "2020-08-26T12:55:37.091-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort3", "sort1", "htmlVarHtml", "sort5", "htmlAfter", "sort2", "userId", "created", "sort4", "htmlBefore", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "                <div>\n",
+    "htmlAfter" : "                </div>\n",
+    "htmlVarHtml" : "reportCard_.suspensionRatesByRaceGraph",
+    "sort1" : "3.0",
+    "sort2" : "2.0",
+    "sort3" : "1.0",
+    "sort4" : "2.0",
+    "sort5" : "2.0"
+  }, {
+    "pk" : "456",
+    "created" : "2020-09-24T21:14:53.753-06:00[America/Denver]",
+    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
+    "saves" : [ "sort2", "userId", "htmlBefore", "sort3", "sort4", "htmlVar", "htmlAfter", "sort5", "sort1", "created", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "-June ",
+    "htmlAfter" : "</div>\n",
+    "htmlVar" : "reportCard_.reportCardEndYear",
+    "sort1" : "4.0",
+    "sort2" : "1.0",
+    "sort3" : "1.0",
+    "sort4" : "0.0",
+    "sort5" : "2.0"
+  }, {
+    "pk" : "436",
+    "created" : "2020-09-03T08:00:49.597-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "htmlVarHtml", "sort4", "sort3", "sort1", "htmlAfter", "sort5", "sort2", "userId", "created", "htmlBefore", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "                <div>\n",
+    "htmlAfter" : "                </div>\n              </td>\n",
+    "htmlVarHtml" : "reportCard_.schoolBasedComplaintsGraph",
+    "sort1" : "4.0",
+    "sort2" : "2.0",
+    "sort3" : "1.0",
+    "sort4" : "1.0",
+    "sort5" : "2.0"
+  }, {
+    "pk" : "435",
+    "created" : "2020-09-03T08:00:49.519-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort3", "sort1", "htmlAfter", "sort5", "htmlVarHtml", "created", "sort2", "sort4", "userId", "htmlBefore", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "                <div>\n",
+    "htmlAfter" : "                </div>\n              </td>\n",
+    "htmlVarHtml" : "reportCard_.agencyStudentsByRaceGraph2",
+    "sort1" : "4.0",
+    "sort2" : "2.0",
+    "sort3" : "1.0",
+    "sort4" : "2.0",
+    "sort5" : "2.0"
+  }, {
+    "pk" : "457",
+    "created" : "2020-09-24T21:19:06.902-06:00[America/Denver]",
+    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
+    "saves" : [ "sort3", "userId", "created", "sort1", "sort4", "htmlAfter", "htmlBefore", "sort5", "htmlVar", "sort2", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "              <td class=\"w3-mobile \">\n                <div class=\"w3-center font-weight-bold w3-margin-top w3-large w3-center \">% of School-Based Complaints by Race</div>\n                <div class=\"w3-center w3-small \">School Year \n",
+    "htmlAfter" : "</div>\n",
+    "htmlVar" : "reportCard_.reportCardYearsStr",
+    "sort1" : "4.0",
+    "sort2" : "2.0",
+    "sort3" : "1.0",
+    "sort4" : "1.0",
+    "sort5" : "1.0"
+  }, {
+    "pk" : "458",
+    "created" : "2020-09-24T21:19:10.371-06:00[America/Denver]",
+    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
+    "saves" : [ "sort3", "userId", "sort1", "htmlAfter", "htmlBefore", "sort5", "created", "sort4", "htmlVar", "sort2", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "              <td class=\"w3-mobile \">\n                <div class=\"w3-center font-weight-bold w3-margin-top w3-large w3-center \">% of Students in District by Race</div>\n                <div class=\"w3-center w3-small \">School Year \n",
+    "htmlAfter" : "</div>\n",
+    "htmlVar" : "reportCard_.reportCardYearsStr",
+    "sort1" : "4.0",
+    "sort2" : "2.0",
+    "sort3" : "1.0",
+    "sort4" : "2.0",
+    "sort5" : "1.0"
+  }, {
+    "pk" : "455",
+    "created" : "2020-09-24T18:00:37.111-06:00[America/Denver]",
+    "userId" : "dc7ac006-6890-45de-938a-2c42125a39d7",
+    "saves" : [ "userId", "sort3", "htmlVar", "sort2", "sort1", "htmlBefore", "sort4", "sort5", "created", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "              <td class=\"w3-mobile w3-padding \" style=\"vertical-align: top; \">\n                <div class=\"w3-center font-weight-bold w3-margin-top w3-large \">% of Juvenile Complaints in County that were School Based</div>\n                <div class=\"w3-center w3-small \">July \n",
+    "htmlVar" : "reportCard_.reportCardStartYear",
+    "sort1" : "4.0",
+    "sort2" : "1.0",
+    "sort3" : "1.0",
+    "sort4" : "0.0",
+    "sort5" : "1.0"
+  }, {
+    "pk" : "431",
+    "created" : "2020-09-03T08:00:49.240-06:00[America/Denver]",
+    "userId" : "2e2a2ee6-6c02-465f-b04d-ae212644c8bd",
+    "saves" : [ "sort2", "htmlVar", "sort4", "sort1", "sort3", "htmlBefore", "userId", "created", "pageDesignKeys" ],
+    "pageDesignKeys" : [ "312" ],
+    "htmlBefore" : "              <td class=\"w3-mobile \" style=\"width: 50%; \">\n                <div class=\"w3-purple w3-border-deep-purple w3-topbar w3-rightbar w3-bottombar w3-leftbar \">COURT INVOLVEMENT</div>\n                <div class=\"w3-padding w3-border-deep-purple w3-rightbar w3-bottombar w3-leftbar \">\n                  <p>Criminalization of youthful misbehavior has immediate \nand long-term consequences. Studies show youth who\nare court involved are more likely to reoffend and\nexperience lifelong entanglement in the criminal system.\nFurthermore, court involvement can impact a youth’s\naccess to education, employment, housing, public\nbenefits, voting rights, and other sources of opportunity\nand support.<span class=\"font-weight-bold \">Statewide, ",
+    "htmlVar" : "stateReportCard_.delinquentComplaintsAtSchoolPercent",
+    "sort1" : "4.0",
+    "sort2" : "1.0",
+    "sort3" : "2.0",
+    "sort4" : "0.0"
   } ]
 }

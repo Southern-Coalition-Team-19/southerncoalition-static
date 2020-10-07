@@ -320,6 +320,8 @@ site-header-image-custom {
 	color:#fff;background-color:#2E6E87;font-size:30px;
 }
 
+.w3-tooltip+.w3-text{display:none}.w3-tooltip:hover+.w3-text{display:inline-block}
+
 .w3-vivid-pink
 {color:#fff;background-color:#ffb5bA}
 .w3-vivid-red

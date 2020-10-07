@@ -76,6 +76,14 @@ async function putcopySiteState($formValues, pk, success, error) {
 	if(valueStateAbbreviation != null && valueStateAbbreviation !== '')
 		vals['stateAbbreviation'] = valueStateAbbreviation;
 
+	var valueImageLeft = $formValues.find('.valueImageLeft').val();
+	if(valueImageLeft != null && valueImageLeft !== '')
+		vals['imageLeft'] = valueImageLeft;
+
+	var valueImageTop = $formValues.find('.valueImageTop').val();
+	if(valueImageTop != null && valueImageTop !== '')
+		vals['imageTop'] = valueImageTop;
+
 	var valueAgencyKeys = $formValues.find('input.valueAgencyKeys:checked').val();
 	if(valueAgencyKeys != null && valueAgencyKeys !== '')
 		vals['agencyKeys'] = [valueAgencyKeys];
@@ -160,6 +168,14 @@ async function postSiteState($formValues, success, error) {
 	var valueStateAbbreviation = $formValues.find('.valueStateAbbreviation').val();
 	if(valueStateAbbreviation != null && valueStateAbbreviation !== '')
 		vals['stateAbbreviation'] = valueStateAbbreviation;
+
+	var valueImageLeft = $formValues.find('.valueImageLeft').val();
+	if(valueImageLeft != null && valueImageLeft !== '')
+		vals['imageLeft'] = valueImageLeft;
+
+	var valueImageTop = $formValues.find('.valueImageTop').val();
+	if(valueImageTop != null && valueImageTop !== '')
+		vals['imageTop'] = valueImageTop;
 
 	var valueAgencyKeys = [];
 	$formValues.find('input.valueAgencyKeys:checked').each(function(index) {
@@ -318,6 +334,30 @@ async function patchSiteState($formFilters, $formValues, pk, success, error) {
 	if(removeStateAbbreviation != null && removeStateAbbreviation !== '')
 		vals['removeStateAbbreviation'] = removeStateAbbreviation;
 
+	var valueImageLeft = $formValues.find('.valueImageLeft').val();
+	var removeImageLeft = $formValues.find('.removeImageLeft').val() === 'true';
+	var setImageLeft = removeImageLeft ? null : $formValues.find('.setImageLeft').val();
+	if(removeImageLeft || setImageLeft != null && setImageLeft !== '')
+		vals['setImageLeft'] = setImageLeft;
+	var addImageLeft = $formValues.find('.addImageLeft').val();
+	if(addImageLeft != null && addImageLeft !== '')
+		vals['addImageLeft'] = addImageLeft;
+	var removeImageLeft = $formValues.find('.removeImageLeft').val();
+	if(removeImageLeft != null && removeImageLeft !== '')
+		vals['removeImageLeft'] = removeImageLeft;
+
+	var valueImageTop = $formValues.find('.valueImageTop').val();
+	var removeImageTop = $formValues.find('.removeImageTop').val() === 'true';
+	var setImageTop = removeImageTop ? null : $formValues.find('.setImageTop').val();
+	if(removeImageTop || setImageTop != null && setImageTop !== '')
+		vals['setImageTop'] = setImageTop;
+	var addImageTop = $formValues.find('.addImageTop').val();
+	if(addImageTop != null && addImageTop !== '')
+		vals['addImageTop'] = addImageTop;
+	var removeImageTop = $formValues.find('.removeImageTop').val();
+	if(removeImageTop != null && removeImageTop !== '')
+		vals['removeImageTop'] = removeImageTop;
+
 	var valueAgencyKeys = $formValues.find('input.valueAgencyKeys:checked').val();
 	if(valueAgencyKeys != null && valueAgencyKeys !== '')
 		vals['addAgencyKeys'] = valueAgencyKeys;
@@ -420,6 +460,14 @@ function patchSiteStateFilters($formFilters) {
 		var filterStateAbbreviation = $formFilters.find('.valueStateAbbreviation').val();
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
+
+		var filterImageLeft = $formFilters.find('.valueImageLeft').val();
+		if(filterImageLeft != null && filterImageLeft !== '')
+			filters.push({ name: 'fq', value: 'imageLeft:' + filterImageLeft });
+
+		var filterImageTop = $formFilters.find('.valueImageTop').val();
+		if(filterImageTop != null && filterImageTop !== '')
+			filters.push({ name: 'fq', value: 'imageTop:' + filterImageTop });
 
 		var filterAgencyKeys = $formFilters.find('.valueAgencyKeys').val();
 		if(filterAgencyKeys != null && filterAgencyKeys !== '')
@@ -582,6 +630,14 @@ function searchSiteStateFilters($formFilters) {
 		var filterStateAbbreviation = $formFilters.find('.valueStateAbbreviation').val();
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
+
+		var filterImageLeft = $formFilters.find('.valueImageLeft').val();
+		if(filterImageLeft != null && filterImageLeft !== '')
+			filters.push({ name: 'fq', value: 'imageLeft:' + filterImageLeft });
+
+		var filterImageTop = $formFilters.find('.valueImageTop').val();
+		if(filterImageTop != null && filterImageTop !== '')
+			filters.push({ name: 'fq', value: 'imageTop:' + filterImageTop });
 
 		var filterAgencyKeys = $formFilters.find('.valueAgencyKeys').val();
 		if(filterAgencyKeys != null && filterAgencyKeys !== '')
@@ -780,6 +836,14 @@ function adminsearchSiteStateFilters($formFilters) {
 		var filterStateAbbreviation = $formFilters.find('.valueStateAbbreviation').val();
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
+
+		var filterImageLeft = $formFilters.find('.valueImageLeft').val();
+		if(filterImageLeft != null && filterImageLeft !== '')
+			filters.push({ name: 'fq', value: 'imageLeft:' + filterImageLeft });
+
+		var filterImageTop = $formFilters.find('.valueImageTop').val();
+		if(filterImageTop != null && filterImageTop !== '')
+			filters.push({ name: 'fq', value: 'imageTop:' + filterImageTop });
 
 		var filterAgencyKeys = $formFilters.find('.valueAgencyKeys').val();
 		if(filterAgencyKeys != null && filterAgencyKeys !== '')
@@ -1080,6 +1144,30 @@ async function websocketSiteStateInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputSiteState' + pk + 'StateAbbreviation'));
+			}
+			var val = o['imageLeft'];
+			if(vars.includes('imageLeft')) {
+				$('.inputSiteState' + pk + 'ImageLeft').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'ImageLeft').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'ImageLeft'));
+			}
+			var val = o['imageTop'];
+			if(vars.includes('imageTop')) {
+				$('.inputSiteState' + pk + 'ImageTop').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteState' + pk + 'ImageTop').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteState' + pk + 'ImageTop'));
 			}
 			var val = o['agencyKeys'];
 			if(vars.includes('agencyKeys')) {

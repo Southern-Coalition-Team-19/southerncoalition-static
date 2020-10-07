@@ -3366,6 +3366,14 @@ function patchReportCardFilters($formFilters) {
 		if(filterReportCardYearsStr != null && filterReportCardYearsStr !== '')
 			filters.push({ name: 'fq', value: 'reportCardYearsStr:' + filterReportCardYearsStr });
 
+		var filterImageLeft = $formFilters.find('.valueImageLeft').val();
+		if(filterImageLeft != null && filterImageLeft !== '')
+			filters.push({ name: 'fq', value: 'imageLeft:' + filterImageLeft });
+
+		var filterImageTop = $formFilters.find('.valueImageTop').val();
+		if(filterImageTop != null && filterImageTop !== '')
+			filters.push({ name: 'fq', value: 'imageTop:' + filterImageTop });
+
 		var filterPupilsOtherPercent = $formFilters.find('.valuePupilsOtherPercent').val();
 		if(filterPupilsOtherPercent != null && filterPupilsOtherPercent !== '')
 			filters.push({ name: 'fq', value: 'pupilsOtherPercent:' + filterPupilsOtherPercent });
@@ -4043,6 +4051,14 @@ function searchReportCardFilters($formFilters) {
 		var filterReportCardYearsStr = $formFilters.find('.valueReportCardYearsStr').val();
 		if(filterReportCardYearsStr != null && filterReportCardYearsStr !== '')
 			filters.push({ name: 'fq', value: 'reportCardYearsStr:' + filterReportCardYearsStr });
+
+		var filterImageLeft = $formFilters.find('.valueImageLeft').val();
+		if(filterImageLeft != null && filterImageLeft !== '')
+			filters.push({ name: 'fq', value: 'imageLeft:' + filterImageLeft });
+
+		var filterImageTop = $formFilters.find('.valueImageTop').val();
+		if(filterImageTop != null && filterImageTop !== '')
+			filters.push({ name: 'fq', value: 'imageTop:' + filterImageTop });
 
 		var filterPupilsOtherPercent = $formFilters.find('.valuePupilsOtherPercent').val();
 		if(filterPupilsOtherPercent != null && filterPupilsOtherPercent !== '')
@@ -4759,6 +4775,14 @@ function adminsearchReportCardFilters($formFilters) {
 		var filterReportCardYearsStr = $formFilters.find('.valueReportCardYearsStr').val();
 		if(filterReportCardYearsStr != null && filterReportCardYearsStr !== '')
 			filters.push({ name: 'fq', value: 'reportCardYearsStr:' + filterReportCardYearsStr });
+
+		var filterImageLeft = $formFilters.find('.valueImageLeft').val();
+		if(filterImageLeft != null && filterImageLeft !== '')
+			filters.push({ name: 'fq', value: 'imageLeft:' + filterImageLeft });
+
+		var filterImageTop = $formFilters.find('.valueImageTop').val();
+		if(filterImageTop != null && filterImageTop !== '')
+			filters.push({ name: 'fq', value: 'imageTop:' + filterImageTop });
 
 		var filterPupilsOtherPercent = $formFilters.find('.valuePupilsOtherPercent').val();
 		if(filterPupilsOtherPercent != null && filterPupilsOtherPercent !== '')
@@ -6673,6 +6697,30 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'ReportCardYearsStr'));
+			}
+			var val = o['imageLeft'];
+			if(vars.includes('imageLeft')) {
+				$('.inputReportCard' + pk + 'ImageLeft').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'ImageLeft').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'ImageLeft'));
+			}
+			var val = o['imageTop'];
+			if(vars.includes('imageTop')) {
+				$('.inputReportCard' + pk + 'ImageTop').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'ImageTop').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'ImageTop'));
 			}
 			var val = o['pupilsOtherPercent'];
 			if(vars.includes('pupilsOtherPercent')) {

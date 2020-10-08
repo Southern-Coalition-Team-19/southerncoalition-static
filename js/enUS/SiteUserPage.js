@@ -217,8 +217,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 	var vals = {};
 
 	var valuePk = $formValues.find('.valuePk').val();
-	if(valuePk != null && valuePk !== '')
-	var removePk = $formFilters.find('.removePk').val() === 'true';
+	var removePk = $formValues.find('.removePk').val() === 'true';
 	var setPk = removePk ? null : $formValues.find('.setPk').val();
 	if(removePk || setPk != null && setPk !== '')
 		vals['setPk'] = setPk;
@@ -230,8 +229,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removePk'] = removePk;
 
 	var valueCreated = $formValues.find('.valueCreated').val();
-	if(valueCreated != null && valueCreated !== '')
-	var removeCreated = $formFilters.find('.removeCreated').val() === 'true';
+	var removeCreated = $formValues.find('.removeCreated').val() === 'true';
 	var setCreated = removeCreated ? null : $formValues.find('.setCreated').val();
 	if(removeCreated || setCreated != null && setCreated !== '')
 		vals['setCreated'] = setCreated;
@@ -243,8 +241,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeCreated'] = removeCreated;
 
 	var valueModified = $formValues.find('.valueModified').val();
-	if(valueModified != null && valueModified !== '')
-	var removeModified = $formFilters.find('.removeModified').val() === 'true';
+	var removeModified = $formValues.find('.removeModified').val() === 'true';
 	var setModified = removeModified ? null : $formValues.find('.setModified').val();
 	if(removeModified || setModified != null && setModified !== '')
 		vals['setModified'] = setModified;
@@ -256,8 +253,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeModified'] = removeModified;
 
 	var valueObjectId = $formValues.find('.valueObjectId').val();
-	if(valueObjectId != null && valueObjectId !== '')
-	var removeObjectId = $formFilters.find('.removeObjectId').val() === 'true';
+	var removeObjectId = $formValues.find('.removeObjectId').val() === 'true';
 	var setObjectId = removeObjectId ? null : $formValues.find('.setObjectId').val();
 	if(removeObjectId || setObjectId != null && setObjectId !== '')
 		vals['setObjectId'] = setObjectId;
@@ -269,11 +265,10 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeObjectId'] = removeObjectId;
 
 	var valueArchived = $formValues.find('.valueArchived').prop('checked');
-	if(valueArchived != null && valueArchived !== '')
-	var removeArchived = $formFilters.find('.removeArchived').val() === 'true';
+	var removeArchived = $formValues.find('.removeArchived').val() === 'true';
 	var valueArchivedSelectVal = $formValues.find('select.setArchived').val();
 	var valueArchived = null;
-	if(valueArchivedSelectVal !== '')
+	if(valueArchivedSelectVal != null && valueArchivedSelectVal !== '')
 		valueArchived = valueArchivedSelectVal == 'true';
 	setArchived = removeArchived ? null : valueArchived;
 	if(removeArchived || setArchived != null && setArchived !== '')
@@ -286,11 +281,10 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeArchived'] = removeArchived;
 
 	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
-	if(valueDeleted != null && valueDeleted !== '')
-	var removeDeleted = $formFilters.find('.removeDeleted').val() === 'true';
+	var removeDeleted = $formValues.find('.removeDeleted').val() === 'true';
 	var valueDeletedSelectVal = $formValues.find('select.setDeleted').val();
 	var valueDeleted = null;
-	if(valueDeletedSelectVal !== '')
+	if(valueDeletedSelectVal != null && valueDeletedSelectVal !== '')
 		valueDeleted = valueDeletedSelectVal == 'true';
 	setDeleted = removeDeleted ? null : valueDeleted;
 	if(removeDeleted || setDeleted != null && setDeleted !== '')
@@ -303,11 +297,10 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeDeleted'] = removeDeleted;
 
 	var valueUserReceiveEmails = $formValues.find('.valueUserReceiveEmails').prop('checked');
-	if(valueUserReceiveEmails != null && valueUserReceiveEmails !== '')
-	var removeUserReceiveEmails = $formFilters.find('.removeUserReceiveEmails').val() === 'true';
+	var removeUserReceiveEmails = $formValues.find('.removeUserReceiveEmails').val() === 'true';
 	var valueUserReceiveEmailsSelectVal = $formValues.find('select.setUserReceiveEmails').val();
 	var valueUserReceiveEmails = null;
-	if(valueUserReceiveEmailsSelectVal !== '')
+	if(valueUserReceiveEmailsSelectVal != null && valueUserReceiveEmailsSelectVal !== '')
 		valueUserReceiveEmails = valueUserReceiveEmailsSelectVal == 'true';
 	setUserReceiveEmails = removeUserReceiveEmails ? null : valueUserReceiveEmails;
 	if(removeUserReceiveEmails || setUserReceiveEmails != null && setUserReceiveEmails !== '')
@@ -320,11 +313,10 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeUserReceiveEmails'] = removeUserReceiveEmails;
 
 	var valueSeeArchived = $formValues.find('.valueSeeArchived').prop('checked');
-	if(valueSeeArchived != null && valueSeeArchived !== '')
-	var removeSeeArchived = $formFilters.find('.removeSeeArchived').val() === 'true';
+	var removeSeeArchived = $formValues.find('.removeSeeArchived').val() === 'true';
 	var valueSeeArchivedSelectVal = $formValues.find('select.setSeeArchived').val();
 	var valueSeeArchived = null;
-	if(valueSeeArchivedSelectVal !== '')
+	if(valueSeeArchivedSelectVal != null && valueSeeArchivedSelectVal !== '')
 		valueSeeArchived = valueSeeArchivedSelectVal == 'true';
 	setSeeArchived = removeSeeArchived ? null : valueSeeArchived;
 	if(removeSeeArchived || setSeeArchived != null && setSeeArchived !== '')
@@ -337,11 +329,10 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeSeeArchived'] = removeSeeArchived;
 
 	var valueSeeDeleted = $formValues.find('.valueSeeDeleted').prop('checked');
-	if(valueSeeDeleted != null && valueSeeDeleted !== '')
-	var removeSeeDeleted = $formFilters.find('.removeSeeDeleted').val() === 'true';
+	var removeSeeDeleted = $formValues.find('.removeSeeDeleted').val() === 'true';
 	var valueSeeDeletedSelectVal = $formValues.find('select.setSeeDeleted').val();
 	var valueSeeDeleted = null;
-	if(valueSeeDeletedSelectVal !== '')
+	if(valueSeeDeletedSelectVal != null && valueSeeDeletedSelectVal !== '')
 		valueSeeDeleted = valueSeeDeletedSelectVal == 'true';
 	setSeeDeleted = removeSeeDeleted ? null : valueSeeDeleted;
 	if(removeSeeDeleted || setSeeDeleted != null && setSeeDeleted !== '')
@@ -354,8 +345,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeSeeDeleted'] = removeSeeDeleted;
 
 	var valueCustomerProfileId = $formValues.find('.valueCustomerProfileId').val();
-	if(valueCustomerProfileId != null && valueCustomerProfileId !== '')
-	var removeCustomerProfileId = $formFilters.find('.removeCustomerProfileId').val() === 'true';
+	var removeCustomerProfileId = $formValues.find('.removeCustomerProfileId').val() === 'true';
 	var setCustomerProfileId = removeCustomerProfileId ? null : $formValues.find('.setCustomerProfileId').val();
 	if(removeCustomerProfileId || setCustomerProfileId != null && setCustomerProfileId !== '')
 		vals['setCustomerProfileId'] = setCustomerProfileId;
@@ -367,8 +357,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeCustomerProfileId'] = removeCustomerProfileId;
 
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
-	if(valueInheritPk != null && valueInheritPk !== '')
-	var removeInheritPk = $formFilters.find('.removeInheritPk').val() === 'true';
+	var removeInheritPk = $formValues.find('.removeInheritPk').val() === 'true';
 	var setInheritPk = removeInheritPk ? null : $formValues.find('.setInheritPk').val();
 	if(removeInheritPk || setInheritPk != null && setInheritPk !== '')
 		vals['setInheritPk'] = setInheritPk;
@@ -380,8 +369,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeInheritPk'] = removeInheritPk;
 
 	var valueUserId = $formValues.find('.valueUserId').val();
-	if(valueUserId != null && valueUserId !== '')
-	var removeUserId = $formFilters.find('.removeUserId').val() === 'true';
+	var removeUserId = $formValues.find('.removeUserId').val() === 'true';
 	var setUserId = removeUserId ? null : $formValues.find('.setUserId').val();
 	if(removeUserId || setUserId != null && setUserId !== '')
 		vals['setUserId'] = setUserId;
@@ -393,8 +381,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeUserId'] = removeUserId;
 
 	var valueUserKey = $formValues.find('.valueUserKey').val();
-	if(valueUserKey != null && valueUserKey !== '')
-	var removeUserKey = $formFilters.find('.removeUserKey').val() === 'true';
+	var removeUserKey = $formValues.find('.removeUserKey').val() === 'true';
 	var setUserKey = removeUserKey ? null : $formValues.find('.setUserKey').val();
 	if(removeUserKey || setUserKey != null && setUserKey !== '')
 		vals['setUserKey'] = setUserKey;
@@ -406,8 +393,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeUserKey'] = removeUserKey;
 
 	var valueObjectTitle = $formValues.find('.valueObjectTitle').val();
-	if(valueObjectTitle != null && valueObjectTitle !== '')
-	var removeObjectTitle = $formFilters.find('.removeObjectTitle').val() === 'true';
+	var removeObjectTitle = $formValues.find('.removeObjectTitle').val() === 'true';
 	var setObjectTitle = removeObjectTitle ? null : $formValues.find('.setObjectTitle').val();
 	if(removeObjectTitle || setObjectTitle != null && setObjectTitle !== '')
 		vals['setObjectTitle'] = setObjectTitle;
@@ -419,8 +405,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeObjectTitle'] = removeObjectTitle;
 
 	var valueUserId = $formValues.find('.valueUserId').val();
-	if(valueUserId != null && valueUserId !== '')
-	var removeUserId = $formFilters.find('.removeUserId').val() === 'true';
+	var removeUserId = $formValues.find('.removeUserId').val() === 'true';
 	var setUserId = removeUserId ? null : $formValues.find('.setUserId').val();
 	if(removeUserId || setUserId != null && setUserId !== '')
 		vals['setUserId'] = setUserId;
@@ -432,8 +417,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeUserId'] = removeUserId;
 
 	var valueUserKey = $formValues.find('.valueUserKey').val();
-	if(valueUserKey != null && valueUserKey !== '')
-	var removeUserKey = $formFilters.find('.removeUserKey').val() === 'true';
+	var removeUserKey = $formValues.find('.removeUserKey').val() === 'true';
 	var setUserKey = removeUserKey ? null : $formValues.find('.setUserKey').val();
 	if(removeUserKey || setUserKey != null && setUserKey !== '')
 		vals['setUserKey'] = setUserKey;
@@ -445,8 +429,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 		vals['removeUserKey'] = removeUserKey;
 
 	var valueUserName = $formValues.find('.valueUserName').val();
-	if(valueUserName != null && valueUserName !== '')
-	var removeUserName = $formFilters.find('.removeUserName').val() === 'true';
+	var removeUserName = $formValues.find('.removeUserName').val() === 'true';
 	var setUserName = removeUserName ? null : $formValues.find('.setUserName').val();
 	if(removeUserName || setUserName != null && setUserName !== '')
 		vals['setUserName'] = setUserName;

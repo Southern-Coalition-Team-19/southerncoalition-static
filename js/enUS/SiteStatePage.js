@@ -712,6 +712,7 @@ function searchSiteStateFilters($formFilters) {
 
 function searchSiteStateVals(filters, success, error) {
 
+
 	filters.push({ name: 'sort', value: 'stateName asc' });
 	$.ajax({
 		url: '/api/state?' + $.param(filters)
@@ -918,6 +919,7 @@ function adminsearchSiteStateFilters($formFilters) {
 
 function adminsearchSiteStateVals(filters, success, error) {
 
+
 	filters.push({ name: 'sort', value: 'stateName asc' });
 	$.ajax({
 		url: '/api/admin/state?' + $.param(filters)
@@ -993,10 +995,10 @@ async function websocketSiteState(success) {
 			var pkPage = $('#SiteStateForm :input[name=pk]').val();
 			var pks = json['pks'];
 			var empty = json['empty'];
-			var numFound = json['numFound'];
-			var numPATCH = json['numPATCH'];
+			var numFound = parseInt(json['numFound']);
+			var numPATCH = parseInt(json['numPATCH']);
 			var percent = Math.floor( numPATCH / numFound * 100 ) + '%';
-			var $box = $('<div>').attr('class', 'w3-display-topright w3-quarter box-' + id + ' ').attr('id', 'box-' + id);
+			var $box = $('<div>').attr('class', 'w3-display-topright w3-quarter box-' + id + ' ').attr('id', 'box-' + id).attr('data-numPATCH', numPATCH);
 			var $margin = $('<div>').attr('class', 'w3-margin ').attr('id', 'margin-' + id);
 			var $card = $('<div>').attr('class', 'w3-card w3-white ').attr('id', 'card-' + id);
 			var $header = $('<div>').attr('class', 'w3-container fa-pale-blue ').attr('id', 'header-' + id);
@@ -1015,10 +1017,18 @@ async function websocketSiteState(success) {
 			$card.append($body);
 			$box.append($margin);
 			$margin.append($card);
-			$('.box-' + id).remove();
-			if(numPATCH < numFound)
-			$('.top-box').append($box);
-			if(pk && pkPage && pk == pkPage) {;
+			if(numPATCH < numFound) {
+				var $old_box = $('.box-' + id);
+				if(!$old_box.size()) {
+					$('.top-box').append($box);
+				} else if($old_box && $old_box.attr('data-numPATCH') < numFound) {
+					$('.box-' + id).remove();
+					$('.top-box').append($box);
+				}
+			} else {
+				$('.box-' + id).remove();
+			}
+			if(pk && pkPage && pk == pkPage) {
 				if(success)
 					success(json);
 			}

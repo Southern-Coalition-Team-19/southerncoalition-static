@@ -3402,6 +3402,10 @@ function patchReportCardFilters($formFilters) {
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
+		var filterAgencyOnlyName = $formFilters.find('.valueAgencyOnlyName').val();
+		if(filterAgencyOnlyName != null && filterAgencyOnlyName !== '')
+			filters.push({ name: 'fq', value: 'agencyOnlyName:' + filterAgencyOnlyName });
+
 		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
 		if(filterAgencyName != null && filterAgencyName !== '')
 			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
@@ -4088,6 +4092,10 @@ function searchReportCardFilters($formFilters) {
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
+		var filterAgencyOnlyName = $formFilters.find('.valueAgencyOnlyName').val();
+		if(filterAgencyOnlyName != null && filterAgencyOnlyName !== '')
+			filters.push({ name: 'fq', value: 'agencyOnlyName:' + filterAgencyOnlyName });
+
 		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
 		if(filterAgencyName != null && filterAgencyName !== '')
 			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
@@ -4100,6 +4108,7 @@ function searchReportCardFilters($formFilters) {
 }
 
 function searchReportCardVals(filters, success, error) {
+
 
 	filters.push({ name: 'sort', value: 'reportCardStartYear desc' });
 	filters.push({ name: 'sort', value: 'stateName asc' });
@@ -4812,6 +4821,10 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
+		var filterAgencyOnlyName = $formFilters.find('.valueAgencyOnlyName').val();
+		if(filterAgencyOnlyName != null && filterAgencyOnlyName !== '')
+			filters.push({ name: 'fq', value: 'agencyOnlyName:' + filterAgencyOnlyName });
+
 		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
 		if(filterAgencyName != null && filterAgencyName !== '')
 			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
@@ -4824,6 +4837,7 @@ function adminsearchReportCardFilters($formFilters) {
 }
 
 function adminsearchReportCardVals(filters, success, error) {
+
 
 	filters.push({ name: 'sort', value: 'reportCardStartYear desc' });
 	filters.push({ name: 'sort', value: 'stateName asc' });
@@ -4902,10 +4916,10 @@ async function websocketReportCard(success) {
 			var pkPage = $('#ReportCardForm :input[name=pk]').val();
 			var pks = json['pks'];
 			var empty = json['empty'];
-			var numFound = json['numFound'];
-			var numPATCH = json['numPATCH'];
+			var numFound = parseInt(json['numFound']);
+			var numPATCH = parseInt(json['numPATCH']);
 			var percent = Math.floor( numPATCH / numFound * 100 ) + '%';
-			var $box = $('<div>').attr('class', 'w3-display-topright w3-quarter box-' + id + ' ').attr('id', 'box-' + id);
+			var $box = $('<div>').attr('class', 'w3-display-topright w3-quarter box-' + id + ' ').attr('id', 'box-' + id).attr('data-numPATCH', numPATCH);
 			var $margin = $('<div>').attr('class', 'w3-margin ').attr('id', 'margin-' + id);
 			var $card = $('<div>').attr('class', 'w3-card w3-white ').attr('id', 'card-' + id);
 			var $header = $('<div>').attr('class', 'w3-container fa-pale-green ').attr('id', 'header-' + id);
@@ -4924,10 +4938,18 @@ async function websocketReportCard(success) {
 			$card.append($body);
 			$box.append($margin);
 			$margin.append($card);
-			$('.box-' + id).remove();
-			if(numPATCH < numFound)
-			$('.top-box').append($box);
-			if(pk && pkPage && pk == pkPage) {;
+			if(numPATCH < numFound) {
+				var $old_box = $('.box-' + id);
+				if(!$old_box.size()) {
+					$('.top-box').append($box);
+				} else if($old_box && $old_box.attr('data-numPATCH') < numFound) {
+					$('.box-' + id).remove();
+					$('.top-box').append($box);
+				}
+			} else {
+				$('.box-' + id).remove();
+			}
+			if(pk && pkPage && pk == pkPage) {
 				if(success)
 					success(json);
 			}
@@ -6805,6 +6827,18 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'StateAbbreviation'));
+			}
+			var val = o['agencyOnlyName'];
+			if(vars.includes('agencyOnlyName')) {
+				$('.inputReportCard' + pk + 'AgencyOnlyName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'AgencyOnlyName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'AgencyOnlyName'));
 			}
 			var val = o['agencyName'];
 			if(vars.includes('agencyName')) {

@@ -561,6 +561,10 @@ function patchSiteAgencyFilters($formFilters) {
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
+		var filterAgencyOnlyName = $formFilters.find('.valueAgencyOnlyName').val();
+		if(filterAgencyOnlyName != null && filterAgencyOnlyName !== '')
+			filters.push({ name: 'fq', value: 'agencyOnlyName:' + filterAgencyOnlyName });
+
 		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
 		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
 			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
@@ -747,6 +751,10 @@ function searchSiteAgencyFilters($formFilters) {
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
+		var filterAgencyOnlyName = $formFilters.find('.valueAgencyOnlyName').val();
+		if(filterAgencyOnlyName != null && filterAgencyOnlyName !== '')
+			filters.push({ name: 'fq', value: 'agencyOnlyName:' + filterAgencyOnlyName });
+
 		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
 		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
 			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
@@ -755,6 +763,7 @@ function searchSiteAgencyFilters($formFilters) {
 }
 
 function searchSiteAgencyVals(filters, success, error) {
+
 
 	filters.push({ name: 'sort', value: 'agencyName asc' });
 	$.ajax({
@@ -1005,6 +1014,10 @@ function adminsearchSiteAgencyFilters($formFilters) {
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
+		var filterAgencyOnlyName = $formFilters.find('.valueAgencyOnlyName').val();
+		if(filterAgencyOnlyName != null && filterAgencyOnlyName !== '')
+			filters.push({ name: 'fq', value: 'agencyOnlyName:' + filterAgencyOnlyName });
+
 		var filterAgencyCompleteName = $formFilters.find('.valueAgencyCompleteName').val();
 		if(filterAgencyCompleteName != null && filterAgencyCompleteName !== '')
 			filters.push({ name: 'fq', value: 'agencyCompleteName:' + filterAgencyCompleteName });
@@ -1013,6 +1026,7 @@ function adminsearchSiteAgencyFilters($formFilters) {
 }
 
 function adminsearchSiteAgencyVals(filters, success, error) {
+
 
 	filters.push({ name: 'sort', value: 'agencyName asc' });
 	$.ajax({
@@ -1125,10 +1139,10 @@ async function websocketSiteAgency(success) {
 			var pkPage = $('#SiteAgencyForm :input[name=pk]').val();
 			var pks = json['pks'];
 			var empty = json['empty'];
-			var numFound = json['numFound'];
-			var numPATCH = json['numPATCH'];
+			var numFound = parseInt(json['numFound']);
+			var numPATCH = parseInt(json['numPATCH']);
 			var percent = Math.floor( numPATCH / numFound * 100 ) + '%';
-			var $box = $('<div>').attr('class', 'w3-display-topright w3-quarter box-' + id + ' ').attr('id', 'box-' + id);
+			var $box = $('<div>').attr('class', 'w3-display-topright w3-quarter box-' + id + ' ').attr('id', 'box-' + id).attr('data-numPATCH', numPATCH);
 			var $margin = $('<div>').attr('class', 'w3-margin ').attr('id', 'margin-' + id);
 			var $card = $('<div>').attr('class', 'w3-card w3-white ').attr('id', 'card-' + id);
 			var $header = $('<div>').attr('class', 'w3-container fa-pale-yellow ').attr('id', 'header-' + id);
@@ -1147,10 +1161,18 @@ async function websocketSiteAgency(success) {
 			$card.append($body);
 			$box.append($margin);
 			$margin.append($card);
-			$('.box-' + id).remove();
-			if(numPATCH < numFound)
-			$('.top-box').append($box);
-			if(pk && pkPage && pk == pkPage) {;
+			if(numPATCH < numFound) {
+				var $old_box = $('.box-' + id);
+				if(!$old_box.size()) {
+					$('.top-box').append($box);
+				} else if($old_box && $old_box.attr('data-numPATCH') < numFound) {
+					$('.box-' + id).remove();
+					$('.top-box').append($box);
+				}
+			} else {
+				$('.box-' + id).remove();
+			}
+			if(pk && pkPage && pk == pkPage) {
 				if(success)
 					success(json);
 			}
@@ -1554,6 +1576,18 @@ async function websocketSiteAgencyInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputSiteAgency' + pk + 'StateAbbreviation'));
+			}
+			var val = o['agencyOnlyName'];
+			if(vars.includes('agencyOnlyName')) {
+				$('.inputSiteAgency' + pk + 'AgencyOnlyName').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'AgencyOnlyName').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'AgencyOnlyName'));
 			}
 			var val = o['agencyCompleteName'];
 			if(vars.includes('agencyCompleteName')) {

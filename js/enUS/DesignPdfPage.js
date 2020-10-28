@@ -76,6 +76,10 @@ async function putcopyPageDesign($formValues, pk, success, error) {
 	if(valueDesignHidden != null && valueDesignHidden !== '')
 		vals['designHidden'] = valueDesignHidden;
 
+	var valuePageContentType = $formValues.find('.valuePageContentType').val();
+	if(valuePageContentType != null && valuePageContentType !== '')
+		vals['pageContentType'] = valuePageContentType;
+
 	var valueParentDesignKeys = $formValues.find('input.valueParentDesignKeys:checked').val();
 	if(valueParentDesignKeys != null && valueParentDesignKeys !== '')
 		vals['parentDesignKeys'] = [valueParentDesignKeys];
@@ -164,6 +168,10 @@ async function postPageDesign($formValues, success, error) {
 	var valueDesignHidden = $formValues.find('.valueDesignHidden').prop('checked');
 	if(valueDesignHidden != null && valueDesignHidden !== '')
 		vals['designHidden'] = valueDesignHidden;
+
+	var valuePageContentType = $formValues.find('.valuePageContentType').val();
+	if(valuePageContentType != null && valuePageContentType !== '')
+		vals['pageContentType'] = valuePageContentType;
 
 	var valueParentDesignKeys = [];
 	$formValues.find('input.valueParentDesignKeys:checked').each(function(index) {
@@ -333,6 +341,18 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	if(removeDesignHidden != null && removeDesignHidden !== '')
 		vals['removeDesignHidden'] = removeDesignHidden;
 
+	var valuePageContentType = $formValues.find('.valuePageContentType').val();
+	var removePageContentType = $formValues.find('.removePageContentType').val() === 'true';
+	var setPageContentType = removePageContentType ? null : $formValues.find('.setPageContentType').val();
+	if(removePageContentType || setPageContentType != null && setPageContentType !== '')
+		vals['setPageContentType'] = setPageContentType;
+	var addPageContentType = $formValues.find('.addPageContentType').val();
+	if(addPageContentType != null && addPageContentType !== '')
+		vals['addPageContentType'] = addPageContentType;
+	var removePageContentType = $formValues.find('.removePageContentType').val();
+	if(removePageContentType != null && removePageContentType !== '')
+		vals['removePageContentType'] = removePageContentType;
+
 	var valueParentDesignKeys = $formValues.find('input.valueParentDesignKeys:checked').val();
 	if(valueParentDesignKeys != null && valueParentDesignKeys !== '')
 		vals['addParentDesignKeys'] = valueParentDesignKeys;
@@ -445,6 +465,10 @@ function patchPageDesignFilters($formFilters) {
 			filterDesignHidden = filterDesignHiddenSelectVal == 'true';
 		if(filterDesignHidden != null && filterDesignHidden === true)
 			filters.push({ name: 'fq', value: 'designHidden:' + filterDesignHidden });
+
+		var filterPageContentType = $formFilters.find('.valuePageContentType').val();
+		if(filterPageContentType != null && filterPageContentType !== '')
+			filters.push({ name: 'fq', value: 'pageContentType:' + filterPageContentType });
 
 		var filterParentDesignKeys = $formFilters.find('.valueParentDesignKeys').val();
 		if(filterParentDesignKeys != null && filterParentDesignKeys !== '')
@@ -617,6 +641,10 @@ function searchPageDesignFilters($formFilters) {
 			filterDesignHidden = filterDesignHiddenSelectVal == 'true';
 		if(filterDesignHidden != null && filterDesignHidden === true)
 			filters.push({ name: 'fq', value: 'designHidden:' + filterDesignHidden });
+
+		var filterPageContentType = $formFilters.find('.valuePageContentType').val();
+		if(filterPageContentType != null && filterPageContentType !== '')
+			filters.push({ name: 'fq', value: 'pageContentType:' + filterPageContentType });
 
 		var filterParentDesignKeys = $formFilters.find('.valueParentDesignKeys').val();
 		if(filterParentDesignKeys != null && filterParentDesignKeys !== '')
@@ -1076,6 +1104,10 @@ function adminsearchPageDesignFilters($formFilters) {
 			filterDesignHidden = filterDesignHiddenSelectVal == 'true';
 		if(filterDesignHidden != null && filterDesignHidden === true)
 			filters.push({ name: 'fq', value: 'designHidden:' + filterDesignHidden });
+
+		var filterPageContentType = $formFilters.find('.valuePageContentType').val();
+		if(filterPageContentType != null && filterPageContentType !== '')
+			filters.push({ name: 'fq', value: 'pageContentType:' + filterPageContentType });
 
 		var filterParentDesignKeys = $formFilters.find('.valueParentDesignKeys').val();
 		if(filterParentDesignKeys != null && filterParentDesignKeys !== '')
@@ -1668,6 +1700,18 @@ async function websocketPageDesignInner(apiRequest) {
 				});
 				addGlow($('.inputPageDesign' + pk + 'DesignHidden'));
 			}
+			var val = o['pageContentType'];
+			if(vars.includes('pageContentType')) {
+				$('.inputPageDesign' + pk + 'PageContentType').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'PageContentType').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'PageContentType'));
+			}
 			var val = o['parentDesignKeys'];
 			if(vars.includes('parentDesignKeys')) {
 				$('.inputPageDesign' + pk + 'ParentDesignKeys').each(function() {
@@ -1715,6 +1759,18 @@ async function websocketPageDesignInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputPageDesign' + pk + 'Id'));
+			}
+			var val = o['modifiedIsoOffsetDateTime'];
+			if(vars.includes('modifiedIsoOffsetDateTime')) {
+				$('.inputPageDesign' + pk + 'ModifiedIsoOffsetDateTime').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varPageDesign' + pk + 'ModifiedIsoOffsetDateTime').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputPageDesign' + pk + 'ModifiedIsoOffsetDateTime'));
 			}
 			var val = o['classCanonicalName'];
 			if(vars.includes('classCanonicalName')) {

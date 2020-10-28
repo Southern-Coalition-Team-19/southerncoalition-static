@@ -1385,6 +1385,18 @@ async function websocketSiteAgencyInner(apiRequest) {
 				});
 				addGlow($('.inputSiteAgency' + pk + 'Id'));
 			}
+			var val = o['modifiedIsoOffsetDateTime'];
+			if(vars.includes('modifiedIsoOffsetDateTime')) {
+				$('.inputSiteAgency' + pk + 'ModifiedIsoOffsetDateTime').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'ModifiedIsoOffsetDateTime').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'ModifiedIsoOffsetDateTime'));
+			}
 			var val = o['classCanonicalName'];
 			if(vars.includes('classCanonicalName')) {
 				$('.inputSiteAgency' + pk + 'ClassCanonicalName').each(function() {

@@ -6552,6 +6552,18 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'Id'));
 			}
+			var val = o['modifiedIsoOffsetDateTime'];
+			if(vars.includes('modifiedIsoOffsetDateTime')) {
+				$('.inputReportCard' + pk + 'ModifiedIsoOffsetDateTime').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'ModifiedIsoOffsetDateTime').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'ModifiedIsoOffsetDateTime'));
+			}
 			var val = o['classCanonicalName'];
 			if(vars.includes('classCanonicalName')) {
 				$('.inputReportCard' + pk + 'ClassCanonicalName').each(function() {
@@ -7019,6 +7031,18 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'AgencyStudentsByRaceGraph2'));
+			}
+			var val = o['reportCardImage'];
+			if(vars.includes('reportCardImage')) {
+				$('.inputReportCard' + pk + 'ReportCardImage').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'ReportCardImage').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'ReportCardImage'));
 			}
 		});
 	}

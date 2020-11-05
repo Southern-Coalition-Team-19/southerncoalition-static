@@ -104,6 +104,10 @@ async function postHtmlPart($formValues, success, error) {
 	if(valueHtmlVarHtml != null && valueHtmlVarHtml !== '')
 		vals['htmlVarHtml'] = valueHtmlVarHtml;
 
+	var valueHtmlVarBase64Decode = $formValues.find('.valueHtmlVarBase64Decode').val();
+	if(valueHtmlVarBase64Decode != null && valueHtmlVarBase64Decode !== '')
+		vals['htmlVarBase64Decode'] = valueHtmlVarBase64Decode;
+
 	var valueHtmlExclude = $formValues.find('.valueHtmlExclude').prop('checked');
 	if(valueHtmlExclude != null && valueHtmlExclude !== '')
 		vals['htmlExclude'] = valueHtmlExclude;
@@ -323,6 +327,10 @@ async function putcopyHtmlPart($formValues, pk, success, error) {
 	var valueHtmlVarHtml = $formValues.find('.valueHtmlVarHtml').val();
 	if(valueHtmlVarHtml != null && valueHtmlVarHtml !== '')
 		vals['htmlVarHtml'] = valueHtmlVarHtml;
+
+	var valueHtmlVarBase64Decode = $formValues.find('.valueHtmlVarBase64Decode').val();
+	if(valueHtmlVarBase64Decode != null && valueHtmlVarBase64Decode !== '')
+		vals['htmlVarBase64Decode'] = valueHtmlVarBase64Decode;
 
 	var valueHtmlExclude = $formValues.find('.valueHtmlExclude').prop('checked');
 	if(valueHtmlExclude != null && valueHtmlExclude !== '')
@@ -666,6 +674,18 @@ async function patchHtmlPart($formFilters, $formValues, pk, success, error) {
 	if(removeHtmlVarHtml != null && removeHtmlVarHtml !== '')
 		vals['removeHtmlVarHtml'] = removeHtmlVarHtml;
 
+	var valueHtmlVarBase64Decode = $formValues.find('.valueHtmlVarBase64Decode').val();
+	var removeHtmlVarBase64Decode = $formValues.find('.removeHtmlVarBase64Decode').val() === 'true';
+	var setHtmlVarBase64Decode = removeHtmlVarBase64Decode ? null : $formValues.find('.setHtmlVarBase64Decode').val();
+	if(removeHtmlVarBase64Decode || setHtmlVarBase64Decode != null && setHtmlVarBase64Decode !== '')
+		vals['setHtmlVarBase64Decode'] = setHtmlVarBase64Decode;
+	var addHtmlVarBase64Decode = $formValues.find('.addHtmlVarBase64Decode').val();
+	if(addHtmlVarBase64Decode != null && addHtmlVarBase64Decode !== '')
+		vals['addHtmlVarBase64Decode'] = addHtmlVarBase64Decode;
+	var removeHtmlVarBase64Decode = $formValues.find('.removeHtmlVarBase64Decode').val();
+	if(removeHtmlVarBase64Decode != null && removeHtmlVarBase64Decode !== '')
+		vals['removeHtmlVarBase64Decode'] = removeHtmlVarBase64Decode;
+
 	var valueHtmlExclude = $formValues.find('.valueHtmlExclude').prop('checked');
 	var removeHtmlExclude = $formValues.find('.removeHtmlExclude').val() === 'true';
 	var valueHtmlExcludeSelectVal = $formValues.find('select.setHtmlExclude').val();
@@ -973,6 +993,10 @@ function patchHtmlPartFilters($formFilters) {
 		if(filterHtmlVarHtml != null && filterHtmlVarHtml !== '')
 			filters.push({ name: 'fq', value: 'htmlVarHtml:' + filterHtmlVarHtml });
 
+		var filterHtmlVarBase64Decode = $formFilters.find('.valueHtmlVarBase64Decode').val();
+		if(filterHtmlVarBase64Decode != null && filterHtmlVarBase64Decode !== '')
+			filters.push({ name: 'fq', value: 'htmlVarBase64Decode:' + filterHtmlVarBase64Decode });
+
 		var $filterHtmlExcludeCheckbox = $formFilters.find('input.valueHtmlExclude[type = "checkbox"]');
 		var $filterHtmlExcludeSelect = $formFilters.find('select.valueHtmlExclude');
 		var filterHtmlExclude = $filterHtmlExcludeSelect.length ? $filterHtmlExcludeSelect.val() : $filterHtmlExcludeCheckbox.prop('checked');
@@ -1236,6 +1260,10 @@ function searchHtmlPartFilters($formFilters) {
 		var filterHtmlVarHtml = $formFilters.find('.valueHtmlVarHtml').val();
 		if(filterHtmlVarHtml != null && filterHtmlVarHtml !== '')
 			filters.push({ name: 'fq', value: 'htmlVarHtml:' + filterHtmlVarHtml });
+
+		var filterHtmlVarBase64Decode = $formFilters.find('.valueHtmlVarBase64Decode').val();
+		if(filterHtmlVarBase64Decode != null && filterHtmlVarBase64Decode !== '')
+			filters.push({ name: 'fq', value: 'htmlVarBase64Decode:' + filterHtmlVarBase64Decode });
 
 		var $filterHtmlExcludeCheckbox = $formFilters.find('input.valueHtmlExclude[type = "checkbox"]');
 		var $filterHtmlExcludeSelect = $formFilters.find('select.valueHtmlExclude');
@@ -1766,6 +1794,18 @@ async function websocketHtmlPartInner(apiRequest) {
 				});
 				addGlow($('.inputHtmlPart' + pk + 'HtmlVarHtml'));
 			}
+			var val = o['htmlVarBase64Decode'];
+			if(vars.includes('htmlVarBase64Decode')) {
+				$('.inputHtmlPart' + pk + 'HtmlVarBase64Decode').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'HtmlVarBase64Decode').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'HtmlVarBase64Decode'));
+			}
 			var val = o['htmlExclude'];
 			if(vars.includes('htmlExclude')) {
 				$('.inputHtmlPart' + pk + 'HtmlExclude').each(function() {
@@ -1945,6 +1985,18 @@ async function websocketHtmlPartInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputHtmlPart' + pk + 'Id'));
+			}
+			var val = o['modifiedIsoOffsetDateTime'];
+			if(vars.includes('modifiedIsoOffsetDateTime')) {
+				$('.inputHtmlPart' + pk + 'ModifiedIsoOffsetDateTime').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varHtmlPart' + pk + 'ModifiedIsoOffsetDateTime').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputHtmlPart' + pk + 'ModifiedIsoOffsetDateTime'));
 			}
 			var val = o['classCanonicalName'];
 			if(vars.includes('classCanonicalName')) {

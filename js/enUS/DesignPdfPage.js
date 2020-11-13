@@ -236,9 +236,9 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valuePk = $formValues.find('.valuePk').val();
 	var removePk = $formValues.find('.removePk').val() === 'true';
 	var setPk = removePk ? null : $formValues.find('.setPk').val();
+	var addPk = $formValues.find('.addPk').val();
 	if(removePk || setPk != null && setPk !== '')
 		vals['setPk'] = setPk;
-	var addPk = $formValues.find('.addPk').val();
 	if(addPk != null && addPk !== '')
 		vals['addPk'] = addPk;
 	var removePk = $formValues.find('.removePk').val();
@@ -248,9 +248,9 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valueCreated = $formValues.find('.valueCreated').val();
 	var removeCreated = $formValues.find('.removeCreated').val() === 'true';
 	var setCreated = removeCreated ? null : $formValues.find('.setCreated').val();
+	var addCreated = $formValues.find('.addCreated').val();
 	if(removeCreated || setCreated != null && setCreated !== '')
 		vals['setCreated'] = setCreated;
-	var addCreated = $formValues.find('.addCreated').val();
 	if(addCreated != null && addCreated !== '')
 		vals['addCreated'] = addCreated;
 	var removeCreated = $formValues.find('.removeCreated').val();
@@ -260,9 +260,9 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valueModified = $formValues.find('.valueModified').val();
 	var removeModified = $formValues.find('.removeModified').val() === 'true';
 	var setModified = removeModified ? null : $formValues.find('.setModified').val();
+	var addModified = $formValues.find('.addModified').val();
 	if(removeModified || setModified != null && setModified !== '')
 		vals['setModified'] = setModified;
-	var addModified = $formValues.find('.addModified').val();
 	if(addModified != null && addModified !== '')
 		vals['addModified'] = addModified;
 	var removeModified = $formValues.find('.removeModified').val();
@@ -272,9 +272,9 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valueObjectId = $formValues.find('.valueObjectId').val();
 	var removeObjectId = $formValues.find('.removeObjectId').val() === 'true';
 	var setObjectId = removeObjectId ? null : $formValues.find('.setObjectId').val();
+	var addObjectId = $formValues.find('.addObjectId').val();
 	if(removeObjectId || setObjectId != null && setObjectId !== '')
 		vals['setObjectId'] = setObjectId;
-	var addObjectId = $formValues.find('.addObjectId').val();
 	if(addObjectId != null && addObjectId !== '')
 		vals['addObjectId'] = addObjectId;
 	var removeObjectId = $formValues.find('.removeObjectId').val();
@@ -287,10 +287,10 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valueArchived = null;
 	if(valueArchivedSelectVal != null && valueArchivedSelectVal !== '')
 		valueArchived = valueArchivedSelectVal == 'true';
-	setArchived = removeArchived ? null : valueArchived;
+	var setArchived = removeArchived ? null : valueArchived;
+	var addArchived = $formValues.find('.addArchived').prop('checked');
 	if(removeArchived || setArchived != null && setArchived !== '')
 		vals['setArchived'] = setArchived;
-	var addArchived = $formValues.find('.addArchived').prop('checked');
 	if(addArchived != null && addArchived !== '')
 		vals['addArchived'] = addArchived;
 	var removeArchived = $formValues.find('.removeArchived').prop('checked');
@@ -303,10 +303,10 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valueDeleted = null;
 	if(valueDeletedSelectVal != null && valueDeletedSelectVal !== '')
 		valueDeleted = valueDeletedSelectVal == 'true';
-	setDeleted = removeDeleted ? null : valueDeleted;
+	var setDeleted = removeDeleted ? null : valueDeleted;
+	var addDeleted = $formValues.find('.addDeleted').prop('checked');
 	if(removeDeleted || setDeleted != null && setDeleted !== '')
 		vals['setDeleted'] = setDeleted;
-	var addDeleted = $formValues.find('.addDeleted').prop('checked');
 	if(addDeleted != null && addDeleted !== '')
 		vals['addDeleted'] = addDeleted;
 	var removeDeleted = $formValues.find('.removeDeleted').prop('checked');
@@ -316,9 +316,9 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valuePageDesignCompleteName = $formValues.find('.valuePageDesignCompleteName').val();
 	var removePageDesignCompleteName = $formValues.find('.removePageDesignCompleteName').val() === 'true';
 	var setPageDesignCompleteName = removePageDesignCompleteName ? null : $formValues.find('.setPageDesignCompleteName').val();
+	var addPageDesignCompleteName = $formValues.find('.addPageDesignCompleteName').val();
 	if(removePageDesignCompleteName || setPageDesignCompleteName != null && setPageDesignCompleteName !== '')
 		vals['setPageDesignCompleteName'] = setPageDesignCompleteName;
-	var addPageDesignCompleteName = $formValues.find('.addPageDesignCompleteName').val();
 	if(addPageDesignCompleteName != null && addPageDesignCompleteName !== '')
 		vals['addPageDesignCompleteName'] = addPageDesignCompleteName;
 	var removePageDesignCompleteName = $formValues.find('.removePageDesignCompleteName').val();
@@ -331,10 +331,10 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valueDesignHidden = null;
 	if(valueDesignHiddenSelectVal != null && valueDesignHiddenSelectVal !== '')
 		valueDesignHidden = valueDesignHiddenSelectVal == 'true';
-	setDesignHidden = removeDesignHidden ? null : valueDesignHidden;
+	var setDesignHidden = removeDesignHidden ? null : valueDesignHidden;
+	var addDesignHidden = $formValues.find('.addDesignHidden').prop('checked');
 	if(removeDesignHidden || setDesignHidden != null && setDesignHidden !== '')
 		vals['setDesignHidden'] = setDesignHidden;
-	var addDesignHidden = $formValues.find('.addDesignHidden').prop('checked');
 	if(addDesignHidden != null && addDesignHidden !== '')
 		vals['addDesignHidden'] = addDesignHidden;
 	var removeDesignHidden = $formValues.find('.removeDesignHidden').prop('checked');
@@ -344,9 +344,9 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valuePageContentType = $formValues.find('.valuePageContentType').val();
 	var removePageContentType = $formValues.find('.removePageContentType').val() === 'true';
 	var setPageContentType = removePageContentType ? null : $formValues.find('.setPageContentType').val();
+	var addPageContentType = $formValues.find('.addPageContentType').val();
 	if(removePageContentType || setPageContentType != null && setPageContentType !== '')
 		vals['setPageContentType'] = setPageContentType;
-	var addPageContentType = $formValues.find('.addPageContentType').val();
 	if(addPageContentType != null && addPageContentType !== '')
 		vals['addPageContentType'] = addPageContentType;
 	var removePageContentType = $formValues.find('.removePageContentType').val();
@@ -364,9 +364,9 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
 	var removeInheritPk = $formValues.find('.removeInheritPk').val() === 'true';
 	var setInheritPk = removeInheritPk ? null : $formValues.find('.setInheritPk').val();
+	var addInheritPk = $formValues.find('.addInheritPk').val();
 	if(removeInheritPk || setInheritPk != null && setInheritPk !== '')
 		vals['setInheritPk'] = setInheritPk;
-	var addInheritPk = $formValues.find('.addInheritPk').val();
 	if(addInheritPk != null && addInheritPk !== '')
 		vals['addInheritPk'] = addInheritPk;
 	var removeInheritPk = $formValues.find('.removeInheritPk').val();
@@ -376,9 +376,9 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valueUserId = $formValues.find('.valueUserId').val();
 	var removeUserId = $formValues.find('.removeUserId').val() === 'true';
 	var setUserId = removeUserId ? null : $formValues.find('.setUserId').val();
+	var addUserId = $formValues.find('.addUserId').val();
 	if(removeUserId || setUserId != null && setUserId !== '')
 		vals['setUserId'] = setUserId;
-	var addUserId = $formValues.find('.addUserId').val();
 	if(addUserId != null && addUserId !== '')
 		vals['addUserId'] = addUserId;
 	var removeUserId = $formValues.find('.removeUserId').val();
@@ -388,9 +388,9 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valueUserKey = $formValues.find('.valueUserKey').val();
 	var removeUserKey = $formValues.find('.removeUserKey').val() === 'true';
 	var setUserKey = removeUserKey ? null : $formValues.find('.setUserKey').val();
+	var addUserKey = $formValues.find('.addUserKey').val();
 	if(removeUserKey || setUserKey != null && setUserKey !== '')
 		vals['setUserKey'] = setUserKey;
-	var addUserKey = $formValues.find('.addUserKey').val();
 	if(addUserKey != null && addUserKey !== '')
 		vals['addUserKey'] = addUserKey;
 	var removeUserKey = $formValues.find('.removeUserKey').val();
@@ -400,9 +400,9 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	var valueObjectTitle = $formValues.find('.valueObjectTitle').val();
 	var removeObjectTitle = $formValues.find('.removeObjectTitle').val() === 'true';
 	var setObjectTitle = removeObjectTitle ? null : $formValues.find('.setObjectTitle').val();
+	var addObjectTitle = $formValues.find('.addObjectTitle').val();
 	if(removeObjectTitle || setObjectTitle != null && setObjectTitle !== '')
 		vals['setObjectTitle'] = setObjectTitle;
-	var addObjectTitle = $formValues.find('.addObjectTitle').val();
 	if(addObjectTitle != null && addObjectTitle !== '')
 		vals['addObjectTitle'] = addObjectTitle;
 	var removeObjectTitle = $formValues.find('.removeObjectTitle').val();

@@ -1174,9 +1174,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePk = $formValues.find('.valuePk').val();
 	var removePk = $formValues.find('.removePk').val() === 'true';
 	var setPk = removePk ? null : $formValues.find('.setPk').val();
+	var addPk = $formValues.find('.addPk').val();
 	if(removePk || setPk != null && setPk !== '')
 		vals['setPk'] = setPk;
-	var addPk = $formValues.find('.addPk').val();
 	if(addPk != null && addPk !== '')
 		vals['addPk'] = addPk;
 	var removePk = $formValues.find('.removePk').val();
@@ -1186,9 +1186,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueCreated = $formValues.find('.valueCreated').val();
 	var removeCreated = $formValues.find('.removeCreated').val() === 'true';
 	var setCreated = removeCreated ? null : $formValues.find('.setCreated').val();
+	var addCreated = $formValues.find('.addCreated').val();
 	if(removeCreated || setCreated != null && setCreated !== '')
 		vals['setCreated'] = setCreated;
-	var addCreated = $formValues.find('.addCreated').val();
 	if(addCreated != null && addCreated !== '')
 		vals['addCreated'] = addCreated;
 	var removeCreated = $formValues.find('.removeCreated').val();
@@ -1198,9 +1198,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueModified = $formValues.find('.valueModified').val();
 	var removeModified = $formValues.find('.removeModified').val() === 'true';
 	var setModified = removeModified ? null : $formValues.find('.setModified').val();
+	var addModified = $formValues.find('.addModified').val();
 	if(removeModified || setModified != null && setModified !== '')
 		vals['setModified'] = setModified;
-	var addModified = $formValues.find('.addModified').val();
 	if(addModified != null && addModified !== '')
 		vals['addModified'] = addModified;
 	var removeModified = $formValues.find('.removeModified').val();
@@ -1210,9 +1210,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueObjectId = $formValues.find('.valueObjectId').val();
 	var removeObjectId = $formValues.find('.removeObjectId').val() === 'true';
 	var setObjectId = removeObjectId ? null : $formValues.find('.setObjectId').val();
+	var addObjectId = $formValues.find('.addObjectId').val();
 	if(removeObjectId || setObjectId != null && setObjectId !== '')
 		vals['setObjectId'] = setObjectId;
-	var addObjectId = $formValues.find('.addObjectId').val();
 	if(addObjectId != null && addObjectId !== '')
 		vals['addObjectId'] = addObjectId;
 	var removeObjectId = $formValues.find('.removeObjectId').val();
@@ -1225,10 +1225,10 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueArchived = null;
 	if(valueArchivedSelectVal != null && valueArchivedSelectVal !== '')
 		valueArchived = valueArchivedSelectVal == 'true';
-	setArchived = removeArchived ? null : valueArchived;
+	var setArchived = removeArchived ? null : valueArchived;
+	var addArchived = $formValues.find('.addArchived').prop('checked');
 	if(removeArchived || setArchived != null && setArchived !== '')
 		vals['setArchived'] = setArchived;
-	var addArchived = $formValues.find('.addArchived').prop('checked');
 	if(addArchived != null && addArchived !== '')
 		vals['addArchived'] = addArchived;
 	var removeArchived = $formValues.find('.removeArchived').prop('checked');
@@ -1241,10 +1241,10 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDeleted = null;
 	if(valueDeletedSelectVal != null && valueDeletedSelectVal !== '')
 		valueDeleted = valueDeletedSelectVal == 'true';
-	setDeleted = removeDeleted ? null : valueDeleted;
+	var setDeleted = removeDeleted ? null : valueDeleted;
+	var addDeleted = $formValues.find('.addDeleted').prop('checked');
 	if(removeDeleted || setDeleted != null && setDeleted !== '')
 		vals['setDeleted'] = setDeleted;
-	var addDeleted = $formValues.find('.addDeleted').prop('checked');
 	if(addDeleted != null && addDeleted !== '')
 		vals['addDeleted'] = addDeleted;
 	var removeDeleted = $formValues.find('.removeDeleted').prop('checked');
@@ -1254,9 +1254,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueReportCardStartYear = $formValues.find('.valueReportCardStartYear').val();
 	var removeReportCardStartYear = $formValues.find('.removeReportCardStartYear').val() === 'true';
 	var setReportCardStartYear = removeReportCardStartYear ? null : $formValues.find('.setReportCardStartYear').val();
+	var addReportCardStartYear = $formValues.find('.addReportCardStartYear').val();
 	if(removeReportCardStartYear || setReportCardStartYear != null && setReportCardStartYear !== '')
 		vals['setReportCardStartYear'] = setReportCardStartYear;
-	var addReportCardStartYear = $formValues.find('.addReportCardStartYear').val();
 	if(addReportCardStartYear != null && addReportCardStartYear !== '')
 		vals['addReportCardStartYear'] = addReportCardStartYear;
 	var removeReportCardStartYear = $formValues.find('.removeReportCardStartYear').val();
@@ -1266,9 +1266,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueReportCardEndYear = $formValues.find('.valueReportCardEndYear').val();
 	var removeReportCardEndYear = $formValues.find('.removeReportCardEndYear').val() === 'true';
 	var setReportCardEndYear = removeReportCardEndYear ? null : $formValues.find('.setReportCardEndYear').val();
+	var addReportCardEndYear = $formValues.find('.addReportCardEndYear').val();
 	if(removeReportCardEndYear || setReportCardEndYear != null && setReportCardEndYear !== '')
 		vals['setReportCardEndYear'] = setReportCardEndYear;
-	var addReportCardEndYear = $formValues.find('.addReportCardEndYear').val();
 	if(addReportCardEndYear != null && addReportCardEndYear !== '')
 		vals['addReportCardEndYear'] = addReportCardEndYear;
 	var removeReportCardEndYear = $formValues.find('.removeReportCardEndYear').val();
@@ -1282,9 +1282,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsIndigenousMale = $formValues.find('.valuePupilsIndigenousMale').val();
 	var removePupilsIndigenousMale = $formValues.find('.removePupilsIndigenousMale').val() === 'true';
 	var setPupilsIndigenousMale = removePupilsIndigenousMale ? null : $formValues.find('.setPupilsIndigenousMale').val();
+	var addPupilsIndigenousMale = $formValues.find('.addPupilsIndigenousMale').val();
 	if(removePupilsIndigenousMale || setPupilsIndigenousMale != null && setPupilsIndigenousMale !== '')
 		vals['setPupilsIndigenousMale'] = setPupilsIndigenousMale;
-	var addPupilsIndigenousMale = $formValues.find('.addPupilsIndigenousMale').val();
 	if(addPupilsIndigenousMale != null && addPupilsIndigenousMale !== '')
 		vals['addPupilsIndigenousMale'] = addPupilsIndigenousMale;
 	var removePupilsIndigenousMale = $formValues.find('.removePupilsIndigenousMale').val();
@@ -1294,9 +1294,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsIndigenousFemale = $formValues.find('.valuePupilsIndigenousFemale').val();
 	var removePupilsIndigenousFemale = $formValues.find('.removePupilsIndigenousFemale').val() === 'true';
 	var setPupilsIndigenousFemale = removePupilsIndigenousFemale ? null : $formValues.find('.setPupilsIndigenousFemale').val();
+	var addPupilsIndigenousFemale = $formValues.find('.addPupilsIndigenousFemale').val();
 	if(removePupilsIndigenousFemale || setPupilsIndigenousFemale != null && setPupilsIndigenousFemale !== '')
 		vals['setPupilsIndigenousFemale'] = setPupilsIndigenousFemale;
-	var addPupilsIndigenousFemale = $formValues.find('.addPupilsIndigenousFemale').val();
 	if(addPupilsIndigenousFemale != null && addPupilsIndigenousFemale !== '')
 		vals['addPupilsIndigenousFemale'] = addPupilsIndigenousFemale;
 	var removePupilsIndigenousFemale = $formValues.find('.removePupilsIndigenousFemale').val();
@@ -1306,9 +1306,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsIndigenousTotal = $formValues.find('.valuePupilsIndigenousTotal').val();
 	var removePupilsIndigenousTotal = $formValues.find('.removePupilsIndigenousTotal').val() === 'true';
 	var setPupilsIndigenousTotal = removePupilsIndigenousTotal ? null : $formValues.find('.setPupilsIndigenousTotal').val();
+	var addPupilsIndigenousTotal = $formValues.find('.addPupilsIndigenousTotal').val();
 	if(removePupilsIndigenousTotal || setPupilsIndigenousTotal != null && setPupilsIndigenousTotal !== '')
 		vals['setPupilsIndigenousTotal'] = setPupilsIndigenousTotal;
-	var addPupilsIndigenousTotal = $formValues.find('.addPupilsIndigenousTotal').val();
 	if(addPupilsIndigenousTotal != null && addPupilsIndigenousTotal !== '')
 		vals['addPupilsIndigenousTotal'] = addPupilsIndigenousTotal;
 	var removePupilsIndigenousTotal = $formValues.find('.removePupilsIndigenousTotal').val();
@@ -1318,9 +1318,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsIndigenousPercent = $formValues.find('.valuePupilsIndigenousPercent').val();
 	var removePupilsIndigenousPercent = $formValues.find('.removePupilsIndigenousPercent').val() === 'true';
 	var setPupilsIndigenousPercent = removePupilsIndigenousPercent ? null : $formValues.find('.setPupilsIndigenousPercent').val();
+	var addPupilsIndigenousPercent = $formValues.find('.addPupilsIndigenousPercent').val();
 	if(removePupilsIndigenousPercent || setPupilsIndigenousPercent != null && setPupilsIndigenousPercent !== '')
 		vals['setPupilsIndigenousPercent'] = setPupilsIndigenousPercent;
-	var addPupilsIndigenousPercent = $formValues.find('.addPupilsIndigenousPercent').val();
 	if(addPupilsIndigenousPercent != null && addPupilsIndigenousPercent !== '')
 		vals['addPupilsIndigenousPercent'] = addPupilsIndigenousPercent;
 	var removePupilsIndigenousPercent = $formValues.find('.removePupilsIndigenousPercent').val();
@@ -1330,9 +1330,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsAsianMale = $formValues.find('.valuePupilsAsianMale').val();
 	var removePupilsAsianMale = $formValues.find('.removePupilsAsianMale').val() === 'true';
 	var setPupilsAsianMale = removePupilsAsianMale ? null : $formValues.find('.setPupilsAsianMale').val();
+	var addPupilsAsianMale = $formValues.find('.addPupilsAsianMale').val();
 	if(removePupilsAsianMale || setPupilsAsianMale != null && setPupilsAsianMale !== '')
 		vals['setPupilsAsianMale'] = setPupilsAsianMale;
-	var addPupilsAsianMale = $formValues.find('.addPupilsAsianMale').val();
 	if(addPupilsAsianMale != null && addPupilsAsianMale !== '')
 		vals['addPupilsAsianMale'] = addPupilsAsianMale;
 	var removePupilsAsianMale = $formValues.find('.removePupilsAsianMale').val();
@@ -1342,9 +1342,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsAsianFemale = $formValues.find('.valuePupilsAsianFemale').val();
 	var removePupilsAsianFemale = $formValues.find('.removePupilsAsianFemale').val() === 'true';
 	var setPupilsAsianFemale = removePupilsAsianFemale ? null : $formValues.find('.setPupilsAsianFemale').val();
+	var addPupilsAsianFemale = $formValues.find('.addPupilsAsianFemale').val();
 	if(removePupilsAsianFemale || setPupilsAsianFemale != null && setPupilsAsianFemale !== '')
 		vals['setPupilsAsianFemale'] = setPupilsAsianFemale;
-	var addPupilsAsianFemale = $formValues.find('.addPupilsAsianFemale').val();
 	if(addPupilsAsianFemale != null && addPupilsAsianFemale !== '')
 		vals['addPupilsAsianFemale'] = addPupilsAsianFemale;
 	var removePupilsAsianFemale = $formValues.find('.removePupilsAsianFemale').val();
@@ -1354,9 +1354,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsAsianTotal = $formValues.find('.valuePupilsAsianTotal').val();
 	var removePupilsAsianTotal = $formValues.find('.removePupilsAsianTotal').val() === 'true';
 	var setPupilsAsianTotal = removePupilsAsianTotal ? null : $formValues.find('.setPupilsAsianTotal').val();
+	var addPupilsAsianTotal = $formValues.find('.addPupilsAsianTotal').val();
 	if(removePupilsAsianTotal || setPupilsAsianTotal != null && setPupilsAsianTotal !== '')
 		vals['setPupilsAsianTotal'] = setPupilsAsianTotal;
-	var addPupilsAsianTotal = $formValues.find('.addPupilsAsianTotal').val();
 	if(addPupilsAsianTotal != null && addPupilsAsianTotal !== '')
 		vals['addPupilsAsianTotal'] = addPupilsAsianTotal;
 	var removePupilsAsianTotal = $formValues.find('.removePupilsAsianTotal').val();
@@ -1366,9 +1366,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsAsianPercent = $formValues.find('.valuePupilsAsianPercent').val();
 	var removePupilsAsianPercent = $formValues.find('.removePupilsAsianPercent').val() === 'true';
 	var setPupilsAsianPercent = removePupilsAsianPercent ? null : $formValues.find('.setPupilsAsianPercent').val();
+	var addPupilsAsianPercent = $formValues.find('.addPupilsAsianPercent').val();
 	if(removePupilsAsianPercent || setPupilsAsianPercent != null && setPupilsAsianPercent !== '')
 		vals['setPupilsAsianPercent'] = setPupilsAsianPercent;
-	var addPupilsAsianPercent = $formValues.find('.addPupilsAsianPercent').val();
 	if(addPupilsAsianPercent != null && addPupilsAsianPercent !== '')
 		vals['addPupilsAsianPercent'] = addPupilsAsianPercent;
 	var removePupilsAsianPercent = $formValues.find('.removePupilsAsianPercent').val();
@@ -1378,9 +1378,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsLatinxMale = $formValues.find('.valuePupilsLatinxMale').val();
 	var removePupilsLatinxMale = $formValues.find('.removePupilsLatinxMale').val() === 'true';
 	var setPupilsLatinxMale = removePupilsLatinxMale ? null : $formValues.find('.setPupilsLatinxMale').val();
+	var addPupilsLatinxMale = $formValues.find('.addPupilsLatinxMale').val();
 	if(removePupilsLatinxMale || setPupilsLatinxMale != null && setPupilsLatinxMale !== '')
 		vals['setPupilsLatinxMale'] = setPupilsLatinxMale;
-	var addPupilsLatinxMale = $formValues.find('.addPupilsLatinxMale').val();
 	if(addPupilsLatinxMale != null && addPupilsLatinxMale !== '')
 		vals['addPupilsLatinxMale'] = addPupilsLatinxMale;
 	var removePupilsLatinxMale = $formValues.find('.removePupilsLatinxMale').val();
@@ -1390,9 +1390,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsLatinxFemale = $formValues.find('.valuePupilsLatinxFemale').val();
 	var removePupilsLatinxFemale = $formValues.find('.removePupilsLatinxFemale').val() === 'true';
 	var setPupilsLatinxFemale = removePupilsLatinxFemale ? null : $formValues.find('.setPupilsLatinxFemale').val();
+	var addPupilsLatinxFemale = $formValues.find('.addPupilsLatinxFemale').val();
 	if(removePupilsLatinxFemale || setPupilsLatinxFemale != null && setPupilsLatinxFemale !== '')
 		vals['setPupilsLatinxFemale'] = setPupilsLatinxFemale;
-	var addPupilsLatinxFemale = $formValues.find('.addPupilsLatinxFemale').val();
 	if(addPupilsLatinxFemale != null && addPupilsLatinxFemale !== '')
 		vals['addPupilsLatinxFemale'] = addPupilsLatinxFemale;
 	var removePupilsLatinxFemale = $formValues.find('.removePupilsLatinxFemale').val();
@@ -1402,9 +1402,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsLatinxTotal = $formValues.find('.valuePupilsLatinxTotal').val();
 	var removePupilsLatinxTotal = $formValues.find('.removePupilsLatinxTotal').val() === 'true';
 	var setPupilsLatinxTotal = removePupilsLatinxTotal ? null : $formValues.find('.setPupilsLatinxTotal').val();
+	var addPupilsLatinxTotal = $formValues.find('.addPupilsLatinxTotal').val();
 	if(removePupilsLatinxTotal || setPupilsLatinxTotal != null && setPupilsLatinxTotal !== '')
 		vals['setPupilsLatinxTotal'] = setPupilsLatinxTotal;
-	var addPupilsLatinxTotal = $formValues.find('.addPupilsLatinxTotal').val();
 	if(addPupilsLatinxTotal != null && addPupilsLatinxTotal !== '')
 		vals['addPupilsLatinxTotal'] = addPupilsLatinxTotal;
 	var removePupilsLatinxTotal = $formValues.find('.removePupilsLatinxTotal').val();
@@ -1414,9 +1414,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsLatinxPercent = $formValues.find('.valuePupilsLatinxPercent').val();
 	var removePupilsLatinxPercent = $formValues.find('.removePupilsLatinxPercent').val() === 'true';
 	var setPupilsLatinxPercent = removePupilsLatinxPercent ? null : $formValues.find('.setPupilsLatinxPercent').val();
+	var addPupilsLatinxPercent = $formValues.find('.addPupilsLatinxPercent').val();
 	if(removePupilsLatinxPercent || setPupilsLatinxPercent != null && setPupilsLatinxPercent !== '')
 		vals['setPupilsLatinxPercent'] = setPupilsLatinxPercent;
-	var addPupilsLatinxPercent = $formValues.find('.addPupilsLatinxPercent').val();
 	if(addPupilsLatinxPercent != null && addPupilsLatinxPercent !== '')
 		vals['addPupilsLatinxPercent'] = addPupilsLatinxPercent;
 	var removePupilsLatinxPercent = $formValues.find('.removePupilsLatinxPercent').val();
@@ -1426,9 +1426,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsBlackMale = $formValues.find('.valuePupilsBlackMale').val();
 	var removePupilsBlackMale = $formValues.find('.removePupilsBlackMale').val() === 'true';
 	var setPupilsBlackMale = removePupilsBlackMale ? null : $formValues.find('.setPupilsBlackMale').val();
+	var addPupilsBlackMale = $formValues.find('.addPupilsBlackMale').val();
 	if(removePupilsBlackMale || setPupilsBlackMale != null && setPupilsBlackMale !== '')
 		vals['setPupilsBlackMale'] = setPupilsBlackMale;
-	var addPupilsBlackMale = $formValues.find('.addPupilsBlackMale').val();
 	if(addPupilsBlackMale != null && addPupilsBlackMale !== '')
 		vals['addPupilsBlackMale'] = addPupilsBlackMale;
 	var removePupilsBlackMale = $formValues.find('.removePupilsBlackMale').val();
@@ -1438,9 +1438,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsBlackFemale = $formValues.find('.valuePupilsBlackFemale').val();
 	var removePupilsBlackFemale = $formValues.find('.removePupilsBlackFemale').val() === 'true';
 	var setPupilsBlackFemale = removePupilsBlackFemale ? null : $formValues.find('.setPupilsBlackFemale').val();
+	var addPupilsBlackFemale = $formValues.find('.addPupilsBlackFemale').val();
 	if(removePupilsBlackFemale || setPupilsBlackFemale != null && setPupilsBlackFemale !== '')
 		vals['setPupilsBlackFemale'] = setPupilsBlackFemale;
-	var addPupilsBlackFemale = $formValues.find('.addPupilsBlackFemale').val();
 	if(addPupilsBlackFemale != null && addPupilsBlackFemale !== '')
 		vals['addPupilsBlackFemale'] = addPupilsBlackFemale;
 	var removePupilsBlackFemale = $formValues.find('.removePupilsBlackFemale').val();
@@ -1450,9 +1450,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsBlackTotal = $formValues.find('.valuePupilsBlackTotal').val();
 	var removePupilsBlackTotal = $formValues.find('.removePupilsBlackTotal').val() === 'true';
 	var setPupilsBlackTotal = removePupilsBlackTotal ? null : $formValues.find('.setPupilsBlackTotal').val();
+	var addPupilsBlackTotal = $formValues.find('.addPupilsBlackTotal').val();
 	if(removePupilsBlackTotal || setPupilsBlackTotal != null && setPupilsBlackTotal !== '')
 		vals['setPupilsBlackTotal'] = setPupilsBlackTotal;
-	var addPupilsBlackTotal = $formValues.find('.addPupilsBlackTotal').val();
 	if(addPupilsBlackTotal != null && addPupilsBlackTotal !== '')
 		vals['addPupilsBlackTotal'] = addPupilsBlackTotal;
 	var removePupilsBlackTotal = $formValues.find('.removePupilsBlackTotal').val();
@@ -1462,9 +1462,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsBlackPercent = $formValues.find('.valuePupilsBlackPercent').val();
 	var removePupilsBlackPercent = $formValues.find('.removePupilsBlackPercent').val() === 'true';
 	var setPupilsBlackPercent = removePupilsBlackPercent ? null : $formValues.find('.setPupilsBlackPercent').val();
+	var addPupilsBlackPercent = $formValues.find('.addPupilsBlackPercent').val();
 	if(removePupilsBlackPercent || setPupilsBlackPercent != null && setPupilsBlackPercent !== '')
 		vals['setPupilsBlackPercent'] = setPupilsBlackPercent;
-	var addPupilsBlackPercent = $formValues.find('.addPupilsBlackPercent').val();
 	if(addPupilsBlackPercent != null && addPupilsBlackPercent !== '')
 		vals['addPupilsBlackPercent'] = addPupilsBlackPercent;
 	var removePupilsBlackPercent = $formValues.find('.removePupilsBlackPercent').val();
@@ -1474,9 +1474,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsWhiteMale = $formValues.find('.valuePupilsWhiteMale').val();
 	var removePupilsWhiteMale = $formValues.find('.removePupilsWhiteMale').val() === 'true';
 	var setPupilsWhiteMale = removePupilsWhiteMale ? null : $formValues.find('.setPupilsWhiteMale').val();
+	var addPupilsWhiteMale = $formValues.find('.addPupilsWhiteMale').val();
 	if(removePupilsWhiteMale || setPupilsWhiteMale != null && setPupilsWhiteMale !== '')
 		vals['setPupilsWhiteMale'] = setPupilsWhiteMale;
-	var addPupilsWhiteMale = $formValues.find('.addPupilsWhiteMale').val();
 	if(addPupilsWhiteMale != null && addPupilsWhiteMale !== '')
 		vals['addPupilsWhiteMale'] = addPupilsWhiteMale;
 	var removePupilsWhiteMale = $formValues.find('.removePupilsWhiteMale').val();
@@ -1486,9 +1486,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsWhiteFemale = $formValues.find('.valuePupilsWhiteFemale').val();
 	var removePupilsWhiteFemale = $formValues.find('.removePupilsWhiteFemale').val() === 'true';
 	var setPupilsWhiteFemale = removePupilsWhiteFemale ? null : $formValues.find('.setPupilsWhiteFemale').val();
+	var addPupilsWhiteFemale = $formValues.find('.addPupilsWhiteFemale').val();
 	if(removePupilsWhiteFemale || setPupilsWhiteFemale != null && setPupilsWhiteFemale !== '')
 		vals['setPupilsWhiteFemale'] = setPupilsWhiteFemale;
-	var addPupilsWhiteFemale = $formValues.find('.addPupilsWhiteFemale').val();
 	if(addPupilsWhiteFemale != null && addPupilsWhiteFemale !== '')
 		vals['addPupilsWhiteFemale'] = addPupilsWhiteFemale;
 	var removePupilsWhiteFemale = $formValues.find('.removePupilsWhiteFemale').val();
@@ -1498,9 +1498,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsWhiteTotal = $formValues.find('.valuePupilsWhiteTotal').val();
 	var removePupilsWhiteTotal = $formValues.find('.removePupilsWhiteTotal').val() === 'true';
 	var setPupilsWhiteTotal = removePupilsWhiteTotal ? null : $formValues.find('.setPupilsWhiteTotal').val();
+	var addPupilsWhiteTotal = $formValues.find('.addPupilsWhiteTotal').val();
 	if(removePupilsWhiteTotal || setPupilsWhiteTotal != null && setPupilsWhiteTotal !== '')
 		vals['setPupilsWhiteTotal'] = setPupilsWhiteTotal;
-	var addPupilsWhiteTotal = $formValues.find('.addPupilsWhiteTotal').val();
 	if(addPupilsWhiteTotal != null && addPupilsWhiteTotal !== '')
 		vals['addPupilsWhiteTotal'] = addPupilsWhiteTotal;
 	var removePupilsWhiteTotal = $formValues.find('.removePupilsWhiteTotal').val();
@@ -1510,9 +1510,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsWhitePercent = $formValues.find('.valuePupilsWhitePercent').val();
 	var removePupilsWhitePercent = $formValues.find('.removePupilsWhitePercent').val() === 'true';
 	var setPupilsWhitePercent = removePupilsWhitePercent ? null : $formValues.find('.setPupilsWhitePercent').val();
+	var addPupilsWhitePercent = $formValues.find('.addPupilsWhitePercent').val();
 	if(removePupilsWhitePercent || setPupilsWhitePercent != null && setPupilsWhitePercent !== '')
 		vals['setPupilsWhitePercent'] = setPupilsWhitePercent;
-	var addPupilsWhitePercent = $formValues.find('.addPupilsWhitePercent').val();
 	if(addPupilsWhitePercent != null && addPupilsWhitePercent !== '')
 		vals['addPupilsWhitePercent'] = addPupilsWhitePercent;
 	var removePupilsWhitePercent = $formValues.find('.removePupilsWhitePercent').val();
@@ -1522,9 +1522,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsPacificIslanderMale = $formValues.find('.valuePupilsPacificIslanderMale').val();
 	var removePupilsPacificIslanderMale = $formValues.find('.removePupilsPacificIslanderMale').val() === 'true';
 	var setPupilsPacificIslanderMale = removePupilsPacificIslanderMale ? null : $formValues.find('.setPupilsPacificIslanderMale').val();
+	var addPupilsPacificIslanderMale = $formValues.find('.addPupilsPacificIslanderMale').val();
 	if(removePupilsPacificIslanderMale || setPupilsPacificIslanderMale != null && setPupilsPacificIslanderMale !== '')
 		vals['setPupilsPacificIslanderMale'] = setPupilsPacificIslanderMale;
-	var addPupilsPacificIslanderMale = $formValues.find('.addPupilsPacificIslanderMale').val();
 	if(addPupilsPacificIslanderMale != null && addPupilsPacificIslanderMale !== '')
 		vals['addPupilsPacificIslanderMale'] = addPupilsPacificIslanderMale;
 	var removePupilsPacificIslanderMale = $formValues.find('.removePupilsPacificIslanderMale').val();
@@ -1534,9 +1534,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsPacificIslanderFemale = $formValues.find('.valuePupilsPacificIslanderFemale').val();
 	var removePupilsPacificIslanderFemale = $formValues.find('.removePupilsPacificIslanderFemale').val() === 'true';
 	var setPupilsPacificIslanderFemale = removePupilsPacificIslanderFemale ? null : $formValues.find('.setPupilsPacificIslanderFemale').val();
+	var addPupilsPacificIslanderFemale = $formValues.find('.addPupilsPacificIslanderFemale').val();
 	if(removePupilsPacificIslanderFemale || setPupilsPacificIslanderFemale != null && setPupilsPacificIslanderFemale !== '')
 		vals['setPupilsPacificIslanderFemale'] = setPupilsPacificIslanderFemale;
-	var addPupilsPacificIslanderFemale = $formValues.find('.addPupilsPacificIslanderFemale').val();
 	if(addPupilsPacificIslanderFemale != null && addPupilsPacificIslanderFemale !== '')
 		vals['addPupilsPacificIslanderFemale'] = addPupilsPacificIslanderFemale;
 	var removePupilsPacificIslanderFemale = $formValues.find('.removePupilsPacificIslanderFemale').val();
@@ -1546,9 +1546,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsPacificIslanderTotal = $formValues.find('.valuePupilsPacificIslanderTotal').val();
 	var removePupilsPacificIslanderTotal = $formValues.find('.removePupilsPacificIslanderTotal').val() === 'true';
 	var setPupilsPacificIslanderTotal = removePupilsPacificIslanderTotal ? null : $formValues.find('.setPupilsPacificIslanderTotal').val();
+	var addPupilsPacificIslanderTotal = $formValues.find('.addPupilsPacificIslanderTotal').val();
 	if(removePupilsPacificIslanderTotal || setPupilsPacificIslanderTotal != null && setPupilsPacificIslanderTotal !== '')
 		vals['setPupilsPacificIslanderTotal'] = setPupilsPacificIslanderTotal;
-	var addPupilsPacificIslanderTotal = $formValues.find('.addPupilsPacificIslanderTotal').val();
 	if(addPupilsPacificIslanderTotal != null && addPupilsPacificIslanderTotal !== '')
 		vals['addPupilsPacificIslanderTotal'] = addPupilsPacificIslanderTotal;
 	var removePupilsPacificIslanderTotal = $formValues.find('.removePupilsPacificIslanderTotal').val();
@@ -1558,9 +1558,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsPacificIslanderPercent = $formValues.find('.valuePupilsPacificIslanderPercent').val();
 	var removePupilsPacificIslanderPercent = $formValues.find('.removePupilsPacificIslanderPercent').val() === 'true';
 	var setPupilsPacificIslanderPercent = removePupilsPacificIslanderPercent ? null : $formValues.find('.setPupilsPacificIslanderPercent').val();
+	var addPupilsPacificIslanderPercent = $formValues.find('.addPupilsPacificIslanderPercent').val();
 	if(removePupilsPacificIslanderPercent || setPupilsPacificIslanderPercent != null && setPupilsPacificIslanderPercent !== '')
 		vals['setPupilsPacificIslanderPercent'] = setPupilsPacificIslanderPercent;
-	var addPupilsPacificIslanderPercent = $formValues.find('.addPupilsPacificIslanderPercent').val();
 	if(addPupilsPacificIslanderPercent != null && addPupilsPacificIslanderPercent !== '')
 		vals['addPupilsPacificIslanderPercent'] = addPupilsPacificIslanderPercent;
 	var removePupilsPacificIslanderPercent = $formValues.find('.removePupilsPacificIslanderPercent').val();
@@ -1570,9 +1570,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsMultiRacialMale = $formValues.find('.valuePupilsMultiRacialMale').val();
 	var removePupilsMultiRacialMale = $formValues.find('.removePupilsMultiRacialMale').val() === 'true';
 	var setPupilsMultiRacialMale = removePupilsMultiRacialMale ? null : $formValues.find('.setPupilsMultiRacialMale').val();
+	var addPupilsMultiRacialMale = $formValues.find('.addPupilsMultiRacialMale').val();
 	if(removePupilsMultiRacialMale || setPupilsMultiRacialMale != null && setPupilsMultiRacialMale !== '')
 		vals['setPupilsMultiRacialMale'] = setPupilsMultiRacialMale;
-	var addPupilsMultiRacialMale = $formValues.find('.addPupilsMultiRacialMale').val();
 	if(addPupilsMultiRacialMale != null && addPupilsMultiRacialMale !== '')
 		vals['addPupilsMultiRacialMale'] = addPupilsMultiRacialMale;
 	var removePupilsMultiRacialMale = $formValues.find('.removePupilsMultiRacialMale').val();
@@ -1582,9 +1582,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsMultiRacialFemale = $formValues.find('.valuePupilsMultiRacialFemale').val();
 	var removePupilsMultiRacialFemale = $formValues.find('.removePupilsMultiRacialFemale').val() === 'true';
 	var setPupilsMultiRacialFemale = removePupilsMultiRacialFemale ? null : $formValues.find('.setPupilsMultiRacialFemale').val();
+	var addPupilsMultiRacialFemale = $formValues.find('.addPupilsMultiRacialFemale').val();
 	if(removePupilsMultiRacialFemale || setPupilsMultiRacialFemale != null && setPupilsMultiRacialFemale !== '')
 		vals['setPupilsMultiRacialFemale'] = setPupilsMultiRacialFemale;
-	var addPupilsMultiRacialFemale = $formValues.find('.addPupilsMultiRacialFemale').val();
 	if(addPupilsMultiRacialFemale != null && addPupilsMultiRacialFemale !== '')
 		vals['addPupilsMultiRacialFemale'] = addPupilsMultiRacialFemale;
 	var removePupilsMultiRacialFemale = $formValues.find('.removePupilsMultiRacialFemale').val();
@@ -1594,9 +1594,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsMultiRacialTotal = $formValues.find('.valuePupilsMultiRacialTotal').val();
 	var removePupilsMultiRacialTotal = $formValues.find('.removePupilsMultiRacialTotal').val() === 'true';
 	var setPupilsMultiRacialTotal = removePupilsMultiRacialTotal ? null : $formValues.find('.setPupilsMultiRacialTotal').val();
+	var addPupilsMultiRacialTotal = $formValues.find('.addPupilsMultiRacialTotal').val();
 	if(removePupilsMultiRacialTotal || setPupilsMultiRacialTotal != null && setPupilsMultiRacialTotal !== '')
 		vals['setPupilsMultiRacialTotal'] = setPupilsMultiRacialTotal;
-	var addPupilsMultiRacialTotal = $formValues.find('.addPupilsMultiRacialTotal').val();
 	if(addPupilsMultiRacialTotal != null && addPupilsMultiRacialTotal !== '')
 		vals['addPupilsMultiRacialTotal'] = addPupilsMultiRacialTotal;
 	var removePupilsMultiRacialTotal = $formValues.find('.removePupilsMultiRacialTotal').val();
@@ -1606,9 +1606,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsMultiRacialPercent = $formValues.find('.valuePupilsMultiRacialPercent').val();
 	var removePupilsMultiRacialPercent = $formValues.find('.removePupilsMultiRacialPercent').val() === 'true';
 	var setPupilsMultiRacialPercent = removePupilsMultiRacialPercent ? null : $formValues.find('.setPupilsMultiRacialPercent').val();
+	var addPupilsMultiRacialPercent = $formValues.find('.addPupilsMultiRacialPercent').val();
 	if(removePupilsMultiRacialPercent || setPupilsMultiRacialPercent != null && setPupilsMultiRacialPercent !== '')
 		vals['setPupilsMultiRacialPercent'] = setPupilsMultiRacialPercent;
-	var addPupilsMultiRacialPercent = $formValues.find('.addPupilsMultiRacialPercent').val();
 	if(addPupilsMultiRacialPercent != null && addPupilsMultiRacialPercent !== '')
 		vals['addPupilsMultiRacialPercent'] = addPupilsMultiRacialPercent;
 	var removePupilsMultiRacialPercent = $formValues.find('.removePupilsMultiRacialPercent').val();
@@ -1618,9 +1618,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valuePupilsTotal = $formValues.find('.valuePupilsTotal').val();
 	var removePupilsTotal = $formValues.find('.removePupilsTotal').val() === 'true';
 	var setPupilsTotal = removePupilsTotal ? null : $formValues.find('.setPupilsTotal').val();
+	var addPupilsTotal = $formValues.find('.addPupilsTotal').val();
 	if(removePupilsTotal || setPupilsTotal != null && setPupilsTotal !== '')
 		vals['setPupilsTotal'] = setPupilsTotal;
-	var addPupilsTotal = $formValues.find('.addPupilsTotal').val();
 	if(addPupilsTotal != null && addPupilsTotal !== '')
 		vals['addPupilsTotal'] = addPupilsTotal;
 	var removePupilsTotal = $formValues.find('.removePupilsTotal').val();
@@ -1630,9 +1630,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueTeachersMale = $formValues.find('.valueTeachersMale').val();
 	var removeTeachersMale = $formValues.find('.removeTeachersMale').val() === 'true';
 	var setTeachersMale = removeTeachersMale ? null : $formValues.find('.setTeachersMale').val();
+	var addTeachersMale = $formValues.find('.addTeachersMale').val();
 	if(removeTeachersMale || setTeachersMale != null && setTeachersMale !== '')
 		vals['setTeachersMale'] = setTeachersMale;
-	var addTeachersMale = $formValues.find('.addTeachersMale').val();
 	if(addTeachersMale != null && addTeachersMale !== '')
 		vals['addTeachersMale'] = addTeachersMale;
 	var removeTeachersMale = $formValues.find('.removeTeachersMale').val();
@@ -1642,9 +1642,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueTeachersFemale = $formValues.find('.valueTeachersFemale').val();
 	var removeTeachersFemale = $formValues.find('.removeTeachersFemale').val() === 'true';
 	var setTeachersFemale = removeTeachersFemale ? null : $formValues.find('.setTeachersFemale').val();
+	var addTeachersFemale = $formValues.find('.addTeachersFemale').val();
 	if(removeTeachersFemale || setTeachersFemale != null && setTeachersFemale !== '')
 		vals['setTeachersFemale'] = setTeachersFemale;
-	var addTeachersFemale = $formValues.find('.addTeachersFemale').val();
 	if(addTeachersFemale != null && addTeachersFemale !== '')
 		vals['addTeachersFemale'] = addTeachersFemale;
 	var removeTeachersFemale = $formValues.find('.removeTeachersFemale').val();
@@ -1654,9 +1654,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueTeachersTotal = $formValues.find('.valueTeachersTotal').val();
 	var removeTeachersTotal = $formValues.find('.removeTeachersTotal').val() === 'true';
 	var setTeachersTotal = removeTeachersTotal ? null : $formValues.find('.setTeachersTotal').val();
+	var addTeachersTotal = $formValues.find('.addTeachersTotal').val();
 	if(removeTeachersTotal || setTeachersTotal != null && setTeachersTotal !== '')
 		vals['setTeachersTotal'] = setTeachersTotal;
-	var addTeachersTotal = $formValues.find('.addTeachersTotal').val();
 	if(addTeachersTotal != null && addTeachersTotal !== '')
 		vals['addTeachersTotal'] = addTeachersTotal;
 	var removeTeachersTotal = $formValues.find('.removeTeachersTotal').val();
@@ -1666,9 +1666,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueTeachersWhiteTotal = $formValues.find('.valueTeachersWhiteTotal').val();
 	var removeTeachersWhiteTotal = $formValues.find('.removeTeachersWhiteTotal').val() === 'true';
 	var setTeachersWhiteTotal = removeTeachersWhiteTotal ? null : $formValues.find('.setTeachersWhiteTotal').val();
+	var addTeachersWhiteTotal = $formValues.find('.addTeachersWhiteTotal').val();
 	if(removeTeachersWhiteTotal || setTeachersWhiteTotal != null && setTeachersWhiteTotal !== '')
 		vals['setTeachersWhiteTotal'] = setTeachersWhiteTotal;
-	var addTeachersWhiteTotal = $formValues.find('.addTeachersWhiteTotal').val();
 	if(addTeachersWhiteTotal != null && addTeachersWhiteTotal !== '')
 		vals['addTeachersWhiteTotal'] = addTeachersWhiteTotal;
 	var removeTeachersWhiteTotal = $formValues.find('.removeTeachersWhiteTotal').val();
@@ -1678,9 +1678,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueTeachersWhitePercent = $formValues.find('.valueTeachersWhitePercent').val();
 	var removeTeachersWhitePercent = $formValues.find('.removeTeachersWhitePercent').val() === 'true';
 	var setTeachersWhitePercent = removeTeachersWhitePercent ? null : $formValues.find('.setTeachersWhitePercent').val();
+	var addTeachersWhitePercent = $formValues.find('.addTeachersWhitePercent').val();
 	if(removeTeachersWhitePercent || setTeachersWhitePercent != null && setTeachersWhitePercent !== '')
 		vals['setTeachersWhitePercent'] = setTeachersWhitePercent;
-	var addTeachersWhitePercent = $formValues.find('.addTeachersWhitePercent').val();
 	if(addTeachersWhitePercent != null && addTeachersWhitePercent !== '')
 		vals['addTeachersWhitePercent'] = addTeachersWhitePercent;
 	var removeTeachersWhitePercent = $formValues.find('.removeTeachersWhitePercent').val();
@@ -1690,9 +1690,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueTeachersBlackTotal = $formValues.find('.valueTeachersBlackTotal').val();
 	var removeTeachersBlackTotal = $formValues.find('.removeTeachersBlackTotal').val() === 'true';
 	var setTeachersBlackTotal = removeTeachersBlackTotal ? null : $formValues.find('.setTeachersBlackTotal').val();
+	var addTeachersBlackTotal = $formValues.find('.addTeachersBlackTotal').val();
 	if(removeTeachersBlackTotal || setTeachersBlackTotal != null && setTeachersBlackTotal !== '')
 		vals['setTeachersBlackTotal'] = setTeachersBlackTotal;
-	var addTeachersBlackTotal = $formValues.find('.addTeachersBlackTotal').val();
 	if(addTeachersBlackTotal != null && addTeachersBlackTotal !== '')
 		vals['addTeachersBlackTotal'] = addTeachersBlackTotal;
 	var removeTeachersBlackTotal = $formValues.find('.removeTeachersBlackTotal').val();
@@ -1702,9 +1702,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueTeachersBlackPercent = $formValues.find('.valueTeachersBlackPercent').val();
 	var removeTeachersBlackPercent = $formValues.find('.removeTeachersBlackPercent').val() === 'true';
 	var setTeachersBlackPercent = removeTeachersBlackPercent ? null : $formValues.find('.setTeachersBlackPercent').val();
+	var addTeachersBlackPercent = $formValues.find('.addTeachersBlackPercent').val();
 	if(removeTeachersBlackPercent || setTeachersBlackPercent != null && setTeachersBlackPercent !== '')
 		vals['setTeachersBlackPercent'] = setTeachersBlackPercent;
-	var addTeachersBlackPercent = $formValues.find('.addTeachersBlackPercent').val();
 	if(addTeachersBlackPercent != null && addTeachersBlackPercent !== '')
 		vals['addTeachersBlackPercent'] = addTeachersBlackPercent;
 	var removeTeachersBlackPercent = $formValues.find('.removeTeachersBlackPercent').val();
@@ -1714,9 +1714,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueTeachersOtherTotal = $formValues.find('.valueTeachersOtherTotal').val();
 	var removeTeachersOtherTotal = $formValues.find('.removeTeachersOtherTotal').val() === 'true';
 	var setTeachersOtherTotal = removeTeachersOtherTotal ? null : $formValues.find('.setTeachersOtherTotal').val();
+	var addTeachersOtherTotal = $formValues.find('.addTeachersOtherTotal').val();
 	if(removeTeachersOtherTotal || setTeachersOtherTotal != null && setTeachersOtherTotal !== '')
 		vals['setTeachersOtherTotal'] = setTeachersOtherTotal;
-	var addTeachersOtherTotal = $formValues.find('.addTeachersOtherTotal').val();
 	if(addTeachersOtherTotal != null && addTeachersOtherTotal !== '')
 		vals['addTeachersOtherTotal'] = addTeachersOtherTotal;
 	var removeTeachersOtherTotal = $formValues.find('.removeTeachersOtherTotal').val();
@@ -1726,9 +1726,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueTeachersOtherPercent = $formValues.find('.valueTeachersOtherPercent').val();
 	var removeTeachersOtherPercent = $formValues.find('.removeTeachersOtherPercent').val() === 'true';
 	var setTeachersOtherPercent = removeTeachersOtherPercent ? null : $formValues.find('.setTeachersOtherPercent').val();
+	var addTeachersOtherPercent = $formValues.find('.addTeachersOtherPercent').val();
 	if(removeTeachersOtherPercent || setTeachersOtherPercent != null && setTeachersOtherPercent !== '')
 		vals['setTeachersOtherPercent'] = setTeachersOtherPercent;
-	var addTeachersOtherPercent = $formValues.find('.addTeachersOtherPercent').val();
 	if(addTeachersOtherPercent != null && addTeachersOtherPercent !== '')
 		vals['addTeachersOtherPercent'] = addTeachersOtherPercent;
 	var removeTeachersOtherPercent = $formValues.find('.removeTeachersOtherPercent').val();
@@ -1738,9 +1738,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsTotal = $formValues.find('.valueDelinquentComplaintsTotal').val();
 	var removeDelinquentComplaintsTotal = $formValues.find('.removeDelinquentComplaintsTotal').val() === 'true';
 	var setDelinquentComplaintsTotal = removeDelinquentComplaintsTotal ? null : $formValues.find('.setDelinquentComplaintsTotal').val();
+	var addDelinquentComplaintsTotal = $formValues.find('.addDelinquentComplaintsTotal').val();
 	if(removeDelinquentComplaintsTotal || setDelinquentComplaintsTotal != null && setDelinquentComplaintsTotal !== '')
 		vals['setDelinquentComplaintsTotal'] = setDelinquentComplaintsTotal;
-	var addDelinquentComplaintsTotal = $formValues.find('.addDelinquentComplaintsTotal').val();
 	if(addDelinquentComplaintsTotal != null && addDelinquentComplaintsTotal !== '')
 		vals['addDelinquentComplaintsTotal'] = addDelinquentComplaintsTotal;
 	var removeDelinquentComplaintsTotal = $formValues.find('.removeDelinquentComplaintsTotal').val();
@@ -1750,9 +1750,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsAtSchool = $formValues.find('.valueDelinquentComplaintsAtSchool').val();
 	var removeDelinquentComplaintsAtSchool = $formValues.find('.removeDelinquentComplaintsAtSchool').val() === 'true';
 	var setDelinquentComplaintsAtSchool = removeDelinquentComplaintsAtSchool ? null : $formValues.find('.setDelinquentComplaintsAtSchool').val();
+	var addDelinquentComplaintsAtSchool = $formValues.find('.addDelinquentComplaintsAtSchool').val();
 	if(removeDelinquentComplaintsAtSchool || setDelinquentComplaintsAtSchool != null && setDelinquentComplaintsAtSchool !== '')
 		vals['setDelinquentComplaintsAtSchool'] = setDelinquentComplaintsAtSchool;
-	var addDelinquentComplaintsAtSchool = $formValues.find('.addDelinquentComplaintsAtSchool').val();
 	if(addDelinquentComplaintsAtSchool != null && addDelinquentComplaintsAtSchool !== '')
 		vals['addDelinquentComplaintsAtSchool'] = addDelinquentComplaintsAtSchool;
 	var removeDelinquentComplaintsAtSchool = $formValues.find('.removeDelinquentComplaintsAtSchool').val();
@@ -1762,9 +1762,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsAtSchoolPercent = $formValues.find('.valueDelinquentComplaintsAtSchoolPercent').val();
 	var removeDelinquentComplaintsAtSchoolPercent = $formValues.find('.removeDelinquentComplaintsAtSchoolPercent').val() === 'true';
 	var setDelinquentComplaintsAtSchoolPercent = removeDelinquentComplaintsAtSchoolPercent ? null : $formValues.find('.setDelinquentComplaintsAtSchoolPercent').val();
+	var addDelinquentComplaintsAtSchoolPercent = $formValues.find('.addDelinquentComplaintsAtSchoolPercent').val();
 	if(removeDelinquentComplaintsAtSchoolPercent || setDelinquentComplaintsAtSchoolPercent != null && setDelinquentComplaintsAtSchoolPercent !== '')
 		vals['setDelinquentComplaintsAtSchoolPercent'] = setDelinquentComplaintsAtSchoolPercent;
-	var addDelinquentComplaintsAtSchoolPercent = $formValues.find('.addDelinquentComplaintsAtSchoolPercent').val();
 	if(addDelinquentComplaintsAtSchoolPercent != null && addDelinquentComplaintsAtSchoolPercent !== '')
 		vals['addDelinquentComplaintsAtSchoolPercent'] = addDelinquentComplaintsAtSchoolPercent;
 	var removeDelinquentComplaintsAtSchoolPercent = $formValues.find('.removeDelinquentComplaintsAtSchoolPercent').val();
@@ -1774,9 +1774,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsAsian = $formValues.find('.valueDelinquentComplaintsAsian').val();
 	var removeDelinquentComplaintsAsian = $formValues.find('.removeDelinquentComplaintsAsian').val() === 'true';
 	var setDelinquentComplaintsAsian = removeDelinquentComplaintsAsian ? null : $formValues.find('.setDelinquentComplaintsAsian').val();
+	var addDelinquentComplaintsAsian = $formValues.find('.addDelinquentComplaintsAsian').val();
 	if(removeDelinquentComplaintsAsian || setDelinquentComplaintsAsian != null && setDelinquentComplaintsAsian !== '')
 		vals['setDelinquentComplaintsAsian'] = setDelinquentComplaintsAsian;
-	var addDelinquentComplaintsAsian = $formValues.find('.addDelinquentComplaintsAsian').val();
 	if(addDelinquentComplaintsAsian != null && addDelinquentComplaintsAsian !== '')
 		vals['addDelinquentComplaintsAsian'] = addDelinquentComplaintsAsian;
 	var removeDelinquentComplaintsAsian = $formValues.find('.removeDelinquentComplaintsAsian').val();
@@ -1786,9 +1786,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsAsianPercent = $formValues.find('.valueDelinquentComplaintsAsianPercent').val();
 	var removeDelinquentComplaintsAsianPercent = $formValues.find('.removeDelinquentComplaintsAsianPercent').val() === 'true';
 	var setDelinquentComplaintsAsianPercent = removeDelinquentComplaintsAsianPercent ? null : $formValues.find('.setDelinquentComplaintsAsianPercent').val();
+	var addDelinquentComplaintsAsianPercent = $formValues.find('.addDelinquentComplaintsAsianPercent').val();
 	if(removeDelinquentComplaintsAsianPercent || setDelinquentComplaintsAsianPercent != null && setDelinquentComplaintsAsianPercent !== '')
 		vals['setDelinquentComplaintsAsianPercent'] = setDelinquentComplaintsAsianPercent;
-	var addDelinquentComplaintsAsianPercent = $formValues.find('.addDelinquentComplaintsAsianPercent').val();
 	if(addDelinquentComplaintsAsianPercent != null && addDelinquentComplaintsAsianPercent !== '')
 		vals['addDelinquentComplaintsAsianPercent'] = addDelinquentComplaintsAsianPercent;
 	var removeDelinquentComplaintsAsianPercent = $formValues.find('.removeDelinquentComplaintsAsianPercent').val();
@@ -1798,9 +1798,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsBlack = $formValues.find('.valueDelinquentComplaintsBlack').val();
 	var removeDelinquentComplaintsBlack = $formValues.find('.removeDelinquentComplaintsBlack').val() === 'true';
 	var setDelinquentComplaintsBlack = removeDelinquentComplaintsBlack ? null : $formValues.find('.setDelinquentComplaintsBlack').val();
+	var addDelinquentComplaintsBlack = $formValues.find('.addDelinquentComplaintsBlack').val();
 	if(removeDelinquentComplaintsBlack || setDelinquentComplaintsBlack != null && setDelinquentComplaintsBlack !== '')
 		vals['setDelinquentComplaintsBlack'] = setDelinquentComplaintsBlack;
-	var addDelinquentComplaintsBlack = $formValues.find('.addDelinquentComplaintsBlack').val();
 	if(addDelinquentComplaintsBlack != null && addDelinquentComplaintsBlack !== '')
 		vals['addDelinquentComplaintsBlack'] = addDelinquentComplaintsBlack;
 	var removeDelinquentComplaintsBlack = $formValues.find('.removeDelinquentComplaintsBlack').val();
@@ -1810,9 +1810,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsBlackPercent = $formValues.find('.valueDelinquentComplaintsBlackPercent').val();
 	var removeDelinquentComplaintsBlackPercent = $formValues.find('.removeDelinquentComplaintsBlackPercent').val() === 'true';
 	var setDelinquentComplaintsBlackPercent = removeDelinquentComplaintsBlackPercent ? null : $formValues.find('.setDelinquentComplaintsBlackPercent').val();
+	var addDelinquentComplaintsBlackPercent = $formValues.find('.addDelinquentComplaintsBlackPercent').val();
 	if(removeDelinquentComplaintsBlackPercent || setDelinquentComplaintsBlackPercent != null && setDelinquentComplaintsBlackPercent !== '')
 		vals['setDelinquentComplaintsBlackPercent'] = setDelinquentComplaintsBlackPercent;
-	var addDelinquentComplaintsBlackPercent = $formValues.find('.addDelinquentComplaintsBlackPercent').val();
 	if(addDelinquentComplaintsBlackPercent != null && addDelinquentComplaintsBlackPercent !== '')
 		vals['addDelinquentComplaintsBlackPercent'] = addDelinquentComplaintsBlackPercent;
 	var removeDelinquentComplaintsBlackPercent = $formValues.find('.removeDelinquentComplaintsBlackPercent').val();
@@ -1822,9 +1822,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsLatinx = $formValues.find('.valueDelinquentComplaintsLatinx').val();
 	var removeDelinquentComplaintsLatinx = $formValues.find('.removeDelinquentComplaintsLatinx').val() === 'true';
 	var setDelinquentComplaintsLatinx = removeDelinquentComplaintsLatinx ? null : $formValues.find('.setDelinquentComplaintsLatinx').val();
+	var addDelinquentComplaintsLatinx = $formValues.find('.addDelinquentComplaintsLatinx').val();
 	if(removeDelinquentComplaintsLatinx || setDelinquentComplaintsLatinx != null && setDelinquentComplaintsLatinx !== '')
 		vals['setDelinquentComplaintsLatinx'] = setDelinquentComplaintsLatinx;
-	var addDelinquentComplaintsLatinx = $formValues.find('.addDelinquentComplaintsLatinx').val();
 	if(addDelinquentComplaintsLatinx != null && addDelinquentComplaintsLatinx !== '')
 		vals['addDelinquentComplaintsLatinx'] = addDelinquentComplaintsLatinx;
 	var removeDelinquentComplaintsLatinx = $formValues.find('.removeDelinquentComplaintsLatinx').val();
@@ -1834,9 +1834,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsLatinxPercent = $formValues.find('.valueDelinquentComplaintsLatinxPercent').val();
 	var removeDelinquentComplaintsLatinxPercent = $formValues.find('.removeDelinquentComplaintsLatinxPercent').val() === 'true';
 	var setDelinquentComplaintsLatinxPercent = removeDelinquentComplaintsLatinxPercent ? null : $formValues.find('.setDelinquentComplaintsLatinxPercent').val();
+	var addDelinquentComplaintsLatinxPercent = $formValues.find('.addDelinquentComplaintsLatinxPercent').val();
 	if(removeDelinquentComplaintsLatinxPercent || setDelinquentComplaintsLatinxPercent != null && setDelinquentComplaintsLatinxPercent !== '')
 		vals['setDelinquentComplaintsLatinxPercent'] = setDelinquentComplaintsLatinxPercent;
-	var addDelinquentComplaintsLatinxPercent = $formValues.find('.addDelinquentComplaintsLatinxPercent').val();
 	if(addDelinquentComplaintsLatinxPercent != null && addDelinquentComplaintsLatinxPercent !== '')
 		vals['addDelinquentComplaintsLatinxPercent'] = addDelinquentComplaintsLatinxPercent;
 	var removeDelinquentComplaintsLatinxPercent = $formValues.find('.removeDelinquentComplaintsLatinxPercent').val();
@@ -1846,9 +1846,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsMultiRacial = $formValues.find('.valueDelinquentComplaintsMultiRacial').val();
 	var removeDelinquentComplaintsMultiRacial = $formValues.find('.removeDelinquentComplaintsMultiRacial').val() === 'true';
 	var setDelinquentComplaintsMultiRacial = removeDelinquentComplaintsMultiRacial ? null : $formValues.find('.setDelinquentComplaintsMultiRacial').val();
+	var addDelinquentComplaintsMultiRacial = $formValues.find('.addDelinquentComplaintsMultiRacial').val();
 	if(removeDelinquentComplaintsMultiRacial || setDelinquentComplaintsMultiRacial != null && setDelinquentComplaintsMultiRacial !== '')
 		vals['setDelinquentComplaintsMultiRacial'] = setDelinquentComplaintsMultiRacial;
-	var addDelinquentComplaintsMultiRacial = $formValues.find('.addDelinquentComplaintsMultiRacial').val();
 	if(addDelinquentComplaintsMultiRacial != null && addDelinquentComplaintsMultiRacial !== '')
 		vals['addDelinquentComplaintsMultiRacial'] = addDelinquentComplaintsMultiRacial;
 	var removeDelinquentComplaintsMultiRacial = $formValues.find('.removeDelinquentComplaintsMultiRacial').val();
@@ -1858,9 +1858,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsMultiRacialPercent = $formValues.find('.valueDelinquentComplaintsMultiRacialPercent').val();
 	var removeDelinquentComplaintsMultiRacialPercent = $formValues.find('.removeDelinquentComplaintsMultiRacialPercent').val() === 'true';
 	var setDelinquentComplaintsMultiRacialPercent = removeDelinquentComplaintsMultiRacialPercent ? null : $formValues.find('.setDelinquentComplaintsMultiRacialPercent').val();
+	var addDelinquentComplaintsMultiRacialPercent = $formValues.find('.addDelinquentComplaintsMultiRacialPercent').val();
 	if(removeDelinquentComplaintsMultiRacialPercent || setDelinquentComplaintsMultiRacialPercent != null && setDelinquentComplaintsMultiRacialPercent !== '')
 		vals['setDelinquentComplaintsMultiRacialPercent'] = setDelinquentComplaintsMultiRacialPercent;
-	var addDelinquentComplaintsMultiRacialPercent = $formValues.find('.addDelinquentComplaintsMultiRacialPercent').val();
 	if(addDelinquentComplaintsMultiRacialPercent != null && addDelinquentComplaintsMultiRacialPercent !== '')
 		vals['addDelinquentComplaintsMultiRacialPercent'] = addDelinquentComplaintsMultiRacialPercent;
 	var removeDelinquentComplaintsMultiRacialPercent = $formValues.find('.removeDelinquentComplaintsMultiRacialPercent').val();
@@ -1870,9 +1870,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsIndigenous = $formValues.find('.valueDelinquentComplaintsIndigenous').val();
 	var removeDelinquentComplaintsIndigenous = $formValues.find('.removeDelinquentComplaintsIndigenous').val() === 'true';
 	var setDelinquentComplaintsIndigenous = removeDelinquentComplaintsIndigenous ? null : $formValues.find('.setDelinquentComplaintsIndigenous').val();
+	var addDelinquentComplaintsIndigenous = $formValues.find('.addDelinquentComplaintsIndigenous').val();
 	if(removeDelinquentComplaintsIndigenous || setDelinquentComplaintsIndigenous != null && setDelinquentComplaintsIndigenous !== '')
 		vals['setDelinquentComplaintsIndigenous'] = setDelinquentComplaintsIndigenous;
-	var addDelinquentComplaintsIndigenous = $formValues.find('.addDelinquentComplaintsIndigenous').val();
 	if(addDelinquentComplaintsIndigenous != null && addDelinquentComplaintsIndigenous !== '')
 		vals['addDelinquentComplaintsIndigenous'] = addDelinquentComplaintsIndigenous;
 	var removeDelinquentComplaintsIndigenous = $formValues.find('.removeDelinquentComplaintsIndigenous').val();
@@ -1882,9 +1882,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsIndigenousPercent = $formValues.find('.valueDelinquentComplaintsIndigenousPercent').val();
 	var removeDelinquentComplaintsIndigenousPercent = $formValues.find('.removeDelinquentComplaintsIndigenousPercent').val() === 'true';
 	var setDelinquentComplaintsIndigenousPercent = removeDelinquentComplaintsIndigenousPercent ? null : $formValues.find('.setDelinquentComplaintsIndigenousPercent').val();
+	var addDelinquentComplaintsIndigenousPercent = $formValues.find('.addDelinquentComplaintsIndigenousPercent').val();
 	if(removeDelinquentComplaintsIndigenousPercent || setDelinquentComplaintsIndigenousPercent != null && setDelinquentComplaintsIndigenousPercent !== '')
 		vals['setDelinquentComplaintsIndigenousPercent'] = setDelinquentComplaintsIndigenousPercent;
-	var addDelinquentComplaintsIndigenousPercent = $formValues.find('.addDelinquentComplaintsIndigenousPercent').val();
 	if(addDelinquentComplaintsIndigenousPercent != null && addDelinquentComplaintsIndigenousPercent !== '')
 		vals['addDelinquentComplaintsIndigenousPercent'] = addDelinquentComplaintsIndigenousPercent;
 	var removeDelinquentComplaintsIndigenousPercent = $formValues.find('.removeDelinquentComplaintsIndigenousPercent').val();
@@ -1894,9 +1894,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsWhite = $formValues.find('.valueDelinquentComplaintsWhite').val();
 	var removeDelinquentComplaintsWhite = $formValues.find('.removeDelinquentComplaintsWhite').val() === 'true';
 	var setDelinquentComplaintsWhite = removeDelinquentComplaintsWhite ? null : $formValues.find('.setDelinquentComplaintsWhite').val();
+	var addDelinquentComplaintsWhite = $formValues.find('.addDelinquentComplaintsWhite').val();
 	if(removeDelinquentComplaintsWhite || setDelinquentComplaintsWhite != null && setDelinquentComplaintsWhite !== '')
 		vals['setDelinquentComplaintsWhite'] = setDelinquentComplaintsWhite;
-	var addDelinquentComplaintsWhite = $formValues.find('.addDelinquentComplaintsWhite').val();
 	if(addDelinquentComplaintsWhite != null && addDelinquentComplaintsWhite !== '')
 		vals['addDelinquentComplaintsWhite'] = addDelinquentComplaintsWhite;
 	var removeDelinquentComplaintsWhite = $formValues.find('.removeDelinquentComplaintsWhite').val();
@@ -1906,9 +1906,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsWhitePercent = $formValues.find('.valueDelinquentComplaintsWhitePercent').val();
 	var removeDelinquentComplaintsWhitePercent = $formValues.find('.removeDelinquentComplaintsWhitePercent').val() === 'true';
 	var setDelinquentComplaintsWhitePercent = removeDelinquentComplaintsWhitePercent ? null : $formValues.find('.setDelinquentComplaintsWhitePercent').val();
+	var addDelinquentComplaintsWhitePercent = $formValues.find('.addDelinquentComplaintsWhitePercent').val();
 	if(removeDelinquentComplaintsWhitePercent || setDelinquentComplaintsWhitePercent != null && setDelinquentComplaintsWhitePercent !== '')
 		vals['setDelinquentComplaintsWhitePercent'] = setDelinquentComplaintsWhitePercent;
-	var addDelinquentComplaintsWhitePercent = $formValues.find('.addDelinquentComplaintsWhitePercent').val();
 	if(addDelinquentComplaintsWhitePercent != null && addDelinquentComplaintsWhitePercent !== '')
 		vals['addDelinquentComplaintsWhitePercent'] = addDelinquentComplaintsWhitePercent;
 	var removeDelinquentComplaintsWhitePercent = $formValues.find('.removeDelinquentComplaintsWhitePercent').val();
@@ -1918,9 +1918,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsPacificIslander = $formValues.find('.valueDelinquentComplaintsPacificIslander').val();
 	var removeDelinquentComplaintsPacificIslander = $formValues.find('.removeDelinquentComplaintsPacificIslander').val() === 'true';
 	var setDelinquentComplaintsPacificIslander = removeDelinquentComplaintsPacificIslander ? null : $formValues.find('.setDelinquentComplaintsPacificIslander').val();
+	var addDelinquentComplaintsPacificIslander = $formValues.find('.addDelinquentComplaintsPacificIslander').val();
 	if(removeDelinquentComplaintsPacificIslander || setDelinquentComplaintsPacificIslander != null && setDelinquentComplaintsPacificIslander !== '')
 		vals['setDelinquentComplaintsPacificIslander'] = setDelinquentComplaintsPacificIslander;
-	var addDelinquentComplaintsPacificIslander = $formValues.find('.addDelinquentComplaintsPacificIslander').val();
 	if(addDelinquentComplaintsPacificIslander != null && addDelinquentComplaintsPacificIslander !== '')
 		vals['addDelinquentComplaintsPacificIslander'] = addDelinquentComplaintsPacificIslander;
 	var removeDelinquentComplaintsPacificIslander = $formValues.find('.removeDelinquentComplaintsPacificIslander').val();
@@ -1930,9 +1930,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueDelinquentComplaintsPacificIslanderPercent = $formValues.find('.valueDelinquentComplaintsPacificIslanderPercent').val();
 	var removeDelinquentComplaintsPacificIslanderPercent = $formValues.find('.removeDelinquentComplaintsPacificIslanderPercent').val() === 'true';
 	var setDelinquentComplaintsPacificIslanderPercent = removeDelinquentComplaintsPacificIslanderPercent ? null : $formValues.find('.setDelinquentComplaintsPacificIslanderPercent').val();
+	var addDelinquentComplaintsPacificIslanderPercent = $formValues.find('.addDelinquentComplaintsPacificIslanderPercent').val();
 	if(removeDelinquentComplaintsPacificIslanderPercent || setDelinquentComplaintsPacificIslanderPercent != null && setDelinquentComplaintsPacificIslanderPercent !== '')
 		vals['setDelinquentComplaintsPacificIslanderPercent'] = setDelinquentComplaintsPacificIslanderPercent;
-	var addDelinquentComplaintsPacificIslanderPercent = $formValues.find('.addDelinquentComplaintsPacificIslanderPercent').val();
 	if(addDelinquentComplaintsPacificIslanderPercent != null && addDelinquentComplaintsPacificIslanderPercent !== '')
 		vals['addDelinquentComplaintsPacificIslanderPercent'] = addDelinquentComplaintsPacificIslanderPercent;
 	var removeDelinquentComplaintsPacificIslanderPercent = $formValues.find('.removeDelinquentComplaintsPacificIslanderPercent').val();
@@ -1942,9 +1942,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionRate = $formValues.find('.valueShortTermSuspensionRate').val();
 	var removeShortTermSuspensionRate = $formValues.find('.removeShortTermSuspensionRate').val() === 'true';
 	var setShortTermSuspensionRate = removeShortTermSuspensionRate ? null : $formValues.find('.setShortTermSuspensionRate').val();
+	var addShortTermSuspensionRate = $formValues.find('.addShortTermSuspensionRate').val();
 	if(removeShortTermSuspensionRate || setShortTermSuspensionRate != null && setShortTermSuspensionRate !== '')
 		vals['setShortTermSuspensionRate'] = setShortTermSuspensionRate;
-	var addShortTermSuspensionRate = $formValues.find('.addShortTermSuspensionRate').val();
 	if(addShortTermSuspensionRate != null && addShortTermSuspensionRate !== '')
 		vals['addShortTermSuspensionRate'] = addShortTermSuspensionRate;
 	var removeShortTermSuspensionRate = $formValues.find('.removeShortTermSuspensionRate').val();
@@ -1954,9 +1954,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsTotal = $formValues.find('.valueShortTermSuspensionsTotal').val();
 	var removeShortTermSuspensionsTotal = $formValues.find('.removeShortTermSuspensionsTotal').val() === 'true';
 	var setShortTermSuspensionsTotal = removeShortTermSuspensionsTotal ? null : $formValues.find('.setShortTermSuspensionsTotal').val();
+	var addShortTermSuspensionsTotal = $formValues.find('.addShortTermSuspensionsTotal').val();
 	if(removeShortTermSuspensionsTotal || setShortTermSuspensionsTotal != null && setShortTermSuspensionsTotal !== '')
 		vals['setShortTermSuspensionsTotal'] = setShortTermSuspensionsTotal;
-	var addShortTermSuspensionsTotal = $formValues.find('.addShortTermSuspensionsTotal').val();
 	if(addShortTermSuspensionsTotal != null && addShortTermSuspensionsTotal !== '')
 		vals['addShortTermSuspensionsTotal'] = addShortTermSuspensionsTotal;
 	var removeShortTermSuspensionsTotal = $formValues.find('.removeShortTermSuspensionsTotal').val();
@@ -1966,9 +1966,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueLongTermSuspensionsTotal = $formValues.find('.valueLongTermSuspensionsTotal').val();
 	var removeLongTermSuspensionsTotal = $formValues.find('.removeLongTermSuspensionsTotal').val() === 'true';
 	var setLongTermSuspensionsTotal = removeLongTermSuspensionsTotal ? null : $formValues.find('.setLongTermSuspensionsTotal').val();
+	var addLongTermSuspensionsTotal = $formValues.find('.addLongTermSuspensionsTotal').val();
 	if(removeLongTermSuspensionsTotal || setLongTermSuspensionsTotal != null && setLongTermSuspensionsTotal !== '')
 		vals['setLongTermSuspensionsTotal'] = setLongTermSuspensionsTotal;
-	var addLongTermSuspensionsTotal = $formValues.find('.addLongTermSuspensionsTotal').val();
 	if(addLongTermSuspensionsTotal != null && addLongTermSuspensionsTotal !== '')
 		vals['addLongTermSuspensionsTotal'] = addLongTermSuspensionsTotal;
 	var removeLongTermSuspensionsTotal = $formValues.find('.removeLongTermSuspensionsTotal').val();
@@ -1978,9 +1978,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExpulsionsTotal = $formValues.find('.valueExpulsionsTotal').val();
 	var removeExpulsionsTotal = $formValues.find('.removeExpulsionsTotal').val() === 'true';
 	var setExpulsionsTotal = removeExpulsionsTotal ? null : $formValues.find('.setExpulsionsTotal').val();
+	var addExpulsionsTotal = $formValues.find('.addExpulsionsTotal').val();
 	if(removeExpulsionsTotal || setExpulsionsTotal != null && setExpulsionsTotal !== '')
 		vals['setExpulsionsTotal'] = setExpulsionsTotal;
-	var addExpulsionsTotal = $formValues.find('.addExpulsionsTotal').val();
 	if(addExpulsionsTotal != null && addExpulsionsTotal !== '')
 		vals['addExpulsionsTotal'] = addExpulsionsTotal;
 	var removeExpulsionsTotal = $formValues.find('.removeExpulsionsTotal').val();
@@ -1990,9 +1990,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsAsianFemale = $formValues.find('.valueShortTermSuspensionsAsianFemale').val();
 	var removeShortTermSuspensionsAsianFemale = $formValues.find('.removeShortTermSuspensionsAsianFemale').val() === 'true';
 	var setShortTermSuspensionsAsianFemale = removeShortTermSuspensionsAsianFemale ? null : $formValues.find('.setShortTermSuspensionsAsianFemale').val();
+	var addShortTermSuspensionsAsianFemale = $formValues.find('.addShortTermSuspensionsAsianFemale').val();
 	if(removeShortTermSuspensionsAsianFemale || setShortTermSuspensionsAsianFemale != null && setShortTermSuspensionsAsianFemale !== '')
 		vals['setShortTermSuspensionsAsianFemale'] = setShortTermSuspensionsAsianFemale;
-	var addShortTermSuspensionsAsianFemale = $formValues.find('.addShortTermSuspensionsAsianFemale').val();
 	if(addShortTermSuspensionsAsianFemale != null && addShortTermSuspensionsAsianFemale !== '')
 		vals['addShortTermSuspensionsAsianFemale'] = addShortTermSuspensionsAsianFemale;
 	var removeShortTermSuspensionsAsianFemale = $formValues.find('.removeShortTermSuspensionsAsianFemale').val();
@@ -2002,9 +2002,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsAsianMale = $formValues.find('.valueShortTermSuspensionsAsianMale').val();
 	var removeShortTermSuspensionsAsianMale = $formValues.find('.removeShortTermSuspensionsAsianMale').val() === 'true';
 	var setShortTermSuspensionsAsianMale = removeShortTermSuspensionsAsianMale ? null : $formValues.find('.setShortTermSuspensionsAsianMale').val();
+	var addShortTermSuspensionsAsianMale = $formValues.find('.addShortTermSuspensionsAsianMale').val();
 	if(removeShortTermSuspensionsAsianMale || setShortTermSuspensionsAsianMale != null && setShortTermSuspensionsAsianMale !== '')
 		vals['setShortTermSuspensionsAsianMale'] = setShortTermSuspensionsAsianMale;
-	var addShortTermSuspensionsAsianMale = $formValues.find('.addShortTermSuspensionsAsianMale').val();
 	if(addShortTermSuspensionsAsianMale != null && addShortTermSuspensionsAsianMale !== '')
 		vals['addShortTermSuspensionsAsianMale'] = addShortTermSuspensionsAsianMale;
 	var removeShortTermSuspensionsAsianMale = $formValues.find('.removeShortTermSuspensionsAsianMale').val();
@@ -2014,9 +2014,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsAsianTotal = $formValues.find('.valueShortTermSuspensionsAsianTotal').val();
 	var removeShortTermSuspensionsAsianTotal = $formValues.find('.removeShortTermSuspensionsAsianTotal').val() === 'true';
 	var setShortTermSuspensionsAsianTotal = removeShortTermSuspensionsAsianTotal ? null : $formValues.find('.setShortTermSuspensionsAsianTotal').val();
+	var addShortTermSuspensionsAsianTotal = $formValues.find('.addShortTermSuspensionsAsianTotal').val();
 	if(removeShortTermSuspensionsAsianTotal || setShortTermSuspensionsAsianTotal != null && setShortTermSuspensionsAsianTotal !== '')
 		vals['setShortTermSuspensionsAsianTotal'] = setShortTermSuspensionsAsianTotal;
-	var addShortTermSuspensionsAsianTotal = $formValues.find('.addShortTermSuspensionsAsianTotal').val();
 	if(addShortTermSuspensionsAsianTotal != null && addShortTermSuspensionsAsianTotal !== '')
 		vals['addShortTermSuspensionsAsianTotal'] = addShortTermSuspensionsAsianTotal;
 	var removeShortTermSuspensionsAsianTotal = $formValues.find('.removeShortTermSuspensionsAsianTotal').val();
@@ -2026,9 +2026,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsAsianPercent = $formValues.find('.valueShortTermSuspensionsAsianPercent').val();
 	var removeShortTermSuspensionsAsianPercent = $formValues.find('.removeShortTermSuspensionsAsianPercent').val() === 'true';
 	var setShortTermSuspensionsAsianPercent = removeShortTermSuspensionsAsianPercent ? null : $formValues.find('.setShortTermSuspensionsAsianPercent').val();
+	var addShortTermSuspensionsAsianPercent = $formValues.find('.addShortTermSuspensionsAsianPercent').val();
 	if(removeShortTermSuspensionsAsianPercent || setShortTermSuspensionsAsianPercent != null && setShortTermSuspensionsAsianPercent !== '')
 		vals['setShortTermSuspensionsAsianPercent'] = setShortTermSuspensionsAsianPercent;
-	var addShortTermSuspensionsAsianPercent = $formValues.find('.addShortTermSuspensionsAsianPercent').val();
 	if(addShortTermSuspensionsAsianPercent != null && addShortTermSuspensionsAsianPercent !== '')
 		vals['addShortTermSuspensionsAsianPercent'] = addShortTermSuspensionsAsianPercent;
 	var removeShortTermSuspensionsAsianPercent = $formValues.find('.removeShortTermSuspensionsAsianPercent').val();
@@ -2038,9 +2038,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsAsianRate = $formValues.find('.valueShortTermSuspensionsAsianRate').val();
 	var removeShortTermSuspensionsAsianRate = $formValues.find('.removeShortTermSuspensionsAsianRate').val() === 'true';
 	var setShortTermSuspensionsAsianRate = removeShortTermSuspensionsAsianRate ? null : $formValues.find('.setShortTermSuspensionsAsianRate').val();
+	var addShortTermSuspensionsAsianRate = $formValues.find('.addShortTermSuspensionsAsianRate').val();
 	if(removeShortTermSuspensionsAsianRate || setShortTermSuspensionsAsianRate != null && setShortTermSuspensionsAsianRate !== '')
 		vals['setShortTermSuspensionsAsianRate'] = setShortTermSuspensionsAsianRate;
-	var addShortTermSuspensionsAsianRate = $formValues.find('.addShortTermSuspensionsAsianRate').val();
 	if(addShortTermSuspensionsAsianRate != null && addShortTermSuspensionsAsianRate !== '')
 		vals['addShortTermSuspensionsAsianRate'] = addShortTermSuspensionsAsianRate;
 	var removeShortTermSuspensionsAsianRate = $formValues.find('.removeShortTermSuspensionsAsianRate').val();
@@ -2050,9 +2050,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsBlackFemale = $formValues.find('.valueShortTermSuspensionsBlackFemale').val();
 	var removeShortTermSuspensionsBlackFemale = $formValues.find('.removeShortTermSuspensionsBlackFemale').val() === 'true';
 	var setShortTermSuspensionsBlackFemale = removeShortTermSuspensionsBlackFemale ? null : $formValues.find('.setShortTermSuspensionsBlackFemale').val();
+	var addShortTermSuspensionsBlackFemale = $formValues.find('.addShortTermSuspensionsBlackFemale').val();
 	if(removeShortTermSuspensionsBlackFemale || setShortTermSuspensionsBlackFemale != null && setShortTermSuspensionsBlackFemale !== '')
 		vals['setShortTermSuspensionsBlackFemale'] = setShortTermSuspensionsBlackFemale;
-	var addShortTermSuspensionsBlackFemale = $formValues.find('.addShortTermSuspensionsBlackFemale').val();
 	if(addShortTermSuspensionsBlackFemale != null && addShortTermSuspensionsBlackFemale !== '')
 		vals['addShortTermSuspensionsBlackFemale'] = addShortTermSuspensionsBlackFemale;
 	var removeShortTermSuspensionsBlackFemale = $formValues.find('.removeShortTermSuspensionsBlackFemale').val();
@@ -2062,9 +2062,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsBlackMale = $formValues.find('.valueShortTermSuspensionsBlackMale').val();
 	var removeShortTermSuspensionsBlackMale = $formValues.find('.removeShortTermSuspensionsBlackMale').val() === 'true';
 	var setShortTermSuspensionsBlackMale = removeShortTermSuspensionsBlackMale ? null : $formValues.find('.setShortTermSuspensionsBlackMale').val();
+	var addShortTermSuspensionsBlackMale = $formValues.find('.addShortTermSuspensionsBlackMale').val();
 	if(removeShortTermSuspensionsBlackMale || setShortTermSuspensionsBlackMale != null && setShortTermSuspensionsBlackMale !== '')
 		vals['setShortTermSuspensionsBlackMale'] = setShortTermSuspensionsBlackMale;
-	var addShortTermSuspensionsBlackMale = $formValues.find('.addShortTermSuspensionsBlackMale').val();
 	if(addShortTermSuspensionsBlackMale != null && addShortTermSuspensionsBlackMale !== '')
 		vals['addShortTermSuspensionsBlackMale'] = addShortTermSuspensionsBlackMale;
 	var removeShortTermSuspensionsBlackMale = $formValues.find('.removeShortTermSuspensionsBlackMale').val();
@@ -2074,9 +2074,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsBlackTotal = $formValues.find('.valueShortTermSuspensionsBlackTotal').val();
 	var removeShortTermSuspensionsBlackTotal = $formValues.find('.removeShortTermSuspensionsBlackTotal').val() === 'true';
 	var setShortTermSuspensionsBlackTotal = removeShortTermSuspensionsBlackTotal ? null : $formValues.find('.setShortTermSuspensionsBlackTotal').val();
+	var addShortTermSuspensionsBlackTotal = $formValues.find('.addShortTermSuspensionsBlackTotal').val();
 	if(removeShortTermSuspensionsBlackTotal || setShortTermSuspensionsBlackTotal != null && setShortTermSuspensionsBlackTotal !== '')
 		vals['setShortTermSuspensionsBlackTotal'] = setShortTermSuspensionsBlackTotal;
-	var addShortTermSuspensionsBlackTotal = $formValues.find('.addShortTermSuspensionsBlackTotal').val();
 	if(addShortTermSuspensionsBlackTotal != null && addShortTermSuspensionsBlackTotal !== '')
 		vals['addShortTermSuspensionsBlackTotal'] = addShortTermSuspensionsBlackTotal;
 	var removeShortTermSuspensionsBlackTotal = $formValues.find('.removeShortTermSuspensionsBlackTotal').val();
@@ -2086,9 +2086,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsBlackPercent = $formValues.find('.valueShortTermSuspensionsBlackPercent').val();
 	var removeShortTermSuspensionsBlackPercent = $formValues.find('.removeShortTermSuspensionsBlackPercent').val() === 'true';
 	var setShortTermSuspensionsBlackPercent = removeShortTermSuspensionsBlackPercent ? null : $formValues.find('.setShortTermSuspensionsBlackPercent').val();
+	var addShortTermSuspensionsBlackPercent = $formValues.find('.addShortTermSuspensionsBlackPercent').val();
 	if(removeShortTermSuspensionsBlackPercent || setShortTermSuspensionsBlackPercent != null && setShortTermSuspensionsBlackPercent !== '')
 		vals['setShortTermSuspensionsBlackPercent'] = setShortTermSuspensionsBlackPercent;
-	var addShortTermSuspensionsBlackPercent = $formValues.find('.addShortTermSuspensionsBlackPercent').val();
 	if(addShortTermSuspensionsBlackPercent != null && addShortTermSuspensionsBlackPercent !== '')
 		vals['addShortTermSuspensionsBlackPercent'] = addShortTermSuspensionsBlackPercent;
 	var removeShortTermSuspensionsBlackPercent = $formValues.find('.removeShortTermSuspensionsBlackPercent').val();
@@ -2098,9 +2098,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsBlackRate = $formValues.find('.valueShortTermSuspensionsBlackRate').val();
 	var removeShortTermSuspensionsBlackRate = $formValues.find('.removeShortTermSuspensionsBlackRate').val() === 'true';
 	var setShortTermSuspensionsBlackRate = removeShortTermSuspensionsBlackRate ? null : $formValues.find('.setShortTermSuspensionsBlackRate').val();
+	var addShortTermSuspensionsBlackRate = $formValues.find('.addShortTermSuspensionsBlackRate').val();
 	if(removeShortTermSuspensionsBlackRate || setShortTermSuspensionsBlackRate != null && setShortTermSuspensionsBlackRate !== '')
 		vals['setShortTermSuspensionsBlackRate'] = setShortTermSuspensionsBlackRate;
-	var addShortTermSuspensionsBlackRate = $formValues.find('.addShortTermSuspensionsBlackRate').val();
 	if(addShortTermSuspensionsBlackRate != null && addShortTermSuspensionsBlackRate !== '')
 		vals['addShortTermSuspensionsBlackRate'] = addShortTermSuspensionsBlackRate;
 	var removeShortTermSuspensionsBlackRate = $formValues.find('.removeShortTermSuspensionsBlackRate').val();
@@ -2110,9 +2110,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsLatinxFemale = $formValues.find('.valueShortTermSuspensionsLatinxFemale').val();
 	var removeShortTermSuspensionsLatinxFemale = $formValues.find('.removeShortTermSuspensionsLatinxFemale').val() === 'true';
 	var setShortTermSuspensionsLatinxFemale = removeShortTermSuspensionsLatinxFemale ? null : $formValues.find('.setShortTermSuspensionsLatinxFemale').val();
+	var addShortTermSuspensionsLatinxFemale = $formValues.find('.addShortTermSuspensionsLatinxFemale').val();
 	if(removeShortTermSuspensionsLatinxFemale || setShortTermSuspensionsLatinxFemale != null && setShortTermSuspensionsLatinxFemale !== '')
 		vals['setShortTermSuspensionsLatinxFemale'] = setShortTermSuspensionsLatinxFemale;
-	var addShortTermSuspensionsLatinxFemale = $formValues.find('.addShortTermSuspensionsLatinxFemale').val();
 	if(addShortTermSuspensionsLatinxFemale != null && addShortTermSuspensionsLatinxFemale !== '')
 		vals['addShortTermSuspensionsLatinxFemale'] = addShortTermSuspensionsLatinxFemale;
 	var removeShortTermSuspensionsLatinxFemale = $formValues.find('.removeShortTermSuspensionsLatinxFemale').val();
@@ -2122,9 +2122,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsLatinxMale = $formValues.find('.valueShortTermSuspensionsLatinxMale').val();
 	var removeShortTermSuspensionsLatinxMale = $formValues.find('.removeShortTermSuspensionsLatinxMale').val() === 'true';
 	var setShortTermSuspensionsLatinxMale = removeShortTermSuspensionsLatinxMale ? null : $formValues.find('.setShortTermSuspensionsLatinxMale').val();
+	var addShortTermSuspensionsLatinxMale = $formValues.find('.addShortTermSuspensionsLatinxMale').val();
 	if(removeShortTermSuspensionsLatinxMale || setShortTermSuspensionsLatinxMale != null && setShortTermSuspensionsLatinxMale !== '')
 		vals['setShortTermSuspensionsLatinxMale'] = setShortTermSuspensionsLatinxMale;
-	var addShortTermSuspensionsLatinxMale = $formValues.find('.addShortTermSuspensionsLatinxMale').val();
 	if(addShortTermSuspensionsLatinxMale != null && addShortTermSuspensionsLatinxMale !== '')
 		vals['addShortTermSuspensionsLatinxMale'] = addShortTermSuspensionsLatinxMale;
 	var removeShortTermSuspensionsLatinxMale = $formValues.find('.removeShortTermSuspensionsLatinxMale').val();
@@ -2134,9 +2134,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsLatinxTotal = $formValues.find('.valueShortTermSuspensionsLatinxTotal').val();
 	var removeShortTermSuspensionsLatinxTotal = $formValues.find('.removeShortTermSuspensionsLatinxTotal').val() === 'true';
 	var setShortTermSuspensionsLatinxTotal = removeShortTermSuspensionsLatinxTotal ? null : $formValues.find('.setShortTermSuspensionsLatinxTotal').val();
+	var addShortTermSuspensionsLatinxTotal = $formValues.find('.addShortTermSuspensionsLatinxTotal').val();
 	if(removeShortTermSuspensionsLatinxTotal || setShortTermSuspensionsLatinxTotal != null && setShortTermSuspensionsLatinxTotal !== '')
 		vals['setShortTermSuspensionsLatinxTotal'] = setShortTermSuspensionsLatinxTotal;
-	var addShortTermSuspensionsLatinxTotal = $formValues.find('.addShortTermSuspensionsLatinxTotal').val();
 	if(addShortTermSuspensionsLatinxTotal != null && addShortTermSuspensionsLatinxTotal !== '')
 		vals['addShortTermSuspensionsLatinxTotal'] = addShortTermSuspensionsLatinxTotal;
 	var removeShortTermSuspensionsLatinxTotal = $formValues.find('.removeShortTermSuspensionsLatinxTotal').val();
@@ -2146,9 +2146,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsLatinxPercent = $formValues.find('.valueShortTermSuspensionsLatinxPercent').val();
 	var removeShortTermSuspensionsLatinxPercent = $formValues.find('.removeShortTermSuspensionsLatinxPercent').val() === 'true';
 	var setShortTermSuspensionsLatinxPercent = removeShortTermSuspensionsLatinxPercent ? null : $formValues.find('.setShortTermSuspensionsLatinxPercent').val();
+	var addShortTermSuspensionsLatinxPercent = $formValues.find('.addShortTermSuspensionsLatinxPercent').val();
 	if(removeShortTermSuspensionsLatinxPercent || setShortTermSuspensionsLatinxPercent != null && setShortTermSuspensionsLatinxPercent !== '')
 		vals['setShortTermSuspensionsLatinxPercent'] = setShortTermSuspensionsLatinxPercent;
-	var addShortTermSuspensionsLatinxPercent = $formValues.find('.addShortTermSuspensionsLatinxPercent').val();
 	if(addShortTermSuspensionsLatinxPercent != null && addShortTermSuspensionsLatinxPercent !== '')
 		vals['addShortTermSuspensionsLatinxPercent'] = addShortTermSuspensionsLatinxPercent;
 	var removeShortTermSuspensionsLatinxPercent = $formValues.find('.removeShortTermSuspensionsLatinxPercent').val();
@@ -2158,9 +2158,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsLatinxRate = $formValues.find('.valueShortTermSuspensionsLatinxRate').val();
 	var removeShortTermSuspensionsLatinxRate = $formValues.find('.removeShortTermSuspensionsLatinxRate').val() === 'true';
 	var setShortTermSuspensionsLatinxRate = removeShortTermSuspensionsLatinxRate ? null : $formValues.find('.setShortTermSuspensionsLatinxRate').val();
+	var addShortTermSuspensionsLatinxRate = $formValues.find('.addShortTermSuspensionsLatinxRate').val();
 	if(removeShortTermSuspensionsLatinxRate || setShortTermSuspensionsLatinxRate != null && setShortTermSuspensionsLatinxRate !== '')
 		vals['setShortTermSuspensionsLatinxRate'] = setShortTermSuspensionsLatinxRate;
-	var addShortTermSuspensionsLatinxRate = $formValues.find('.addShortTermSuspensionsLatinxRate').val();
 	if(addShortTermSuspensionsLatinxRate != null && addShortTermSuspensionsLatinxRate !== '')
 		vals['addShortTermSuspensionsLatinxRate'] = addShortTermSuspensionsLatinxRate;
 	var removeShortTermSuspensionsLatinxRate = $formValues.find('.removeShortTermSuspensionsLatinxRate').val();
@@ -2170,9 +2170,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsIndigenousFemale = $formValues.find('.valueShortTermSuspensionsIndigenousFemale').val();
 	var removeShortTermSuspensionsIndigenousFemale = $formValues.find('.removeShortTermSuspensionsIndigenousFemale').val() === 'true';
 	var setShortTermSuspensionsIndigenousFemale = removeShortTermSuspensionsIndigenousFemale ? null : $formValues.find('.setShortTermSuspensionsIndigenousFemale').val();
+	var addShortTermSuspensionsIndigenousFemale = $formValues.find('.addShortTermSuspensionsIndigenousFemale').val();
 	if(removeShortTermSuspensionsIndigenousFemale || setShortTermSuspensionsIndigenousFemale != null && setShortTermSuspensionsIndigenousFemale !== '')
 		vals['setShortTermSuspensionsIndigenousFemale'] = setShortTermSuspensionsIndigenousFemale;
-	var addShortTermSuspensionsIndigenousFemale = $formValues.find('.addShortTermSuspensionsIndigenousFemale').val();
 	if(addShortTermSuspensionsIndigenousFemale != null && addShortTermSuspensionsIndigenousFemale !== '')
 		vals['addShortTermSuspensionsIndigenousFemale'] = addShortTermSuspensionsIndigenousFemale;
 	var removeShortTermSuspensionsIndigenousFemale = $formValues.find('.removeShortTermSuspensionsIndigenousFemale').val();
@@ -2182,9 +2182,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsIndigenousMale = $formValues.find('.valueShortTermSuspensionsIndigenousMale').val();
 	var removeShortTermSuspensionsIndigenousMale = $formValues.find('.removeShortTermSuspensionsIndigenousMale').val() === 'true';
 	var setShortTermSuspensionsIndigenousMale = removeShortTermSuspensionsIndigenousMale ? null : $formValues.find('.setShortTermSuspensionsIndigenousMale').val();
+	var addShortTermSuspensionsIndigenousMale = $formValues.find('.addShortTermSuspensionsIndigenousMale').val();
 	if(removeShortTermSuspensionsIndigenousMale || setShortTermSuspensionsIndigenousMale != null && setShortTermSuspensionsIndigenousMale !== '')
 		vals['setShortTermSuspensionsIndigenousMale'] = setShortTermSuspensionsIndigenousMale;
-	var addShortTermSuspensionsIndigenousMale = $formValues.find('.addShortTermSuspensionsIndigenousMale').val();
 	if(addShortTermSuspensionsIndigenousMale != null && addShortTermSuspensionsIndigenousMale !== '')
 		vals['addShortTermSuspensionsIndigenousMale'] = addShortTermSuspensionsIndigenousMale;
 	var removeShortTermSuspensionsIndigenousMale = $formValues.find('.removeShortTermSuspensionsIndigenousMale').val();
@@ -2194,9 +2194,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsIndigenousTotal = $formValues.find('.valueShortTermSuspensionsIndigenousTotal').val();
 	var removeShortTermSuspensionsIndigenousTotal = $formValues.find('.removeShortTermSuspensionsIndigenousTotal').val() === 'true';
 	var setShortTermSuspensionsIndigenousTotal = removeShortTermSuspensionsIndigenousTotal ? null : $formValues.find('.setShortTermSuspensionsIndigenousTotal').val();
+	var addShortTermSuspensionsIndigenousTotal = $formValues.find('.addShortTermSuspensionsIndigenousTotal').val();
 	if(removeShortTermSuspensionsIndigenousTotal || setShortTermSuspensionsIndigenousTotal != null && setShortTermSuspensionsIndigenousTotal !== '')
 		vals['setShortTermSuspensionsIndigenousTotal'] = setShortTermSuspensionsIndigenousTotal;
-	var addShortTermSuspensionsIndigenousTotal = $formValues.find('.addShortTermSuspensionsIndigenousTotal').val();
 	if(addShortTermSuspensionsIndigenousTotal != null && addShortTermSuspensionsIndigenousTotal !== '')
 		vals['addShortTermSuspensionsIndigenousTotal'] = addShortTermSuspensionsIndigenousTotal;
 	var removeShortTermSuspensionsIndigenousTotal = $formValues.find('.removeShortTermSuspensionsIndigenousTotal').val();
@@ -2206,9 +2206,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsIndigenousPercent = $formValues.find('.valueShortTermSuspensionsIndigenousPercent').val();
 	var removeShortTermSuspensionsIndigenousPercent = $formValues.find('.removeShortTermSuspensionsIndigenousPercent').val() === 'true';
 	var setShortTermSuspensionsIndigenousPercent = removeShortTermSuspensionsIndigenousPercent ? null : $formValues.find('.setShortTermSuspensionsIndigenousPercent').val();
+	var addShortTermSuspensionsIndigenousPercent = $formValues.find('.addShortTermSuspensionsIndigenousPercent').val();
 	if(removeShortTermSuspensionsIndigenousPercent || setShortTermSuspensionsIndigenousPercent != null && setShortTermSuspensionsIndigenousPercent !== '')
 		vals['setShortTermSuspensionsIndigenousPercent'] = setShortTermSuspensionsIndigenousPercent;
-	var addShortTermSuspensionsIndigenousPercent = $formValues.find('.addShortTermSuspensionsIndigenousPercent').val();
 	if(addShortTermSuspensionsIndigenousPercent != null && addShortTermSuspensionsIndigenousPercent !== '')
 		vals['addShortTermSuspensionsIndigenousPercent'] = addShortTermSuspensionsIndigenousPercent;
 	var removeShortTermSuspensionsIndigenousPercent = $formValues.find('.removeShortTermSuspensionsIndigenousPercent').val();
@@ -2218,9 +2218,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsIndigenousRate = $formValues.find('.valueShortTermSuspensionsIndigenousRate').val();
 	var removeShortTermSuspensionsIndigenousRate = $formValues.find('.removeShortTermSuspensionsIndigenousRate').val() === 'true';
 	var setShortTermSuspensionsIndigenousRate = removeShortTermSuspensionsIndigenousRate ? null : $formValues.find('.setShortTermSuspensionsIndigenousRate').val();
+	var addShortTermSuspensionsIndigenousRate = $formValues.find('.addShortTermSuspensionsIndigenousRate').val();
 	if(removeShortTermSuspensionsIndigenousRate || setShortTermSuspensionsIndigenousRate != null && setShortTermSuspensionsIndigenousRate !== '')
 		vals['setShortTermSuspensionsIndigenousRate'] = setShortTermSuspensionsIndigenousRate;
-	var addShortTermSuspensionsIndigenousRate = $formValues.find('.addShortTermSuspensionsIndigenousRate').val();
 	if(addShortTermSuspensionsIndigenousRate != null && addShortTermSuspensionsIndigenousRate !== '')
 		vals['addShortTermSuspensionsIndigenousRate'] = addShortTermSuspensionsIndigenousRate;
 	var removeShortTermSuspensionsIndigenousRate = $formValues.find('.removeShortTermSuspensionsIndigenousRate').val();
@@ -2230,9 +2230,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsMultiRacialFemale = $formValues.find('.valueShortTermSuspensionsMultiRacialFemale').val();
 	var removeShortTermSuspensionsMultiRacialFemale = $formValues.find('.removeShortTermSuspensionsMultiRacialFemale').val() === 'true';
 	var setShortTermSuspensionsMultiRacialFemale = removeShortTermSuspensionsMultiRacialFemale ? null : $formValues.find('.setShortTermSuspensionsMultiRacialFemale').val();
+	var addShortTermSuspensionsMultiRacialFemale = $formValues.find('.addShortTermSuspensionsMultiRacialFemale').val();
 	if(removeShortTermSuspensionsMultiRacialFemale || setShortTermSuspensionsMultiRacialFemale != null && setShortTermSuspensionsMultiRacialFemale !== '')
 		vals['setShortTermSuspensionsMultiRacialFemale'] = setShortTermSuspensionsMultiRacialFemale;
-	var addShortTermSuspensionsMultiRacialFemale = $formValues.find('.addShortTermSuspensionsMultiRacialFemale').val();
 	if(addShortTermSuspensionsMultiRacialFemale != null && addShortTermSuspensionsMultiRacialFemale !== '')
 		vals['addShortTermSuspensionsMultiRacialFemale'] = addShortTermSuspensionsMultiRacialFemale;
 	var removeShortTermSuspensionsMultiRacialFemale = $formValues.find('.removeShortTermSuspensionsMultiRacialFemale').val();
@@ -2242,9 +2242,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsMultiRacialMale = $formValues.find('.valueShortTermSuspensionsMultiRacialMale').val();
 	var removeShortTermSuspensionsMultiRacialMale = $formValues.find('.removeShortTermSuspensionsMultiRacialMale').val() === 'true';
 	var setShortTermSuspensionsMultiRacialMale = removeShortTermSuspensionsMultiRacialMale ? null : $formValues.find('.setShortTermSuspensionsMultiRacialMale').val();
+	var addShortTermSuspensionsMultiRacialMale = $formValues.find('.addShortTermSuspensionsMultiRacialMale').val();
 	if(removeShortTermSuspensionsMultiRacialMale || setShortTermSuspensionsMultiRacialMale != null && setShortTermSuspensionsMultiRacialMale !== '')
 		vals['setShortTermSuspensionsMultiRacialMale'] = setShortTermSuspensionsMultiRacialMale;
-	var addShortTermSuspensionsMultiRacialMale = $formValues.find('.addShortTermSuspensionsMultiRacialMale').val();
 	if(addShortTermSuspensionsMultiRacialMale != null && addShortTermSuspensionsMultiRacialMale !== '')
 		vals['addShortTermSuspensionsMultiRacialMale'] = addShortTermSuspensionsMultiRacialMale;
 	var removeShortTermSuspensionsMultiRacialMale = $formValues.find('.removeShortTermSuspensionsMultiRacialMale').val();
@@ -2254,9 +2254,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsMultiRacialTotal = $formValues.find('.valueShortTermSuspensionsMultiRacialTotal').val();
 	var removeShortTermSuspensionsMultiRacialTotal = $formValues.find('.removeShortTermSuspensionsMultiRacialTotal').val() === 'true';
 	var setShortTermSuspensionsMultiRacialTotal = removeShortTermSuspensionsMultiRacialTotal ? null : $formValues.find('.setShortTermSuspensionsMultiRacialTotal').val();
+	var addShortTermSuspensionsMultiRacialTotal = $formValues.find('.addShortTermSuspensionsMultiRacialTotal').val();
 	if(removeShortTermSuspensionsMultiRacialTotal || setShortTermSuspensionsMultiRacialTotal != null && setShortTermSuspensionsMultiRacialTotal !== '')
 		vals['setShortTermSuspensionsMultiRacialTotal'] = setShortTermSuspensionsMultiRacialTotal;
-	var addShortTermSuspensionsMultiRacialTotal = $formValues.find('.addShortTermSuspensionsMultiRacialTotal').val();
 	if(addShortTermSuspensionsMultiRacialTotal != null && addShortTermSuspensionsMultiRacialTotal !== '')
 		vals['addShortTermSuspensionsMultiRacialTotal'] = addShortTermSuspensionsMultiRacialTotal;
 	var removeShortTermSuspensionsMultiRacialTotal = $formValues.find('.removeShortTermSuspensionsMultiRacialTotal').val();
@@ -2266,9 +2266,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsMultiRacialPercent = $formValues.find('.valueShortTermSuspensionsMultiRacialPercent').val();
 	var removeShortTermSuspensionsMultiRacialPercent = $formValues.find('.removeShortTermSuspensionsMultiRacialPercent').val() === 'true';
 	var setShortTermSuspensionsMultiRacialPercent = removeShortTermSuspensionsMultiRacialPercent ? null : $formValues.find('.setShortTermSuspensionsMultiRacialPercent').val();
+	var addShortTermSuspensionsMultiRacialPercent = $formValues.find('.addShortTermSuspensionsMultiRacialPercent').val();
 	if(removeShortTermSuspensionsMultiRacialPercent || setShortTermSuspensionsMultiRacialPercent != null && setShortTermSuspensionsMultiRacialPercent !== '')
 		vals['setShortTermSuspensionsMultiRacialPercent'] = setShortTermSuspensionsMultiRacialPercent;
-	var addShortTermSuspensionsMultiRacialPercent = $formValues.find('.addShortTermSuspensionsMultiRacialPercent').val();
 	if(addShortTermSuspensionsMultiRacialPercent != null && addShortTermSuspensionsMultiRacialPercent !== '')
 		vals['addShortTermSuspensionsMultiRacialPercent'] = addShortTermSuspensionsMultiRacialPercent;
 	var removeShortTermSuspensionsMultiRacialPercent = $formValues.find('.removeShortTermSuspensionsMultiRacialPercent').val();
@@ -2278,9 +2278,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsMultiRacialRate = $formValues.find('.valueShortTermSuspensionsMultiRacialRate').val();
 	var removeShortTermSuspensionsMultiRacialRate = $formValues.find('.removeShortTermSuspensionsMultiRacialRate').val() === 'true';
 	var setShortTermSuspensionsMultiRacialRate = removeShortTermSuspensionsMultiRacialRate ? null : $formValues.find('.setShortTermSuspensionsMultiRacialRate').val();
+	var addShortTermSuspensionsMultiRacialRate = $formValues.find('.addShortTermSuspensionsMultiRacialRate').val();
 	if(removeShortTermSuspensionsMultiRacialRate || setShortTermSuspensionsMultiRacialRate != null && setShortTermSuspensionsMultiRacialRate !== '')
 		vals['setShortTermSuspensionsMultiRacialRate'] = setShortTermSuspensionsMultiRacialRate;
-	var addShortTermSuspensionsMultiRacialRate = $formValues.find('.addShortTermSuspensionsMultiRacialRate').val();
 	if(addShortTermSuspensionsMultiRacialRate != null && addShortTermSuspensionsMultiRacialRate !== '')
 		vals['addShortTermSuspensionsMultiRacialRate'] = addShortTermSuspensionsMultiRacialRate;
 	var removeShortTermSuspensionsMultiRacialRate = $formValues.find('.removeShortTermSuspensionsMultiRacialRate').val();
@@ -2290,9 +2290,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsPacificIslanderFemale = $formValues.find('.valueShortTermSuspensionsPacificIslanderFemale').val();
 	var removeShortTermSuspensionsPacificIslanderFemale = $formValues.find('.removeShortTermSuspensionsPacificIslanderFemale').val() === 'true';
 	var setShortTermSuspensionsPacificIslanderFemale = removeShortTermSuspensionsPacificIslanderFemale ? null : $formValues.find('.setShortTermSuspensionsPacificIslanderFemale').val();
+	var addShortTermSuspensionsPacificIslanderFemale = $formValues.find('.addShortTermSuspensionsPacificIslanderFemale').val();
 	if(removeShortTermSuspensionsPacificIslanderFemale || setShortTermSuspensionsPacificIslanderFemale != null && setShortTermSuspensionsPacificIslanderFemale !== '')
 		vals['setShortTermSuspensionsPacificIslanderFemale'] = setShortTermSuspensionsPacificIslanderFemale;
-	var addShortTermSuspensionsPacificIslanderFemale = $formValues.find('.addShortTermSuspensionsPacificIslanderFemale').val();
 	if(addShortTermSuspensionsPacificIslanderFemale != null && addShortTermSuspensionsPacificIslanderFemale !== '')
 		vals['addShortTermSuspensionsPacificIslanderFemale'] = addShortTermSuspensionsPacificIslanderFemale;
 	var removeShortTermSuspensionsPacificIslanderFemale = $formValues.find('.removeShortTermSuspensionsPacificIslanderFemale').val();
@@ -2302,9 +2302,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsPacificIslanderMale = $formValues.find('.valueShortTermSuspensionsPacificIslanderMale').val();
 	var removeShortTermSuspensionsPacificIslanderMale = $formValues.find('.removeShortTermSuspensionsPacificIslanderMale').val() === 'true';
 	var setShortTermSuspensionsPacificIslanderMale = removeShortTermSuspensionsPacificIslanderMale ? null : $formValues.find('.setShortTermSuspensionsPacificIslanderMale').val();
+	var addShortTermSuspensionsPacificIslanderMale = $formValues.find('.addShortTermSuspensionsPacificIslanderMale').val();
 	if(removeShortTermSuspensionsPacificIslanderMale || setShortTermSuspensionsPacificIslanderMale != null && setShortTermSuspensionsPacificIslanderMale !== '')
 		vals['setShortTermSuspensionsPacificIslanderMale'] = setShortTermSuspensionsPacificIslanderMale;
-	var addShortTermSuspensionsPacificIslanderMale = $formValues.find('.addShortTermSuspensionsPacificIslanderMale').val();
 	if(addShortTermSuspensionsPacificIslanderMale != null && addShortTermSuspensionsPacificIslanderMale !== '')
 		vals['addShortTermSuspensionsPacificIslanderMale'] = addShortTermSuspensionsPacificIslanderMale;
 	var removeShortTermSuspensionsPacificIslanderMale = $formValues.find('.removeShortTermSuspensionsPacificIslanderMale').val();
@@ -2314,9 +2314,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsPacificIslanderTotal = $formValues.find('.valueShortTermSuspensionsPacificIslanderTotal').val();
 	var removeShortTermSuspensionsPacificIslanderTotal = $formValues.find('.removeShortTermSuspensionsPacificIslanderTotal').val() === 'true';
 	var setShortTermSuspensionsPacificIslanderTotal = removeShortTermSuspensionsPacificIslanderTotal ? null : $formValues.find('.setShortTermSuspensionsPacificIslanderTotal').val();
+	var addShortTermSuspensionsPacificIslanderTotal = $formValues.find('.addShortTermSuspensionsPacificIslanderTotal').val();
 	if(removeShortTermSuspensionsPacificIslanderTotal || setShortTermSuspensionsPacificIslanderTotal != null && setShortTermSuspensionsPacificIslanderTotal !== '')
 		vals['setShortTermSuspensionsPacificIslanderTotal'] = setShortTermSuspensionsPacificIslanderTotal;
-	var addShortTermSuspensionsPacificIslanderTotal = $formValues.find('.addShortTermSuspensionsPacificIslanderTotal').val();
 	if(addShortTermSuspensionsPacificIslanderTotal != null && addShortTermSuspensionsPacificIslanderTotal !== '')
 		vals['addShortTermSuspensionsPacificIslanderTotal'] = addShortTermSuspensionsPacificIslanderTotal;
 	var removeShortTermSuspensionsPacificIslanderTotal = $formValues.find('.removeShortTermSuspensionsPacificIslanderTotal').val();
@@ -2326,9 +2326,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsPacificIslanderPercent = $formValues.find('.valueShortTermSuspensionsPacificIslanderPercent').val();
 	var removeShortTermSuspensionsPacificIslanderPercent = $formValues.find('.removeShortTermSuspensionsPacificIslanderPercent').val() === 'true';
 	var setShortTermSuspensionsPacificIslanderPercent = removeShortTermSuspensionsPacificIslanderPercent ? null : $formValues.find('.setShortTermSuspensionsPacificIslanderPercent').val();
+	var addShortTermSuspensionsPacificIslanderPercent = $formValues.find('.addShortTermSuspensionsPacificIslanderPercent').val();
 	if(removeShortTermSuspensionsPacificIslanderPercent || setShortTermSuspensionsPacificIslanderPercent != null && setShortTermSuspensionsPacificIslanderPercent !== '')
 		vals['setShortTermSuspensionsPacificIslanderPercent'] = setShortTermSuspensionsPacificIslanderPercent;
-	var addShortTermSuspensionsPacificIslanderPercent = $formValues.find('.addShortTermSuspensionsPacificIslanderPercent').val();
 	if(addShortTermSuspensionsPacificIslanderPercent != null && addShortTermSuspensionsPacificIslanderPercent !== '')
 		vals['addShortTermSuspensionsPacificIslanderPercent'] = addShortTermSuspensionsPacificIslanderPercent;
 	var removeShortTermSuspensionsPacificIslanderPercent = $formValues.find('.removeShortTermSuspensionsPacificIslanderPercent').val();
@@ -2338,9 +2338,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsPacificIslanderRate = $formValues.find('.valueShortTermSuspensionsPacificIslanderRate').val();
 	var removeShortTermSuspensionsPacificIslanderRate = $formValues.find('.removeShortTermSuspensionsPacificIslanderRate').val() === 'true';
 	var setShortTermSuspensionsPacificIslanderRate = removeShortTermSuspensionsPacificIslanderRate ? null : $formValues.find('.setShortTermSuspensionsPacificIslanderRate').val();
+	var addShortTermSuspensionsPacificIslanderRate = $formValues.find('.addShortTermSuspensionsPacificIslanderRate').val();
 	if(removeShortTermSuspensionsPacificIslanderRate || setShortTermSuspensionsPacificIslanderRate != null && setShortTermSuspensionsPacificIslanderRate !== '')
 		vals['setShortTermSuspensionsPacificIslanderRate'] = setShortTermSuspensionsPacificIslanderRate;
-	var addShortTermSuspensionsPacificIslanderRate = $formValues.find('.addShortTermSuspensionsPacificIslanderRate').val();
 	if(addShortTermSuspensionsPacificIslanderRate != null && addShortTermSuspensionsPacificIslanderRate !== '')
 		vals['addShortTermSuspensionsPacificIslanderRate'] = addShortTermSuspensionsPacificIslanderRate;
 	var removeShortTermSuspensionsPacificIslanderRate = $formValues.find('.removeShortTermSuspensionsPacificIslanderRate').val();
@@ -2350,9 +2350,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsWhiteFemale = $formValues.find('.valueShortTermSuspensionsWhiteFemale').val();
 	var removeShortTermSuspensionsWhiteFemale = $formValues.find('.removeShortTermSuspensionsWhiteFemale').val() === 'true';
 	var setShortTermSuspensionsWhiteFemale = removeShortTermSuspensionsWhiteFemale ? null : $formValues.find('.setShortTermSuspensionsWhiteFemale').val();
+	var addShortTermSuspensionsWhiteFemale = $formValues.find('.addShortTermSuspensionsWhiteFemale').val();
 	if(removeShortTermSuspensionsWhiteFemale || setShortTermSuspensionsWhiteFemale != null && setShortTermSuspensionsWhiteFemale !== '')
 		vals['setShortTermSuspensionsWhiteFemale'] = setShortTermSuspensionsWhiteFemale;
-	var addShortTermSuspensionsWhiteFemale = $formValues.find('.addShortTermSuspensionsWhiteFemale').val();
 	if(addShortTermSuspensionsWhiteFemale != null && addShortTermSuspensionsWhiteFemale !== '')
 		vals['addShortTermSuspensionsWhiteFemale'] = addShortTermSuspensionsWhiteFemale;
 	var removeShortTermSuspensionsWhiteFemale = $formValues.find('.removeShortTermSuspensionsWhiteFemale').val();
@@ -2362,9 +2362,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsWhiteMale = $formValues.find('.valueShortTermSuspensionsWhiteMale').val();
 	var removeShortTermSuspensionsWhiteMale = $formValues.find('.removeShortTermSuspensionsWhiteMale').val() === 'true';
 	var setShortTermSuspensionsWhiteMale = removeShortTermSuspensionsWhiteMale ? null : $formValues.find('.setShortTermSuspensionsWhiteMale').val();
+	var addShortTermSuspensionsWhiteMale = $formValues.find('.addShortTermSuspensionsWhiteMale').val();
 	if(removeShortTermSuspensionsWhiteMale || setShortTermSuspensionsWhiteMale != null && setShortTermSuspensionsWhiteMale !== '')
 		vals['setShortTermSuspensionsWhiteMale'] = setShortTermSuspensionsWhiteMale;
-	var addShortTermSuspensionsWhiteMale = $formValues.find('.addShortTermSuspensionsWhiteMale').val();
 	if(addShortTermSuspensionsWhiteMale != null && addShortTermSuspensionsWhiteMale !== '')
 		vals['addShortTermSuspensionsWhiteMale'] = addShortTermSuspensionsWhiteMale;
 	var removeShortTermSuspensionsWhiteMale = $formValues.find('.removeShortTermSuspensionsWhiteMale').val();
@@ -2374,9 +2374,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsWhiteTotal = $formValues.find('.valueShortTermSuspensionsWhiteTotal').val();
 	var removeShortTermSuspensionsWhiteTotal = $formValues.find('.removeShortTermSuspensionsWhiteTotal').val() === 'true';
 	var setShortTermSuspensionsWhiteTotal = removeShortTermSuspensionsWhiteTotal ? null : $formValues.find('.setShortTermSuspensionsWhiteTotal').val();
+	var addShortTermSuspensionsWhiteTotal = $formValues.find('.addShortTermSuspensionsWhiteTotal').val();
 	if(removeShortTermSuspensionsWhiteTotal || setShortTermSuspensionsWhiteTotal != null && setShortTermSuspensionsWhiteTotal !== '')
 		vals['setShortTermSuspensionsWhiteTotal'] = setShortTermSuspensionsWhiteTotal;
-	var addShortTermSuspensionsWhiteTotal = $formValues.find('.addShortTermSuspensionsWhiteTotal').val();
 	if(addShortTermSuspensionsWhiteTotal != null && addShortTermSuspensionsWhiteTotal !== '')
 		vals['addShortTermSuspensionsWhiteTotal'] = addShortTermSuspensionsWhiteTotal;
 	var removeShortTermSuspensionsWhiteTotal = $formValues.find('.removeShortTermSuspensionsWhiteTotal').val();
@@ -2386,9 +2386,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsWhitePercent = $formValues.find('.valueShortTermSuspensionsWhitePercent').val();
 	var removeShortTermSuspensionsWhitePercent = $formValues.find('.removeShortTermSuspensionsWhitePercent').val() === 'true';
 	var setShortTermSuspensionsWhitePercent = removeShortTermSuspensionsWhitePercent ? null : $formValues.find('.setShortTermSuspensionsWhitePercent').val();
+	var addShortTermSuspensionsWhitePercent = $formValues.find('.addShortTermSuspensionsWhitePercent').val();
 	if(removeShortTermSuspensionsWhitePercent || setShortTermSuspensionsWhitePercent != null && setShortTermSuspensionsWhitePercent !== '')
 		vals['setShortTermSuspensionsWhitePercent'] = setShortTermSuspensionsWhitePercent;
-	var addShortTermSuspensionsWhitePercent = $formValues.find('.addShortTermSuspensionsWhitePercent').val();
 	if(addShortTermSuspensionsWhitePercent != null && addShortTermSuspensionsWhitePercent !== '')
 		vals['addShortTermSuspensionsWhitePercent'] = addShortTermSuspensionsWhitePercent;
 	var removeShortTermSuspensionsWhitePercent = $formValues.find('.removeShortTermSuspensionsWhitePercent').val();
@@ -2398,9 +2398,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsWhiteRate = $formValues.find('.valueShortTermSuspensionsWhiteRate').val();
 	var removeShortTermSuspensionsWhiteRate = $formValues.find('.removeShortTermSuspensionsWhiteRate').val() === 'true';
 	var setShortTermSuspensionsWhiteRate = removeShortTermSuspensionsWhiteRate ? null : $formValues.find('.setShortTermSuspensionsWhiteRate').val();
+	var addShortTermSuspensionsWhiteRate = $formValues.find('.addShortTermSuspensionsWhiteRate').val();
 	if(removeShortTermSuspensionsWhiteRate || setShortTermSuspensionsWhiteRate != null && setShortTermSuspensionsWhiteRate !== '')
 		vals['setShortTermSuspensionsWhiteRate'] = setShortTermSuspensionsWhiteRate;
-	var addShortTermSuspensionsWhiteRate = $formValues.find('.addShortTermSuspensionsWhiteRate').val();
 	if(addShortTermSuspensionsWhiteRate != null && addShortTermSuspensionsWhiteRate !== '')
 		vals['addShortTermSuspensionsWhiteRate'] = addShortTermSuspensionsWhiteRate;
 	var removeShortTermSuspensionsWhiteRate = $formValues.find('.removeShortTermSuspensionsWhiteRate').val();
@@ -2410,9 +2410,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsAllRate = $formValues.find('.valueShortTermSuspensionsAllRate').val();
 	var removeShortTermSuspensionsAllRate = $formValues.find('.removeShortTermSuspensionsAllRate').val() === 'true';
 	var setShortTermSuspensionsAllRate = removeShortTermSuspensionsAllRate ? null : $formValues.find('.setShortTermSuspensionsAllRate').val();
+	var addShortTermSuspensionsAllRate = $formValues.find('.addShortTermSuspensionsAllRate').val();
 	if(removeShortTermSuspensionsAllRate || setShortTermSuspensionsAllRate != null && setShortTermSuspensionsAllRate !== '')
 		vals['setShortTermSuspensionsAllRate'] = setShortTermSuspensionsAllRate;
-	var addShortTermSuspensionsAllRate = $formValues.find('.addShortTermSuspensionsAllRate').val();
 	if(addShortTermSuspensionsAllRate != null && addShortTermSuspensionsAllRate !== '')
 		vals['addShortTermSuspensionsAllRate'] = addShortTermSuspensionsAllRate;
 	var removeShortTermSuspensionsAllRate = $formValues.find('.removeShortTermSuspensionsAllRate').val();
@@ -2422,9 +2422,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueShortTermSuspensionsBlackVsWhite = $formValues.find('.valueShortTermSuspensionsBlackVsWhite').val();
 	var removeShortTermSuspensionsBlackVsWhite = $formValues.find('.removeShortTermSuspensionsBlackVsWhite').val() === 'true';
 	var setShortTermSuspensionsBlackVsWhite = removeShortTermSuspensionsBlackVsWhite ? null : $formValues.find('.setShortTermSuspensionsBlackVsWhite').val();
+	var addShortTermSuspensionsBlackVsWhite = $formValues.find('.addShortTermSuspensionsBlackVsWhite').val();
 	if(removeShortTermSuspensionsBlackVsWhite || setShortTermSuspensionsBlackVsWhite != null && setShortTermSuspensionsBlackVsWhite !== '')
 		vals['setShortTermSuspensionsBlackVsWhite'] = setShortTermSuspensionsBlackVsWhite;
-	var addShortTermSuspensionsBlackVsWhite = $formValues.find('.addShortTermSuspensionsBlackVsWhite').val();
 	if(addShortTermSuspensionsBlackVsWhite != null && addShortTermSuspensionsBlackVsWhite !== '')
 		vals['addShortTermSuspensionsBlackVsWhite'] = addShortTermSuspensionsBlackVsWhite;
 	var removeShortTermSuspensionsBlackVsWhite = $formValues.find('.removeShortTermSuspensionsBlackVsWhite').val();
@@ -2434,9 +2434,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades38OverallPercent = $formValues.find('.valueExamsCollegeReadyGrades38OverallPercent').val();
 	var removeExamsCollegeReadyGrades38OverallPercent = $formValues.find('.removeExamsCollegeReadyGrades38OverallPercent').val() === 'true';
 	var setExamsCollegeReadyGrades38OverallPercent = removeExamsCollegeReadyGrades38OverallPercent ? null : $formValues.find('.setExamsCollegeReadyGrades38OverallPercent').val();
+	var addExamsCollegeReadyGrades38OverallPercent = $formValues.find('.addExamsCollegeReadyGrades38OverallPercent').val();
 	if(removeExamsCollegeReadyGrades38OverallPercent || setExamsCollegeReadyGrades38OverallPercent != null && setExamsCollegeReadyGrades38OverallPercent !== '')
 		vals['setExamsCollegeReadyGrades38OverallPercent'] = setExamsCollegeReadyGrades38OverallPercent;
-	var addExamsCollegeReadyGrades38OverallPercent = $formValues.find('.addExamsCollegeReadyGrades38OverallPercent').val();
 	if(addExamsCollegeReadyGrades38OverallPercent != null && addExamsCollegeReadyGrades38OverallPercent !== '')
 		vals['addExamsCollegeReadyGrades38OverallPercent'] = addExamsCollegeReadyGrades38OverallPercent;
 	var removeExamsCollegeReadyGrades38OverallPercent = $formValues.find('.removeExamsCollegeReadyGrades38OverallPercent').val();
@@ -2446,9 +2446,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades38IndigenousPercent = $formValues.find('.valueExamsCollegeReadyGrades38IndigenousPercent').val();
 	var removeExamsCollegeReadyGrades38IndigenousPercent = $formValues.find('.removeExamsCollegeReadyGrades38IndigenousPercent').val() === 'true';
 	var setExamsCollegeReadyGrades38IndigenousPercent = removeExamsCollegeReadyGrades38IndigenousPercent ? null : $formValues.find('.setExamsCollegeReadyGrades38IndigenousPercent').val();
+	var addExamsCollegeReadyGrades38IndigenousPercent = $formValues.find('.addExamsCollegeReadyGrades38IndigenousPercent').val();
 	if(removeExamsCollegeReadyGrades38IndigenousPercent || setExamsCollegeReadyGrades38IndigenousPercent != null && setExamsCollegeReadyGrades38IndigenousPercent !== '')
 		vals['setExamsCollegeReadyGrades38IndigenousPercent'] = setExamsCollegeReadyGrades38IndigenousPercent;
-	var addExamsCollegeReadyGrades38IndigenousPercent = $formValues.find('.addExamsCollegeReadyGrades38IndigenousPercent').val();
 	if(addExamsCollegeReadyGrades38IndigenousPercent != null && addExamsCollegeReadyGrades38IndigenousPercent !== '')
 		vals['addExamsCollegeReadyGrades38IndigenousPercent'] = addExamsCollegeReadyGrades38IndigenousPercent;
 	var removeExamsCollegeReadyGrades38IndigenousPercent = $formValues.find('.removeExamsCollegeReadyGrades38IndigenousPercent').val();
@@ -2458,9 +2458,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades38AsianPercent = $formValues.find('.valueExamsCollegeReadyGrades38AsianPercent').val();
 	var removeExamsCollegeReadyGrades38AsianPercent = $formValues.find('.removeExamsCollegeReadyGrades38AsianPercent').val() === 'true';
 	var setExamsCollegeReadyGrades38AsianPercent = removeExamsCollegeReadyGrades38AsianPercent ? null : $formValues.find('.setExamsCollegeReadyGrades38AsianPercent').val();
+	var addExamsCollegeReadyGrades38AsianPercent = $formValues.find('.addExamsCollegeReadyGrades38AsianPercent').val();
 	if(removeExamsCollegeReadyGrades38AsianPercent || setExamsCollegeReadyGrades38AsianPercent != null && setExamsCollegeReadyGrades38AsianPercent !== '')
 		vals['setExamsCollegeReadyGrades38AsianPercent'] = setExamsCollegeReadyGrades38AsianPercent;
-	var addExamsCollegeReadyGrades38AsianPercent = $formValues.find('.addExamsCollegeReadyGrades38AsianPercent').val();
 	if(addExamsCollegeReadyGrades38AsianPercent != null && addExamsCollegeReadyGrades38AsianPercent !== '')
 		vals['addExamsCollegeReadyGrades38AsianPercent'] = addExamsCollegeReadyGrades38AsianPercent;
 	var removeExamsCollegeReadyGrades38AsianPercent = $formValues.find('.removeExamsCollegeReadyGrades38AsianPercent').val();
@@ -2470,9 +2470,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades38BlackPercent = $formValues.find('.valueExamsCollegeReadyGrades38BlackPercent').val();
 	var removeExamsCollegeReadyGrades38BlackPercent = $formValues.find('.removeExamsCollegeReadyGrades38BlackPercent').val() === 'true';
 	var setExamsCollegeReadyGrades38BlackPercent = removeExamsCollegeReadyGrades38BlackPercent ? null : $formValues.find('.setExamsCollegeReadyGrades38BlackPercent').val();
+	var addExamsCollegeReadyGrades38BlackPercent = $formValues.find('.addExamsCollegeReadyGrades38BlackPercent').val();
 	if(removeExamsCollegeReadyGrades38BlackPercent || setExamsCollegeReadyGrades38BlackPercent != null && setExamsCollegeReadyGrades38BlackPercent !== '')
 		vals['setExamsCollegeReadyGrades38BlackPercent'] = setExamsCollegeReadyGrades38BlackPercent;
-	var addExamsCollegeReadyGrades38BlackPercent = $formValues.find('.addExamsCollegeReadyGrades38BlackPercent').val();
 	if(addExamsCollegeReadyGrades38BlackPercent != null && addExamsCollegeReadyGrades38BlackPercent !== '')
 		vals['addExamsCollegeReadyGrades38BlackPercent'] = addExamsCollegeReadyGrades38BlackPercent;
 	var removeExamsCollegeReadyGrades38BlackPercent = $formValues.find('.removeExamsCollegeReadyGrades38BlackPercent').val();
@@ -2482,9 +2482,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades38LatinxPercent = $formValues.find('.valueExamsCollegeReadyGrades38LatinxPercent').val();
 	var removeExamsCollegeReadyGrades38LatinxPercent = $formValues.find('.removeExamsCollegeReadyGrades38LatinxPercent').val() === 'true';
 	var setExamsCollegeReadyGrades38LatinxPercent = removeExamsCollegeReadyGrades38LatinxPercent ? null : $formValues.find('.setExamsCollegeReadyGrades38LatinxPercent').val();
+	var addExamsCollegeReadyGrades38LatinxPercent = $formValues.find('.addExamsCollegeReadyGrades38LatinxPercent').val();
 	if(removeExamsCollegeReadyGrades38LatinxPercent || setExamsCollegeReadyGrades38LatinxPercent != null && setExamsCollegeReadyGrades38LatinxPercent !== '')
 		vals['setExamsCollegeReadyGrades38LatinxPercent'] = setExamsCollegeReadyGrades38LatinxPercent;
-	var addExamsCollegeReadyGrades38LatinxPercent = $formValues.find('.addExamsCollegeReadyGrades38LatinxPercent').val();
 	if(addExamsCollegeReadyGrades38LatinxPercent != null && addExamsCollegeReadyGrades38LatinxPercent !== '')
 		vals['addExamsCollegeReadyGrades38LatinxPercent'] = addExamsCollegeReadyGrades38LatinxPercent;
 	var removeExamsCollegeReadyGrades38LatinxPercent = $formValues.find('.removeExamsCollegeReadyGrades38LatinxPercent').val();
@@ -2494,9 +2494,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades38MultiRacialPercent = $formValues.find('.valueExamsCollegeReadyGrades38MultiRacialPercent').val();
 	var removeExamsCollegeReadyGrades38MultiRacialPercent = $formValues.find('.removeExamsCollegeReadyGrades38MultiRacialPercent').val() === 'true';
 	var setExamsCollegeReadyGrades38MultiRacialPercent = removeExamsCollegeReadyGrades38MultiRacialPercent ? null : $formValues.find('.setExamsCollegeReadyGrades38MultiRacialPercent').val();
+	var addExamsCollegeReadyGrades38MultiRacialPercent = $formValues.find('.addExamsCollegeReadyGrades38MultiRacialPercent').val();
 	if(removeExamsCollegeReadyGrades38MultiRacialPercent || setExamsCollegeReadyGrades38MultiRacialPercent != null && setExamsCollegeReadyGrades38MultiRacialPercent !== '')
 		vals['setExamsCollegeReadyGrades38MultiRacialPercent'] = setExamsCollegeReadyGrades38MultiRacialPercent;
-	var addExamsCollegeReadyGrades38MultiRacialPercent = $formValues.find('.addExamsCollegeReadyGrades38MultiRacialPercent').val();
 	if(addExamsCollegeReadyGrades38MultiRacialPercent != null && addExamsCollegeReadyGrades38MultiRacialPercent !== '')
 		vals['addExamsCollegeReadyGrades38MultiRacialPercent'] = addExamsCollegeReadyGrades38MultiRacialPercent;
 	var removeExamsCollegeReadyGrades38MultiRacialPercent = $formValues.find('.removeExamsCollegeReadyGrades38MultiRacialPercent').val();
@@ -2506,9 +2506,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades38PacificIslanderPercent = $formValues.find('.valueExamsCollegeReadyGrades38PacificIslanderPercent').val();
 	var removeExamsCollegeReadyGrades38PacificIslanderPercent = $formValues.find('.removeExamsCollegeReadyGrades38PacificIslanderPercent').val() === 'true';
 	var setExamsCollegeReadyGrades38PacificIslanderPercent = removeExamsCollegeReadyGrades38PacificIslanderPercent ? null : $formValues.find('.setExamsCollegeReadyGrades38PacificIslanderPercent').val();
+	var addExamsCollegeReadyGrades38PacificIslanderPercent = $formValues.find('.addExamsCollegeReadyGrades38PacificIslanderPercent').val();
 	if(removeExamsCollegeReadyGrades38PacificIslanderPercent || setExamsCollegeReadyGrades38PacificIslanderPercent != null && setExamsCollegeReadyGrades38PacificIslanderPercent !== '')
 		vals['setExamsCollegeReadyGrades38PacificIslanderPercent'] = setExamsCollegeReadyGrades38PacificIslanderPercent;
-	var addExamsCollegeReadyGrades38PacificIslanderPercent = $formValues.find('.addExamsCollegeReadyGrades38PacificIslanderPercent').val();
 	if(addExamsCollegeReadyGrades38PacificIslanderPercent != null && addExamsCollegeReadyGrades38PacificIslanderPercent !== '')
 		vals['addExamsCollegeReadyGrades38PacificIslanderPercent'] = addExamsCollegeReadyGrades38PacificIslanderPercent;
 	var removeExamsCollegeReadyGrades38PacificIslanderPercent = $formValues.find('.removeExamsCollegeReadyGrades38PacificIslanderPercent').val();
@@ -2518,9 +2518,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades38WhitePercent = $formValues.find('.valueExamsCollegeReadyGrades38WhitePercent').val();
 	var removeExamsCollegeReadyGrades38WhitePercent = $formValues.find('.removeExamsCollegeReadyGrades38WhitePercent').val() === 'true';
 	var setExamsCollegeReadyGrades38WhitePercent = removeExamsCollegeReadyGrades38WhitePercent ? null : $formValues.find('.setExamsCollegeReadyGrades38WhitePercent').val();
+	var addExamsCollegeReadyGrades38WhitePercent = $formValues.find('.addExamsCollegeReadyGrades38WhitePercent').val();
 	if(removeExamsCollegeReadyGrades38WhitePercent || setExamsCollegeReadyGrades38WhitePercent != null && setExamsCollegeReadyGrades38WhitePercent !== '')
 		vals['setExamsCollegeReadyGrades38WhitePercent'] = setExamsCollegeReadyGrades38WhitePercent;
-	var addExamsCollegeReadyGrades38WhitePercent = $formValues.find('.addExamsCollegeReadyGrades38WhitePercent').val();
 	if(addExamsCollegeReadyGrades38WhitePercent != null && addExamsCollegeReadyGrades38WhitePercent !== '')
 		vals['addExamsCollegeReadyGrades38WhitePercent'] = addExamsCollegeReadyGrades38WhitePercent;
 	var removeExamsCollegeReadyGrades38WhitePercent = $formValues.find('.removeExamsCollegeReadyGrades38WhitePercent').val();
@@ -2530,9 +2530,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades912OverallPercent = $formValues.find('.valueExamsCollegeReadyGrades912OverallPercent').val();
 	var removeExamsCollegeReadyGrades912OverallPercent = $formValues.find('.removeExamsCollegeReadyGrades912OverallPercent').val() === 'true';
 	var setExamsCollegeReadyGrades912OverallPercent = removeExamsCollegeReadyGrades912OverallPercent ? null : $formValues.find('.setExamsCollegeReadyGrades912OverallPercent').val();
+	var addExamsCollegeReadyGrades912OverallPercent = $formValues.find('.addExamsCollegeReadyGrades912OverallPercent').val();
 	if(removeExamsCollegeReadyGrades912OverallPercent || setExamsCollegeReadyGrades912OverallPercent != null && setExamsCollegeReadyGrades912OverallPercent !== '')
 		vals['setExamsCollegeReadyGrades912OverallPercent'] = setExamsCollegeReadyGrades912OverallPercent;
-	var addExamsCollegeReadyGrades912OverallPercent = $formValues.find('.addExamsCollegeReadyGrades912OverallPercent').val();
 	if(addExamsCollegeReadyGrades912OverallPercent != null && addExamsCollegeReadyGrades912OverallPercent !== '')
 		vals['addExamsCollegeReadyGrades912OverallPercent'] = addExamsCollegeReadyGrades912OverallPercent;
 	var removeExamsCollegeReadyGrades912OverallPercent = $formValues.find('.removeExamsCollegeReadyGrades912OverallPercent').val();
@@ -2542,9 +2542,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades912IndigenousPercent = $formValues.find('.valueExamsCollegeReadyGrades912IndigenousPercent').val();
 	var removeExamsCollegeReadyGrades912IndigenousPercent = $formValues.find('.removeExamsCollegeReadyGrades912IndigenousPercent').val() === 'true';
 	var setExamsCollegeReadyGrades912IndigenousPercent = removeExamsCollegeReadyGrades912IndigenousPercent ? null : $formValues.find('.setExamsCollegeReadyGrades912IndigenousPercent').val();
+	var addExamsCollegeReadyGrades912IndigenousPercent = $formValues.find('.addExamsCollegeReadyGrades912IndigenousPercent').val();
 	if(removeExamsCollegeReadyGrades912IndigenousPercent || setExamsCollegeReadyGrades912IndigenousPercent != null && setExamsCollegeReadyGrades912IndigenousPercent !== '')
 		vals['setExamsCollegeReadyGrades912IndigenousPercent'] = setExamsCollegeReadyGrades912IndigenousPercent;
-	var addExamsCollegeReadyGrades912IndigenousPercent = $formValues.find('.addExamsCollegeReadyGrades912IndigenousPercent').val();
 	if(addExamsCollegeReadyGrades912IndigenousPercent != null && addExamsCollegeReadyGrades912IndigenousPercent !== '')
 		vals['addExamsCollegeReadyGrades912IndigenousPercent'] = addExamsCollegeReadyGrades912IndigenousPercent;
 	var removeExamsCollegeReadyGrades912IndigenousPercent = $formValues.find('.removeExamsCollegeReadyGrades912IndigenousPercent').val();
@@ -2554,9 +2554,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades912AsianPercent = $formValues.find('.valueExamsCollegeReadyGrades912AsianPercent').val();
 	var removeExamsCollegeReadyGrades912AsianPercent = $formValues.find('.removeExamsCollegeReadyGrades912AsianPercent').val() === 'true';
 	var setExamsCollegeReadyGrades912AsianPercent = removeExamsCollegeReadyGrades912AsianPercent ? null : $formValues.find('.setExamsCollegeReadyGrades912AsianPercent').val();
+	var addExamsCollegeReadyGrades912AsianPercent = $formValues.find('.addExamsCollegeReadyGrades912AsianPercent').val();
 	if(removeExamsCollegeReadyGrades912AsianPercent || setExamsCollegeReadyGrades912AsianPercent != null && setExamsCollegeReadyGrades912AsianPercent !== '')
 		vals['setExamsCollegeReadyGrades912AsianPercent'] = setExamsCollegeReadyGrades912AsianPercent;
-	var addExamsCollegeReadyGrades912AsianPercent = $formValues.find('.addExamsCollegeReadyGrades912AsianPercent').val();
 	if(addExamsCollegeReadyGrades912AsianPercent != null && addExamsCollegeReadyGrades912AsianPercent !== '')
 		vals['addExamsCollegeReadyGrades912AsianPercent'] = addExamsCollegeReadyGrades912AsianPercent;
 	var removeExamsCollegeReadyGrades912AsianPercent = $formValues.find('.removeExamsCollegeReadyGrades912AsianPercent').val();
@@ -2566,9 +2566,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades912BlackPercent = $formValues.find('.valueExamsCollegeReadyGrades912BlackPercent').val();
 	var removeExamsCollegeReadyGrades912BlackPercent = $formValues.find('.removeExamsCollegeReadyGrades912BlackPercent').val() === 'true';
 	var setExamsCollegeReadyGrades912BlackPercent = removeExamsCollegeReadyGrades912BlackPercent ? null : $formValues.find('.setExamsCollegeReadyGrades912BlackPercent').val();
+	var addExamsCollegeReadyGrades912BlackPercent = $formValues.find('.addExamsCollegeReadyGrades912BlackPercent').val();
 	if(removeExamsCollegeReadyGrades912BlackPercent || setExamsCollegeReadyGrades912BlackPercent != null && setExamsCollegeReadyGrades912BlackPercent !== '')
 		vals['setExamsCollegeReadyGrades912BlackPercent'] = setExamsCollegeReadyGrades912BlackPercent;
-	var addExamsCollegeReadyGrades912BlackPercent = $formValues.find('.addExamsCollegeReadyGrades912BlackPercent').val();
 	if(addExamsCollegeReadyGrades912BlackPercent != null && addExamsCollegeReadyGrades912BlackPercent !== '')
 		vals['addExamsCollegeReadyGrades912BlackPercent'] = addExamsCollegeReadyGrades912BlackPercent;
 	var removeExamsCollegeReadyGrades912BlackPercent = $formValues.find('.removeExamsCollegeReadyGrades912BlackPercent').val();
@@ -2578,9 +2578,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades912LatinxPercent = $formValues.find('.valueExamsCollegeReadyGrades912LatinxPercent').val();
 	var removeExamsCollegeReadyGrades912LatinxPercent = $formValues.find('.removeExamsCollegeReadyGrades912LatinxPercent').val() === 'true';
 	var setExamsCollegeReadyGrades912LatinxPercent = removeExamsCollegeReadyGrades912LatinxPercent ? null : $formValues.find('.setExamsCollegeReadyGrades912LatinxPercent').val();
+	var addExamsCollegeReadyGrades912LatinxPercent = $formValues.find('.addExamsCollegeReadyGrades912LatinxPercent').val();
 	if(removeExamsCollegeReadyGrades912LatinxPercent || setExamsCollegeReadyGrades912LatinxPercent != null && setExamsCollegeReadyGrades912LatinxPercent !== '')
 		vals['setExamsCollegeReadyGrades912LatinxPercent'] = setExamsCollegeReadyGrades912LatinxPercent;
-	var addExamsCollegeReadyGrades912LatinxPercent = $formValues.find('.addExamsCollegeReadyGrades912LatinxPercent').val();
 	if(addExamsCollegeReadyGrades912LatinxPercent != null && addExamsCollegeReadyGrades912LatinxPercent !== '')
 		vals['addExamsCollegeReadyGrades912LatinxPercent'] = addExamsCollegeReadyGrades912LatinxPercent;
 	var removeExamsCollegeReadyGrades912LatinxPercent = $formValues.find('.removeExamsCollegeReadyGrades912LatinxPercent').val();
@@ -2590,9 +2590,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades912MultiRacialPercent = $formValues.find('.valueExamsCollegeReadyGrades912MultiRacialPercent').val();
 	var removeExamsCollegeReadyGrades912MultiRacialPercent = $formValues.find('.removeExamsCollegeReadyGrades912MultiRacialPercent').val() === 'true';
 	var setExamsCollegeReadyGrades912MultiRacialPercent = removeExamsCollegeReadyGrades912MultiRacialPercent ? null : $formValues.find('.setExamsCollegeReadyGrades912MultiRacialPercent').val();
+	var addExamsCollegeReadyGrades912MultiRacialPercent = $formValues.find('.addExamsCollegeReadyGrades912MultiRacialPercent').val();
 	if(removeExamsCollegeReadyGrades912MultiRacialPercent || setExamsCollegeReadyGrades912MultiRacialPercent != null && setExamsCollegeReadyGrades912MultiRacialPercent !== '')
 		vals['setExamsCollegeReadyGrades912MultiRacialPercent'] = setExamsCollegeReadyGrades912MultiRacialPercent;
-	var addExamsCollegeReadyGrades912MultiRacialPercent = $formValues.find('.addExamsCollegeReadyGrades912MultiRacialPercent').val();
 	if(addExamsCollegeReadyGrades912MultiRacialPercent != null && addExamsCollegeReadyGrades912MultiRacialPercent !== '')
 		vals['addExamsCollegeReadyGrades912MultiRacialPercent'] = addExamsCollegeReadyGrades912MultiRacialPercent;
 	var removeExamsCollegeReadyGrades912MultiRacialPercent = $formValues.find('.removeExamsCollegeReadyGrades912MultiRacialPercent').val();
@@ -2602,9 +2602,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades912PacificIslanderPercent = $formValues.find('.valueExamsCollegeReadyGrades912PacificIslanderPercent').val();
 	var removeExamsCollegeReadyGrades912PacificIslanderPercent = $formValues.find('.removeExamsCollegeReadyGrades912PacificIslanderPercent').val() === 'true';
 	var setExamsCollegeReadyGrades912PacificIslanderPercent = removeExamsCollegeReadyGrades912PacificIslanderPercent ? null : $formValues.find('.setExamsCollegeReadyGrades912PacificIslanderPercent').val();
+	var addExamsCollegeReadyGrades912PacificIslanderPercent = $formValues.find('.addExamsCollegeReadyGrades912PacificIslanderPercent').val();
 	if(removeExamsCollegeReadyGrades912PacificIslanderPercent || setExamsCollegeReadyGrades912PacificIslanderPercent != null && setExamsCollegeReadyGrades912PacificIslanderPercent !== '')
 		vals['setExamsCollegeReadyGrades912PacificIslanderPercent'] = setExamsCollegeReadyGrades912PacificIslanderPercent;
-	var addExamsCollegeReadyGrades912PacificIslanderPercent = $formValues.find('.addExamsCollegeReadyGrades912PacificIslanderPercent').val();
 	if(addExamsCollegeReadyGrades912PacificIslanderPercent != null && addExamsCollegeReadyGrades912PacificIslanderPercent !== '')
 		vals['addExamsCollegeReadyGrades912PacificIslanderPercent'] = addExamsCollegeReadyGrades912PacificIslanderPercent;
 	var removeExamsCollegeReadyGrades912PacificIslanderPercent = $formValues.find('.removeExamsCollegeReadyGrades912PacificIslanderPercent').val();
@@ -2614,9 +2614,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueExamsCollegeReadyGrades912WhitePercent = $formValues.find('.valueExamsCollegeReadyGrades912WhitePercent').val();
 	var removeExamsCollegeReadyGrades912WhitePercent = $formValues.find('.removeExamsCollegeReadyGrades912WhitePercent').val() === 'true';
 	var setExamsCollegeReadyGrades912WhitePercent = removeExamsCollegeReadyGrades912WhitePercent ? null : $formValues.find('.setExamsCollegeReadyGrades912WhitePercent').val();
+	var addExamsCollegeReadyGrades912WhitePercent = $formValues.find('.addExamsCollegeReadyGrades912WhitePercent').val();
 	if(removeExamsCollegeReadyGrades912WhitePercent || setExamsCollegeReadyGrades912WhitePercent != null && setExamsCollegeReadyGrades912WhitePercent !== '')
 		vals['setExamsCollegeReadyGrades912WhitePercent'] = setExamsCollegeReadyGrades912WhitePercent;
-	var addExamsCollegeReadyGrades912WhitePercent = $formValues.find('.addExamsCollegeReadyGrades912WhitePercent').val();
 	if(addExamsCollegeReadyGrades912WhitePercent != null && addExamsCollegeReadyGrades912WhitePercent !== '')
 		vals['addExamsCollegeReadyGrades912WhitePercent'] = addExamsCollegeReadyGrades912WhitePercent;
 	var removeExamsCollegeReadyGrades912WhitePercent = $formValues.find('.removeExamsCollegeReadyGrades912WhitePercent').val();
@@ -2626,9 +2626,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueGraduateWithin4YearsOverallPercent = $formValues.find('.valueGraduateWithin4YearsOverallPercent').val();
 	var removeGraduateWithin4YearsOverallPercent = $formValues.find('.removeGraduateWithin4YearsOverallPercent').val() === 'true';
 	var setGraduateWithin4YearsOverallPercent = removeGraduateWithin4YearsOverallPercent ? null : $formValues.find('.setGraduateWithin4YearsOverallPercent').val();
+	var addGraduateWithin4YearsOverallPercent = $formValues.find('.addGraduateWithin4YearsOverallPercent').val();
 	if(removeGraduateWithin4YearsOverallPercent || setGraduateWithin4YearsOverallPercent != null && setGraduateWithin4YearsOverallPercent !== '')
 		vals['setGraduateWithin4YearsOverallPercent'] = setGraduateWithin4YearsOverallPercent;
-	var addGraduateWithin4YearsOverallPercent = $formValues.find('.addGraduateWithin4YearsOverallPercent').val();
 	if(addGraduateWithin4YearsOverallPercent != null && addGraduateWithin4YearsOverallPercent !== '')
 		vals['addGraduateWithin4YearsOverallPercent'] = addGraduateWithin4YearsOverallPercent;
 	var removeGraduateWithin4YearsOverallPercent = $formValues.find('.removeGraduateWithin4YearsOverallPercent').val();
@@ -2638,9 +2638,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueGraduateWithin4YearsIndigenousPercent = $formValues.find('.valueGraduateWithin4YearsIndigenousPercent').val();
 	var removeGraduateWithin4YearsIndigenousPercent = $formValues.find('.removeGraduateWithin4YearsIndigenousPercent').val() === 'true';
 	var setGraduateWithin4YearsIndigenousPercent = removeGraduateWithin4YearsIndigenousPercent ? null : $formValues.find('.setGraduateWithin4YearsIndigenousPercent').val();
+	var addGraduateWithin4YearsIndigenousPercent = $formValues.find('.addGraduateWithin4YearsIndigenousPercent').val();
 	if(removeGraduateWithin4YearsIndigenousPercent || setGraduateWithin4YearsIndigenousPercent != null && setGraduateWithin4YearsIndigenousPercent !== '')
 		vals['setGraduateWithin4YearsIndigenousPercent'] = setGraduateWithin4YearsIndigenousPercent;
-	var addGraduateWithin4YearsIndigenousPercent = $formValues.find('.addGraduateWithin4YearsIndigenousPercent').val();
 	if(addGraduateWithin4YearsIndigenousPercent != null && addGraduateWithin4YearsIndigenousPercent !== '')
 		vals['addGraduateWithin4YearsIndigenousPercent'] = addGraduateWithin4YearsIndigenousPercent;
 	var removeGraduateWithin4YearsIndigenousPercent = $formValues.find('.removeGraduateWithin4YearsIndigenousPercent').val();
@@ -2650,9 +2650,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueGraduateWithin4YearsAsianPercent = $formValues.find('.valueGraduateWithin4YearsAsianPercent').val();
 	var removeGraduateWithin4YearsAsianPercent = $formValues.find('.removeGraduateWithin4YearsAsianPercent').val() === 'true';
 	var setGraduateWithin4YearsAsianPercent = removeGraduateWithin4YearsAsianPercent ? null : $formValues.find('.setGraduateWithin4YearsAsianPercent').val();
+	var addGraduateWithin4YearsAsianPercent = $formValues.find('.addGraduateWithin4YearsAsianPercent').val();
 	if(removeGraduateWithin4YearsAsianPercent || setGraduateWithin4YearsAsianPercent != null && setGraduateWithin4YearsAsianPercent !== '')
 		vals['setGraduateWithin4YearsAsianPercent'] = setGraduateWithin4YearsAsianPercent;
-	var addGraduateWithin4YearsAsianPercent = $formValues.find('.addGraduateWithin4YearsAsianPercent').val();
 	if(addGraduateWithin4YearsAsianPercent != null && addGraduateWithin4YearsAsianPercent !== '')
 		vals['addGraduateWithin4YearsAsianPercent'] = addGraduateWithin4YearsAsianPercent;
 	var removeGraduateWithin4YearsAsianPercent = $formValues.find('.removeGraduateWithin4YearsAsianPercent').val();
@@ -2662,9 +2662,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueGraduateWithin4YearsBlackPercent = $formValues.find('.valueGraduateWithin4YearsBlackPercent').val();
 	var removeGraduateWithin4YearsBlackPercent = $formValues.find('.removeGraduateWithin4YearsBlackPercent').val() === 'true';
 	var setGraduateWithin4YearsBlackPercent = removeGraduateWithin4YearsBlackPercent ? null : $formValues.find('.setGraduateWithin4YearsBlackPercent').val();
+	var addGraduateWithin4YearsBlackPercent = $formValues.find('.addGraduateWithin4YearsBlackPercent').val();
 	if(removeGraduateWithin4YearsBlackPercent || setGraduateWithin4YearsBlackPercent != null && setGraduateWithin4YearsBlackPercent !== '')
 		vals['setGraduateWithin4YearsBlackPercent'] = setGraduateWithin4YearsBlackPercent;
-	var addGraduateWithin4YearsBlackPercent = $formValues.find('.addGraduateWithin4YearsBlackPercent').val();
 	if(addGraduateWithin4YearsBlackPercent != null && addGraduateWithin4YearsBlackPercent !== '')
 		vals['addGraduateWithin4YearsBlackPercent'] = addGraduateWithin4YearsBlackPercent;
 	var removeGraduateWithin4YearsBlackPercent = $formValues.find('.removeGraduateWithin4YearsBlackPercent').val();
@@ -2674,9 +2674,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueGraduateWithin4YearsLatinxPercent = $formValues.find('.valueGraduateWithin4YearsLatinxPercent').val();
 	var removeGraduateWithin4YearsLatinxPercent = $formValues.find('.removeGraduateWithin4YearsLatinxPercent').val() === 'true';
 	var setGraduateWithin4YearsLatinxPercent = removeGraduateWithin4YearsLatinxPercent ? null : $formValues.find('.setGraduateWithin4YearsLatinxPercent').val();
+	var addGraduateWithin4YearsLatinxPercent = $formValues.find('.addGraduateWithin4YearsLatinxPercent').val();
 	if(removeGraduateWithin4YearsLatinxPercent || setGraduateWithin4YearsLatinxPercent != null && setGraduateWithin4YearsLatinxPercent !== '')
 		vals['setGraduateWithin4YearsLatinxPercent'] = setGraduateWithin4YearsLatinxPercent;
-	var addGraduateWithin4YearsLatinxPercent = $formValues.find('.addGraduateWithin4YearsLatinxPercent').val();
 	if(addGraduateWithin4YearsLatinxPercent != null && addGraduateWithin4YearsLatinxPercent !== '')
 		vals['addGraduateWithin4YearsLatinxPercent'] = addGraduateWithin4YearsLatinxPercent;
 	var removeGraduateWithin4YearsLatinxPercent = $formValues.find('.removeGraduateWithin4YearsLatinxPercent').val();
@@ -2686,9 +2686,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueGraduateWithin4YearsMultiRacialPercent = $formValues.find('.valueGraduateWithin4YearsMultiRacialPercent').val();
 	var removeGraduateWithin4YearsMultiRacialPercent = $formValues.find('.removeGraduateWithin4YearsMultiRacialPercent').val() === 'true';
 	var setGraduateWithin4YearsMultiRacialPercent = removeGraduateWithin4YearsMultiRacialPercent ? null : $formValues.find('.setGraduateWithin4YearsMultiRacialPercent').val();
+	var addGraduateWithin4YearsMultiRacialPercent = $formValues.find('.addGraduateWithin4YearsMultiRacialPercent').val();
 	if(removeGraduateWithin4YearsMultiRacialPercent || setGraduateWithin4YearsMultiRacialPercent != null && setGraduateWithin4YearsMultiRacialPercent !== '')
 		vals['setGraduateWithin4YearsMultiRacialPercent'] = setGraduateWithin4YearsMultiRacialPercent;
-	var addGraduateWithin4YearsMultiRacialPercent = $formValues.find('.addGraduateWithin4YearsMultiRacialPercent').val();
 	if(addGraduateWithin4YearsMultiRacialPercent != null && addGraduateWithin4YearsMultiRacialPercent !== '')
 		vals['addGraduateWithin4YearsMultiRacialPercent'] = addGraduateWithin4YearsMultiRacialPercent;
 	var removeGraduateWithin4YearsMultiRacialPercent = $formValues.find('.removeGraduateWithin4YearsMultiRacialPercent').val();
@@ -2698,9 +2698,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueGraduateWithin4YearsPacificIslanderPercent = $formValues.find('.valueGraduateWithin4YearsPacificIslanderPercent').val();
 	var removeGraduateWithin4YearsPacificIslanderPercent = $formValues.find('.removeGraduateWithin4YearsPacificIslanderPercent').val() === 'true';
 	var setGraduateWithin4YearsPacificIslanderPercent = removeGraduateWithin4YearsPacificIslanderPercent ? null : $formValues.find('.setGraduateWithin4YearsPacificIslanderPercent').val();
+	var addGraduateWithin4YearsPacificIslanderPercent = $formValues.find('.addGraduateWithin4YearsPacificIslanderPercent').val();
 	if(removeGraduateWithin4YearsPacificIslanderPercent || setGraduateWithin4YearsPacificIslanderPercent != null && setGraduateWithin4YearsPacificIslanderPercent !== '')
 		vals['setGraduateWithin4YearsPacificIslanderPercent'] = setGraduateWithin4YearsPacificIslanderPercent;
-	var addGraduateWithin4YearsPacificIslanderPercent = $formValues.find('.addGraduateWithin4YearsPacificIslanderPercent').val();
 	if(addGraduateWithin4YearsPacificIslanderPercent != null && addGraduateWithin4YearsPacificIslanderPercent !== '')
 		vals['addGraduateWithin4YearsPacificIslanderPercent'] = addGraduateWithin4YearsPacificIslanderPercent;
 	var removeGraduateWithin4YearsPacificIslanderPercent = $formValues.find('.removeGraduateWithin4YearsPacificIslanderPercent').val();
@@ -2710,9 +2710,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueGraduateWithin4YearsWhitePercent = $formValues.find('.valueGraduateWithin4YearsWhitePercent').val();
 	var removeGraduateWithin4YearsWhitePercent = $formValues.find('.removeGraduateWithin4YearsWhitePercent').val() === 'true';
 	var setGraduateWithin4YearsWhitePercent = removeGraduateWithin4YearsWhitePercent ? null : $formValues.find('.setGraduateWithin4YearsWhitePercent').val();
+	var addGraduateWithin4YearsWhitePercent = $formValues.find('.addGraduateWithin4YearsWhitePercent').val();
 	if(removeGraduateWithin4YearsWhitePercent || setGraduateWithin4YearsWhitePercent != null && setGraduateWithin4YearsWhitePercent !== '')
 		vals['setGraduateWithin4YearsWhitePercent'] = setGraduateWithin4YearsWhitePercent;
-	var addGraduateWithin4YearsWhitePercent = $formValues.find('.addGraduateWithin4YearsWhitePercent').val();
 	if(addGraduateWithin4YearsWhitePercent != null && addGraduateWithin4YearsWhitePercent !== '')
 		vals['addGraduateWithin4YearsWhitePercent'] = addGraduateWithin4YearsWhitePercent;
 	var removeGraduateWithin4YearsWhitePercent = $formValues.find('.removeGraduateWithin4YearsWhitePercent').val();
@@ -2722,9 +2722,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
 	var removeInheritPk = $formValues.find('.removeInheritPk').val() === 'true';
 	var setInheritPk = removeInheritPk ? null : $formValues.find('.setInheritPk').val();
+	var addInheritPk = $formValues.find('.addInheritPk').val();
 	if(removeInheritPk || setInheritPk != null && setInheritPk !== '')
 		vals['setInheritPk'] = setInheritPk;
-	var addInheritPk = $formValues.find('.addInheritPk').val();
 	if(addInheritPk != null && addInheritPk !== '')
 		vals['addInheritPk'] = addInheritPk;
 	var removeInheritPk = $formValues.find('.removeInheritPk').val();
@@ -2734,9 +2734,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueUserId = $formValues.find('.valueUserId').val();
 	var removeUserId = $formValues.find('.removeUserId').val() === 'true';
 	var setUserId = removeUserId ? null : $formValues.find('.setUserId').val();
+	var addUserId = $formValues.find('.addUserId').val();
 	if(removeUserId || setUserId != null && setUserId !== '')
 		vals['setUserId'] = setUserId;
-	var addUserId = $formValues.find('.addUserId').val();
 	if(addUserId != null && addUserId !== '')
 		vals['addUserId'] = addUserId;
 	var removeUserId = $formValues.find('.removeUserId').val();
@@ -2746,9 +2746,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueUserKey = $formValues.find('.valueUserKey').val();
 	var removeUserKey = $formValues.find('.removeUserKey').val() === 'true';
 	var setUserKey = removeUserKey ? null : $formValues.find('.setUserKey').val();
+	var addUserKey = $formValues.find('.addUserKey').val();
 	if(removeUserKey || setUserKey != null && setUserKey !== '')
 		vals['setUserKey'] = setUserKey;
-	var addUserKey = $formValues.find('.addUserKey').val();
 	if(addUserKey != null && addUserKey !== '')
 		vals['addUserKey'] = addUserKey;
 	var removeUserKey = $formValues.find('.removeUserKey').val();
@@ -2758,9 +2758,9 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	var valueObjectTitle = $formValues.find('.valueObjectTitle').val();
 	var removeObjectTitle = $formValues.find('.removeObjectTitle').val() === 'true';
 	var setObjectTitle = removeObjectTitle ? null : $formValues.find('.setObjectTitle').val();
+	var addObjectTitle = $formValues.find('.addObjectTitle').val();
 	if(removeObjectTitle || setObjectTitle != null && setObjectTitle !== '')
 		vals['setObjectTitle'] = setObjectTitle;
-	var addObjectTitle = $formValues.find('.addObjectTitle').val();
 	if(addObjectTitle != null && addObjectTitle !== '')
 		vals['addObjectTitle'] = addObjectTitle;
 	var removeObjectTitle = $formValues.find('.removeObjectTitle').val();
@@ -3381,6 +3381,10 @@ function patchReportCardFilters($formFilters) {
 		var filterExamsCollegeReadyGrades38BlackVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38BlackVsWhite').val();
 		if(filterExamsCollegeReadyGrades38BlackVsWhite != null && filterExamsCollegeReadyGrades38BlackVsWhite !== '')
 			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38BlackVsWhite:' + filterExamsCollegeReadyGrades38BlackVsWhite });
+
+		var filterExamsCollegeReadyGrades38LatinxVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38LatinxVsWhite').val();
+		if(filterExamsCollegeReadyGrades38LatinxVsWhite != null && filterExamsCollegeReadyGrades38LatinxVsWhite !== '')
+			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38LatinxVsWhite:' + filterExamsCollegeReadyGrades38LatinxVsWhite });
 
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
@@ -4071,6 +4075,10 @@ function searchReportCardFilters($formFilters) {
 		var filterExamsCollegeReadyGrades38BlackVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38BlackVsWhite').val();
 		if(filterExamsCollegeReadyGrades38BlackVsWhite != null && filterExamsCollegeReadyGrades38BlackVsWhite !== '')
 			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38BlackVsWhite:' + filterExamsCollegeReadyGrades38BlackVsWhite });
+
+		var filterExamsCollegeReadyGrades38LatinxVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38LatinxVsWhite').val();
+		if(filterExamsCollegeReadyGrades38LatinxVsWhite != null && filterExamsCollegeReadyGrades38LatinxVsWhite !== '')
+			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38LatinxVsWhite:' + filterExamsCollegeReadyGrades38LatinxVsWhite });
 
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
@@ -4800,6 +4808,10 @@ function adminsearchReportCardFilters($formFilters) {
 		var filterExamsCollegeReadyGrades38BlackVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38BlackVsWhite').val();
 		if(filterExamsCollegeReadyGrades38BlackVsWhite != null && filterExamsCollegeReadyGrades38BlackVsWhite !== '')
 			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38BlackVsWhite:' + filterExamsCollegeReadyGrades38BlackVsWhite });
+
+		var filterExamsCollegeReadyGrades38LatinxVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38LatinxVsWhite').val();
+		if(filterExamsCollegeReadyGrades38LatinxVsWhite != null && filterExamsCollegeReadyGrades38LatinxVsWhite !== '')
+			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38LatinxVsWhite:' + filterExamsCollegeReadyGrades38LatinxVsWhite });
 
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
@@ -6779,6 +6791,18 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'ExamsCollegeReadyGrades38BlackVsWhite'));
+			}
+			var val = o['examsCollegeReadyGrades38LatinxVsWhite'];
+			if(vars.includes('examsCollegeReadyGrades38LatinxVsWhite')) {
+				$('.inputReportCard' + pk + 'ExamsCollegeReadyGrades38LatinxVsWhite').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'ExamsCollegeReadyGrades38LatinxVsWhite').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'ExamsCollegeReadyGrades38LatinxVsWhite'));
 			}
 			var val = o['stateKey'];
 			if(vars.includes('stateKey')) {

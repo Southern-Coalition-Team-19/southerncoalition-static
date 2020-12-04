@@ -1,9 +1,9 @@
 {
   "startNum" : 0,
-  "foundNum" : 250,
-  "returnedNum" : 250,
+  "foundNum" : 249,
+  "returnedNum" : 249,
   "searchTime" : "0.000 sec",
-  "transmissionTime" : "0.061 sec",
+  "transmissionTime" : "0.057 sec",
   "list" : [ {
     "pk" : "20",
     "inheritPk" : "950",
@@ -858,21 +858,6 @@
     "loginLogout" : false,
     "sort1" : "0.0",
     "sort2" : "5.0"
-  }, {
-    "pk" : "533",
-    "inheritPk" : "943",
-    "created" : "2020-05-23T11:45:43.336-04:00[America/New_York]",
-    "archived" : false,
-    "deleted" : false,
-    "userId" : "3df413fd-1cd1-4cc6-bb15-0bfdbfc5e8b7",
-    "saves" : [ "sort1", "inheritPk", "deleted", "loginLogout", "htmlExclude", "htmlBefore", "archived", "sort2", "created", "userId", "pdfExclude", "pageDesignKeys" ],
-    "pageDesignKeys" : [ "16" ],
-    "htmlBefore" : "          <div class=\"site-bar-item w3-bar-item \">\n            <a class=\"w3-padding text-decoration-none \" href=\"/page/contact-us\"><i class=\"far fa-phone-volume \"></i> Contact Us</a>\n          </div>\n",
-    "htmlExclude" : false,
-    "pdfExclude" : true,
-    "loginLogout" : false,
-    "sort1" : "0.0",
-    "sort2" : "6.0"
   }, {
     "pk" : "65",
     "inheritPk" : "955",

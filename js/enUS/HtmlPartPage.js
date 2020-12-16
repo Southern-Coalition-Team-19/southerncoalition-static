@@ -33,13 +33,13 @@ async function postHtmlPart($formValues, success, error) {
 	if(valueObjectId != null && valueObjectId !== '')
 		vals['objectId'] = valueObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	if(valueArchived != null && valueArchived !== '')
-		vals['archived'] = valueArchived;
+		vals['archived'] = valueArchived == 'true';
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	if(valueDeleted != null && valueDeleted !== '')
-		vals['deleted'] = valueDeleted;
+		vals['deleted'] = valueDeleted == 'true';
 
 	var valuePageDesignKeys = [];
 	$formValues.find('input.valuePageDesignKeys:checked').each(function(index) {
@@ -108,17 +108,17 @@ async function postHtmlPart($formValues, success, error) {
 	if(valueHtmlVarBase64Decode != null && valueHtmlVarBase64Decode !== '')
 		vals['htmlVarBase64Decode'] = valueHtmlVarBase64Decode;
 
-	var valueHtmlExclude = $formValues.find('.valueHtmlExclude').prop('checked');
+	var valueHtmlExclude = $formValues.find('.valueHtmlExclude').val();
 	if(valueHtmlExclude != null && valueHtmlExclude !== '')
-		vals['htmlExclude'] = valueHtmlExclude;
+		vals['htmlExclude'] = valueHtmlExclude == 'true';
 
-	var valuePdfExclude = $formValues.find('.valuePdfExclude').prop('checked');
+	var valuePdfExclude = $formValues.find('.valuePdfExclude').val();
 	if(valuePdfExclude != null && valuePdfExclude !== '')
-		vals['pdfExclude'] = valuePdfExclude;
+		vals['pdfExclude'] = valuePdfExclude == 'true';
 
-	var valueLoginLogout = $formValues.find('.valueLoginLogout').prop('checked');
+	var valueLoginLogout = $formValues.find('.valueLoginLogout').val();
 	if(valueLoginLogout != null && valueLoginLogout !== '')
-		vals['loginLogout'] = valueLoginLogout;
+		vals['loginLogout'] = valueLoginLogout == 'true';
 
 	var valueSort1 = $formValues.find('.valueSort1').val();
 	if(valueSort1 != null && valueSort1 !== '')
@@ -260,16 +260,19 @@ async function putcopyHtmlPart($formValues, pk, success, error) {
 	if(valueObjectId != null && valueObjectId !== '')
 		vals['objectId'] = valueObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	if(valueArchived != null && valueArchived !== '')
-		vals['archived'] = valueArchived;
+		vals['archived'] = valueArchived == 'true';
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	if(valueDeleted != null && valueDeleted !== '')
-		vals['deleted'] = valueDeleted;
+		vals['deleted'] = valueDeleted == 'true';
 
 	var valuePageDesignKeys = $formValues.find('input.valuePageDesignKeys:checked').val();
-	if(valuePageDesignKeys != null && valuePageDesignKeys !== '')
+	var valuePageDesignKeysClear = $formValues.find('input.pageDesignKeys_clear:checked').val();
+	if(valuePageDesignKeysClear != null && valuePageDesignKeysClear)
+		vals['pageDesignKeys'] = null;
+	else if(valuePageDesignKeys != null && valuePageDesignKeys)
 		vals['pageDesignKeys'] = [valuePageDesignKeys];
 
 	var valueHtmlLink = $formValues.find('.valueHtmlLink').val();
@@ -332,17 +335,17 @@ async function putcopyHtmlPart($formValues, pk, success, error) {
 	if(valueHtmlVarBase64Decode != null && valueHtmlVarBase64Decode !== '')
 		vals['htmlVarBase64Decode'] = valueHtmlVarBase64Decode;
 
-	var valueHtmlExclude = $formValues.find('.valueHtmlExclude').prop('checked');
+	var valueHtmlExclude = $formValues.find('.valueHtmlExclude').val();
 	if(valueHtmlExclude != null && valueHtmlExclude !== '')
-		vals['htmlExclude'] = valueHtmlExclude;
+		vals['htmlExclude'] = valueHtmlExclude == 'true';
 
-	var valuePdfExclude = $formValues.find('.valuePdfExclude').prop('checked');
+	var valuePdfExclude = $formValues.find('.valuePdfExclude').val();
 	if(valuePdfExclude != null && valuePdfExclude !== '')
-		vals['pdfExclude'] = valuePdfExclude;
+		vals['pdfExclude'] = valuePdfExclude == 'true';
 
-	var valueLoginLogout = $formValues.find('.valueLoginLogout').prop('checked');
+	var valueLoginLogout = $formValues.find('.valueLoginLogout').val();
 	if(valueLoginLogout != null && valueLoginLogout !== '')
-		vals['loginLogout'] = valueLoginLogout;
+		vals['loginLogout'] = valueLoginLogout == 'true';
 
 	var valueSort1 = $formValues.find('.valueSort1').val();
 	if(valueSort1 != null && valueSort1 !== '')
@@ -470,7 +473,7 @@ async function patchHtmlPart($formFilters, $formValues, pk, success, error) {
 	if(removeObjectId != null && removeObjectId !== '')
 		vals['removeObjectId'] = removeObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	var removeArchived = $formValues.find('.removeArchived').val() === 'true';
 	var valueArchivedSelectVal = $formValues.find('select.setArchived').val();
 	var valueArchived = null;
@@ -486,7 +489,7 @@ async function patchHtmlPart($formFilters, $formValues, pk, success, error) {
 	if(removeArchived != null && removeArchived !== '')
 		vals['removeArchived'] = removeArchived;
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	var removeDeleted = $formValues.find('.removeDeleted').val() === 'true';
 	var valueDeletedSelectVal = $formValues.find('select.setDeleted').val();
 	var valueDeleted = null;
@@ -686,7 +689,7 @@ async function patchHtmlPart($formFilters, $formValues, pk, success, error) {
 	if(removeHtmlVarBase64Decode != null && removeHtmlVarBase64Decode !== '')
 		vals['removeHtmlVarBase64Decode'] = removeHtmlVarBase64Decode;
 
-	var valueHtmlExclude = $formValues.find('.valueHtmlExclude').prop('checked');
+	var valueHtmlExclude = $formValues.find('.valueHtmlExclude').val();
 	var removeHtmlExclude = $formValues.find('.removeHtmlExclude').val() === 'true';
 	var valueHtmlExcludeSelectVal = $formValues.find('select.setHtmlExclude').val();
 	var valueHtmlExclude = null;
@@ -702,7 +705,7 @@ async function patchHtmlPart($formFilters, $formValues, pk, success, error) {
 	if(removeHtmlExclude != null && removeHtmlExclude !== '')
 		vals['removeHtmlExclude'] = removeHtmlExclude;
 
-	var valuePdfExclude = $formValues.find('.valuePdfExclude').prop('checked');
+	var valuePdfExclude = $formValues.find('.valuePdfExclude').val();
 	var removePdfExclude = $formValues.find('.removePdfExclude').val() === 'true';
 	var valuePdfExcludeSelectVal = $formValues.find('select.setPdfExclude').val();
 	var valuePdfExclude = null;
@@ -718,7 +721,7 @@ async function patchHtmlPart($formFilters, $formValues, pk, success, error) {
 	if(removePdfExclude != null && removePdfExclude !== '')
 		vals['removePdfExclude'] = removePdfExclude;
 
-	var valueLoginLogout = $formValues.find('.valueLoginLogout').prop('checked');
+	var valueLoginLogout = $formValues.find('.valueLoginLogout').val();
 	var removeLoginLogout = $formValues.find('.removeLoginLogout').val() === 'true';
 	var valueLoginLogoutSelectVal = $formValues.find('select.setLoginLogout').val();
 	var valueLoginLogout = null;

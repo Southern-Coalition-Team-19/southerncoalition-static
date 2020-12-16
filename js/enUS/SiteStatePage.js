@@ -60,13 +60,13 @@ async function putcopySiteState($formValues, pk, success, error) {
 	if(valueObjectId != null && valueObjectId !== '')
 		vals['objectId'] = valueObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	if(valueArchived != null && valueArchived !== '')
-		vals['archived'] = valueArchived;
+		vals['archived'] = valueArchived == 'true';
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	if(valueDeleted != null && valueDeleted !== '')
-		vals['deleted'] = valueDeleted;
+		vals['deleted'] = valueDeleted == 'true';
 
 	var valueStateName = $formValues.find('.valueStateName').val();
 	if(valueStateName != null && valueStateName !== '')
@@ -85,7 +85,10 @@ async function putcopySiteState($formValues, pk, success, error) {
 		vals['imageTop'] = valueImageTop;
 
 	var valueAgencyKeys = $formValues.find('input.valueAgencyKeys:checked').val();
-	if(valueAgencyKeys != null && valueAgencyKeys !== '')
+	var valueAgencyKeysClear = $formValues.find('input.agencyKeys_clear:checked').val();
+	if(valueAgencyKeysClear != null && valueAgencyKeysClear)
+		vals['agencyKeys'] = null;
+	else if(valueAgencyKeys != null && valueAgencyKeys)
 		vals['agencyKeys'] = [valueAgencyKeys];
 
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
@@ -153,13 +156,13 @@ async function postSiteState($formValues, success, error) {
 	if(valueObjectId != null && valueObjectId !== '')
 		vals['objectId'] = valueObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	if(valueArchived != null && valueArchived !== '')
-		vals['archived'] = valueArchived;
+		vals['archived'] = valueArchived == 'true';
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	if(valueDeleted != null && valueDeleted !== '')
-		vals['deleted'] = valueDeleted;
+		vals['deleted'] = valueDeleted == 'true';
 
 	var valueStateName = $formValues.find('.valueStateName').val();
 	if(valueStateName != null && valueStateName !== '')
@@ -278,7 +281,7 @@ async function patchSiteState($formFilters, $formValues, pk, success, error) {
 	if(removeObjectId != null && removeObjectId !== '')
 		vals['removeObjectId'] = removeObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	var removeArchived = $formValues.find('.removeArchived').val() === 'true';
 	var valueArchivedSelectVal = $formValues.find('select.setArchived').val();
 	var valueArchived = null;
@@ -294,7 +297,7 @@ async function patchSiteState($formFilters, $formValues, pk, success, error) {
 	if(removeArchived != null && removeArchived !== '')
 		vals['removeArchived'] = removeArchived;
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	var removeDeleted = $formValues.find('.removeDeleted').val() === 'true';
 	var valueDeletedSelectVal = $formValues.find('select.setDeleted').val();
 	var valueDeleted = null;

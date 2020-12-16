@@ -60,32 +60,38 @@ async function putcopyPageDesign($formValues, pk, success, error) {
 	if(valueObjectId != null && valueObjectId !== '')
 		vals['objectId'] = valueObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	if(valueArchived != null && valueArchived !== '')
-		vals['archived'] = valueArchived;
+		vals['archived'] = valueArchived == 'true';
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	if(valueDeleted != null && valueDeleted !== '')
-		vals['deleted'] = valueDeleted;
+		vals['deleted'] = valueDeleted == 'true';
 
 	var valuePageDesignCompleteName = $formValues.find('.valuePageDesignCompleteName').val();
 	if(valuePageDesignCompleteName != null && valuePageDesignCompleteName !== '')
 		vals['pageDesignCompleteName'] = valuePageDesignCompleteName;
 
-	var valueDesignHidden = $formValues.find('.valueDesignHidden').prop('checked');
+	var valueDesignHidden = $formValues.find('.valueDesignHidden').val();
 	if(valueDesignHidden != null && valueDesignHidden !== '')
-		vals['designHidden'] = valueDesignHidden;
+		vals['designHidden'] = valueDesignHidden == 'true';
 
 	var valuePageContentType = $formValues.find('.valuePageContentType').val();
 	if(valuePageContentType != null && valuePageContentType !== '')
 		vals['pageContentType'] = valuePageContentType;
 
 	var valueParentDesignKeys = $formValues.find('input.valueParentDesignKeys:checked').val();
-	if(valueParentDesignKeys != null && valueParentDesignKeys !== '')
+	var valueParentDesignKeysClear = $formValues.find('input.parentDesignKeys_clear:checked').val();
+	if(valueParentDesignKeysClear != null && valueParentDesignKeysClear)
+		vals['parentDesignKeys'] = null;
+	else if(valueParentDesignKeys != null && valueParentDesignKeys)
 		vals['parentDesignKeys'] = [valueParentDesignKeys];
 
 	var valueHtmlPartKeys = $formValues.find('input.valueHtmlPartKeys:checked').val();
-	if(valueHtmlPartKeys != null && valueHtmlPartKeys !== '')
+	var valueHtmlPartKeysClear = $formValues.find('input.htmlPartKeys_clear:checked').val();
+	if(valueHtmlPartKeysClear != null && valueHtmlPartKeysClear)
+		vals['htmlPartKeys'] = null;
+	else if(valueHtmlPartKeys != null && valueHtmlPartKeys)
 		vals['htmlPartKeys'] = [valueHtmlPartKeys];
 
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
@@ -153,21 +159,21 @@ async function postPageDesign($formValues, success, error) {
 	if(valueObjectId != null && valueObjectId !== '')
 		vals['objectId'] = valueObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	if(valueArchived != null && valueArchived !== '')
-		vals['archived'] = valueArchived;
+		vals['archived'] = valueArchived == 'true';
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	if(valueDeleted != null && valueDeleted !== '')
-		vals['deleted'] = valueDeleted;
+		vals['deleted'] = valueDeleted == 'true';
 
 	var valuePageDesignCompleteName = $formValues.find('.valuePageDesignCompleteName').val();
 	if(valuePageDesignCompleteName != null && valuePageDesignCompleteName !== '')
 		vals['pageDesignCompleteName'] = valuePageDesignCompleteName;
 
-	var valueDesignHidden = $formValues.find('.valueDesignHidden').prop('checked');
+	var valueDesignHidden = $formValues.find('.valueDesignHidden').val();
 	if(valueDesignHidden != null && valueDesignHidden !== '')
-		vals['designHidden'] = valueDesignHidden;
+		vals['designHidden'] = valueDesignHidden == 'true';
 
 	var valuePageContentType = $formValues.find('.valuePageContentType').val();
 	if(valuePageContentType != null && valuePageContentType !== '')
@@ -281,7 +287,7 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	if(removeObjectId != null && removeObjectId !== '')
 		vals['removeObjectId'] = removeObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	var removeArchived = $formValues.find('.removeArchived').val() === 'true';
 	var valueArchivedSelectVal = $formValues.find('select.setArchived').val();
 	var valueArchived = null;
@@ -297,7 +303,7 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	if(removeArchived != null && removeArchived !== '')
 		vals['removeArchived'] = removeArchived;
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	var removeDeleted = $formValues.find('.removeDeleted').val() === 'true';
 	var valueDeletedSelectVal = $formValues.find('select.setDeleted').val();
 	var valueDeleted = null;
@@ -325,7 +331,7 @@ async function patchPageDesign($formFilters, $formValues, pk, success, error) {
 	if(removePageDesignCompleteName != null && removePageDesignCompleteName !== '')
 		vals['removePageDesignCompleteName'] = removePageDesignCompleteName;
 
-	var valueDesignHidden = $formValues.find('.valueDesignHidden').prop('checked');
+	var valueDesignHidden = $formValues.find('.valueDesignHidden').val();
 	var removeDesignHidden = $formValues.find('.removeDesignHidden').val() === 'true';
 	var valueDesignHiddenSelectVal = $formValues.find('select.setDesignHidden').val();
 	var valueDesignHidden = null;

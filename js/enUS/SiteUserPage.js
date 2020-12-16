@@ -264,7 +264,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 	if(removeObjectId != null && removeObjectId !== '')
 		vals['removeObjectId'] = removeObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	var removeArchived = $formValues.find('.removeArchived').val() === 'true';
 	var valueArchivedSelectVal = $formValues.find('select.setArchived').val();
 	var valueArchived = null;
@@ -280,7 +280,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 	if(removeArchived != null && removeArchived !== '')
 		vals['removeArchived'] = removeArchived;
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	var removeDeleted = $formValues.find('.removeDeleted').val() === 'true';
 	var valueDeletedSelectVal = $formValues.find('select.setDeleted').val();
 	var valueDeleted = null;
@@ -296,7 +296,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 	if(removeDeleted != null && removeDeleted !== '')
 		vals['removeDeleted'] = removeDeleted;
 
-	var valueUserReceiveEmails = $formValues.find('.valueUserReceiveEmails').prop('checked');
+	var valueUserReceiveEmails = $formValues.find('.valueUserReceiveEmails').val();
 	var removeUserReceiveEmails = $formValues.find('.removeUserReceiveEmails').val() === 'true';
 	var valueUserReceiveEmailsSelectVal = $formValues.find('select.setUserReceiveEmails').val();
 	var valueUserReceiveEmails = null;
@@ -312,7 +312,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 	if(removeUserReceiveEmails != null && removeUserReceiveEmails !== '')
 		vals['removeUserReceiveEmails'] = removeUserReceiveEmails;
 
-	var valueSeeArchived = $formValues.find('.valueSeeArchived').prop('checked');
+	var valueSeeArchived = $formValues.find('.valueSeeArchived').val();
 	var removeSeeArchived = $formValues.find('.removeSeeArchived').val() === 'true';
 	var valueSeeArchivedSelectVal = $formValues.find('select.setSeeArchived').val();
 	var valueSeeArchived = null;
@@ -328,7 +328,7 @@ async function patchSiteUser($formFilters, $formValues, pk, success, error) {
 	if(removeSeeArchived != null && removeSeeArchived !== '')
 		vals['removeSeeArchived'] = removeSeeArchived;
 
-	var valueSeeDeleted = $formValues.find('.valueSeeDeleted').prop('checked');
+	var valueSeeDeleted = $formValues.find('.valueSeeDeleted').val();
 	var removeSeeDeleted = $formValues.find('.removeSeeDeleted').val() === 'true';
 	var valueSeeDeletedSelectVal = $formValues.find('select.setSeeDeleted').val();
 	var valueSeeDeleted = null;
@@ -664,25 +664,25 @@ async function postSiteUser($formValues, success, error) {
 	if(valueObjectId != null && valueObjectId !== '')
 		vals['objectId'] = valueObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	if(valueArchived != null && valueArchived !== '')
-		vals['archived'] = valueArchived;
+		vals['archived'] = valueArchived == 'true';
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	if(valueDeleted != null && valueDeleted !== '')
-		vals['deleted'] = valueDeleted;
+		vals['deleted'] = valueDeleted == 'true';
 
-	var valueUserReceiveEmails = $formValues.find('.valueUserReceiveEmails').prop('checked');
+	var valueUserReceiveEmails = $formValues.find('.valueUserReceiveEmails').val();
 	if(valueUserReceiveEmails != null && valueUserReceiveEmails !== '')
-		vals['userReceiveEmails'] = valueUserReceiveEmails;
+		vals['userReceiveEmails'] = valueUserReceiveEmails == 'true';
 
-	var valueSeeArchived = $formValues.find('.valueSeeArchived').prop('checked');
+	var valueSeeArchived = $formValues.find('.valueSeeArchived').val();
 	if(valueSeeArchived != null && valueSeeArchived !== '')
-		vals['seeArchived'] = valueSeeArchived;
+		vals['seeArchived'] = valueSeeArchived == 'true';
 
-	var valueSeeDeleted = $formValues.find('.valueSeeDeleted').prop('checked');
+	var valueSeeDeleted = $formValues.find('.valueSeeDeleted').val();
 	if(valueSeeDeleted != null && valueSeeDeleted !== '')
-		vals['seeDeleted'] = valueSeeDeleted;
+		vals['seeDeleted'] = valueSeeDeleted == 'true';
 
 	var valueCustomerProfileId = $formValues.find('.valueCustomerProfileId').val();
 	if(valueCustomerProfileId != null && valueCustomerProfileId !== '')

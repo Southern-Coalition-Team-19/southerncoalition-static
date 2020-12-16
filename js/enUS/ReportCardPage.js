@@ -60,13 +60,13 @@ async function putcopyReportCard($formValues, pk, success, error) {
 	if(valueObjectId != null && valueObjectId !== '')
 		vals['objectId'] = valueObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	if(valueArchived != null && valueArchived !== '')
-		vals['archived'] = valueArchived;
+		vals['archived'] = valueArchived == 'true';
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	if(valueDeleted != null && valueDeleted !== '')
-		vals['deleted'] = valueDeleted;
+		vals['deleted'] = valueDeleted == 'true';
 
 	var valueReportCardStartYear = $formValues.find('.valueReportCardStartYear').val();
 	if(valueReportCardStartYear != null && valueReportCardStartYear !== '')
@@ -77,7 +77,10 @@ async function putcopyReportCard($formValues, pk, success, error) {
 		vals['reportCardEndYear'] = valueReportCardEndYear;
 
 	var valueAgencyKey = $formValues.find('input.valueAgencyKey:checked').val();
-	if(valueAgencyKey != null && valueAgencyKey !== '')
+	var valueAgencyKeyClear = $formValues.find('input.agencyKey_clear:checked').val();
+	if(valueAgencyKeyClear != null && valueAgencyKeyClear)
+		vals['agencyKey'] = null;
+	else if(valueAgencyKey != null && valueAgencyKey)
 		vals['agencyKey'] = valueAgencyKey;
 
 	var valuePupilsIndigenousMale = $formValues.find('.valuePupilsIndigenousMale').val();
@@ -625,13 +628,13 @@ async function postReportCard($formValues, success, error) {
 	if(valueObjectId != null && valueObjectId !== '')
 		vals['objectId'] = valueObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	if(valueArchived != null && valueArchived !== '')
-		vals['archived'] = valueArchived;
+		vals['archived'] = valueArchived == 'true';
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	if(valueDeleted != null && valueDeleted !== '')
-		vals['deleted'] = valueDeleted;
+		vals['deleted'] = valueDeleted == 'true';
 
 	var valueReportCardStartYear = $formValues.find('.valueReportCardStartYear').val();
 	if(valueReportCardStartYear != null && valueReportCardStartYear !== '')
@@ -1219,7 +1222,7 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removeObjectId != null && removeObjectId !== '')
 		vals['removeObjectId'] = removeObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	var removeArchived = $formValues.find('.removeArchived').val() === 'true';
 	var valueArchivedSelectVal = $formValues.find('select.setArchived').val();
 	var valueArchived = null;
@@ -1235,7 +1238,7 @@ async function patchReportCard($formFilters, $formValues, pk, success, error) {
 	if(removeArchived != null && removeArchived !== '')
 		vals['removeArchived'] = removeArchived;
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	var removeDeleted = $formValues.find('.removeDeleted').val() === 'true';
 	var valueDeletedSelectVal = $formValues.find('select.setDeleted').val();
 	var valueDeleted = null;
@@ -3374,18 +3377,6 @@ function patchReportCardFilters($formFilters) {
 		if(filterImageTop != null && filterImageTop !== '')
 			filters.push({ name: 'fq', value: 'imageTop:' + filterImageTop });
 
-		var filterPupilsOtherPercent = $formFilters.find('.valuePupilsOtherPercent').val();
-		if(filterPupilsOtherPercent != null && filterPupilsOtherPercent !== '')
-			filters.push({ name: 'fq', value: 'pupilsOtherPercent:' + filterPupilsOtherPercent });
-
-		var filterExamsCollegeReadyGrades38BlackVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38BlackVsWhite').val();
-		if(filterExamsCollegeReadyGrades38BlackVsWhite != null && filterExamsCollegeReadyGrades38BlackVsWhite !== '')
-			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38BlackVsWhite:' + filterExamsCollegeReadyGrades38BlackVsWhite });
-
-		var filterExamsCollegeReadyGrades38LatinxVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38LatinxVsWhite').val();
-		if(filterExamsCollegeReadyGrades38LatinxVsWhite != null && filterExamsCollegeReadyGrades38LatinxVsWhite !== '')
-			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38LatinxVsWhite:' + filterExamsCollegeReadyGrades38LatinxVsWhite });
-
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
 			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
@@ -3413,6 +3404,28 @@ function patchReportCardFilters($formFilters) {
 		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
 		if(filterAgencyName != null && filterAgencyName !== '')
 			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
+
+		var $filterAgencyIsStateCheckbox = $formFilters.find('input.valueAgencyIsState[type = "checkbox"]');
+		var $filterAgencyIsStateSelect = $formFilters.find('select.valueAgencyIsState');
+		var filterAgencyIsState = $filterAgencyIsStateSelect.length ? $filterAgencyIsStateSelect.val() : $filterAgencyIsStateCheckbox.prop('checked');
+		var filterAgencyIsStateSelectVal = $formFilters.find('select.filterAgencyIsState').val();
+		var filterAgencyIsState = null;
+		if(filterAgencyIsStateSelectVal !== '')
+			filterAgencyIsState = filterAgencyIsStateSelectVal == 'true';
+		if(filterAgencyIsState != null && filterAgencyIsState === true)
+			filters.push({ name: 'fq', value: 'agencyIsState:' + filterAgencyIsState });
+
+		var filterPupilsOtherPercent = $formFilters.find('.valuePupilsOtherPercent').val();
+		if(filterPupilsOtherPercent != null && filterPupilsOtherPercent !== '')
+			filters.push({ name: 'fq', value: 'pupilsOtherPercent:' + filterPupilsOtherPercent });
+
+		var filterExamsCollegeReadyGrades38BlackVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38BlackVsWhite').val();
+		if(filterExamsCollegeReadyGrades38BlackVsWhite != null && filterExamsCollegeReadyGrades38BlackVsWhite !== '')
+			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38BlackVsWhite:' + filterExamsCollegeReadyGrades38BlackVsWhite });
+
+		var filterExamsCollegeReadyGrades38LatinxVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38LatinxVsWhite').val();
+		if(filterExamsCollegeReadyGrades38LatinxVsWhite != null && filterExamsCollegeReadyGrades38LatinxVsWhite !== '')
+			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38LatinxVsWhite:' + filterExamsCollegeReadyGrades38LatinxVsWhite });
 
 		var filterReportCardCompleteName = $formFilters.find('.valueReportCardCompleteName').val();
 		if(filterReportCardCompleteName != null && filterReportCardCompleteName !== '')
@@ -4068,18 +4081,6 @@ function searchReportCardFilters($formFilters) {
 		if(filterImageTop != null && filterImageTop !== '')
 			filters.push({ name: 'fq', value: 'imageTop:' + filterImageTop });
 
-		var filterPupilsOtherPercent = $formFilters.find('.valuePupilsOtherPercent').val();
-		if(filterPupilsOtherPercent != null && filterPupilsOtherPercent !== '')
-			filters.push({ name: 'fq', value: 'pupilsOtherPercent:' + filterPupilsOtherPercent });
-
-		var filterExamsCollegeReadyGrades38BlackVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38BlackVsWhite').val();
-		if(filterExamsCollegeReadyGrades38BlackVsWhite != null && filterExamsCollegeReadyGrades38BlackVsWhite !== '')
-			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38BlackVsWhite:' + filterExamsCollegeReadyGrades38BlackVsWhite });
-
-		var filterExamsCollegeReadyGrades38LatinxVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38LatinxVsWhite').val();
-		if(filterExamsCollegeReadyGrades38LatinxVsWhite != null && filterExamsCollegeReadyGrades38LatinxVsWhite !== '')
-			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38LatinxVsWhite:' + filterExamsCollegeReadyGrades38LatinxVsWhite });
-
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
 			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
@@ -4107,6 +4108,28 @@ function searchReportCardFilters($formFilters) {
 		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
 		if(filterAgencyName != null && filterAgencyName !== '')
 			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
+
+		var $filterAgencyIsStateCheckbox = $formFilters.find('input.valueAgencyIsState[type = "checkbox"]');
+		var $filterAgencyIsStateSelect = $formFilters.find('select.valueAgencyIsState');
+		var filterAgencyIsState = $filterAgencyIsStateSelect.length ? $filterAgencyIsStateSelect.val() : $filterAgencyIsStateCheckbox.prop('checked');
+		var filterAgencyIsStateSelectVal = $formFilters.find('select.filterAgencyIsState').val();
+		var filterAgencyIsState = null;
+		if(filterAgencyIsStateSelectVal !== '')
+			filterAgencyIsState = filterAgencyIsStateSelectVal == 'true';
+		if(filterAgencyIsState != null && filterAgencyIsState === true)
+			filters.push({ name: 'fq', value: 'agencyIsState:' + filterAgencyIsState });
+
+		var filterPupilsOtherPercent = $formFilters.find('.valuePupilsOtherPercent').val();
+		if(filterPupilsOtherPercent != null && filterPupilsOtherPercent !== '')
+			filters.push({ name: 'fq', value: 'pupilsOtherPercent:' + filterPupilsOtherPercent });
+
+		var filterExamsCollegeReadyGrades38BlackVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38BlackVsWhite').val();
+		if(filterExamsCollegeReadyGrades38BlackVsWhite != null && filterExamsCollegeReadyGrades38BlackVsWhite !== '')
+			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38BlackVsWhite:' + filterExamsCollegeReadyGrades38BlackVsWhite });
+
+		var filterExamsCollegeReadyGrades38LatinxVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38LatinxVsWhite').val();
+		if(filterExamsCollegeReadyGrades38LatinxVsWhite != null && filterExamsCollegeReadyGrades38LatinxVsWhite !== '')
+			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38LatinxVsWhite:' + filterExamsCollegeReadyGrades38LatinxVsWhite });
 
 		var filterReportCardCompleteName = $formFilters.find('.valueReportCardCompleteName').val();
 		if(filterReportCardCompleteName != null && filterReportCardCompleteName !== '')
@@ -4801,18 +4824,6 @@ function adminsearchReportCardFilters($formFilters) {
 		if(filterImageTop != null && filterImageTop !== '')
 			filters.push({ name: 'fq', value: 'imageTop:' + filterImageTop });
 
-		var filterPupilsOtherPercent = $formFilters.find('.valuePupilsOtherPercent').val();
-		if(filterPupilsOtherPercent != null && filterPupilsOtherPercent !== '')
-			filters.push({ name: 'fq', value: 'pupilsOtherPercent:' + filterPupilsOtherPercent });
-
-		var filterExamsCollegeReadyGrades38BlackVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38BlackVsWhite').val();
-		if(filterExamsCollegeReadyGrades38BlackVsWhite != null && filterExamsCollegeReadyGrades38BlackVsWhite !== '')
-			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38BlackVsWhite:' + filterExamsCollegeReadyGrades38BlackVsWhite });
-
-		var filterExamsCollegeReadyGrades38LatinxVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38LatinxVsWhite').val();
-		if(filterExamsCollegeReadyGrades38LatinxVsWhite != null && filterExamsCollegeReadyGrades38LatinxVsWhite !== '')
-			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38LatinxVsWhite:' + filterExamsCollegeReadyGrades38LatinxVsWhite });
-
 		var filterStateKey = $formFilters.find('.valueStateKey').val();
 		if(filterStateKey != null && filterStateKey !== '')
 			filters.push({ name: 'fq', value: 'stateKey:' + filterStateKey });
@@ -4840,6 +4851,28 @@ function adminsearchReportCardFilters($formFilters) {
 		var filterAgencyName = $formFilters.find('.valueAgencyName').val();
 		if(filterAgencyName != null && filterAgencyName !== '')
 			filters.push({ name: 'fq', value: 'agencyName:' + filterAgencyName });
+
+		var $filterAgencyIsStateCheckbox = $formFilters.find('input.valueAgencyIsState[type = "checkbox"]');
+		var $filterAgencyIsStateSelect = $formFilters.find('select.valueAgencyIsState');
+		var filterAgencyIsState = $filterAgencyIsStateSelect.length ? $filterAgencyIsStateSelect.val() : $filterAgencyIsStateCheckbox.prop('checked');
+		var filterAgencyIsStateSelectVal = $formFilters.find('select.filterAgencyIsState').val();
+		var filterAgencyIsState = null;
+		if(filterAgencyIsStateSelectVal !== '')
+			filterAgencyIsState = filterAgencyIsStateSelectVal == 'true';
+		if(filterAgencyIsState != null && filterAgencyIsState === true)
+			filters.push({ name: 'fq', value: 'agencyIsState:' + filterAgencyIsState });
+
+		var filterPupilsOtherPercent = $formFilters.find('.valuePupilsOtherPercent').val();
+		if(filterPupilsOtherPercent != null && filterPupilsOtherPercent !== '')
+			filters.push({ name: 'fq', value: 'pupilsOtherPercent:' + filterPupilsOtherPercent });
+
+		var filterExamsCollegeReadyGrades38BlackVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38BlackVsWhite').val();
+		if(filterExamsCollegeReadyGrades38BlackVsWhite != null && filterExamsCollegeReadyGrades38BlackVsWhite !== '')
+			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38BlackVsWhite:' + filterExamsCollegeReadyGrades38BlackVsWhite });
+
+		var filterExamsCollegeReadyGrades38LatinxVsWhite = $formFilters.find('.valueExamsCollegeReadyGrades38LatinxVsWhite').val();
+		if(filterExamsCollegeReadyGrades38LatinxVsWhite != null && filterExamsCollegeReadyGrades38LatinxVsWhite !== '')
+			filters.push({ name: 'fq', value: 'examsCollegeReadyGrades38LatinxVsWhite:' + filterExamsCollegeReadyGrades38LatinxVsWhite });
 
 		var filterReportCardCompleteName = $formFilters.find('.valueReportCardCompleteName').val();
 		if(filterReportCardCompleteName != null && filterReportCardCompleteName !== '')
@@ -6768,42 +6801,6 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'ImageTop'));
 			}
-			var val = o['pupilsOtherPercent'];
-			if(vars.includes('pupilsOtherPercent')) {
-				$('.inputReportCard' + pk + 'PupilsOtherPercent').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varReportCard' + pk + 'PupilsOtherPercent').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputReportCard' + pk + 'PupilsOtherPercent'));
-			}
-			var val = o['examsCollegeReadyGrades38BlackVsWhite'];
-			if(vars.includes('examsCollegeReadyGrades38BlackVsWhite')) {
-				$('.inputReportCard' + pk + 'ExamsCollegeReadyGrades38BlackVsWhite').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varReportCard' + pk + 'ExamsCollegeReadyGrades38BlackVsWhite').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputReportCard' + pk + 'ExamsCollegeReadyGrades38BlackVsWhite'));
-			}
-			var val = o['examsCollegeReadyGrades38LatinxVsWhite'];
-			if(vars.includes('examsCollegeReadyGrades38LatinxVsWhite')) {
-				$('.inputReportCard' + pk + 'ExamsCollegeReadyGrades38LatinxVsWhite').each(function() {
-					if(val !== $(this).val())
-						$(this).val(val);
-				});
-				$('.varReportCard' + pk + 'ExamsCollegeReadyGrades38LatinxVsWhite').each(function() {
-					if(val !== $(this).text())
-						$(this).text(val);
-				});
-				addGlow($('.inputReportCard' + pk + 'ExamsCollegeReadyGrades38LatinxVsWhite'));
-			}
 			var val = o['stateKey'];
 			if(vars.includes('stateKey')) {
 				$('.inputReportCard' + pk + 'StateKey').each(function() {
@@ -6888,6 +6885,18 @@ async function websocketReportCardInner(apiRequest) {
 				});
 				addGlow($('.inputReportCard' + pk + 'AgencyName'));
 			}
+			var val = o['agencyIsState'];
+			if(vars.includes('agencyIsState')) {
+				$('.inputReportCard' + pk + 'AgencyIsState').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'AgencyIsState').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'AgencyIsState'));
+			}
 			var val = o['agencyCoords'];
 			if(vars.includes('agencyCoords')) {
 				$('.inputReportCard' + pk + 'AgencyCoords').each(function() {
@@ -6911,6 +6920,42 @@ async function websocketReportCardInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputReportCard' + pk + 'AgencyLeft'));
+			}
+			var val = o['pupilsOtherPercent'];
+			if(vars.includes('pupilsOtherPercent')) {
+				$('.inputReportCard' + pk + 'PupilsOtherPercent').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'PupilsOtherPercent').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'PupilsOtherPercent'));
+			}
+			var val = o['examsCollegeReadyGrades38BlackVsWhite'];
+			if(vars.includes('examsCollegeReadyGrades38BlackVsWhite')) {
+				$('.inputReportCard' + pk + 'ExamsCollegeReadyGrades38BlackVsWhite').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'ExamsCollegeReadyGrades38BlackVsWhite').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'ExamsCollegeReadyGrades38BlackVsWhite'));
+			}
+			var val = o['examsCollegeReadyGrades38LatinxVsWhite'];
+			if(vars.includes('examsCollegeReadyGrades38LatinxVsWhite')) {
+				$('.inputReportCard' + pk + 'ExamsCollegeReadyGrades38LatinxVsWhite').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varReportCard' + pk + 'ExamsCollegeReadyGrades38LatinxVsWhite').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputReportCard' + pk + 'ExamsCollegeReadyGrades38LatinxVsWhite'));
 			}
 			var val = o['reportCardCompleteName'];
 			if(vars.includes('reportCardCompleteName')) {

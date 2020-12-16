@@ -60,13 +60,13 @@ async function putcopySiteAgency($formValues, pk, success, error) {
 	if(valueObjectId != null && valueObjectId !== '')
 		vals['objectId'] = valueObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	if(valueArchived != null && valueArchived !== '')
-		vals['archived'] = valueArchived;
+		vals['archived'] = valueArchived == 'true';
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	if(valueDeleted != null && valueDeleted !== '')
-		vals['deleted'] = valueDeleted;
+		vals['deleted'] = valueDeleted == 'true';
 
 	var valueAgencyName = $formValues.find('.valueAgencyName').val();
 	if(valueAgencyName != null && valueAgencyName !== '')
@@ -85,11 +85,17 @@ async function putcopySiteAgency($formValues, pk, success, error) {
 		vals['imageCoords'] = valueImageCoords;
 
 	var valueStateKey = $formValues.find('input.valueStateKey:checked').val();
-	if(valueStateKey != null && valueStateKey !== '')
+	var valueStateKeyClear = $formValues.find('input.stateKey_clear:checked').val();
+	if(valueStateKeyClear != null && valueStateKeyClear)
+		vals['stateKey'] = null;
+	else if(valueStateKey != null && valueStateKey)
 		vals['stateKey'] = valueStateKey;
 
 	var valueReportCardKeys = $formValues.find('input.valueReportCardKeys:checked').val();
-	if(valueReportCardKeys != null && valueReportCardKeys !== '')
+	var valueReportCardKeysClear = $formValues.find('input.reportCardKeys_clear:checked').val();
+	if(valueReportCardKeysClear != null && valueReportCardKeysClear)
+		vals['reportCardKeys'] = null;
+	else if(valueReportCardKeys != null && valueReportCardKeys)
 		vals['reportCardKeys'] = [valueReportCardKeys];
 
 	var valueInheritPk = $formValues.find('.valueInheritPk').val();
@@ -157,13 +163,13 @@ async function postSiteAgency($formValues, success, error) {
 	if(valueObjectId != null && valueObjectId !== '')
 		vals['objectId'] = valueObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	if(valueArchived != null && valueArchived !== '')
-		vals['archived'] = valueArchived;
+		vals['archived'] = valueArchived == 'true';
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	if(valueDeleted != null && valueDeleted !== '')
-		vals['deleted'] = valueDeleted;
+		vals['deleted'] = valueDeleted == 'true';
 
 	var valueAgencyName = $formValues.find('.valueAgencyName').val();
 	if(valueAgencyName != null && valueAgencyName !== '')
@@ -286,7 +292,7 @@ async function patchSiteAgency($formFilters, $formValues, pk, success, error) {
 	if(removeObjectId != null && removeObjectId !== '')
 		vals['removeObjectId'] = removeObjectId;
 
-	var valueArchived = $formValues.find('.valueArchived').prop('checked');
+	var valueArchived = $formValues.find('.valueArchived').val();
 	var removeArchived = $formValues.find('.removeArchived').val() === 'true';
 	var valueArchivedSelectVal = $formValues.find('select.setArchived').val();
 	var valueArchived = null;
@@ -302,7 +308,7 @@ async function patchSiteAgency($formFilters, $formValues, pk, success, error) {
 	if(removeArchived != null && removeArchived !== '')
 		vals['removeArchived'] = removeArchived;
 
-	var valueDeleted = $formValues.find('.valueDeleted').prop('checked');
+	var valueDeleted = $formValues.find('.valueDeleted').val();
 	var removeDeleted = $formValues.find('.removeDeleted').val() === 'true';
 	var valueDeletedSelectVal = $formValues.find('select.setDeleted').val();
 	var valueDeleted = null;
@@ -561,6 +567,16 @@ function patchSiteAgencyFilters($formFilters) {
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
 
+		var $filterAgencyIsStateCheckbox = $formFilters.find('input.valueAgencyIsState[type = "checkbox"]');
+		var $filterAgencyIsStateSelect = $formFilters.find('select.valueAgencyIsState');
+		var filterAgencyIsState = $filterAgencyIsStateSelect.length ? $filterAgencyIsStateSelect.val() : $filterAgencyIsStateCheckbox.prop('checked');
+		var filterAgencyIsStateSelectVal = $formFilters.find('select.filterAgencyIsState').val();
+		var filterAgencyIsState = null;
+		if(filterAgencyIsStateSelectVal !== '')
+			filterAgencyIsState = filterAgencyIsStateSelectVal == 'true';
+		if(filterAgencyIsState != null && filterAgencyIsState === true)
+			filters.push({ name: 'fq', value: 'agencyIsState:' + filterAgencyIsState });
+
 		var filterAgencyOnlyName = $formFilters.find('.valueAgencyOnlyName').val();
 		if(filterAgencyOnlyName != null && filterAgencyOnlyName !== '')
 			filters.push({ name: 'fq', value: 'agencyOnlyName:' + filterAgencyOnlyName });
@@ -750,6 +766,16 @@ function searchSiteAgencyFilters($formFilters) {
 		var filterStateAbbreviation = $formFilters.find('.valueStateAbbreviation').val();
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
+
+		var $filterAgencyIsStateCheckbox = $formFilters.find('input.valueAgencyIsState[type = "checkbox"]');
+		var $filterAgencyIsStateSelect = $formFilters.find('select.valueAgencyIsState');
+		var filterAgencyIsState = $filterAgencyIsStateSelect.length ? $filterAgencyIsStateSelect.val() : $filterAgencyIsStateCheckbox.prop('checked');
+		var filterAgencyIsStateSelectVal = $formFilters.find('select.filterAgencyIsState').val();
+		var filterAgencyIsState = null;
+		if(filterAgencyIsStateSelectVal !== '')
+			filterAgencyIsState = filterAgencyIsStateSelectVal == 'true';
+		if(filterAgencyIsState != null && filterAgencyIsState === true)
+			filters.push({ name: 'fq', value: 'agencyIsState:' + filterAgencyIsState });
 
 		var filterAgencyOnlyName = $formFilters.find('.valueAgencyOnlyName').val();
 		if(filterAgencyOnlyName != null && filterAgencyOnlyName !== '')
@@ -1013,6 +1039,16 @@ function adminsearchSiteAgencyFilters($formFilters) {
 		var filterStateAbbreviation = $formFilters.find('.valueStateAbbreviation').val();
 		if(filterStateAbbreviation != null && filterStateAbbreviation !== '')
 			filters.push({ name: 'fq', value: 'stateAbbreviation:' + filterStateAbbreviation });
+
+		var $filterAgencyIsStateCheckbox = $formFilters.find('input.valueAgencyIsState[type = "checkbox"]');
+		var $filterAgencyIsStateSelect = $formFilters.find('select.valueAgencyIsState');
+		var filterAgencyIsState = $filterAgencyIsStateSelect.length ? $filterAgencyIsStateSelect.val() : $filterAgencyIsStateCheckbox.prop('checked');
+		var filterAgencyIsStateSelectVal = $formFilters.find('select.filterAgencyIsState').val();
+		var filterAgencyIsState = null;
+		if(filterAgencyIsStateSelectVal !== '')
+			filterAgencyIsState = filterAgencyIsStateSelectVal == 'true';
+		if(filterAgencyIsState != null && filterAgencyIsState === true)
+			filters.push({ name: 'fq', value: 'agencyIsState:' + filterAgencyIsState });
 
 		var filterAgencyOnlyName = $formFilters.find('.valueAgencyOnlyName').val();
 		if(filterAgencyOnlyName != null && filterAgencyOnlyName !== '')
@@ -1588,6 +1624,18 @@ async function websocketSiteAgencyInner(apiRequest) {
 						$(this).text(val);
 				});
 				addGlow($('.inputSiteAgency' + pk + 'StateAbbreviation'));
+			}
+			var val = o['agencyIsState'];
+			if(vars.includes('agencyIsState')) {
+				$('.inputSiteAgency' + pk + 'AgencyIsState').each(function() {
+					if(val !== $(this).val())
+						$(this).val(val);
+				});
+				$('.varSiteAgency' + pk + 'AgencyIsState').each(function() {
+					if(val !== $(this).text())
+						$(this).text(val);
+				});
+				addGlow($('.inputSiteAgency' + pk + 'AgencyIsState'));
 			}
 			var val = o['agencyOnlyName'];
 			if(vars.includes('agencyOnlyName')) {

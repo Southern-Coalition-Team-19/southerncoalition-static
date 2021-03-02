@@ -15,7 +15,7 @@
     "agencyName" : "Alamance-Burlington County",
     "stateKey" : "277",
     "imageCoords" : "407,47,429,48,429,81,433,85,429,89,408,89,407,84,408,47",
-    "reportCardKeys" : [ "541", "510", "529" ]
+    "reportCardKeys" : [ "541", "510", "529", "754" ]
   }, {
     "pk" : "279",
     "inheritPk" : "1122",
@@ -27,7 +27,7 @@
     "agencyName" : "Alexander County",
     "stateKey" : "277",
     "imageCoords" : "281,71,280,83,273,97,267,94,252,95,252,81,253,74,264,71,268,71,272,70,280,71",
-    "reportCardKeys" : [ "543", "511" ]
+    "reportCardKeys" : [ "543", "511", "755" ]
   }, {
     "pk" : "280",
     "inheritPk" : "1124",
@@ -37,7 +37,7 @@
     "agencyName" : "Alleghany County",
     "stateKey" : "277",
     "imageCoords" : "251,6,290,6,289,15,284,24,284,33,280,34,274,27,270,30,265,29,262,33,252,19,252,5",
-    "reportCardKeys" : [ "542", "512" ]
+    "reportCardKeys" : [ "542", "512", "758" ]
   }, {
     "pk" : "281",
     "inheritPk" : "1121",
@@ -47,7 +47,7 @@
     "agencyName" : "Anson County",
     "stateKey" : "277",
     "imageCoords" : "342,160,346,159,348,162,352,163,358,159,363,168,368,168,374,167,377,171,380,176,378,181,383,190,377,198,342,198,342,160",
-    "reportCardKeys" : [ "530", "513", "544" ]
+    "reportCardKeys" : [ "530", "513", "544", "759" ]
   }, {
     "pk" : "283",
     "inheritPk" : "1160",
@@ -57,7 +57,7 @@
     "agencyName" : "Ashe County",
     "stateKey" : "277",
     "imageCoords" : "228,6,236,5,251,5,252,19,261,32,259,38,255,34,252,36,251,44,242,48,232,43,224,31,224,23,227,6",
-    "reportCardKeys" : [ "514", "545" ]
+    "reportCardKeys" : [ "514", "760", "545" ]
   }, {
     "pk" : "282",
     "inheritPk" : "1187",
@@ -67,7 +67,7 @@
     "agencyName" : "Asheboro City",
     "stateKey" : "277",
     "imageCoords" : "393,110,4 ",
-    "reportCardKeys" : [ "515", "547" ]
+    "reportCardKeys" : [ "515", "761", "547" ]
   }, {
     "pk" : "286",
     "inheritPk" : "1147",
@@ -77,7 +77,7 @@
     "agencyName" : "Asheville City Schools",
     "stateKey" : "277",
     "imageCoords" : "149,111,5",
-    "reportCardKeys" : [ "516", "546" ]
+    "reportCardKeys" : [ "516", "762", "546" ]
   }, {
     "pk" : "290",
     "inheritPk" : "1157",
@@ -87,7 +87,7 @@
     "agencyName" : "Avery County",
     "stateKey" : "277",
     "imageCoords" : "201,41,205,46,205,53,211,55,212,62,218,67,213,78,207,74,203,81,197,82,193,75,194,68,188,61,186,53,194,45,202,39",
-    "reportCardKeys" : [ "517", "549" ]
+    "reportCardKeys" : [ "517", "549", "763" ]
   }, {
     "pk" : "289",
     "inheritPk" : "1136",
@@ -97,7 +97,7 @@
     "agencyName" : "Beaufort County",
     "stateKey" : "277",
     "imageCoords" : "656,96,657,104,669,113,658,113,653,110,652,117,649,118,651,122,657,119,662,127,662,131,657,131,657,138,653,142,641,145,633,144,610,129,610,118,614,114,616,111,610,104,608,93,625,101,634,96,640,96,656,96",
-    "reportCardKeys" : [ "518", "548" ]
+    "reportCardKeys" : [ "518", "548", "764" ]
   }, {
     "pk" : "287",
     "inheritPk" : "1231",
@@ -107,7 +107,7 @@
     "agencyName" : "Bertie County",
     "stateKey" : "277",
     "imageCoords" : "644,39,642,46,649,62,642,77,643,78,638,76,633,82,629,75,621,77,620,70,617,69,609,71,605,71,601,66,595,60,596,56,600,55,596,49,596,45,603,39,644,37",
-    "reportCardKeys" : [ "521", "550" ]
+    "reportCardKeys" : [ "521", "765", "550" ]
   }, {
     "pk" : "284",
     "inheritPk" : "1218",

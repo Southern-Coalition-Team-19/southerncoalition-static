@@ -11,7 +11,7 @@
     "userId" : "3df413fd-1cd1-4cc6-bb15-0bfdbfc5e8b7",
     "saves" : [ "created", "inheritPk", "userId", "pageDesignCompleteName", "htmlPartKeys", "parentDesignKeys" ],
     "parentDesignKeys" : [ "16" ],
-    "htmlPartKeys" : [ "105", "74", "96", "59", "90", "93", "101", "104", "106", "103", "100", "98", "99", "71", "132", "271" ],
+    "htmlPartKeys" : [ "105", "74", "96", "59", "90", "93", "101", "104", "106", "103", "100", "98", "99", "71", "132", "271", "756", "757" ],
     "pageDesignCompleteName" : "home page"
   }, {
     "pk" : "16",

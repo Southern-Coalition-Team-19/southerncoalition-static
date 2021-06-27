@@ -3,7 +3,7 @@
   "foundNum" : 1,
   "returnedNum" : 1,
   "searchTime" : "0.000 sec",
-  "transmissionTime" : "0.001 sec",
+  "transmissionTime" : "0.004 sec",
   "list" : [ {
     "pk" : "277",
     "inheritPk" : "1119",
